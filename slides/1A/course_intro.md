@@ -12,18 +12,20 @@
 
 ---
 
-# The Course (4 Weeks)
+# Course Topics
 
 * Programming in Ruby
-* Building Rails Applications
+* Building Web Applications in Rails
+* Working with Databases
 * Front-End Development (HTML, CSS, JavaScript)
 * Agile Product Development
-* Working with Databases
+* Testing
 
 ---
 
 # Course Format
 
+* 4 weeks
 * 9AM-10:30AM Daily Lecture I
 * 10:30AM-2PM Break / Hacking / Lunch
 * 2PM-3:30PM Daily Lecture II
@@ -43,15 +45,9 @@
 # Course Goals
 
 1. Learn to teach yourself
-3. Learn to **deal with it**
+2. Develop the patience to **deal with failure**
+3. Understand the **high-level** web development process
 4. Build something __you__ are **proud of**
-
-^
-* be OK with confusion
-* be patient
-* dont JUST learn the technology
-* be creative / inspired
-* be a builder, not a screw driver expert
 
 ---
 
