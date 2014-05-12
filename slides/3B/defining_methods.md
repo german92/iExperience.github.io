@@ -132,13 +132,9 @@ end
 
 my_cart = []
 
-# Go shopping!
 go_shopping(my_cart)
-# Put stuff in car
 cart.delete_all
 
-# Go shopping!
 go_shopping(my_cart)
-# Put stuff in car
 cart.delete_all
 ```
