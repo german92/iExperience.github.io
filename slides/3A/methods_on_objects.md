@@ -1,34 +1,9 @@
-# Lists of Data
 
-* So far we have seen two main data types: Strings and Integers
-* Sometimes, we want to store more than just one string or integer
-* It is very common for us to need to store a **list** of data
-* In Ruby, the Array data structure allows you to store a list
-* The list can include integers, strings, or a combination of them
+# Arrays Cont'd
 
 ---
-
-# Arrays
-
-```ruby
->> x = [1,2,3]
-=> [1,2,3]
-
->> y = ["Hey", "You", "Guys"]
-=> ["Hey", "You", "Guys"]
-
->> z = [5, "days", "left"]
-=> [5, "days", "left"]
-
->> grocery_list = ["Bananas", "Apples", "Milk", "Bread"]
-=> ["Bananas", "Apples", "Milk", "Bread"]
-
-```
-
----
-
-# Use Case: To-do List
-## Each to-do item is a string
+### So far we know how to create arrays, and loop over them
+### What about changing them?
 
 ---
 
@@ -71,6 +46,19 @@ Methods (a.k.a. functions/procedures) allow you to perform some operation on dat
 >> todo_list.delete("laundry")
 => ["pay rent", "clean room"]
 
+```
+
+---
+
+# Calling Methods
+### on Arrays (Cont'd)
+
+```ruby
+numbers = [1,2,3]
+
+numbers.each do |number|
+  puts number
+end
 ```
 
 ---
