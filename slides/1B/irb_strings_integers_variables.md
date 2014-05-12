@@ -10,6 +10,19 @@
 
 ---
 
+## Goals of Learning Ruby
+
+* Familiary with the language and syntax
+* Basic understanding of how to work with Ruby constructs
+* Prepare you to write Ruby within Rails
+
+---
+
+### To help us learn Ruby, we will learn it in a 'sandbox'
+### The sandbox we use for Ruby is known as the 'IRB Console'
+
+---
+
 ## What's IRB?
 
 * IRB is basically a responsive console for Ruby
