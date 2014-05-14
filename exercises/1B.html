@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title>1B Exercises</title>
+  <link rel="stylesheet" href="./exercises.css">
+  <link rel="stylesheet" href="../reveal/lib/css/zenburn.css">
+</head>
+<body>
+  <div class="container">
+    <h1>
+      Exercises for 1B
+      <img src="../logo.png" alt="" class="logo">
+    </h1>
+    <h2>E1</h2>
+    <p>
+      Now that you can get some input and output, let's do some actual computing. For the first exercise, also ask for the user's mom's age, a dad's age, and compute the average age of the family. 
+    </p>
+    <pre><code>$ ruby survey.rb
+Hello!
+Please type your name:
+Salman
+Welcome Salman!
+How old are you?
+29
+How old is your mom?
+45
+How old is your dad?
+49
+Thanks for answering my creepy questions! The average age of your family is 41 years old!
+Goodbye!</code></pre>
+    <p class="hint">Hint: To convert a string to an integer, call <code>.to_i</code> on a string variable, just like we used <code>.strip</code>. To convert it to a decimal (called a floating point number, or float, in programming) use <code>.to_f</code>.</p>
+    <h2>E2</h2>
+    <p>
+      Now that you have a program that knows a lot about your family, do some <b>stress testing</b>. That means to try different inputs to see how your program responds. What happens if your output isn't a whole number? What if you input a negative number? A decimal? A fraction? Anything else you can think of?
+    </p>
+    <p>
+      This is actually a pretty important part of programming: making sure your program handles errors well. When you make a website, you can't always guarantee that the user will type in a number in an input field that asks for their age. To make great apps, you have to be dilligent!
+    </p>
+    <h2 class="bonus">E3 (Bonus!)</h2>
+    <p>
+      Average is a pretty weak form of computation. For the heavy lifting, let's take it back to middle school and the days of the quadratic formula. If your memory serves you well, in an equation of the form
+      <code>ax^2 + bx + c = 0</code>:
+      <pre>x = -b + (b^2 - 4ac)/2a</pre> and 
+      <pre>x = -b - (b^2 - 4ac)/2a</pre>
+      Let's write some code to do that for us. Create a new file named <code>quadform.rb</code> and make it do as follows:
+    </p>
+    <pre><code>$ ruby quadform.rb
+Hey bru (South African for "bro"). Let's compute some quadform.
+Give me an A:
+1
+Give me a B:
+-3
+Give me a C:
+2
+beep computing boop boop...
+x is either
+1
+or
+2
+Goodbye!</code></pre>
+  <p>As with before, stress test. Try decimal (float) inputs. Try equations where there is only one real solution, or no real solutions. What should your program do in each case?</p>
+  </div>
+</body>
+</html>
