@@ -18,6 +18,11 @@ h2.bonus {
   border-bottom: 1pt solid #ff1fcb;
 }
 
+img.centered {
+  display: block;
+  margin: 20px auto;
+}
+
 .container {
   width: 900px;
   margin: 0 auto;
@@ -37,3 +42,4 @@ h2.bonus {
   color: #333;
   font-style: italic;
 }
+
