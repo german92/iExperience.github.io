@@ -2,8 +2,7 @@
 
 ---
 
-# While we can use hashes to sore data, sometimes it can be
-# cumbersome to use methods to keep them updated
+While we can use hashes to sore data, sometimes it can be cumbersome to use methods to keep them updated
 
 ---
 # Employees Example
@@ -21,21 +20,18 @@ get_full_name(salman)
 
 ---
 
-# The method 'get_full_name' now can be called by anyone, being 
-# passed any parameter. This is not ideal.
+The method 'get_full_name' now can be called by anyone, being passed any parameter. This is not ideal.
 
 ---
 
-# Object-Oriented Programming dictates that we should encapsulate data and behavior
-# inside relevant objects, so that concerns are separated appropriately
+Object-Oriented Programming dictates that we should encapsulate data and behavior inside relevant objects, so that concerns are separated appropriately
 
 ---
 
-# In other words, an object should know how to store and change its own data.
-# The whole world does not need to know how to work with an object's inner details.
+In other words, an object should know how to store and change its own data. The whole world does not need to know how to work with an object's inner details.
 
 ---
-# Employees Example Revisited
+### Employees Example Revisited
 
 ```
 class Employee
@@ -69,10 +65,10 @@ salman.full_name
 
 ---
 
-## Result: Now only Employee class knows how to generate full names from first and last names. Furthermore, we have a much simpler way of storing employees, accessing their info, and manipulating it.
+Result: Now only Employee class knows how to generate full names from first and last names. Furthermore, we have a much simpler way of storing employees, accessing their info, and manipulating it.
 
 ---
-# Multiple Classes
+### Multiple Classes
 
 ```ruby
 class Engineer
@@ -106,9 +102,7 @@ aaron = Designer.new(20, 'Aaron', 'Fuchs', 'http://www.iexperience.co.za')
 
 ```
 ---
-# Sharing Methods
-## via Class Inheritance
-
+### Sharing Methods via Class Inheritance
 ```ruby
 class Employee
 	def full_name
@@ -133,26 +127,20 @@ class Designer < Employee
 	end
 end
 ```
-
 ---
 
-# As the number of classes declared increases, we will want to separate out
-# each Ruby Class declaration into its own file
+As the number of classes declared increases, we will want to separate out each Ruby Class declaration into its own file
 
 ---
 ```ruby
 # in employee.rb
 class Employee
-	def full_name
-		"#{@first_name} #{@last_name}"
-	end
+	...
 end
-
 # in engineer.rb
 class Engineer
 	...
 end
-
 # in designer.rb
 class Designer
 	...
@@ -168,7 +156,7 @@ aaron = Designer.new(20, 'Aaron', 'Fuchs', 'http://www.iexperience.co.za')
 ```
 ---
 
-## While we are just working with Ruby, a good practice is to have a single ```main.rb``` file with your entire program in it, which requires any other classes it needs in order to function using ```require_relative```
+While we are just working with Ruby, a good practice is to have a single ```main.rb``` file with your entire program in it, which requires any other classes it needs in order to function using ```require_relative```
 
 ---
 
@@ -177,11 +165,9 @@ aaron = Designer.new(20, 'Aaron', 'Fuchs', 'http://www.iexperience.co.za')
 
 ---
 
-## To get methods from multiple places, we use Modules
+To get methods from multiple places, we use Modules
 
 ---
-# Including Modules
-
 ```ruby
 module FullNames
 	def full_name
