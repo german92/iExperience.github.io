@@ -76,17 +76,24 @@ end</code></pre>
       <li>Does it take any arguments? How many? Are they required or optional?</li>
       <li>If it takes arguments, what class should they be?</li>
       <li>Give example usage.</li>
+      <li>Can you think of a method we've learned that behaves like the opposite of <code>split</code>?</li>
     </ol>
     <a class="hover-show pull-right">Hover for answer</a>
     <div class="hover-hide">
       <ol>
-        <li><code>split</code> is called on Strings</li>
-        <li>It returns an Array</li>
+        <li><code>split</code> is called on Strings.</li>
+        <li>It returns an Array.</li>
         <li>It can take 2 arguments. Both are optional.</li>
-        <li>The first argument may be a String, Regexp or nil (don't worry about what a Regexp is yet). The second argument, if provided, must be a Fixnum</li>
+        <li>The first argument may be a String, Regexp or nil (don't worry about what a Regexp is yet). The second argument, if provided, must be a Fixnum.</li>
         <li>
           <pre><code>"Coding is cool".split(" ")
  => ["Coding", "is", "cool"]</code></pre>
+        </li>
+        <li>
+          <code>join</code>, which takes an array and merges all of its items into a string, can behave like its opposite:
+          <pre><code>"Coding is cool".split(" ").join(" ")
+ => "Coding is cool"</code></pre>
+          Notice how we can chain methods together—it's a very powerful technique!
         </li>
       </ol>
     </div>
