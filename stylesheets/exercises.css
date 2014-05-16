@@ -1,3 +1,9 @@
+/*
+ * Colors:
+ *   green: 4ABD9B
+ *   pink: E32080
+ */
+
 html, body {
   padding: 0;
   margin: 0;
@@ -14,8 +20,8 @@ h2 {
 }
 
 h2.bonus {
-  color: #ff1fcb;
-  border-bottom: 1pt solid #ff1fcb;
+  color: #E32080;
+  border-bottom: 1pt solid #E32080;
 }
 
 img.centered {
@@ -36,10 +42,20 @@ img.centered {
 
 .hint {
   padding: 15px;
-  border: 1pt solid #7dcc7d;
-  background-color: #eafff0;
+  border: 1pt solid #4ABD9B;
+  background-color: #e2fff3;
   border-radius: 3px;
   color: #333;
   font-style: italic;
 }
+.hover-hide {
+  opacity: 0.02;
+  clear: both;
+}
+.hover-show:hover + .hover-hide {
+  opacity: 1;
+}
 
+.pull-right {
+  float: right;
+}
