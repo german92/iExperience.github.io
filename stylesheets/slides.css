@@ -3,8 +3,13 @@
 	top: 0px;
 	left: 0px;
 	padding: 3px;
+	z-index: 1001;
 }
 
 .logo a {
 	text-decoration: none;
+}
+
+.state-background {
+	z-index: 1000;
 }
