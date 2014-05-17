@@ -255,3 +255,70 @@ numbers which are multiples of both three and five
 print “FizzBuzz”.
 
 ---
+
+# Loops
+
+---
+
+# While Loop
+
+```ruby
+
+i = 10
+
+while i > 0
+	puts i
+	i = i - 1
+end
+```
+
+---
+
+# Until Loop
+
+```ruby
+
+i = 0
+
+until i > 10
+	puts i
+	i = i + 1
+end
+```
+
+---
+
+# Times Loop
+
+```ruby
+
+6.times do
+	puts "Hey!"
+end
+```
+
+---
+
+# Breaking a Loop
+
+```ruby
+
+countdown = 10
+
+while true
+	countdown = countdown - 1
+
+	if countdown == 0
+		break
+	end
+end
+
+```
+
+---
+
+# Recap
+
+* We can use boolean expressions to check conditions
+* We can use if/else/unless statements to control flow
+* We can use loops to automate and control repetitive work
