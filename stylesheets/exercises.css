@@ -1,6 +1,8 @@
 /*
  * Colors:
  *   green: 4ABD9B
+ *   background-green: e2fff3;
+ *   dark-green: 3c9b7f;
  *   pink: E32080
  */
 
@@ -9,7 +11,11 @@ html, body {
   margin: 0;
   width: 100%;
   height: 100%;
-  font-family: Helvetica, sans-serif;
+  font-family: 'Lato', Helvetica, sans-serif;
+}
+
+a {
+  text-decoration: none;
 }
 
 h2 {
@@ -24,10 +30,32 @@ h2.bonus {
   border-bottom: 1pt solid #E32080;
 }
 
+table {
+  border-spacing: 0;
+  border-collapse: collapse;
+  max-width: 100%;
+  background-color: transparent;
+}
+
+th {
+  text-align: left;
+}
+
 img.centered {
   display: block;
   margin: 20px auto;
 }
+
+.header {
+  background-color: #fafafa;
+  border-bottom: 1pt solid #ddd;
+}
+.footer {
+  padding: 20px;
+  background-color: #fafafa;
+  border-top: 1pt solid #ddd;
+}
+
 
 .container {
   width: 900px;
@@ -48,9 +76,28 @@ img.centered {
   color: #333;
   font-style: italic;
 }
+
+pre code {
+  border-radius: 3px;
+}
+
+.hover-show {
+  color: #888;
+  cursor: pointer;
+  margin-bottom: 5px;
+  -webkit-transition: color 0.2s;
+  -moz-transition: color 0.2s;
+  transition: color 0.2s;
+}
 .hover-hide {
-  opacity: 0.02;
+  opacity: 0;
   clear: both;
+  -webkit-transition: opacity 0.2s;
+  -moz-transition: opacity 0.2s;
+  transition: opacity 0.2s;
+}
+.hover-show:hover {
+  color: black;
 }
 .hover-show:hover + .hover-hide {
   opacity: 1;
@@ -58,4 +105,54 @@ img.centered {
 
 .pull-right {
   float: right;
+}
+
+.btn {
+  padding: 7px;
+  margin: 13px;
+  border-radius: 3px;
+  color: white;
+  text-shadow: none;
+  background-color: #4ABD9B;
+  -webkit-transition: background-color 0.2s;
+  -moz-transition: background-color 0.2s;
+  transition: background-color 0.2s;
+}
+.btn:hover {
+  background-color: #3c9b7f;
+}
+.btn.big {
+  padding: 10px;
+  font-size: 120%;
+}
+
+.table {
+  width: 100%;
+  margin-bottom: 20px;
+}
+.table > thead > tr > th,
+.table > tbody > tr > th,
+.table > tfoot > tr > th,
+.table > thead > tr > td,
+.table > tbody > tr > td,
+.table > tfoot > tr > td {
+  padding: 8px;
+  line-height: 1.42857143;
+  vertical-align: top;
+  border-top: 1px solid #ddd;
+}
+.table > thead > tr > th {
+  vertical-align: bottom;
+  border-bottom: 2px solid #ddd;
+}
+.table > caption + thead > tr:first-child > th,
+.table > colgroup + thead > tr:first-child > th,
+.table > thead:first-child > tr:first-child > th,
+.table > caption + thead > tr:first-child > td,
+.table > colgroup + thead > tr:first-child > td,
+.table > thead:first-child > tr:first-child > td {
+  border-top: 0;
+}
+.table > tbody + tbody {
+  border-top: 2px solid #ddd;
 }

@@ -2,19 +2,23 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <title>3A Exercises</title>
-  <link rel="stylesheet" href="../stylesheets/style.css">
   <link rel="stylesheet" href="../stylesheets/exercises.css">
   <link rel="stylesheet" href="../reveal/lib/css/zenburn.css">
 </head>
 <body>
+  <div class="header">
+    <div class="container">
+      <h1>
+        Exercises for 3A
+        <img src="../images/logo.png" alt="" class="logo">
+      </h1>
+    </div>
+  </div>
   <div class="container">
-    <h1>
-      Exercises for 3A
-      <img src="../images/logo.png" alt="" class="logo">
-    </h1>
     <h2>E1: Guess the Class</h2>
     <p>
       What's the output of each of the following? Check in <code>irb</code>.
@@ -93,7 +97,7 @@ end</code></pre>
           <code>join</code>, which takes an array and merges all of its items into a string, can behave like its opposite:
           <pre><code>"Coding is cool".split(" ").join(" ")
  => "Coding is cool"</code></pre>
-          Notice how we can chain methods together—it's a very powerful technique!
+          Notice how we can chain methods (use one after another wihtout assigning the intermediate result to a variable)—it's a very powerful technique!
         </li>
       </ol>
     </div>
@@ -149,12 +153,16 @@ while !done do
   else
     puts "Command not recognized"
   end
-end</code></pre></div>
-    <p class="footer">
-      <a href="./2B.html">&larr; Previous lesson</a>
-      <a href="../index.html">Back to contents</a>
-      <a href="./3B.html">Next lesson &rarr;</a>
-    </p>
+end</code></pre>
+      </div>
+    </div>
+  </div>
+  <div class="footer">
+    <div class="container">
+      <a href="./2B.html" class="btn big">&larr; Previous lesson</a>
+      <a href="../index.html" class="btn big">Back to contents</a>
+      <a href="./3B.html" class="btn big">Next lesson &rarr;</a>
+    </div>
   </div>
 </body>
 </html>
