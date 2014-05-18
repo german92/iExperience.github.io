@@ -42,7 +42,7 @@
 # Installing Rails
 
 ```
-$ gem install rails \-\-version 4.1 \-\-no-ri \-\-no-rdoc
+$ gem install rails
 $ rails -v
 ```
 
