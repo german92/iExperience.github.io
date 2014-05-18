@@ -18,6 +18,15 @@
 
 ---
 
+## Ruby Background
+
+* Built by Yukihiro Matsumoto in the mid-90s
+* Designed to be easy to use, powerful, and object-oriented
+* Ruby is a dynamic scripting language (vs compiled like C)
+* Ruby has automatic memory management
+
+---
+
 ### To help us learn Ruby, we will learn it in a 'sandbox'
 ### The sandbox we use for Ruby is known as the 'IRB Console'
 

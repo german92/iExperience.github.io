@@ -5,6 +5,7 @@
 Today we will build simple Ruby scripts that pull data from APIs (application programming interfaces). These are open web applications built by others that are freely accessibly via the internet. 
 
 ---
+
 ## REST APIs
 
 * Often, when looking for APIs, we look for REST APIs
@@ -25,6 +26,25 @@ Whenever we want to import data from an API, we check out the website looking fo
 #### https://petitions.whitehouse.gov/developers#petitions-index
 
 ---
+
+# Ruby Gems
+
+* In order to talk to the APIs, we'll need some Ruby libraries to help us communicate easily. 
+* The library we need today is called 'RestClient', which is a Ruby Gem
+* Ruby Gems are Ruby libraries that help perform various functions (think of them as plugins for Ruby)
+* (Almost all) Ruby Gems are open source, meaning you can freely add them to your project without licensing fees
+* NOTE: Different gems use different licenses, so if your organization only supports certain ones, make sure they comply
+
+---
+# Installing Ruby Gems
+
+```
+$ gem list
+$ gem install rest-client
+
+```
+---
+
 ## Reddit API
 
 We will now build a similar application that hits the Reddit API. Let's do it!
