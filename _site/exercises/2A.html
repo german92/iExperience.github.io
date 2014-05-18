@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="iExperience is a coding boot camp in Cape Town.">
+  <title>
+    Exercise 2A
+  </title>
+
+  <!-- <link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic' rel='stylesheet' type='text/css'> -->
+  
+  
+      <link rel="stylesheet" href="/css/exercise.css">
+  
+      <link rel="stylesheet" href="/css/reveal/lib/zenburn.css">
+  
+  <link rel="canonical" href="iexperience.github.io/exercises/2A.html">
+</head>
+
+<body>
+  <div class="header">
+  <div class="container">
+    <h1>Exercise 2A
+      <img src="/images/logo.png" alt="" class="logo">
+    </h1>
+  </div>
+</div>
+<div class="container">
+  <h2>E1: Logic games</h2>
+<p>
+  Below are a set of logic puzzles. Try to guess the output of each line. To check your answers type (don't copy-paste) the expression into <code>irb</code>.
+</p><pre><code>!true && false
+true && false
+true && !false
+x = 6
+x < 7 && x > 5
+x <= 6 || x < 5
+x < 5 || x > 5
+(x = 7) && true # Be careful!
+x</code></pre>
+<h2>E2: Too Old for the Club</h2>
+<p>
+  Create a new folder for today if you haven't already, called <code>d2</code>. In it, create a new program called <code>strict_bouncer.rb</code>. that gets the age from the console and allows only those in the rage <code>21 <= age < 65</code> into the club.
+</p>
+<pre><code>$ ruby strict_bounder.rb
+Welcome to da hip hoppin club. What's your age?
+20
+Too young, fool!
+$ ruby strict_bounder.rb
+Welcome to da hip hoppin club. What's your age?
+65
+Go back to the nursing home!
+$ ruby strict_bounder.rb
+Welcome to da hip hoppin club. What's your age?
+64
+Aw yeah c'mon in.</code></pre>
+<h2>E3: Quiz App</h2>
+<p>
+  In <code>d2</code>, create a mini quiz that prompts for answers and checks if they are right. Your quiz should have at least 3 questions, and keep track of how many the user got right. Use questions about yourself so your friends can learn about you when they take it!
+</p>
+<pre><code>$ ruby mini_quiz.rb
+Welcome to Rafi's mini quiz.
+What's my last name?
+Khan
+Right! You have 1 point.
+How many siblings do I have?
+2
+Wrong...I don't have any. You have 1 point.
+What country was I born in?
+Bangladesh
+Nice! You have 2 points.
+Thanks for playing!</code></pre>
+<p class="hint">A user experience concern: how do you know when to display <code>"point"</code> and when to use <code>"points"</code>? Nothing says n00b like a message that reads "You have 1 points". The given answer doesn't address this question, but yours should!</p>
+<span class="hover-show pull-right">Hover for answer</span>
+<div class="hover-hide">
+  <pre><code><span class="comment"># mini_quiz.rb</span>
+
+  puts <span class="string">"Welcome to Rafi's mini quiz."</span>
+  points = 0
+  puts <span class="string">"What's my last name?"</span>
+  answer = gets.strip
+  if answer == <span class="string">"Khan"</span>
+  points = points + 1
+  puts <span class="string">"Right! You have #{points} points."</span>
+  else
+  puts <span class="string">"Wrong...it's Khan. You have #{points} points."</span>
+  end
+  puts <span class="string">"How many siblings do I have?"</span>
+  answer = gets.strip.to_i
+  if answer == 0
+    points = points + 1
+    puts <span class="string">"Right! You have #{points} points."</span>
+  else
+    puts <span class="string">"Wrong...I don't have any. You have #{points} points."</span>
+  end
+  puts <span class="string">"What country was I born in?"</span>
+  answer = gets.strip
+  if answer == <span class="string">"Bangladesh"</span>
+    points = points + 1
+    puts <span class="string">"Right! You have #{points} points."</span>
+  else
+    puts <span class="string">"Wrong...I was born in Bangladesh. You have #{points} points."</span>
+  end
+  puts <span class="string">"Thanks for playing!"</span></code></pre>
+</div>
+
+</div>
+<div class="footer">
+  <div class="container">
+    <a href="./1B.html" class="btn big">
+      &larr; Previous lesson
+    </a>
+    <a href="../index.html" class="btn big">Back to contents</a>
+    <a href="./2B.html" class="btn big">
+      Next lesson &rarr;
+    </a>
+  </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="iExperience is a coding boot camp in Cape Town.">
+  <title>
+    Exercise 1A
+  </title>
+
+  <!-- <link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic' rel='stylesheet' type='text/css'> -->
+  
+  
+      <link rel="stylesheet" href="/css/exercise.css">
+  
+      <link rel="stylesheet" href="/css/reveal/lib/zenburn.css">
+  
+  <link rel="canonical" href="iexperience.github.io/exercises/1A.html">
+</head>
+
+<body>
+  <div class="header">
+  <div class="container">
+    <h1>Exercise 1A
+      <img src="/images/logo.png" alt="" class="logo">
+    </h1>
+  </div>
+</div>
+<div class="container">
+  <h2>E1: Gaining Familiarity</h2>
+<p>
+  Learn the name, hometown, interests and some interesting facts about two of the people sitting near you.
+</p>
+<h2>E2: A Bit More Setup</h2>
+<p>
+  We're going to build off of the prework to set up the working environment. All this material should be review, but if you have questions don't hesitate to ask. 
+</p>
+<p>
+  On your Desktop, create a folder called <code>iX</code>. In your shell, switch to that directory with <code>cd</code> or <code>dir</code> and start a git repository. Lastly, create a folder called <code>d1</code> (for day 1).
+  <pre><code>$ cd ~/Desktop
+$ mkdir iX
+$ cd iX
+$ git init
+Initialized empty Git repository in /Users/my_name/Desktop/iX/.git/
+$ mkdir d1</code></pre>
+</p>
+<p class="hint">
+  Windows users: While all the examples and screenshots are done on Macs, all the code should work (after slight modification) on your machine, especially if you have Cygwin or Git bash installed. If you don't and are stuck, please ask one of the TA's and they'll help you out!
+</p>
+<p>
+  Every day, you'll create a new folder for the classwork done during that day. Next, open the folder you've created in Sublime Text (File -> Open and then choose the folder on a Mac, File -> Open Folder... then choose the folder on Windows). Your Sublime should look exactly like below:
+  <img src="./images/1.sublime-1.png" class="centered">
+  Right click on the <code>d1</code> folder and choose "New File". Then save that file (File -> Save or Command-s on Mac or Ctrl-s on PC) as <code>first.html</code>. Now your screen should look like this:
+  <img src="./images/1.sublime-2.png" alt="" class="centered">
+</p>
+<p>
+  In that file, type <code>&lt;p&gt;hello world!&lt;/p&gt;</code>. Make sure to save again, and then open that folder in Google Chrome (right click on the file in the Sublime left sidebar and choose "Reveal in Finder". Then right click on the file in Finder and choose Open With -> Google Chrome). Now you should see a page in Chrome with <code>hello world</code> written on it—congratulations, you've made your first web page at iExperience!
+</p>
+<h2>E3: A Real Web Page</h2>
+<p>
+  For this exercise, we're going to make a real web page, using the <code>html</code>, <code>head</code> and <code>body</code> tags you've already learned. Create a new file in the <code>d1</code> folder called <code>second.html</code> and write the following (don't copy paste!):
+  <pre><code><span class="doctype">&lt;doctype html&gt;</span>
+&lt;html&gt;
+&lt;head&gt;
+  &lt;title&gt;My second webpage&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;p&gt;hello world!&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+</p>
+<p>
+  Open it in Chrome...do you see any difference betweeen this web page and the one you created in E2?
+</p>
+<h2>E4: Create a repo, commit and push!</h2>
+We'll work together to <a href="https://help.github.com/articles/create-a-repo" target="_blank">create a repo on</a> Github called iX. Then, just like in the prework, tell your repository about the new repo, commit your changes, and push! First, make sure you're in the <code>iX</code> directory.
+<pre><code>$ git add .
+$ git commit -m "Made first html files"
+$ git remote add origin https://github.com/<em>username</em>/iX.git
+$ git push origin master</code></pre>
+
+</div>
+<div class="footer">
+  <div class="container">
+    <a href="./1A.html" class="btn big">
+      &larr; Previous lesson
+    </a>
+    <a href="../index.html" class="btn big">Back to contents</a>
+    <a href="./1B.html" class="btn big">
+      Next lesson &rarr;
+    </a>
+  </div>
+</div>
+
+</body>
+</html>

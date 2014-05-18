@@ -1,0 +1,19 @@
+/* Colors */
+$off-white: #fafafa;
+$border-grey: #ddd;
+$rule-grey: #aaa;
+$text-grey: #777;
+$green: #4ABD9B;
+$background-green: #e2fff3;
+$dark-green: #3c9b7f;
+$pink: #E32080;
+
+/* Other variables */
+$border-radius: 3px;
+
+@mixin transition($properties) {
+  -webkit-transition: $properties;
+  -moz-transition: $properties;
+  -o-transition: $properties;
+  transition: $properties;
+}

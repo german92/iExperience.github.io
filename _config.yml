@@ -1,0 +1,15 @@
+# Site settings
+title: iExperience Course Page
+email: info@iexperience.co.za
+description: "iExperience is a coding boot camp in Cape Town."
+baseurl: ""
+url: "iexperience.github.io"
+
+# Build settings
+markdown: kramdown
+permalink: pretty
+
+sass:
+  style: :compressed
+
+highlighter: pygments

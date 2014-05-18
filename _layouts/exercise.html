@@ -1,0 +1,27 @@
+---
+layout: default
+extra_css:
+  - exercise.css
+  - reveal/lib/zenburn.css
+---
+<div class="header">
+  <div class="container">
+    <h1>{{ page.title }}
+      <img src="/images/logo.png" alt="" class="logo">
+    </h1>
+  </div>
+</div>
+<div class="container">
+  {{ content }}
+</div>
+<div class="footer">
+  <div class="container">
+    <a href="./{{page.prev}}.html" class="btn big">
+      &larr; Previous lesson
+    </a>
+    <a href="../index.html" class="btn big">Back to contents</a>
+    <a href="./{{page.next}}.html" class="btn big">
+      Next lesson &rarr;
+    </a>
+  </div>
+</div>
