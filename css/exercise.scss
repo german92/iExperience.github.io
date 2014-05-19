@@ -11,8 +11,18 @@ html, body {
   font: 16px/1.4 normal 'Lato', Helvetica, sans-serif;
 }
 
-a {
+a, .a-like {
   text-decoration: none;
+  color: $green;
+  @include transition(color 0.2s);
+
+  &:visited {
+    color: $dark-green;
+  }
+  &:hover {
+    text-decoration: underline; 
+  }
+
 }
 
 h2 {
