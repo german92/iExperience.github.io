@@ -5,7 +5,7 @@
   <link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <title>3A Exercises</title>
+  <title>3A Homework</title>
   <link rel="stylesheet" href="../stylesheets/exercises.css">
   <link rel="stylesheet" href="../reveal/lib/css/zenburn.css">
 </head>
@@ -13,7 +13,7 @@
   <div class="header">
     <div class="container">
       <h1>
-        Exercises for 3A
+        Homework for 3A
         <img src="../images/logo.png" alt="" class="logo">
       </h1>
     </div>
@@ -23,6 +23,7 @@
     <p>
       <b>Topics Covered:</b> calling methods; objects; classes
     </p>
+    <h1>Exercises</h1>
     <h2>E1: Guess the Class</h2>
     <p>
       What's the output of each of the following? Check in <code>irb</code>.
@@ -46,6 +47,7 @@ x.class.class.class</code></pre>
     <p>
       Use your best friend Google (or Bing, if you're one of those) to research the method <code>split</code> in Ruby. Then answer the following questions:
     </p>
+
     <ol>
       <li>What class of objects can it be called on?</li>
       <li>What class does it return?</li>
@@ -73,6 +75,121 @@ x.class.class.class</code></pre>
         </li>
       </ol>
     </div>
+    <h1>Projects</h1>
+    <h2>Ruby: Fueling Consumerism</h2>
+    <p>
+      Now that you have a beautiful presence on the Internet, we're going to work on bringing one of the most notable American vices to South Africa: consumerism. Over the next two days, you'll use your new knowledge of Ruby—with all its Hashes and Classes—to build a Shopping Cart and some Shoppers. It will closely model something you might build in a Rails application some day.
+    </p>
+    <h4>
+      The Goods
+    </h4>
+    <p>
+      To start, create a <code>shopping_cart</code> folder in your <code>projects</code> directory. We'll start with an <code>Item</code> class, so in <code>shopping_cart</code>, create a file called <code>item.rb</code>. Item is the simplest: it just has a <code>name</code> and a <code>price</code>. Copy the below code into it:
+    </p>
+    <pre><code><span class="comment"># item.rb</span>
+
+class Item
+  # @param{string} name The item's name
+  # @param{float} price The item's price
+  def initialize(name, price)
+  end
+
+  # Accessor methods
+
+  # Returns name
+  def name
+  end
+
+  # Returns price
+  def price
+  end
+end</code></pre>
+    <p>
+      This code doesn't do anything yet, but should be simple to fill out. Go ahead and do so, just like we did in lecture.
+    </p>
+    <h4>
+      The Vehicle
+    </h4>
+    <p>
+      Next we're going to build a <code>Cart</code> class that will hold all of the items, as well as how many items there are. Put this in a new file, <code>cart.rb</code>. This cart will closely resemble Lesson 2B, Exercise 4, so feel free to borrow and modify code from there. To start, here's a template:
+    </p>
+    <pre><code><span class="comment"># cart.rb</span>
+
+class Cart
+  def initialize
+  end
+
+  # @return{Hash&lt;string, Hash&lt;:item => Item, :quantity => Float&gt;&gt;}
+  #   The items and their quantities in the cart, keyed by item name.
+  def items
+  end
+
+  # @return{float} The total price of all the goods in the cart.
+  def total_price
+  end
+
+  # @param{Item} item The item to add. 
+  def add(item)
+  end
+
+  # @param{Item} item The item to remove. 
+  def remove(item)
+  end
+end</code></pre>
+  <p>
+    The exact specification is as follows:
+    <ul>
+      <li>
+        Cart should keep a class variables called <code>@items</code>.
+        <code>@items</code> will be <code>Hash</code>, where the keys are the item names (strings).
+      </li>
+      <li>
+        The values of that hash will themselves be hashes (which we'll call <code>item_obj</code>s), with two keys: <code>:item</code> and <code>:quantity</code>. The value of <code>:item</code> will be the <code>Item</code> object, and the value of <code>:quantity</code> will be the number of that item in the cart. The value of quantity should never be below 0.
+      </li>
+      <li>
+        <code>add</code> will increment the quantity if the item already exists, or create a new, properly created <code>item_obj</code>.
+      </li>
+      <li>
+        <code>remove</code> will decrement the quantity if the item exists and has a quantity of at least 1. Otherwise, it will do nothing.
+      </li>
+      <li>
+        <code>total_price</code> returns a <code>float</code> of the total price of all items in the cart. 
+      </li>
+    </ul>
+  </p>
+  <p>
+    Like in the slides, let's create a <code>main.rb</code> that we'll use to test. This is a sample of how you might test it:
+  </p>
+  <pre><code><span class="comment"># main.rb</span>
+
+require_relative 'item'
+require_relative 'cart'
+milk = Item.new("milk", 1.20)
+eggs = Item.new("eggs", 1.30)
+cart = Cart.new
+cart.add(milk)
+cart.add(milk)
+cart.add(eggs)
+p cart.items
+<span class="string"># Console output might look like (but less well formatted):
+# {
+#   "milk" => {
+#     :item => #&lt;Item:0x00...>,
+#     :quantity => 2
+#   },
+#   "eggs" => {
+#     :item => #&lt;Item:0x00...>,
+#     :quantity => 1
+#   }
+# }</span>
+p cart.total_price
+<span class="string"># 3.7</span>
+cart.remove(milk)
+p cart.total_price
+<span class="string"># 2.5</span></code></pre>
+  <p>
+    After you think you have a working answer, download the test file from <a href="../files/shopping_cart_test_1.rb" target="_blank">here</a> and put it in your <code>shopping_cart</code> directory (just do File -> Save from Chrome). Run it with <code>ruby shopping_cart_test_1.rb</code>. If you're failing any tests, make them pass!
+  </p>
   </div>
   <div class="footer">
     <div class="container">

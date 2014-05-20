@@ -7,4 +7,4 @@
 # String replace regex:
 #   (\"[^"]+\")&
 #   <span class="string">\1</span>&
-puts String.class
+puts 1.1.class
