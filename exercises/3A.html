@@ -23,6 +23,9 @@
     <p>
       <b>Topics Covered:</b> calling methods; objects; classes
     </p>
+    <hr class="large">
+
+    <!-- Exercises -->
     <h1>Exercises</h1>
     <h2>E1: Guess the Class</h2>
     <p>
@@ -56,6 +59,9 @@ x.class.class.class</code></pre>
       <li>Give example usage.</li>
       <li>Can you think of a method we've learned that behaves like the opposite of <code>split</code>?</li>
     </ol>
+    <p>
+      Only <b>after</b> you've written down your answers should you check them. If you don't know, give it your best shot—you're not being graded, so you're only helping yourself :)
+    </p>
     <a class="hover-show pull-right">Hover for answer</a>
     <div class="hover-hide">
       <ol>
@@ -71,205 +77,63 @@ x.class.class.class</code></pre>
           <code>join</code>, which takes an array and merges all of its items into a string, can behave like its opposite:
           <pre><code>"Coding is cool".split(" ").join(" ")
  => "Coding is cool"</code></pre>
-          Notice how we can chain methods (use one after another wihtout assigning the intermediate result to a variable)—it's a very powerful technique!
+          Notice how we can chain methods (use one after another wihtout assigning the intermediate result to a variable)—it's a very powerful technique.
         </li>
       </ol>
     </div>
-    <h2>E3: Tic-Tac-Toe</h2>
-    <p>
-      This one's more a mini-project: we're going to work through building a simple tic-tac-toe application from scratch. Pick a partner who you haven't worked with before, create <code>tictactoe.rb</code> in <code>d3</code> and let's get started!
-    </p>
-    <h4>Step 1: Planning</h4>
-    <p>
-      As usual, we're going to plan out our approach before we begin coding. Read the following carefully—your program must:
-      <ul>
-        <li>Take input from two players</li>
-        <li>Detect invalid input</li>
-        <li>Keep track of whose turn it is</li>
-        <li>Keep track of a board</li>
-        <li>Keep track of which squares have been filled in on the board, and not let the same square be filled in more than once</li>
-        <li>Detect a winner when a player has won</li>
-      </ul>
-      The input will be an integer from 0-8 and the squares will be numbered top-left to bottom-right (0 is the top-left square, 2 is the top-right square, 4 is the middle square, and 8 is the bottom-right square).  
-    </p>
-    <p>
-      In <code>tictactoe.rb</code>, answer the following questions:
-    </p>
-    <pre><code><span class="comment"># tictactoe.rb</span>
 
-# How will you keep track of whose turn it is?
-# What data structure will you use to keep track of the board? You only
-#   know two (Array, Hash), but remember they can be nested (meaning an
-#   array can contain another array—it can even contain a hash that contains
-#   another hash)
-# When a player makes a move, what should happen? 
-# How do you keep track of which squares have x's and which have o's?
-# How do you detect a winner?
-# When does the program stop? Is there a loop? If so, what kind?</code></pre>
-    <h4>Step 2: Pseudo-code</h4>
+    <h2 class="bonus">E4 (Bonus!): The Fibonacci Re-code</h2>
     <p>
-      <em>Pseudo-code</em> is code that's written in English; that is, step by step instructions for how your program behaves. An example:
+      Now that you know more about methods, take the Fibonacci code you wrote earlier and make it into a method in <code>d3/fibonacci_method.rb</code>. Your code should still behave the same way, but wrap your code in a <code>while true</code> loop so that it doesn't exit every time:
     </p>
-    <pre><code># Every turn:
-#   Update whose turn it is
-#   Get user input
-#   Update board
-#   Check for winner</code></pre>
-    <p>
-      Of course, that's pretty easy to write, but may not be so obvious to translate into code. What exactly is a turn? How does one update the board? These are questions you've started thinking about in Step 1. For Step 2, expand your thinking and the above pseudo-code to make a more detailed outline. That is, your writing may contain words like "Array" and "Hash", but probably doesn't contain any "[" or "{". As you write, consider these questions, and be ready to answer them:
-      <ul>
-        <li>Do you need to make any classes or modules?</li>
-        <li>
-          What functionality are you using often? Do you need any helper methods?
-        </li>
-        <li>
-          Again: is there a loop? What kind of loop? Does it end? When? How? If no loop, how is your program structured?
-        </li>
-      </ul>
-    </p>
-    <p class="hint info">
-      It may be starting to become clear that coding is much more about <b>thinking</b> than anything else. While there isn't necessarily a best solution, there are solutions that are much more intuitive and easier to understand than others. Remember that code is meant to be read by <b>humans</b>, and when two pieces of code do the same thing with the same efficiency, the one that's simpler is always better.
-    </p>
-    <p>
-      <b>Check in with a TA before continuing!</b>
-    </p>
-    <h4>Step 3: Code</h4>
-    <p>
-      Now that you have your pseudo-code, it should be a simple matter to turn it into real code. Take a crack, and see if it works. 
-    </p>
-    <pre><code>$ ruby tictactoe.rb 
-Player 1:
-0
-Player 2:
-1
-Player 1:
-kittens
-Error: Invalid input
-Player 1:
+    <pre><code>$ ruby fibonacci_method.rb
+Enter a number:
 10
-Error: Invalid input
-Player 1:
-3
-Player 2:
-2
-Player 1:
-2
-Error: Square already taken
-Player 1:
-6
-Congrats, player 1 won!</code></pre>
-    
-    <p class="info hint">
-      If you've gotten this far, you actually know quite a bit about coding, and the coding process. This was actually a Google coding interview problem (though keep that fact hush hush!). When you interview at companies—or try to code anything, really—this workflow is a good one to keep in mind: first <b>talk through</b> your solution and think about what <b>data structures</b> you'll use. Then write <b>pseudo-code</b> and try to foresee as many problems as you can. Only when you're confident in your <b>thinking</b> should you start coding.
-    </p>
-    <h4>Step 4: User Experience</h4>
+Fibonacci at 10: 55
+Enter a number:
+11
+Fibonacci at 11: 89</code></pre>
     <p>
-      To be honest, while your program is cool, it's not very user friendly...humans aren't very good at remembering what the board looks like. Add a method to print out the board after each step. We've picked a design, but feel free to make it look like however you want!
+      For this exercise, we're going to explore the topic of <em>recursion</em>, or calling a method <em>in itself</em>. For example, suppose I wanted to write a method that returned the sum of all the numbers up to the one it was given. I might write this:
     </p>
-    <pre><code>$ ruby tictactoe.rb
-Player 1:
-4
-     |   |   
-  ———+———+———
-     | X |   
-  ———+———+———
-     |   |   
-Player 2:
-0
-   O |   |   
-  ———+———+———
-     | X |   
-  ———+———+———
-     |   |   
-Player 1:
-2
-   O |   | X 
-  ———+———+———
-     | X |   
-  ———+———+———
-     |   |   
-Player 2:
-6
-   O |   | X 
-  ———+———+———
-     | X |   
-  ———+———+———
-   O |   |   
-Player 1:
-3
-   O |   | X 
-  ———+———+———
-   X | X |   
-  ———+———+———
-   O |   |   
-Player 2:
-5
-   O |   | X 
-  ———+———+———
-   X | X | O 
-  ———+———+———
-   O |   |   
-Player 1:
-1
-   O | X | X 
-  ———+———+———
-   X | X | O 
-  ———+———+———
-   O |   |   
-Player 2:
-7
-   O | X | X 
-  ———+———+———
-   X | X | O 
-  ———+———+———
-   O | O |   
-Player 1:
-8
-   O | X | X 
-  ———+———+———
-   X | X | O 
-  ———+———+———
-   O | O | X 
-Cats game!</code></pre>
+    <pre><code><span class="comment"># sum_loop.rb</span>
 
-    <h2 class="bonus">E5 (Bonus!): Computer Tic-Tac-Toe</h2>
+def sum_up_to(num)
+  sum = 0
+  num.times do |i|
+    sum += (i+1)
+  end
+  return sum
+end
+
+sum_up_to 10
+<span class="string"># => 55</code></pre>
     <p>
-      While playing against a person is fun, us loners need something to do. Write a program that <b>plays tic tac toe against you</b>. It should be smart, or else that's not fun!
+      But a more elegant way might be:
     </p>
-    <pre><code>$ ruby computer_tictactoe.rb
-Would you like to be Player 1 or Player 2?
-1
-Player 1:
-4
-Computer: 0
-   O |   |   
-  ———+———+———
-     | X |   
-  ———+———+———
-     |   |   
-Player 1:
-2
-Computer: 6
-6
-   O |   | X 
-  ———+———+———
-     | X |   
-  ———+———+———
-   O |   |   
-Player 1
-5
-Computer: 8
-3
-   O |   | X 
-  ———+———+———
-   O | X | X 
-  ———+———+———
-   O |   |   
-The computer wins!
-</code></pre>
+    <pre><code><span class="comment"># sum_recursive.rb</span>
+
+def sum_up_to(num)
+  return 0 if num == 0
+  return num + sum_up_to(num-1)
+end</code></pre>
     <p>
-      As you can see, it's pretty tough to get a computer to even be smart about something as simple as tic-tac-toe—the human brain is really amazing. Now consider how much code and intelligence is required to make a program that plays chess, or gives directions to some place depending on traffic and road closings...it's actually quite humbling.
+      That little bit of code packs a lot of punch. It stems from the observation that the sum of the numbers <code>0...5</code> is the same as <code>5 +</code> the sum of <code>0...4</code>. In general:
+      <ul>
+        <code>sum 0...n = n + sum 0...n-1</code>
+      </ul>
+      Recursion stems from the <em>induction principle</em>, which you might remember from way back when. Basically, it requires two things: a <b>base case</b> and <b>an inductive step</b>. Our base case is easy: the sum of all the numbers up to 0 is 0. We know that, it's always true, and we can hard code it in. The inductive step is the answer to: <b>if we know the answer for <code>n</code>, how can we find the answer for <code>n+1</code>?</b> For our case, that's easy again: just add <code>n+1</code> to the answer for <code>n</code> (or rather, <code>n</code> to the answer for <code>n-1</code>).
     </p>
+    <pre><code><span class="comment"># sum_recursive.rb</span>
+
+def sum_up_to(num)
+  return 0 if num == 0          <span class="string"># Base case</span>
+  return num + sum_up_to(num-1) <span class="string"># Inductive (or recursive) step.</span>
+end</code></pre>
+    <p>
+      You might be able to guess what the Fibonacci re-code is: Can you implement the fibonacci method so that it uses recursion?
+    </p>
+    <hr class="large">
 
     <!-- Projects -->
     <h1>Projects</h1>
@@ -385,7 +249,30 @@ cart.remove(milk)
 p cart.total_price
 <span class="string"># 2.5</span></code></pre>
   <p>
-    After you think you have a working answer, download the test file from <a href="../files/shopping_cart_test_1.rb" target="_blank">here</a> and put it in your <code>shopping_cart</code> directory (just do File -> Save from Chrome). Run it with <code>ruby shopping_cart_test_1.rb</code>. If you're failing any tests, make them pass!
+    After you think you have a working answer, download the test file from <a href="../files/shopping_cart_test_1.rb" target="_blank">here</a> and put it in your <code>shopping_cart</code> directory (just do File -> Save from Chrome). Run it with <code>ruby shopping_cart_test_1.rb</code>. If you're failing any tests, make them pass.
+  </p>
+  <h4>Add Some Mustard</h4>
+  <p>
+    If you're itching for a challenge, implement the following:
+    <ul>
+      <li>
+        Add an optional <code>quantity</code> parameter to <code>add</code> and <code>remove</code>, so we can just do <code>add(milk, 2)</code>. Make sure <code>remove</code> still can't ever be negative.
+      </li>
+      <li>
+        Give each item a <code>weight</code> property, and the <code>Cart</code> a <code>total_weight</code> method.
+      </li>
+      <li>
+        Make it so you can't create two <code>Item</code>s with the same name. That is, the below should fail (i.e. not create the second milk):
+        <ul>
+          <code>
+            Item.new("milk", 2)<br>
+            Item.new("milk", 3)
+          </code>
+        </ul>
+        This will involve research into <b>class methods and properties</b>.
+      </li>
+    </ul>
+
   </p>
   </div>
   <div class="footer">

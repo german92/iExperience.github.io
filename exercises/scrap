@@ -7,4 +7,10 @@
 # String replace regex:
 #   (\"[^"]+\")&
 #   <span class="string">\1</span>&
-puts 1.1.class
+def sum_up_to(num)
+  return 0 if num == 0
+  return num + sum_up_to(num-1)
+end
+puts (sum_up_to 10)
+
+puts :>.class
