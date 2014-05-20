@@ -5,7 +5,7 @@
   <link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <title>2A Exercises</title>
+  <title>2A Homework</title>
   
   <link rel="stylesheet" href="../stylesheets/exercises.css">
   <link rel="stylesheet" href="../reveal/lib/css/zenburn.css">
@@ -14,12 +14,17 @@
   <div class="header">
     <div class="container">
       <h1>
-        Exercises for 2A
+        Homework for 2A
         <img src="../images/logo.png" alt="" class="logo">
       </h1>
     </div>
   </div>
   <div class="container">
+    <h1>Review</h1>
+    <p>
+      <b>Topics Covered:</b> Control flow and logic; loops
+    </p>
+    <h1>Exercises</h1>
     <h2>E1: Logic games</h2>
     <p>
       Below are a set of logic puzzles. Try to guess the output of each line. To check your answers type (don't copy-paste) the expression into <code>irb</code>.
@@ -65,7 +70,7 @@ What country was I born in?
 Bangladesh
 Nice! You have 2 points.
 Thanks for playing!</code></pre>
-    <p class="hint">A user experience concern: how do you know when to display <code>"point"</code> and when to use <code>"points"</code>? Nothing says n00b like a message that reads "You have 1 points". The given answer doesn't address this question, but yours should!</p>
+    <p class="info hint">A user experience concern: how do you know when to display <code>"point"</code> and when to use <code>"points"</code>? Nothing says n00b like a message that reads "You have 1 points". The given answer doesn't address this question, but yours should!</p>
     <span class="hover-show pull-right">Hover for answer</span>
     <div class="hover-hide">
       <pre><code><span class="comment"># mini_quiz.rb</span>
@@ -98,6 +103,65 @@ else
 end
 puts <span class="string">"Thanks for playing!"</span></code></pre>
     </div>
+    <h2>E4: Fizzbuzz</h2>
+    <p>
+      Write a program (also called a <em>script</em>) that prints the numbers from 1-100, but for each multiple of 3, print "fizz", each multiple of 5 print "buzz" and each multiple of 3 and 5 print "fizzbuzz":
+    </p>
+    <pre><code>$ ruby fizzbuzz.rb
+1
+2
+fizz
+4
+buzz
+...
+13
+14
+fizzbuzz
+16
+...</code></pre>
+    <p class="info hint">The <em>modulo</em> operator returns the remainder when the first input is divided by the second. That is, <em>10 modulo 4</em> would return 2. A quick way to check if a number is divisible by another is to see if their modulo is 0. In ruby, the <code>%</code> symbol is the modulo operator, that is <code>10 % 4 == 2</code>.</p>
+    <a class="hover-show pull-right">Hover to show answer</a>
+    <div class="hover-hide">
+      <pre><code><span class="comment"># fizzbuzz.rb</span>
+        
+100.times do |x|
+  x = x+1
+  mult_3 = (x % 3 == 0)
+  mult_5 = (x % 5 == 0)
+  if mult_3 && mult_5
+    puts <span class="string">"fizzbuzz"</span>
+  elsif mult_3
+    puts <span class="string">"fizz"</span>
+  elsif mult_5
+    puts <span class="string">"buzz"</span>
+  else
+    puts x
+  end
+end
+      </code></pre>
+    </div>
+    <!-- Projects -->
+    <hr class="large">
+    <h1>Projects</h1>
+    <h2>A Coder's Selfie</h2>
+    <p>
+      Let's continue with our personal pages. Add some styling to give it the look and feel you want. In your <code>username.github.io</code> folder, create a folder called <code>stylesheets</code>, and while you're at it, create a folder called <code>images</code> as well. In <code>stylesheets</code>, create <code>style.css</code>. Then link your stylesheet in your HTML.
+    </p>
+    <pre><code><span class="comment">...</span>
+<span class="tag">&lt;head&gt;</span>
+  <span class="tag">&lt;title&gt;</span>The Bru<span class="tag">&lt;/title&gt;</span>
+  <span class="tag">&lt;link rel=<span class="string">"stylesheet"</span> href=<span class="string">"./stylesheets/style.css"</span>&gt;</span>
+<span class="tag">&lt;/head&gt;</span>
+<span class="tag">&lt;body&gt;</span>
+...
+    </code></pre>
+      Push yourself here: you want to have the basic concept done and ready. Look at example sites for inspiration, use Google fonts, borrow other people's styles—you want to have something you're truly proud of! Gauge your progress or get some ideas <a href="http://iexperience.github.io/personal/2A.html">here</a>.
+    </p>
+    <h4>Code Review</h4>
+    <p>
+      Once again, go through the code review process with someone (different from your partner last time). Check in with a TA to get suggetions.
+    </p>
+
   </div>
   <div class="footer">
     <div class="container">

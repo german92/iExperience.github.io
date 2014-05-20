@@ -19,6 +19,10 @@
     </div>
   </div>
   <div class="container">
+    <h1>Review</h1>
+    <p>
+      <b>Topics Covered:</b> calling methods; objects; classes
+    </p>
     <h2>E1: Guess the Class</h2>
     <p>
       What's the output of each of the following? Check in <code>irb</code>.
@@ -35,41 +39,9 @@ x.join.class
 x.length.class <span class="comment"># .length is the same as .size</span>
 x.class.class
 x.class.class.class</code></pre>
-    <p class="hint">
+    <p class="info hint">
       Classes are why things like <code>1 + "hi"</code> don't work—now the error message <code>TypeError: String can't be coerced into Fixnum</code> might start making some sense. Methods like <code>.to_i</code> and <code>.to_s</code> make it easy to convert between classes.
     </p>
-    <h2>E2: Build a List</h2>
-    <p>
-      In <code>d3</code>, create a program that asks the user for items. Add each item to a list, and print out the whole list after each item.
-    </p>
-    <pre><code>$ ruby list_builder.rb
-Welcome to list builder!
-What can I add?
-yummy things
-Added! Your list is:
-["yummy things"]
-What can I add?
-icky things
-Added! Your list is:
-["yummy things", "icky things"]
-</code></pre>
-    <p class="hint">
-      To keep a program running forever, put your code in a <code>while true</code> loop. To exit such a program, press <code>Ctrl-c</code> in the shell.
-    </p>
-    <a class="hover-show pull-right">Hover for answer</a>
-    <div class="hover-hide">
-      <pre><code><span class="comment"># list_builder.rb</span>
-      
-puts "Welcome to list builder!"
-list = []
-while <span class="boolean">true</span> do
-  puts "What can I add?"
-  item = gets.strip
-  list.push(item)
-  puts "Added! Your list is:"
-  p list <span class="comment"># p is like puts, but works with all objects, not just strings</span>
-end</code></pre>
-    </div>
     <h2>E3: Split Up</h2>
     <p>
       Use your best friend Google (or Bing, if you're one of those) to research the method <code>split</code> in Ruby. Then answer the following questions:
@@ -100,61 +72,6 @@ end</code></pre>
           Notice how we can chain methods (use one after another wihtout assigning the intermediate result to a variable)—it's a very powerful technique!
         </li>
       </ol>
-    </div>
-    <h2 class="bonus">E4 (Bonus!): An Extensive Listbuilder</h2>
-    <p>
-      Create an extensive list builder, that allows you to add items with a command like <code>add x</code>, remove items with <code>remove x</code>, and quit with <code>quit</code>
-    </p>
-    <pre><code>$ ruby ext_list_builder.rb
-Welcome to list builder++!
-What can I do for you?
-add a
-Added! Your list is:
-["a"]
-What can I do for you?
-add b
-Added! Your list is:
-["a", "b"]
-remove a
-Removed! Your list is:
-["b"]
-quit
-Bye!</code></pre>
-    <p class="hint">
-      This is the pinnacle—it'll require knowledge from all the exercises up until this point! Since the program will be long, you may want to sketch out a solution before you start coding. How do you keep track of whether you're done? What if the user makes a typo, tries a different command, or tries to remove something not in the list? Can they they see the list of available commands somehow?
-      <br>
-      After you come up with a solution, try to stress test, and check for edge cases (not typing anything, typing many words, etc.). Then ask one of the TA's to stress test for you and find any bugs!
-    </p>
-    <a class="hover-show pull-right">Hover for answer</a>
-    <div class="hover-hide"><pre><code><span class="comment"># ext_list_builder.rb</span>
-
-puts "Welcome to list builder++!"
-list = []
-done = false
-while !done do
-  puts "What can I do for you?"
-  command = gets.strip
-  tokens = command.split(" ")
-  if tokens[0] == "add"
-    item = tokens[1]
-    list.push(item)
-    puts "Added! Your list is:"
-    p list
-  elsif tokens[0] == "remove"
-    item = tokens[1]
-    list.delete(item)
-    puts "Removed! Your list is:"
-    p list
-  elsif tokens[0] == "quit"
-    puts "Bye!"
-    done = true
-  elsif tokens[0] == "help"
-    puts "You can add items with 'add x', remove items with 'remove x' and quit with 'quit'."
-  else
-    puts "Command not recognized"
-  end
-end</code></pre>
-      </div>
     </div>
   </div>
   <div class="footer">

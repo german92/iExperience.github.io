@@ -51,7 +51,7 @@ pre .tex .special {
 }
 
 pre .diff .chunk,
-pre .subst {
+pre .subst, pre .comment, pre .doctype {
   color: #8F8F8F;
 }
 
@@ -95,11 +95,9 @@ pre .tex .formula {
 
 pre .shebang,
 pre .diff .addition,
-pre .comment,
 pre .java .annotation,
 pre .template_comment,
-pre .pi,
-pre .doctype {
+pre .pi {
   color: #7F9F7F;
 }
 
