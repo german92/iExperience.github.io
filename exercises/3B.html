@@ -27,6 +27,97 @@
 
     <!-- Exercises -->
     <h1>Exercises</h1>
+    <h2>E1: A Mass for the Masses</h2>
+    <p>
+      We're going to review what we learned in class about classes.
+      Check out this code, and <b>write down</b> the answers to the questions below, in a file called <code>mass_quiz</code>. Have a teacher check them for you.
+    </p>
+    <pre><code>class Person
+  def initialize(name)
+    @name = name <span class="string"># Line 3</span>
+  end
+
+  def name
+    return @name
+  end
+end
+
+class Christian < Person
+  def initialize(name, type)
+    @name = name
+    @type = type
+  end
+
+  def go_to_mass
+    puts "Going to mass..."
+  end
+end 
+
+abdullah = Christian.new("abdullah", "original")</code></pre>
+    <p>
+      <ol>
+        <li>Why is line 3 necessary? What happens without it?</li>
+        <li>Is <code>Christian</code> a subclass or a superclass?</li>
+        <li>What will running <code>Christian.go_to_mass</code> do? Why?</li>
+        <li>What will running <code>abdullah.type</code> do? Why? If you think it's broken, how can you fix it? If you think it works, what does it return?</li>
+        <li>
+          What is <code>abdullah</code>? Choose all that apply:
+          <ul>
+            <li>A class</li>
+            <li>A method</li>
+            <li>An instance</li>
+            <li>An object</li>
+            <li>A variable</li>
+          </ul>
+        </li>
+      </ol>
+    </p>
+    <h4>Raise a Glass to Glasses</h4>
+    <p>
+      Trudging onward:
+    </p>
+    <pre><code>module HasGlasses
+  def put_on_glasses
+    @glasses = "on"
+  end
+  def take_off_glasses
+    @glasses = "off"
+  end
+  def drink_ten_glasses
+    @thirsty = "false"
+  end
+
+  def glasses_on?
+    return (@glasses == "on")
+  end
+end
+
+class Christian < Person
+  include HasGlasses
+end
+
+class Muslim < Person
+  include HasGlasses
+end
+
+mary = Muslim.new("mary")</code></pre>
+    <p>
+      <ol start="6">
+        <li>Will all this code work? Do you see any bugs? Before you try it yourself, write down your answer. If you see bugs, note what they are and how you would fix them.</li>
+        <li>What will <code>Muslim.new("mary", "sunni")</code> do? Why?</li>
+        <li>In the code, we're calling <code>Muslim.new("mary")</code>, even though the <code>new</code> method isn't <code>def</code>'d anywhere. How come it works?</li>
+        <li>What will <code>Muslim.put_on_glasses</code> do? Why?</li>
+        <li>If after the last line of code, you ran <code>mary.glasses_on?</code>, what would happen? Why? If you think it's broken, how can you fix it? If you think it works, what does it return?</li>
+        <li>What is <code>HasGlasses</code>? Choose all that apply:
+          <ul>
+            <li>A class</li>
+            <li>A method</li>
+            <li>An instance</li>
+            <li>An object</li>
+            <li>A variable</li>
+          </ul></li>
+      </ol>
+    </p>
     <h2>E1: String Theory</h2>
     <p>
       A common way to practice arrays and methods is to write <em>string manipulation</em> methods, or methods that modify strings. The cool thing about Ruby is that you can always modify any class and add methods to it. For example, instead of our <code>shout</code> method, we could have written it into the <code>String</code> class itself:
@@ -82,8 +173,67 @@ require_relative 'piglatinify'
 class Array
   include Piglatinify
 end
-["a", "b", "c"].piglatinify
-<span class="string"># => "\"a\", \"b\", \"c\"][ay"</span></code></pre>
+[:a, :b, :c].piglatinify
+<span class="string"># => ":a, :b, :c][ay"</span>
+[:a, :b, :c].piglatinify_sentence
+<span class="string"># => ":a,[ay b,:ay c]:ay"</span></code></pre>
+
+    <h2>E3: Finding things</h2>
+    <p>
+      One of the best uses of a computer is to find things—meaning information or other data. Facebook finds what your friends are doing, Buzzfeed finds things you kind of care about, and even Bing finds things sometimes, too. For this exercise, you're going to write your own code that finds things.
+    </p>
+    <h4>Thing = letter in string</h4>
+    <p>
+      Write a method <code>index_of</code> that takes two paramters, a string and a letter. Return the index of the first time the letter occurs in that string, or -1 if it doesn't occur.
+    </p>
+
+    <h4>Thing = item in array</h4>
+    <p>
+      Write a method <code>find_by_name</code>, which takes an array of hashes, each of which has the property <code>:name</code>, and a string and finds the first one that has that name.
+    </p>
+    <h4>Thing = items in array</h4>
+    <p>
+      Write a second, very similar method <code>filter_by_name</code>, which returns and array with <b>all</b> the items with the given name. Note that that method should always return an array, even if only one item is found.
+    </p>
+    <pre><code><span class="comment"># finding_things.rb</span>
+
+# Your code here
+
+index_of("abcdefghijklmnop", "m")
+<span class="string"># => 12</span>
+index_of("abcdefghijklmnop", "z")
+<span class="string"># => -1</span>
+
+people = [
+  {
+    :id => 1,
+    :name => "bru"
+  },
+  {
+    :id => 2,
+    :name => "ski"
+  },
+  {
+    :id => 3,
+    :name => "brunette"
+  },
+  {
+    :id => 4,
+    :name => "ski"
+  }
+]
+find_by_name(people, "ski")
+<span class="string"># => {:id=>2,:name=>"ski"}</span>
+find_by_name(people, "kitten!!!")
+<span class="string"># => nil</span>
+filter_by_name(people, "ski")
+<span class="string"># => [{:id=>2,:name=>"ski"}, {:id=>4,:name=>"ski"}]</span>
+filter_by_name(people, "bru")
+<span class="string"># => [{:id=>1,:name=>"bru"}] (Note this is still an array)</span>
+filter_by_name(people, "kitten!!!")
+<span class="string"># => []</span>
+</code></pre>
+
     <h2>E4: Tic-Tac-Toe</h2>
     <p>
       This one's more a mini-project: we're going to work through building a simple tic-tac-toe application from scratch. Pick a partner who you haven't worked with before, create <code>tictactoe.rb</code> in <code>d3</code> and let's get started.
@@ -144,7 +294,7 @@ end
     </p>
     <h4>Step 3: Code</h4>
     <p>
-      Now that you have your pseudo-code, it should be a simple matter to turn it into real code. Take a crack, and see if it works. 
+      Now that you have your pseudo-code, it should be a simple matter to turn it into real code. Take a crack at it, and see if it works. 
     </p>
     <pre><code>$ ruby tictactoe.rb 
 Player 1:
@@ -324,6 +474,22 @@ The computer wins!
     </p>
     <p>
       As with before, download the test script from <a href="../files/shopping_cart_test_2.rb" target="_blank">here</a>. Save it into your <code>shopping_cart</code> directory, run it, and make all the tests pass!
+    </p>
+    <h4>More mustard!!</h4>
+    <p>
+      Implement the following:
+      <ul>
+        <li>Give each shopper that's created an <code>id</code> attribute. It should update automatically—that is, when I create the first shopper, its id should be 1, the second shopper's should be 2, etc. This is not a property that can be overwritten. Hint: use a class variable.</li>
+        <li>
+          Create an array that keeps track of all the shoppers—when a shopper is created, it should automatically be added to that array. Do the same for items.
+        </li>
+        <li>
+          Give <code>Shopper</code> a nice <code>to_s</code> method. Do the same for <code>Item</code>
+          <pre><code>bru = Shopper.new("bru")
+puts bru
+<span class="string"># => &lt;Shopper: id: 1, first_name: "bru", last_name: "", money: 100, cart: {}&gt;</span></code></pre>
+        </li>
+      </ul>
     </p>
   </div>
   <div class="footer">
