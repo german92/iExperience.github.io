@@ -7,10 +7,17 @@
 # String replace regex:
 #   (\"[^"]+\")&
 #   <span class="string">\1</span>&
-def sum_up_to(num)
-  return 0 if num == 0
-  return num + sum_up_to(num-1)
+module Piglatinify
+  def piglatinify
+    str = self.to_s
+    first = str[0]
+    str[1..-1] + first + "ay"
+  end
 end
-puts (sum_up_to 10)
 
-puts :>.class
+class Array
+  include Piglatinify
+end
+
+p " 
+  tripsay emay \t ".strip

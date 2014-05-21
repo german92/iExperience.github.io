@@ -27,6 +27,63 @@
 
     <!-- Exercises -->
     <h1>Exercises</h1>
+    <h2>E1: String Theory</h2>
+    <p>
+      A common way to practice arrays and methods is to write <em>string manipulation</em> methods, or methods that modify strings. The cool thing about Ruby is that you can always modify any class and add methods to it. For example, instead of our <code>shout</code> method, we could have written it into the <code>String</code> class itself:
+    </p>
+    <pre><code>class String
+  def shout
+    self.upcase
+  end
+end
+
+"hElLo".shout
+<span class="string"># => "HELLO"</span></code></pre>
+    <p>
+      For this exercise, we're going to add some methods to the <code>String</code> class. Create <code>d3/super_strings.rb</code>.
+    </p>
+
+    <h4>Iglatinpay</h4>
+    <p>
+      You may be familiar with <em>Piglatin</em>, which is a language just like English, but each first letter of a word is put at the end and followed by "ay". So, "Piglatin" in Piglatin is "Iglatinpay", and "iglatinpay" is "glatinpayiay". Write a method <code>piglatinify</code> to get this behavior.
+    </p>
+    <h4>Histay Siay Iglatinpay</h4>
+    <p>
+      Write a method <code>piglatinify_sentence</code> that makes each word in a sentence into Piglatin.
+    </p>
+    <h4>Strip Down</h4>
+    <p>
+      Write the method <code>strip</code> (but call it <code>strip_new</code>). Test it against Ruby's strip with a variety of test samples. Does it always behave the same?
+    </p>
+
+    <pre><code><span class="comment"># super_strings.rb</span>
+
+# Your code here
+
+"piglatin".piglatinify
+<span class="string"># => "iglatinpay"</span>
+"Piglatin".piglatinify
+<span class="string"># => "Iglatinpay" (watch out for capital letters!)</span>
+"This is Piglatin".piglatinify_sentence
+<span class="string"># => "Histay siay Iglatinpay"</span>
+" 
+  tripsay emay \t ".strip_new
+<span class="string"># => "tripsay emay"</span>
+</code></pre>
+
+    <h2>E2: Modulify</h2>
+    <p>
+      Make your Piglatin methods into a module called <code>Piglatinify</code> in <code>piglatinify.rb</code>. The two methods should work on any class (perhaps the <code>to_s</code> method will come in handy here). Test by creating another file.
+    </p>
+    <pre><code><span class="comment"># d3/some_other_file.rb</span>
+
+require_relative 'piglatinify'
+
+class Array
+  include Piglatinify
+end
+["a", "b", "c"].piglatinify
+<span class="string"># => "\"a\", \"b\", \"c\"][ay"</span></code></pre>
     <h2>E4: Tic-Tac-Toe</h2>
     <p>
       This one's more a mini-project: we're going to work through building a simple tic-tac-toe application from scratch. Pick a partner who you haven't worked with before, create <code>tictactoe.rb</code> in <code>d3</code> and let's get started.
@@ -184,7 +241,12 @@ Player 1:
    O | O | X 
 Cats game!</code></pre>
 
-    <h2 class="bonus">E5 (Bonus!): Computer Tic-Tac-Toe</h2>
+    <h2>E5: Bigger. Better. Squared.</h2>
+    <p>
+      Implement a 4 by 4 tic-tac-toe game.
+    </p>
+
+    <h2 class="bonus">E6 (Bonus!): Computer Tic-Tac-Toe</h2>
     <p>
       While playing against a person is fun, us loners need something to do. Write a program that <b>plays tic tac toe against you</b>. It should be smart!
     </p>
@@ -227,6 +289,42 @@ The computer wins!
 
     <!-- Projects -->
     <h1>Projects</h1>
+    <h2>Ruby: Fueling Consumerism</h2>
+    <p>
+      Onward the plot to bring consumerism to Cape Town. We have the Goods and the Vehicle, all we need is the Villan.
+    </p>
+    <p>
+      Create a <code>Shopper</code> class. It should:
+      <ul>
+        <li>Have one required parameter, <code>first_name</code></li>
+        <li>Optionally have <code>last_name</code> and <code>money</code> properties, which should be input via an <code>options</code> hash in the constructor.</li>
+        <li>If <code>money</code> is not provided in the <code>options</code> hash, then it should default to 100.</li>
+        <li>Have methods to get a <code>first_name</code>, <code>last_name</code> and <code>money</code>, and a <code>full_name</code> method</li>
+        <li>
+          Have a <code>cart</code> property that is set to an empty <code>Cart</code> in the constructor.
+        </li>
+        <li>
+          Have <code>add_to_cart</code> and <code>remove_from_cart</code> methods.
+        </li>
+        <li>
+          Have a <code>checkout</code> method that empties the cart and subtracts the total price of its items from <code>money</code> proprety, <b>only if</b> the shopper has enough money. If not, the method does nothing.
+        </li>
+      </ul>
+    </p>
+    <h4>More power, Less responsibility</h4>
+    <p>
+      Now create a <code>SuperShopper</code> class. It should:
+      <ul>
+        <li>Extend <code>Shopper</code></li>
+        <li>Receive a 10% discount on all items. That is, in its <code>checkout</code> method, only 90% of the total price of the cart is subtracted from <code>money</code>.</li>
+        <li>
+          Have a <code>get_money</code> method that takes an optional integer parameter and adds the input to the <code>money</code> property. If no input is specified, add 100.
+        </li>
+      </ul>
+    </p>
+    <p>
+      As with before, download the test script from <a href="../files/shopping_cart_test_2.rb" target="_blank">here</a>. Save it into your <code>shopping_cart</code> directory, run it, and make all the tests pass!
+    </p>
   </div>
   <div class="footer">
     <div class="container">
