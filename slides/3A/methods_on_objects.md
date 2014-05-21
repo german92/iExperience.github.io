@@ -1,35 +1,8 @@
-
-# Arrays Cont'd
-
----
-### So far we know how to create arrays, and loop over them
-### What about changing them?
+# Methods & Objects
 
 ---
 
-# Adding & Removing Items to the Array
-
-```ruby
->> todo_list = ["laundry", "pay rent"]
-=> ["laundry", "pay rent"]
-
->> todo_list = todo_list + "clean room"
-TypeError: no implicit conversion of String into Array
-
->> todo_list = todo_list - "laundry"
-TypeError: no implicit conversion of String into Array
-```
-
----
-
-# We can't use the numeric operators to manipulate Arrays. So how can we update our list?
-
----
-
-
-# Methods
-
-Methods (a.k.a. functions/procedures) allow you to perform some operation on data types (e.g. strings, integers) as well as data structures (e.g. arrays).
+So far, we have been invoking methods on a variety of different things (Strings, Arrays, etc.). Let's review those cases and see if we can find any common patterns.
 
 ---
 
@@ -37,24 +10,9 @@ Methods (a.k.a. functions/procedures) allow you to perform some operation on dat
 ### on Arrays
 
 ```ruby
->> todo_list = ["laundry", "pay rent"]
-=> ["laundry", "pay rent"]
-
->> todo_list.push("clean room")
-=> ["laundry", "pay rent", "clean room"]
-
->> todo_list.delete("laundry")
-=> ["pay rent", "clean room"]
-
-```
-
----
-
-# Calling Methods
-### on Arrays (Cont'd)
-
-```ruby
 numbers = [1,2,3]
+
+numbers.push(4)
 
 numbers.each do |number|
   puts number
@@ -102,44 +60,17 @@ end
 
 ---
 
-# Throwback: Remember gets.strip?
-### That was calling a method on a string!
-
-```ruby
->> x = gets # x is now a string!
-Hey
-=> "Hey\n"
-
->> x.strip
-=> "Hey"
-
->> x = gets.strip
-Hey
-=> "Hey"
-```
-
----
-
-# Recap
-
-* We've now learned how to work with strings, integers and arrays
-* We know how to create and manipulate them, and do so using stored variables
-* We also know how to call methods on them to perform various operations
-
----
-
 # What do they have in common?
 ### Strings, Numbers, Arrays
 
 * They hold data
 * They can be stored in variables
 * They have methods you can call on them
-* They are __objects__!
+* They are all *objects*!
 
 ---
 
-# Everything is an Object
-### in Ruby
+# In Ruby, Everything is an Object
 
 ---
 
@@ -185,7 +116,7 @@ Hey
 
 # What are Methods again?
 
-* __Methods__ can be called on objects to perform work
+* __Methods__ are commands that can be called on objects to perform work
 * Depending on which __Class__ of Object it is, it has different methods
 
 ```ruby
@@ -247,6 +178,4 @@ Hey
 
 ---
 
-# Homework
-
-Learn about all the existing methods in Array, FixNum, and String. These are all the possibilities of things you can do to them. Try them out. Learn where to look for this data (Ruby.org, Dash, etc.)
+Remember: *Everything* is an Object.

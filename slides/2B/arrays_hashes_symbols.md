@@ -95,32 +95,11 @@ The most commonly used loops in Ruby are .each and while loops operating on arra
 
 So far we know how to create arrays, and loop over them. 
 
-What about changing them?
+What about changing them (e.g. adding & removing items)?
 
 ---
 
-# Adding & Removing Items to the Array
-
-```ruby
->> todo_list = ["laundry", "pay rent"]
-=> ["laundry", "pay rent"]
-
->> todo_list = todo_list + "clean room"
-TypeError: no implicit conversion of String into Array
-
->> todo_list = todo_list - "laundry"
-TypeError: no implicit conversion of String into Array
-```
-
----
-
-# We can't use the numeric operators to manipulate Arrays. So how can we update our list?
-
----
-
-# Methods
-
-Methods (a.k.a. functions/procedures) allow you to perform some operation on data types (e.g. strings, integers) as well as data structures (e.g. arrays).
+In the past, we've used Methods to perform operations on Strings (e.g. gets.strip). In Ruby, you can use Methods to perform operations on Arrays as well.
 
 ---
 
@@ -128,12 +107,15 @@ Methods (a.k.a. functions/procedures) allow you to perform some operation on dat
 ### on Arrays
 
 ```ruby
+# Create an array
 >> todo_list = ["laundry", "pay rent"]
 => ["laundry", "pay rent"]
 
+# Add an element to an array
 >> todo_list.push("clean room")
 => ["laundry", "pay rent", "clean room"]
 
+# Remove an element from an array
 >> todo_list.delete("laundry")
 => ["pay rent", "clean room"]
 
@@ -141,27 +123,62 @@ Methods (a.k.a. functions/procedures) allow you to perform some operation on dat
 
 ---
 
-For now, just know that you can use methods like .push and .delete to perform their desired duties. We will learn more details about how methods work later on.
+We can also find the union or intersect of arrays using the + and - operators
 
+---
+# Working with multiple arrays
+
+```ruby
+>> first = [1, 2, 3]
+>> second = [2, 3, 4]
+
+# union of arrays
+>> first + second
+=> [1, 2, 3, 2, 3, 4]
+
+# intersection of arrays
+=> first - second
+=> [1]
+
+```
+---
+# Unique elements
+
+Sometimes we only want unique elements from an array. We can use ```uniq``` for this:
+
+```ruby
+>> repeats = [1,2,3,4,4,5,5,6]
+
+>> repeats.uniq
+=> [1,2,3,4,5,6]
+
+```
 ---
 
 # Arrays Review
 
 * We can create lists of things
 * We can access specific items using their *index*
-* We can modify the lists by adding/removing items with the ```.push``` or ```.delete``` methods
 * We can iterate over items in the array with ```.each``` or ```for``` loop
+* We can modify the lists by adding/removing items with the ```.push``` or ```.delete``` methods
+* We can get the union/intersect of two arrays using +/-
+* We can get unique elements of an array using ```.uniq```
+
+---
+
+EXERCISE: E1
+
+Spend 10 minutes working through this exercise.
 
 ---
 
 # Hashes (a.k.a. Dictionaries)
 
 ---
-# Hashes (Dictionaries) vs Arrays (Lists)
 
-* Arrays just store a list of values
-* Hashes store a list of values, where each value has a key
-* e.g. A grocery list can be stored in an array, but a phonebook would require a Hash
+Sometimes we need to store a list of things, but for each 'entry' in the list, we need to store two things rather than just one: we need to store both a 'key' as well as a 'value'.
+
+The primary example of a Hash is a... dictionary! Each word maps to a definition. Another common example is a Phone book. Let's take a closer look at an example.
 
 ---
 
@@ -183,43 +200,11 @@ For now, just know that you can use methods like .push and .delete to perform th
 
 ---
 
-## A hash (dictionary) maps a set of *keys* to *values*
-
----
-# Accessing Keys & Values in a Hash
-
-```ruby
->> numbers = {'Salman' => 123456789, 'Aaron' => 567890934}
-=> {'Salman' => 123456789, 'Aaron' => 567890934}
-
->> numbers.keys
-=> ['Salman', 'Aaron']
-
->> numbers.values
-=> [123456789, 567890934]
-
-```
+A hash maps a set of *unique* keys to values. You cannot have two values for the same key.
 
 ---
 
-# Modifying a Hash
-### Phone Book
-
-```ruby
-
->> numbers = {'Salman' => 123456789, 'Aaron' => 567890934}
-=> {'Salman' => 123456789, 'Aaron' => 567890934}
-
->> numbers['Rafi'] = 892381232
-=> 892381232
-
->> numbers
-=> {'Salman' => 123456789, 'Aaron' => 567890934, 'Rafi' => 892381232}
-```
-
----
-
-# Accessing Elements in a Hash
+### Accessing Elements in a Hash
 
 ```ruby
 >> numbers = {'Salman' => 123456789, 'Aaron' => 567890934}
@@ -236,6 +221,36 @@ For now, just know that you can use methods like .push and .delete to perform th
 >> numbers.values
 => [123456789, 567890934]
 ```
+---
+
+# Modifying a Hash
+
+```ruby
+# Adding a new element
+>> numbers['Rafi'] = 892381232
+
+# Removing an element
+>> numbers.delete('Salman')
+# OR
+>> numbers['Salman'] = nil
+```
+---
+
+# Accessing Keys & Values
+
+```ruby
+>> numbers = {'Salman' => 123456789, 'Aaron' => 567890934}
+=> {'Salman' => 123456789, 'Aaron' => 567890934}
+
+# this returns an Array!
+>> numbers.keys
+=> ['Salman', 'Aaron']
+
+# this also returns an Array!
+>> numbers.values
+=> [123456789, 567890934]
+
+```
 
 ---
 
@@ -243,10 +258,6 @@ For now, just know that you can use methods like .push and .delete to perform th
 ### Loops!
 
 ---
-
-# Iterating over a Hash
-### Similar to Iterating over an Array
-
 ```ruby
 # Iterating with an array
 numbers = [1,2,3]
@@ -260,7 +271,6 @@ phone_numbers.each do |name, number|
 	puts number
 end
 ```
-
 ---
 
 ## In almost all cases, we don't actually use Strings as Keys
@@ -268,14 +278,12 @@ end
 
 ---
 
-## Symbols are a simple data type in Ruby that uses less
-## memory than Strings. We use them as keys for Hashes primarily,
-## but you will see other use cases as well.
+Symbols are a simple data type in Ruby that uses less memory than Strings. We use them as keys for Hashes primarily, but you will see other use cases as well.
 
 ---
 
-# New Type: Symbols
-## Used as Keys for a Hash
+## Symbols
+### Used as Keys for a Hash
 
 ```ruby
 >> :hello
@@ -289,85 +297,11 @@ end
 
 >> health_info[:weight] = 200
 => 200
-
 ```
 
 ---
 
-## Symbols are typically composed of lowercase letters and underscores.
-
----
-
-# Using Hashes as Optional Parameters in Methods
-
-```ruby
-
-def print_info(name, age, email)
-	puts "Your name is: #{name}"
-	puts "Your age is: #{age}"
-	puts "Your email is: #{email}"
-end
-
-print_info("Salman", 29, "salman@iexperience.co.za")
-# Your name is Salman
-# Your age is 29
-# Your email is salman@iexperience.co.za
-
-```
-
----
-
-## What happens if we don't pass all arguments?
-## e.g. Imagine if email was optional.
-
----
-# Email is Optional?
-
-```ruby
-print_info("Salman", 29, "salman@iexperience.co.za")
-# Your name is Salman
-# Your age is 29
-# Your email is salman@iexperience.co.za
-
-print_info("Salman", 29)
-# ArgumentError: wrong number of arguments (2 for 3)
-
-```
-
----
-
-# Options Hash to the rescue!
-# In Ruby, we use an 'options hash' to specify optional arguments to methods
-
----
-
-```ruby
-
-# Using an options hash parameter with a default value of empty hash
-def print_info(name, age, options={})
-	puts "Your name is: #{name}"
-	puts "Your age is: #{age}"
-
-	if options[:email]
-		puts "Your email is: #{email}"
-	end
-end
-
-print_info("Salman", 29)
-# Your name is Salman
-# Your age is 29
-
-print_info("Salman", 29, :email => "salman@iexperience.co.za")
-# Your name is Salman
-# Your age is 29
-# Your email is salman@iexperience.co.za
-
-```
-
----
-
-# Hashes are extremely powerful dictionaries that are used to store data,
-# as well as pass data around as convenient forms of method arguments.
+In Ruby, method names, variable names, and Symbols are typically composed of lowercase letters and underscores. Stick to that convention (e.g. my_name not MyName34$).
 
 ---
 

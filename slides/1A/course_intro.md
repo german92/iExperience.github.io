@@ -1,4 +1,4 @@
-# [fit] Welcome to Cape Town!
+# Welcome to Cape Town!
 
 ---
 
@@ -15,9 +15,9 @@
 # Course Topics
 
 * Programming in Ruby
+* Front-End Development (HTML, CSS, JavaScript)
 * Building Web Applications in Rails
 * Working with Databases
-* Front-End Development (HTML, CSS, JavaScript)
 * Agile Product Development
 * Testing
 

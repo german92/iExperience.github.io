@@ -1,12 +1,16 @@
-## Control Flow
+# Control Flow
 
-* A program's operation changes based on varying conditions
-* We can use conditions to control program flow
-* In Ruby we use Boolean expressions to represent conditions
+---
+# What is Control Flow?
+
+* So far our programs have had a *linear* flow. In other words, a set of things happen in order. 
+* No matter what, those statements will execute in that exact order.
+* As a program's complexity grows, we need to be able to execute different operations based on certain *conditions* (e.g. if the user chooses A, do something, if they choose B, do something else)
+* Ruby has a special type of value that is used to store whether a condition is true or false
 
 ---
 
-## Boolean Expressions
+## Booleans
 
 ```ruby
 >> true
@@ -15,34 +19,84 @@
 >> false
 => false
 
->> 1 < 3
-=> true
-
->> (5 > 100)
-=> false
-
 ```
 
 ---
 
-### Boolean Expressions (Cont'd)
+## Boolean Expressions
 
 ```ruby
->> 1 == 2
+>> (1 == 2)
 => false
 
->> 1 == 1
+>> (1 == 1)
 => true
 
->> 1 < 2
+>> (1 < 2)
 => true
 
->> 3 <= 3
+>> (3 <= 3)
 => true
 ```
 
 ---
 
+Pay close attention to the syntax in a statement like ```1 == 2```. It is not a variable assignment, it is not a method call. It is an *evaluation* of a Boolean expression.
+
+---
+# What is a Boolean Expression?
+
+* An expression is simply a set of terms that evaluate to true or false
+* The terms are each compared using comparison operators, which include: ==, <, <=, >, >=
+* They can compare any simple values, or variables
+
+---
+## Boolean Expressions
+
+```ruby
+>> (x = 4)
+=> 4
+
+>> (y = 5)
+=> 5
+
+>> (x == y)
+=> false
+
+>> (x < y)
+=> true
+
+>> (x >= y)
+=> false
+```
+---
+
+By themselves, Boolean Expressions don't seem to serve much value. Their power comes in when they are used to control logic flow of the program, typically using *if statements*.
+
+---
+
+## Control Flow
+### if statements
+
+```ruby
+>> x = 2
+>> if (x == 2) # true
+>>  puts "hey!"
+>> end
+hey!
+
+>> y = 3
+>> if (y == 3) # true
+>>  puts "hey!"
+>> end
+hey!
+
+>> if (x == y) # false
+>>  puts "bye!"
+>> end
+```
+
+---
 
 ## Multiple Boolean Expressions
 ### Combined using operators
@@ -63,47 +117,66 @@
 ```
 
 ---
-## Boolean Variables
+## Boolean vs Numeric Expressions
+
+You've actually already worked with another kind of expression: Numeric Expressions. They operate in a very similar way to Boolean Expressions.
 
 ```ruby
->> 1 < 3
+>> true || false
 => true
 
->> x = (1 < 3)
-=> true
+>> (1 + 2)
+=> 3
 
->> y = (6 > 5)
-=> false
+>> (3 + 4) * (1 + 2)
+=> 21
 
->> x && y
-=> false
-
->> x || y
+>> (1 < 3) || (6 > 3)
 => true
 ```
 
 ---
 
+Just like with numeric expressions, we can store the *result* of *evaluating* an expression into a variable.
 
-## Control Flow
-### if statements
+---
+
+## Boolean Variables
 
 ```ruby
->> x = 2
->> if (x == 2)
->>  puts "hey!"
->> end
-hey!
+>> y = (1 + 3)
+=> 4
 
->> y = 3
->> if (y == 3)
->>  puts "hey!"
->> end
-hey!
+>> y
+=> 4
 
->> if (x == y)
->>  puts "bye!"
->> end
+>> x = (1 < 3)
+=> true
+
+>> x
+=> true
+```
+
+---
+
+We can also use boolean variables as part of other boolean expressions.
+
+---
+
+## Boolean Variables in Boolean Expressions
+
+```ruby
+>> x = (1 < 4)
+=> true
+
+>> y = (2 > 4)
+=> false
+
+>> z = (x && y)
+=> false
+
+>> z = (x || y)
+=> true
 ```
 
 ---
@@ -127,88 +200,61 @@ hey!
 
 ---
 
-## Control Flow
-### if-else statements
+We can use if statements that execute when a Boolean expression is true, but we can also use else statements to handle when the expression is false.
+
+---
+## if-else statements
 
 ```ruby
 >> y = false
+
+>> if y
+>>   puts "Hurray for Y!"
+>> end
 
 >> if y
 >>   puts "Hurray for Y!"
 >> else
 >>   puts "Boo for Y!"
 >> end
-
 Boo for Y!
 ```
+---
+
+We can further expand the 'else clause', and add additional alternative conditions.
 
 ---
 
-## Control Flow
-### if-elsif-else statements
+## if-elsif-else statements
 
 ```ruby
 >> x = true
 >> y = false
 
->> if y
->>   puts "Hurray for Y!"
->> elsif x
+>> if y # if y is true, do this
+>>   puts "Hurray for Y!" 
+>> elsif x # otherwise, if x is true, do this
 >>   puts "Hurray for X!"
->> else
+>> else # in all other cases, do this
 >>   puts "Boo for X & Y!"
 >> end
 
 Hurray for X!
 ```
-
 ---
 
-## 'Not' Modifier
+Always remember to close an if statement with an ```end```.
 
-```ruby
->> !true
-=> false
-
->> x = true
-=> true
->> !x
-=> false
-
->> !(1 < 3)
-=> false
-
-```
 
 ---
+# Recap
 
-## 'Not' Modifier
-
-```ruby
->> healthy = false
-
->> if !healthy
->>   puts "Excercise!"
->> end
-
-Exercise!
-
-```
-
----
-
-## Control Flow
-### unless statements
-
-```ruby
->> done = false
-
->> unless done
->>   puts "Keep working!"
->> end
-
-Keep working!
-```
+* We can use expressions to store conditions in Boolean values
+* We can make boolean expressions using multiple conditions, just like numeric expressions
+* We can store the result of expressions in variables
+* We can use variables as part of other expressions
+* We can use if-else-elsif statements to control logic flow using boolean expressions
+* We can also use Not modifiers to flip boolean values, and unless statements to invert if statements
 
 ---
 
@@ -246,17 +292,59 @@ You are 21! Come on in.
 
 ---
 
-## Excercise: FizzBuzz
+## Boolean 'Not' Modifier
 
-Write a program that prints the numbers from 1 to 100.
-But for multiples of three print “Fizz” instead of the
-number and for the multiples of five print “Buzz”. For
-numbers which are multiples of both three and five
-print “FizzBuzz”.
+```ruby
+>> !true
+=> false
+
+>> x = true
+=> true
+>> !x
+=> false
+
+>> !(1 < 3)
+=> false
+
+```
+
+---
+
+## Boolean 'Not' Modifier
+
+```ruby
+>> healthy = false
+
+>> if !healthy
+>>   puts "Excercise!"
+>> end
+
+Exercise!
+
+```
+
+---
+
+## Control Flow
+### unless statements
+
+```ruby
+>> done = false
+
+>> unless done
+>>   puts "Keep working!"
+>> end
+
+Keep working!
+```
 
 ---
 
 # Loops
+
+---
+
+In addition to using conditionals to create 'switches' in program flow, we can also use loops to create repetition in our program.
 
 ---
 
@@ -317,8 +405,18 @@ end
 
 ---
 
-# Recap
+## Exercise: E1 (FizzBuzz)
 
-* We can use boolean expressions to check conditions
-* We can use if/else/unless statements to control flow
-* We can use loops to automate and control repetitive work
+Write a program that prints the numbers from 1 to 100.
+But for multiples of three print “Fizz” instead of the
+number and for the multiples of five print “Buzz”. For
+numbers which are multiples of both three and five
+print “FizzBuzz”.
+
+---
+
+# Today's Summary
+
+* We can use boolean expressions to represent conditions
+* We can use if/else/unless statements to control program flow
+* We can use loops to automate repetitive work
