@@ -154,6 +154,22 @@ Sometimes we only want unique elements from an array. We can use ```uniq``` for 
 
 ```
 ---
+# Splitting a string into an array
+
+On occasion, we want to take a string and divide it up into pieces. We can do this using the ```split``` method on string. By default, the split method will split a string between spaces, but we can also pass a parameter to specify exactly what to split on. Super cool!
+
+```ruby
+>> "bring me juice".split
+=> ["bring", "me", "juice"]
+
+>> "first,second,third".split(",")
+=> ["first", "second", "third"]
+
+>> "www.google.com".split(".")
+=> ["www", "google", "com"]
+```
+
+---
 
 # Arrays Review
 
