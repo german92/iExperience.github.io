@@ -1,4 +1,5 @@
-# Welcome to Cape Town!
+## Welcome To 
+# Cape Town!
 
 ---
 
@@ -24,14 +25,30 @@
 
 ---
 
-# Course Format
+# Course Highlights
 
-* 4 weeks
-* 9AM-10:30AM Daily Lecture I
-* 10:30AM-2PM Break / Hacking / Lunch
-* 2PM-3:30PM Daily Lecture II
-* 3:30PM+ Hacking
-* PLUS: Saturday Morning Lecture
+* 4 Weeks
+* Monday-Friday lectures
+* Saturday lectures
+* Weekend / weeknight excursions
+* Weeknight workshops / panels / talks
+
+---
+
+# Typical Weekday
+
+* 8:30AM-9:30AM Breakfast
+* 9:30AM-11AM Morning Lecture
+* 10:30AM-2PM Exercises / Project Work / Lunch Break
+* 2PM-3:30PM Afternoon Lecture
+* 3:30PM-6PM Exercises / Project Work
+* 6PM-10PM Workshops / Talks / Excursions
+* 10PM-Midnight Late-Night Hacking
+* Midnight House Closes
+
+---
+
+iExperience does not enforce a strict schedule. It's up to you to work at the level you need to maximize your learning and balance your health. There are many components to iExperience besides just learning technology -- keep this in mind and do your best to maximize the opportunity of being here *every single day*.
 
 ---
 
@@ -68,4 +85,8 @@ Try and use this course as an apprenticeship @ iExperience. Look around. You are
 
 ---
 
-# Start exercising!
+Good luck! We're rooting for you :)
+
+---
+
+# EXERCISES
