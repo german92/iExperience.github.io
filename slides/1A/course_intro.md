@@ -48,31 +48,33 @@
 
 * *8:30AM-9:30AM:* Breakfast
 * *9:30AM-11AM:* Morning Lecture
-* *10:30AM-2PM:* Exercises / Project Work / Lunch Break
+* *11AM-2PM:* Exercises / Projects / Lunch Break
 * *2PM-3:30PM:* Afternoon Lecture
-* *3:30PM-6PM:* Exercises / Project Work
-* *:6PM-10PM:* Workshops / Talks / Excursions
+* *3:30PM-6PM:* Exercises / Projects
+* *6PM-10PM:* Workshops / Talks / Excursions / Projects
 * *10PM-12AM:* Late-Night Hacking
 * *12AM:* House Closes
 
 ---
 
-iExperience does not enforce a strict schedule outside of lectures. *We are not your parents*. It's up to you to work at the level you need to maximize your learning, and balance your health. You are responsible for balancing many different goals, including:
+iExperience does not enforce a strict schedule outside of lectures. *We are not your parents*. It's up to you to balance the many goals of this program:
 
-* Spend the necessary time to complete exercises, projects and other materials. Work late if you have to. You didn't fly to Cape Town just to slack off.
-* Ensure you are well rested enough to pay your *full attention* during lectures. Lectures are the most concentrated, valuable form of learning you will get. You do *NOT* want to miss them (or stare blankly at the wall during them...)
+* Spend the time to complete exercises, projects and other materials. Work late if you have to. You didn't fly to Cape Town just to slack off.
+* Ensure you are well rested enough to pay your *full attention* during lectures. Lectures are the most concentrated, valuable form of learning you will get.
 * There are many components to iExperience besides just learning technology -- make the most of your (ridiculously beautiful) surroundings and make this a trip you'll never forget.
-* Remember to have fun! The materials will challenge and frustrate you, but this is something you *chose* to do, so make sure to enjoy it as much as possible.
+* Remember to have fun!
 
 ---
 
-# Keep in Mind
+# Resources
 
-* Lectures are your primary source of material
-* Exercises are critical to *complete* your learning. DO THEM!
-* Pay attention / participate during in-class walkthroughs. I will aim to improvise as much as possible to give you a sense of the true development process.
-* TreeHouse resources are supplemental materials. Use them!
-* You are in Cape Town. LIVE here!
+* iExperience.github.io
+	** Course schedule
+	** Lecture slides will be available on the site.
+	** Exercises will be posted with solutions posted the next day
+	** Additional resources & links
+* TreeHouse resources are supplemental to lectures
+* Student Center forums for online discussions & questions
 
 ---
 
