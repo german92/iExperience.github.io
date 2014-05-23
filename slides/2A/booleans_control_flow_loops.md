@@ -10,7 +10,7 @@
 
 ---
 
-## Booleans
+### Declaring Booleans
 
 ```ruby
 >> true
@@ -23,7 +23,8 @@
 
 ---
 
-## Boolean Expressions
+### Comparisons
+#### Boolean Result
 
 ```ruby
 >> (1 == 2)
@@ -41,17 +42,18 @@
 
 ---
 
-Pay close attention to the syntax in a statement like ```1 == 2```. It is not a variable assignment, it is not a method call. It is an *evaluation* of a Boolean expression.
+Pay close attention to the syntax in a statement like ```1 == 2```. It is not a variable assignment, or a method call -- it is a comparison *operator* as part of a Boolean expression.
 
 ---
 # What is a Boolean Expression?
 
-* An expression is simply a set of terms that evaluate to true or false
-* The terms are each compared using comparison operators, which include: ==, <, <=, >, >=
-* They can compare any simple values, or variables
+* A Boolean expression is one or more comparisons that evaluate to true or false
+* The terms are each compared using comparison *operators*, which include: ==, <, <=, >, >=
+* The comparison *operands* can be literal values (e.g. 1, 3, "hi") or variables
 
 ---
-## Boolean Expressions
+### Boolean Expressions
+#### Using Variables
 
 ```ruby
 >> x = 4
@@ -74,9 +76,8 @@ Pay close attention to the syntax in a statement like ```1 == 2```. It is not a 
 By themselves, Boolean Expressions don't seem to serve much value. Their power comes in when they are used to control logic flow of the program, typically using *if statements*.
 
 ---
-
-## Control Flow
-### if statements
+### Control Flow
+#### if statements
 
 ```ruby
 >> x = 2
@@ -117,9 +118,7 @@ hey!
 ```
 
 ---
-## Boolean vs Numeric Expressions
-
-You've actually already worked with another kind of expression: Numeric Expressions. They operate in a very similar way to Boolean Expressions.
+### Boolean vs Numeric Expressions
 
 ```ruby
 >> true || false
@@ -141,7 +140,7 @@ Just like with numeric expressions, we can store the *result* of *evaluating* an
 
 ---
 
-## Boolean Variables
+### Boolean Variables
 
 ```ruby
 >> y = (1 + 3)
@@ -163,7 +162,7 @@ We can also use boolean variables as part of other boolean expressions.
 
 ---
 
-## Boolean Variables in Boolean Expressions
+### Boolean Variables in Boolean Expressions
 
 ```ruby
 >> x = (1 < 4)
@@ -203,7 +202,7 @@ We can also use boolean variables as part of other boolean expressions.
 We can use if statements that execute when a Boolean expression is true, but we can also use else statements to handle when the expression is false.
 
 ---
-## if-else statements
+### if-else statements
 
 ```ruby
 >> y = false
@@ -225,7 +224,7 @@ We can further expand the 'else clause', and add additional alternative conditio
 
 ---
 
-## if-elsif-else statements
+### if-elsif-else statements
 
 ```ruby
 >> x = true
@@ -238,60 +237,68 @@ We can further expand the 'else clause', and add additional alternative conditio
 >> else # in all other cases, do this
 >>   puts "Boo for X & Y!"
 >> end
-
 Hurray for X!
 ```
 ---
 
 Always remember to close an if statement with an ```end```.
 
-
----
-# Recap
-
-* We can use expressions to store conditions in Boolean values
-* We can make boolean expressions using multiple conditions, just like numeric expressions
-* We can store the result of expressions in variables
-* We can use variables as part of other expressions
-* We can use if-else-elsif statements to control logic flow using boolean expressions
-* We can also use Not modifiers to flip boolean values, and unless statements to invert if statements
-
 ---
 
-### Bouncer
+Let's try building some programs using control flow!
+
+---
+# Bouncer App
+
+```
+$ mkdir bouncer
+$ touch bouncer/bouncer.rb
+$ sublime bouncer
+```
+---
+
+### bouncer.rb
 
 ```ruby
->> age = 21
-=> 21
+age = 21
 
->> if age == 21
->>   puts "You are 21! Come on in."
->> elsif age == 22
->>   puts "You are 22! Come on in."
->> else
->>   puts "Sorry! You're too young."
->> end
-You are 21! Come on in.
-=> nil
+if age == 21
+	puts "You are 21! Come on in."
+elsif age == 22
+	puts "You are 22! Come on in."
+else
+	puts "Sorry! You're too young."
+end
 ```
 
 ---
+# Running Bouncer
 
+```
+$ ruby bouncer/bouncer.rb
+You are 21! Come on in.
+```
+---
 ### Smarter Bouncer
 
 ```ruby
->> age = gets.to_i
-=> 21
+age = gets.to_i
 
->> if age >= 21
->>   puts "You're at least 21! Come on in."
->> else
->>   puts "You're too young. Sorry."
->> end
+if age >= 21
+	puts "You're at least 21! Come on in."
+else
+	puts "You're too young. Sorry."
+end
+```
+---
+# Running Smarter Bouncer
+
+```
+$ ruby bouncer/bouncer.rb
+You're at least 21! Come on in.
 ```
 
 ---
-
 ## Boolean 'Not' Modifier
 
 ```ruby
@@ -324,6 +331,15 @@ Exercise!
 ```
 
 ---
+# Recap
+
+* We can use expressions to store conditions in Boolean values
+* We can make boolean expressions using multiple conditions, just like numeric expressions
+* We can store the result of expressions in variables
+* We can use variables as part of other expressions
+* We can use if-else-elsif statements to control logic flow using boolean expressions
+* We can also use Not modifiers to flip boolean values, and unless statements to invert if statements
+---
 
 # Loops
 
@@ -333,10 +349,13 @@ In addition to using conditionals to create 'switches' in program flow, we can a
 
 ---
 
+*PRO TIP*: If you want to write quick programs without creating a whole Ruby file/folder, you can use ```pry``` instead of IRB, along with the ```edit``` command.
+
+---
+
 # While Loop
 
 ```ruby
-
 i = 10
 
 while i > 0
@@ -346,22 +365,18 @@ end
 ```
 
 ---
-
 # Times Loop
 
 ```ruby
-
 6.times do
 	puts "Hey!"
 end
 ```
 
 ---
-
 # Breaking a Loop
 
 ```ruby
-
 countdown = 10
 
 while true
@@ -376,7 +391,9 @@ end
 
 ---
 
-## Exercise: E4 (FizzBuzz)
+# Exercise: E4 (FizzBuzz)
+
+[http://iexperience.github.io/exercises/2A.html](http://iexperience.github.io/exercises/2A.html)
 
 ---
 
@@ -385,3 +402,9 @@ end
 * We can use boolean expressions to represent conditions
 * We can use if/else/unless statements to control program flow
 * We can use loops to automate repetitive work
+
+---
+
+# EXERCISES
+
+[http://iexperience.github.io/exercises/2A.html](http://iexperience.github.io/exercises/2A.html)
