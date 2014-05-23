@@ -68,11 +68,7 @@ iExperience does not enforce a strict schedule outside of lectures. *We are not 
 
 # Resources
 
-* iExperience.github.io
-⋅⋅* Course schedule
-⋅⋅* Lecture slides will be available on the site.
-⋅⋅* Exercises will be posted with solutions posted the next day
-⋅⋅* Additional resources & links
+* *iExperience.github.io*: Course schedule, lecture slides, exercises (solutions next day)
 * TreeHouse resources are supplemental to lectures
 * Student Center forums for online discussions & questions
 
