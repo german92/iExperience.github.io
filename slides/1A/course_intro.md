@@ -48,9 +48,9 @@
 
 * *8:30AM-9:30AM:* Breakfast
 * *9:30AM-11AM:* Morning Lecture
-* *11AM-2PM:* Exercises / Projects / Lunch Break
+* *11AM-2PM:* Morning Exercises / Projects / Lunch Break
 * *2PM-3:30PM:* Afternoon Lecture
-* *3:30PM-6PM:* Exercises / Projects
+* *3:30PM-6PM:* Afternoon Exercises / Projects
 * *6PM-10PM:* Workshops / Talks / Excursions / Projects
 * *10PM-12AM:* Late-Night Hacking
 * *12AM:* House Closes
@@ -69,8 +69,8 @@ iExperience does not enforce a strict schedule outside of lectures. *We are not 
 # Resources
 
 * *iExperience.github.io*: Course schedule, lecture slides, exercises (solutions next day)
-* TreeHouse resources are supplemental to lectures
-* Student Center forums for online discussions & questions
+* *TreeHouse*: are supplemental to lectures
+* *Student Center*: forums for online discussions & questions
 
 ---
 
