@@ -52,15 +52,17 @@ The simplest forms of programming manipulate strings (text) and integers (number
 
 ---
 
-## Declaring Text (Strings)
+### Declaring Text (Strings)
 
 ```ruby
+# Declare a string
 >> "Hello"
 => "Hello"
 
->> "Hello" + "Goodbye"
+>> "Goodbye"
 => "Goodbye"
 
+# Combining two strings
 >> "Hello" + "Goodbye"
 => "HelloGoodbye"
 
@@ -68,7 +70,7 @@ The simplest forms of programming manipulate strings (text) and integers (number
 
 ---
 
-## Declaring Numbers (Integers)
+### Declaring Numbers (Integers)
 
 ```ruby
 >> 5
@@ -89,11 +91,11 @@ The simplest forms of programming manipulate strings (text) and integers (number
 
 ---
 
-For a program to provide value, it generally needs to be able to *store* data. In Ruby, you can store data inside named *variables*. 
+For a program to provide value, it generally needs to be able to *store* data. In Ruby, you can store data inside named *variables*. Variables are like named lockers to hold your data, allowing you to access and change their contents at any time. 
 
 ---
 
-## Assigning (String) Variables
+### Assigning (String) Variables
 
 ```ruby
 # Declare the variable
@@ -107,13 +109,14 @@ For a program to provide value, it generally needs to be able to *store* data. I
 
 ---
 
-## Assigning (Integer) Variables
+### Assigning (Integer) Variables
 
 ```ruby
 # Declare the variable
 >> x = 5
 => 5
 
+# Access the variable
 >> x
 => 5
 ```
@@ -123,7 +126,7 @@ For a program to provide value, it generally needs to be able to *store* data. I
 In Ruby, you do not need to specify what type of data the variable holds. Whether the variable is storing a String or an Integer, it is declared, accessed and assigned the same way.
 
 ---
-## Assigning a variable to another variable
+### Assigning a var to another var
 
 ```ruby
 >> x = 5
@@ -143,11 +146,12 @@ In Ruby, you do not need to specify what type of data the variable holds. Whethe
 
 ---
 
-Once a variable has been *declared*, you can re-assign it to a new value.
+Once a variable has been *declared*, 
+you can always re-assign it to a new value.
 
 ---
 
-## Re-assigning (String) Variables
+### Re-assigning (String) Variables
 
 ```ruby
 >> greeting = "Hey"
@@ -170,7 +174,7 @@ Once a variable has been *declared*, you can re-assign it to a new value.
 
 ---
 
-# Re-assigning Integer Variables
+### Re-assigning Integer Variables
 
 ```ruby
 >> x = 1
@@ -188,24 +192,27 @@ Once a variable has been *declared*, you can re-assign it to a new value.
 
 ---
 
-Each statement:
+## Ruby Statements
+
 1. Does some work
 2. Returns a result
 
-NOTE:
+---
+## NOTE:
+
 * Assigning/re-assigning a variable always returns the variables **new** value after the assignment
 * So far, the *result* of each statement is purely informative, but it will be important later
 
 ---
 
-## Combining Integers and Strings
+### Combining Integers and Strings
 
 ```ruby
 >> days = 5
 => 5
 
 >> headline = days + " days left"
-TypeError: String can't be coerced into Fixnum
+# TypeError: String cant be coerced into Fixnum
 
 # Interpolating a String
 >> headline = "#{days} days left"
@@ -239,14 +246,14 @@ Now that we can store & manipulate strings and integers, let's build a program! 
 ### Create a Ruby Script File
 
 ```
-$ mkdir survey
-$ touch survey/survey.rb
-$ sublime survey
+$ mkdir survey # create a survey directory
+$ touch survey/survey.rb # create an empty file called survey.rb
+$ sublime survey # open the survey folder with your code editor
 ```
 
 ---
 
-# survey.rb
+### survey.rb
 
 ```ruby
 "Hello!"
@@ -264,7 +271,7 @@ age = 24
 
 ---
 
-# Run the script
+### Run the script
 
 ```
 $ ruby survey.rb
@@ -272,17 +279,16 @@ $ ruby survey.rb
 
 ---
 
-Nothing happens! Why?
+## Nothing happens! Why?
+
+* In IRB, we were working with a REPL that displayed the result of each statement. 
+* We saw output for each command because it automatically prints the result of the statement.
+* In a program, we will not see any output unless we explictly print output to the screen.
+* In Ruby, you can print out strings using the ```puts``` Ruby method.
 
 ---
 
-In IRB, we were working with a REPL that displayed the result of each statement. This is how we saw output. In a program, we will not see any output unless we explictly print output to the screen.
-
-In Ruby, you can print out strings using the ```puts``` Ruby method.
-
----
-
-## Wait, what is a Ruby Method?
+### Wait, what is a Ruby Method?
 
 * A method is a named command that you can invoke to perform an operation
 * If you're familiar with other programming paradigms, a method is Ruby's equivalent of a function or procedure
@@ -290,15 +296,15 @@ In Ruby, you can print out strings using the ```puts``` Ruby method.
 
 ---
 
-## Okay, what does this so-called ```puts``` method do?
+### Okay, what does this so-called ```puts``` method do?
 
 * The ```puts``` method will print out a string to the command line
 * You can call it (or, more formally, *invoke* it) by typing ```puts``` followed by the string you want to print. 
 * When you 'pass' a method some data in this way, it is known as *passing an argument*. In the case of puts, the string you want to print is the argument.
 
 ---
-## survey.rb
-### Now with puts-ing!
+### survey.rb
+#### Now with puts-ing!
 
 ```ruby
 # Method: puts  
@@ -317,7 +323,7 @@ puts "Goodbye!"
 ```
 ---
 
-## Run the script
+### Run the script
 
 ```
 $ ruby survey.rb
@@ -332,14 +338,14 @@ Goodbye!
 Let's make the program even smarter by taking the name from *user input* (this means the user will be prompted to type in the user's name). We can do this with the help of another friendly *Ruby method* called ```gets```.
 
 ---
-# What does the ```gets``` method do?
+### What does the ```gets``` method do?
 
 * The ```gets``` method prompts the user to type in text, and stores all text the user types until they hit the Enter key
 * Once the ```gets``` method has finished running, it *returns* a string as its result
 * You can then store the resulting string into a variable
 * The ```gets``` method is part of Ruby's system library
 ---
-# Gets vs Puts
+### Gets vs Puts
 
 * While the puts method simply performs an operation (print to screen), the ```gets``` method both performs an operation (takes input from screen) *and* returns a result (the string the user typed).
 * As it turns out, ```puts``` actually returns as well, but it just returns nothing (the concept of 'nothing' is represented as Nil in Ruby)
@@ -350,7 +356,6 @@ Let's make the program even smarter by taking the name from *user input* (this m
 #### ```gets``` in action
 
 ```ruby
-
 # Calling method, ignoring result
 puts "Hello!"
 
@@ -366,12 +371,11 @@ age = 29
 puts "You're #{age} years old!"
 
 puts "Goodbye!"
-
 ```
 
 ---
 
-## Run the survey program
+### Run the survey program
 
 ```
 $ ruby survey.rb
@@ -385,33 +389,33 @@ Goodbye!
 ```
 
 ---
-## Not Quite Right
+### Not Quite Right?
 
 * If you notice, we are seeing the output show up as "Salman", followed by a "!" in the next line, rather than just "Salman!" as we intended.
 * The reason for this is that the ```gets``` command also stores the 'newline' (the character created by hitting the Enter key).
 
 ---
 
-## Solution
+### Solution
 
 * What we want to do is get rid of the last newline character from the result of the ```gets```
 * For this, we can use another Ruby method, ```strip```
 * But how do we call ```strip``` on the result of ```gets```?
+* ```gets``` will return a String, so we need to call ```strip``` on that resulting String
 
 ---
-## How do I call a Method on a String?
+### How do I call a Method on a String?
 
 * You can call a method *on* a string (in other words, perform an operation ON the string, rather than just perform an operation) by using Dot Notation
 * In simplified terms, Dot Notation lets you call methods on things like Strings (we'll see other examples later)
 * When you call a method on a string, the method has access to the string and operates accordingly
 
 ---
-## The ```strip``` method
+### The ```strip``` method
 
 * The Ruby Method ```strip``` lets you strip leading and trailing blank, newline and tab characters from a string
 
 ```ruby
-
 >> " hello ".strip
 => "hello"
 
@@ -425,10 +429,9 @@ Goodbye!
 Let's use the ```strip``` method on the *String* that we get back from invoking the ```gets``` method.
 
 ---
-## survey.rb
+### survey.rb
 
 ```ruby
-
 puts "Hello!"
 puts "Please type your name:"
 
@@ -445,7 +448,7 @@ puts "Goodbye!"
 ```
 ---
 
-## Run the script
+### Run the script
 
 ```
 $ ruby survey.rb
@@ -458,8 +461,8 @@ Goodbye!
 ```
 
 ---
-## A word of caution
-### Variables vs Methods
+### A word of caution
+#### Variables vs Methods
 
 * When you first look at ```name = gets```, it looks wonderful. It is simple. It is beautiful.
 * While that is true, many students often get confused by the potential ambiguity of the statement
@@ -472,7 +475,7 @@ A single line of code often is confusing or ambiguous without the preceding or f
 
 ---
 
-## Choosing Variable & Method Names Wisely
+### Choosing Variable & Method Names Wisely
 
 * Given the inherent complexity of reading code, you should always strive make your code easier to read for others
 * It's important to name variables appropriately so that it's inherently clear that they are variables (same goes for methods)
@@ -484,7 +487,7 @@ Let's take the program one step further, and take the age as input as well.
 
 ---
 
-## survey.rb
+### survey.rb
 
 ```ruby
 
@@ -507,7 +510,7 @@ puts "Goodbye!"
 
 ---
 
-## Run the program
+### Run the script
 
 ```
 $ ruby survey.rb
@@ -543,7 +546,7 @@ Can we do better?
 Whenever you add new features (e.g. user input) to a program, always take the time to look at the code and see if you can improve it (e.g. by simplifying it). This process is called *refactoring*.
 
 ---
-## survey.rb
+### survey.rb
 
 ```ruby
 
@@ -565,12 +568,12 @@ puts "Goodbye!"
 ```
 
 ---
-## The strip method
+### The strip method
 
 The ```strip``` method can be called on *any* string. We don't have to store it in a variable first just to call the method -- we can call ```strip``` directly on the result of ```gets```.
 
 ---
-## survey.rb v2
+### survey.rb v2
 
 ```ruby
 puts "Hello!"
@@ -598,7 +601,7 @@ puts "Goodbye!"
 Can we do better?
 
 ---
-## survey.rb v2
+### survey.rb v2
 
 ```ruby
 puts "Hello!"
@@ -621,7 +624,7 @@ puts "Goodbye!"
 Do we even need those variables? Inside the put statement, could we just pass ```gets.strip``` directly, rather than storing it as a variable and passing that?
 
 ---
-## survey.rb v3
+### survey.rb v3
 
 ```ruby
 puts "Hello!"
@@ -637,7 +640,7 @@ puts "Goodbye!"
 ```
 
 ---
-## Is it really better?
+### Is it really better?
 
 * This code does in fact work.
 * We removed lines of code, so it's simpler to read now, right?
