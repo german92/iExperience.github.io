@@ -192,16 +192,10 @@ you can always re-assign it to a new value.
 
 ---
 
-## Ruby Statements
+### Ruby Statements
 
-1. Does some work
-2. Returns a result
-
----
-## NOTE:
-
-* Assigning/re-assigning a variable always returns the variables **new** value after the assignment
-* So far, the *result* of each statement is purely informative, but it will be important later
+1. Do some work
+2. Return a result
 
 ---
 
@@ -344,12 +338,6 @@ Let's make the program even smarter by taking the name from *user input* (this m
 * Once the ```gets``` method has finished running, it *returns* a string as its result
 * You can then store the resulting string into a variable
 * The ```gets``` method is part of Ruby's system library
----
-### Gets vs Puts
-
-* While the puts method simply performs an operation (print to screen), the ```gets``` method both performs an operation (takes input from screen) *and* returns a result (the string the user typed).
-* As it turns out, ```puts``` actually returns as well, but it just returns nothing (the concept of 'nothing' is represented as Nil in Ruby)
-* We don't *have* to save the result of method calls into variables. We can just ignore the result.
 ---
 
 ### survey.rb
@@ -619,7 +607,6 @@ puts "Goodbye!"
 
 ```
 ---
-## Improvement?
 
 Do we even need those variables? Inside the put statement, could we just pass ```gets.strip``` directly, rather than storing it as a variable and passing that?
 
@@ -642,12 +629,13 @@ puts "Goodbye!"
 ---
 ### Is it really better?
 
-* This code does in fact work.
-* We removed lines of code, so it's simpler to read now, right?
+* The code still works, with less lines! Thus, it's better...right?
 * Not quite. Someone reading this might think, "Hmmm, it looks like it starts printing before it even gets user input. I wonder what happens?"
-* In this case, we've created ambiguity by trying to be *too* clever / concise.
+* In this case, we've created ambiguity by trying to be too concise
+* Generally, we should balance the efficiency of the code with its readability
 
 ---
+### Clarity is King
 
 As a general rule, prioritize code clarity over efficiency. As with any rule, there are exceptions, but it's more important that your code is readable and maintanable in the long run than it is for it to be 10% faster.
 
@@ -661,3 +649,8 @@ As a general rule, prioritize code clarity over efficiency. As with any rule, th
 * We learned how to call methods, and how to call them on strings
 * We learned about the important of writing simple & clear code
 
+---
+
+# EXERCISES
+
+[http://iexperience.github.io/exercises/1B.html](http://iexperience.github.io/exercises/1B.html)

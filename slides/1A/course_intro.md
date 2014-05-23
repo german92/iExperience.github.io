@@ -94,3 +94,5 @@ Good luck! We're rooting for you :)
 ---
 
 # EXERCISES
+
+[http://iexperience.github.io/exercises/1A.html](http://iexperience.github.io/exercises/1A.html)
