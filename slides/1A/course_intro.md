@@ -51,8 +51,7 @@
 * *11AM-2PM:* Morning Exercises / Projects / Lunch Break
 * *2PM-3:30PM:* Afternoon Lecture
 * *3:30PM-6PM:* Afternoon Exercises / Projects
-* *6PM-10PM:* Workshops / Talks / Excursions / Projects
-* *10PM-12AM:* Late-Night Hacking
+* *6PM-12AM:* Workshops / Talks / Excursions / Projects
 * *12AM:* House Closes
 
 ---
