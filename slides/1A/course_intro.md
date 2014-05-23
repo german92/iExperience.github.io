@@ -2,7 +2,7 @@
 
 ---
 
-# The Team
+# (Some Of) The Team
 
 * Aaron Fuchs (CEO)
 * Alexis Gillis (COO)
@@ -35,21 +35,37 @@
 
 ---
 
-# The Apprenticeship (4 Weeks)
+# Course Goals
 
+1. Learn to *teach yourself*
+2. Develop the patience to *deal with failure*
+3. Build something *you* are **proud of**
+4. Understand the web development process
+
+---
+
+# Keep in Mind
+
+* Lectures are your primary source of material
+* Exercises are critical to *complete* your learning. DO THEM!
+* Pay attention / participate during in-class walkthroughs. I will aim to improvise as much as possible to give you a sense of the true development process.
+* TreeHouse resources are supplemental materials. Use them!
+* You are in Cape Town. Live here!
+
+---
+
+# The Apprenticeship
+
+* 4 weeks long
 * Work with local companies
 * Learn about challenges in the industry
 * Creatively contribute to project goals
+* Up to you to provide value!
 
 ---
 
-# Course Goals
-
-1. Learn to teach yourself
-2. Develop the patience to **deal with failure**
-3. Understand the **high-level** web development process
-4. Build something __you__ are **proud of**
+Try and use this course as an apprenticeship @ iExperience. Look around. You are part of the birth of a new startup. Take advantage of this oppurtunity to learn (& contribute!).
 
 ---
 
-## Let the games begin!
+# Start exercising!
