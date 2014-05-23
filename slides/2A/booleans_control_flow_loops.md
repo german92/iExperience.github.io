@@ -54,10 +54,10 @@ Pay close attention to the syntax in a statement like ```1 == 2```. It is not a 
 ## Boolean Expressions
 
 ```ruby
->> (x = 4)
+>> x = 4
 => 4
 
->> (y = 5)
+>> y = 5
 => 5
 
 >> (x == y)
@@ -325,21 +325,6 @@ Exercise!
 
 ---
 
-## Control Flow
-### unless statements
-
-```ruby
->> done = false
-
->> unless done
->>   puts "Keep working!"
->> end
-
-Keep working!
-```
-
----
-
 # Loops
 
 ---
@@ -357,20 +342,6 @@ i = 10
 while i > 0
 	puts i
 	i = i - 1
-end
-```
-
----
-
-# Until Loop
-
-```ruby
-
-i = 0
-
-until i > 10
-	puts i
-	i = i + 1
 end
 ```
 
@@ -405,13 +376,7 @@ end
 
 ---
 
-## Exercise: E1 (FizzBuzz)
-
-Write a program that prints the numbers from 1 to 100.
-But for multiples of three print “Fizz” instead of the
-number and for the multiples of five print “Buzz”. For
-numbers which are multiples of both three and five
-print “FizzBuzz”.
+## Exercise: E4 (FizzBuzz)
 
 ---
 

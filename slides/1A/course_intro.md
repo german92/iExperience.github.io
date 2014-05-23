@@ -6,9 +6,10 @@
 
 * Aaron Fuchs (CEO)
 * Alexis Gillis (COO)
-* Salman Ansari (Professor)
-* Rafi Khan (TA)
+* Darren Kramer (CFO)
 * Isra Shabir (TA)
+* Rafi Khan (TA)
+* Salman Ansari (Professor)
 
 ---
 

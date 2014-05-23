@@ -309,12 +309,3 @@ In Ruby, method names, variable names, and Symbols are typically composed of low
 
 * Method Signatures: [http://www.sitepoint.com/method-signature-you-can-sink-your-teeth-into/](http://www.sitepoint.com/method-signature-you-can-sink-your-teeth-into/)
 * More Info on Symbols: [http://www.troubleshooters.com/codecorn/ruby/symbols.htm](http://www.troubleshooters.com/codecorn/ruby/symbols.htm)
-
-
----
-
-### HOMEWORK: 
-### Look up the methods available on Hashes and Arrays in Ruby Documentation
-### Play. Experiment. Learn.
-
----
