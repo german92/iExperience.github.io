@@ -6,7 +6,7 @@
 * So far our programs have had a *linear* flow. In other words, a set of things happen in order. 
 * No matter what, those statements will execute in that exact order.
 * As a program's complexity grows, we need to be able to execute different operations based on certain *conditions* (e.g. if the user chooses A, do something, if they choose B, do something else)
-* Ruby has a special type of value that is used to store whether a condition is true or false
+* We can represent these *conditions* using *Booleans*, which are are a simply Ruby data type that can either be ```true``` or ```false```
 
 ---
 
@@ -29,38 +29,38 @@
 
 ---
 
-Pay close attention to the syntax in a statement like ```(1 == 2)```. It is not a variable assignment, or a method call.
+Pay close attention to the syntax in a statement like ```(1 == 2)```. It is not a variable assignment.
 
-It is a comparison *operator* as part of a *Boolean expression*.
+Rather, it is a *Boolean expression* with two *operands* and one *operator*. The result of a Boolean expression is always a *Boolean* value (```true``` or ```false```).
 
 ---
-## What is a Boolean Expression?
+## Boolean Expressions
 
 * A Boolean expression is one or more comparisons that evaluate to true or false
 * The terms are each compared using comparison *operators*, which include: ==, <, <=, >, >=
-* The comparison *operands* can be literal values (e.g. 1, 3, "hi") or variables
+* The comparison *operands* can be literal values (e.g. 1, 3, "hi") OR variables
 
 ---
 ### Boolean Expressions
 #### Using Variables
 
 ```ruby
+>> (4 < 5)
+=> true
+
 >> x = 4
 => 4
-
 >> y = 5
 => 5
-
->> (x == y)
-=> false
 
 >> (x < y)
 => true
 
->> (x >= y)
+>> (x == y)
 => false
 ```
 ---
+#### So what?
 
 By themselves, Boolean Expressions don't seem to serve much value. Their power comes in when they are used to control logic flow of the program, typically using *if statements*.
 
@@ -189,10 +189,10 @@ end
 ```
 ---
 
-#### NOTE: Single vs Double Equal Signs
+#### ATTENTION: = vs ==
 
 ```ruby
->> x = 1 # Assignment, sets value of x
+>> x = 1 # Assignment sets value of x
 => 1
 
 >> x == 1 # Boolean Expression
