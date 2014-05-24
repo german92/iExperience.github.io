@@ -313,14 +313,24 @@ This is not good style:
 >> health_info[:weight] = 200
 => 200
 ```
+---
+
+### More Info on Symbols
+
+You can check out the Ruby_Newbie Guide to Symbols: [http://www.troubleshooters.com/codecorn/ruby/symbols.htm](http://www.troubleshooters.com/codecorn/ruby/symbols.htm)
+
+For now though, all you really need to know about Symbols is that they are more efficient than Strings to declare and pass around, and so we use them as keys for Hashes.
 
 ---
 
-In Ruby, method names, variable names, and Symbols are typically composed of lowercase letters and underscores. Stick to that convention (e.g. my_name not MyName34$).
+# RECAP
+
+* We learned how to create lists (arrays), modify and iterate over them
+* We learned how to create hashes (dictionaries), modify and iterate over them
+* We learned about symbols and how they are used as keys for hashes
 
 ---
 
-# Resources
+# EXERCISES
 
-* Method Signatures: [http://www.sitepoint.com/method-signature-you-can-sink-your-teeth-into/](http://www.sitepoint.com/method-signature-you-can-sink-your-teeth-into/)
-* More Info on Symbols: [http://www.troubleshooters.com/codecorn/ruby/symbols.htm](http://www.troubleshooters.com/codecorn/ruby/symbols.htm)
+[http://iexperience.github.io/exercises/2B.html](http://iexperience.github.io/exercises/2B.html)
