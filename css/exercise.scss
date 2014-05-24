@@ -15,14 +15,9 @@ a, .a-like {
   text-decoration: none;
   color: $green;
   @include transition(color 0.2s);
-
-  &:visited {
-    color: $dark-green;
-  }
   &:hover {
     text-decoration: underline; 
   }
-
 }
 
 h2 {
@@ -117,7 +112,9 @@ pre code {
     padding: 10px;
     font-size: 120%;
   }
-  &::hover {
+  &:hover {
+    color: white;
+    text-decoration: none;
     background-color: #3c9b7f;
   }
 }

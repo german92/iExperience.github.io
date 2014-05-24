@@ -28,7 +28,15 @@
   </div>
 </div>
 <div class="container">
-  <h2>E1: Guess the Class</h2>
+  <h1>Review</h1>
+<p>
+  <b>Topics Covered:</b> calling methods; objects; classes
+</p>
+<hr class="large">
+
+<!-- Exercises -->
+<h1>Exercises</h1>
+<h2>E1: Guess the Class</h2>
 <p>
   What's the output of each of the following? Check in <code>irb</code>.
 </p>
@@ -44,45 +52,14 @@ x.join.class
 x.length.class <span class="comment"># .length is the same as .size</span>
 x.class.class
 x.class.class.class</code></pre>
-<p class="hint">
+<p class="info hint">
   Classes are why things like <code>1 + "hi"</code> don't work—now the error message <code>TypeError: String can't be coerced into Fixnum</code> might start making some sense. Methods like <code>.to_i</code> and <code>.to_s</code> make it easy to convert between classes.
 </p>
-<h2>E2: Build a List</h2>
-<p>
-  In <code>d3</code>, create a program that asks the user for items. Add each item to a list, and print out the whole list after each item.
-</p>
-<pre><code>$ ruby list_builder.rb
-Welcome to list builder!
-What can I add?
-yummy things
-Added! Your list is:
-["yummy things"]
-What can I add?
-icky things
-Added! Your list is:
-["yummy things", "icky things"]
-</code></pre>
-<p class="hint">
-  To keep a program running forever, put your code in a <code>while true</code> loop. To exit such a program, press <code>Ctrl-c</code> in the shell.
-</p>
-<a class="hover-show pull-right">Hover for answer</a>
-<div class="hover-hide">
-  <pre><code><span class="comment"># list_builder.rb</span>
-  
-puts "Welcome to list builder!"
-list = []
-while <span class="boolean">true</span> do
-  puts "What can I add?"
-  item = gets.strip
-  list.push(item)
-  puts "Added! Your list is:"
-  p list <span class="comment"># p is like puts, but works with all objects, not just strings</span>
-end</code></pre>
-</div>
-<h2>E3: Split Up</h2>
+<h2>E2: Split Up</h2>
 <p>
   Use your best friend Google (or Bing, if you're one of those) to research the method <code>split</code> in Ruby. Then answer the following questions:
 </p>
+
 <ol>
   <li>What class of objects can it be called on?</li>
   <li>What class does it return?</li>
@@ -91,6 +68,9 @@ end</code></pre>
   <li>Give example usage.</li>
   <li>Can you think of a method we've learned that behaves like the opposite of <code>split</code>?</li>
 </ol>
+<p>
+  Only <b>after</b> you've written down your answers should you check them. If you don't know, give it your best shot—you're not being graded, so you're only helping yourself :)
+</p>
 <a class="hover-show pull-right">Hover for answer</a>
 <div class="hover-hide">
   <ol>
@@ -100,70 +80,280 @@ end</code></pre>
     <li>The first argument may be a String, Regexp or nil (don't worry about what a Regexp is yet). The second argument, if provided, must be a Fixnum.</li>
     <li>
       <pre><code>"Coding is cool".split(" ")
- => ["Coding", "is", "cool"]</code></pre>
-        </li>
-        <li>
-          <code>join</code>, which takes an array and merges all of its items into a string, can behave like its opposite:
-          <pre><code>"Coding is cool".split(" ").join(" ")
- => "Coding is cool"</code></pre>
-          Notice how we can chain methods (use one after another wihtout assigning the intermediate result to a variable)—it's a very powerful technique!
+=> ["Coding", "is", "cool"]</code></pre>
+    </li>
+    <li>
+      <code>join</code>, which takes an array and merges all of its items into a string, can behave like its opposite:
+      <pre><code>"Coding is cool".split(" ").join(" ")
+=> "Coding is cool"</code></pre>
+      Notice how we can chain methods (use one after another wihtout assigning the intermediate result to a variable)—it's a very powerful technique.
     </li>
   </ol>
 </div>
-<h2 class="bonus">E4 (Bonus!): An Extensive Listbuilder</h2>
-<p>
-  Create an extensive list builder, that allows you to add items with a command like <code>add x</code>, remove items with <code>remove x</code>, and quit with <code>quit</code>
-</p>
-<pre><code>$ ruby ext_list_builder.rb
-Welcome to list builder++!
-What can I do for you?
-add a
-Added! Your list is:
-["a"]
-What can I do for you?
-add b
-Added! Your list is:
-["a", "b"]
-remove a
-Removed! Your list is:
-["b"]
-quit
-Bye!</code></pre>
-<p class="hint">
-  This is the pinnacle—it'll require knowledge from all the exercises up until this point! Since the program will be long, you may want to sketch out a solution before you start coding. How do you keep track of whether you're done? What if the user makes a typo, tries a different command, or tries to remove something not in the list? Can they they see the list of available commands somehow?
-  <br>
-  After you come up with a solution, try to stress test, and check for edge cases (not typing anything, typing many words, etc.). Then ask one of the TA's to stress test for you and find any bugs!
-</p>
-<a class="hover-show pull-right">Hover for answer</a>
-<div class="hover-hide"><pre><code># ext_list_builder.rb</span>
 
-puts "Welcome to list builder++!"
-list = []
-done = false
-while !done do
-  puts "What can I do for you?"
-  command = gets.strip
-  tokens = command.split(" ")
-  if tokens[0] == "add"
-    item = tokens[1]
-    list.push(item)
-    puts "Added! Your list is:"
-    p list
-  elsif tokens[0] == "remove"
-    item = tokens[1]
-    list.delete(item)
-    puts "Removed! Your list is:"
-    p list
-  elsif tokens[0] == "quit"
-    puts "Bye!"
-    done = true
-  elsif tokens[0] == "help"
-    puts "You can add items with 'add x', remove items with 'remove x' and quit with 'quit'."
-  else
-    puts "Command not recognized"
-  end
-end</code></pre>
+
+<h2>E3: Hashes and lists, oh my!</h2>
+<p>
+  Create a hash (in <code>ingredients.rb</code>) that maps a dish name (i.e. "Hash browns") to a list of necessary ingredients (i.e. "Potatoes", "Butter", "...is there anything else?"). Add at least 3 dishes. Each dish should have at least 3 ingredients.
+</p>
+
+<h4>Hash on Hash on Hash</h4>
+<p>
+  Create a new file <code>recipes.rb</code>. This time, map each dish name to another hash. That hash should have keys <code>:description</code> (which maps to a <code>String</code>), <code>:ingredients</code> (which maps to an array of Strings, like above, and <code>:steps</code> (which maps to an array of Strings that, you guessed it, tell you how to make the dish). 
+</p>
+<p>
+  If you finish early, cook one of those dishes for your TA.
+</p>
+<div class="info warning">
+  In code, formatting is important. If you're making a nested object, use a clear structure:
+  <ul>
+    <code>
+      <pre style="font-style: normal">
+hash = {
+:a => {
+:b => ["c", "d"]
+},
+:e => "f"
+}</pre>
+    </code>
+  </ul>
 </div>
+<h4>Notation</h4>
+<p>
+  When describing complex objects, it's nice to have a way to describe them. If I were to describe a hash that maps a symbol to a string, for example, I would write <code>Hash&lt;Symbol, String&gt;</code>. For nested structures: <code>Hash&lt;Symbol, Array&lt;String&gt;&gt;</code> (a hash that maps a symbol to an array of strings). Write down the signatures for:
+  <ol>
+    <li>The hash in <code>ingredients.rb</code></li>
+    <li>A hash that maps hashes to an array of integers</li>
+    <li>An array of hashes that map arrays of strings to symbols</li>
+    <li>The hash in the yellow box above (can it be done? explain why).</li>
+  </ol>
+</p>
+
+<h2>E4: hsaH</h2>
+<p>
+  Write a method <code>invert</code> that inverts the keys and values of a Hash. 
+</p>
+<h4>Testing</h4>
+<p>
+  A huge part of writing code is testing to make sure it works, in particular <b>edge cases</b>. Edge cases are common inputs that break a program: things like passing in <code>nil</code>, negative numbers, very large numbers, etc. What kinds of test cases and edge cases can you think of for this method? Here are some:
+  <ul>
+    <li><code>nil</code></li>
+    <li><code>{:a => ["b", "c"]}</code></li>
+    <li><code>{:a => ["b", {:c => "d"}]}</code></li>
+  </ul>
+  <p>
+    Considentally, Ruby comes with a built-in method called <code>invert</code> on the <code>Hash</code> class. Try these test cases on those (i.e. <code>{:a => ["b", "c"]}.invert</code>). How does your program's output compare to Ruby's? Can you think of any other test cases?
+  </p>
+</p>
+
+<h2 class="bonus">E5 (Bonus!): The Fibonacci Re-code</h2>
+<p>
+  Now that you know more about methods, take the Fibonacci code you wrote earlier and make it into a method in <code>d3/fibonacci_method.rb</code>. Your code should still behave the same way, but wrap your code in a <code>while true</code> loop so that it doesn't exit every time:
+</p>
+<pre><code>$ ruby fibonacci_method.rb
+Enter a number:
+10
+Fibonacci at 10: 55
+Enter a number:
+11
+Fibonacci at 11: 89</code></pre>
+<p>
+  For this exercise, we're going to explore the topic of <em>recursion</em>, or calling a method <em>in itself</em>. For example, suppose I wanted to write a method that returned the sum of all the numbers up to the one it was given. I might write this:
+</p>
+<pre><code><span class="comment"># sum_loop.rb</span>
+
+def sum_up_to(num)
+sum = 0
+num.times do |i|
+sum += (i+1)
+end
+return sum
+end
+
+sum_up_to 10
+<span class="string"># => 55</code></pre>
+<p>
+  But a more elegant way might be:
+</p>
+<pre><code><span class="comment"># sum_recursive.rb</span>
+
+def sum_up_to(num)
+return 0 if num == 0
+return num + sum_up_to(num-1)
+end</code></pre>
+<p>
+  That little bit of code packs a lot of punch. It stems from the observation that the sum of the numbers <code>0...5</code> is the same as <code>5 +</code> the sum of <code>0...4</code>. In general:
+  <ul>
+    <code>sum 0...n = n + sum 0...n-1</code>
+  </ul>
+  Recursion stems from the <em>induction principle</em>, which you might remember from way back when. Basically, it requires two things: a <b>base case</b> and <b>an inductive step</b>. Our base case is easy: the sum of all the numbers up to 0 is 0. We know that, it's always true, and we can hard code it in. The inductive step is the answer to: <b>if we know the answer for <code>n</code>, how can we find the answer for <code>n+1</code>?</b> For our case, that's easy again: just add <code>n+1</code> to the answer for <code>n</code> (or rather, <code>n</code> to the answer for <code>n-1</code>).
+</p>
+<pre><code><span class="comment"># sum_recursive.rb</span>
+
+def sum_up_to(num)
+return 0 if num == 0          <span class="string"># Base case</span>
+return num + sum_up_to(num-1) <span class="string"># Inductive (or recursive) step.</span>
+end</code></pre>
+<p>
+  You might be able to guess what the Fibonacci re-code is: Can you implement the fibonacci method so that it uses recursion?
+</p>
+
+<h2 class="bonus">E6 (Bonus!): hsaH no hsaH no hsaH</h2>
+<p>
+  Knowing what you know about recursion, write a method that inverts all the keys and values for a hash, as well as those for any hashes in it. It should use the <code>invert</code> method you wrote above.
+</p>
+<pre><code><span class="comment"># invert_recursive.rb</span>
+
+# Your code here...
+
+{:a => {:b => "c"}}.invert_recursive
+<span class="string"># => {\{"c" => :b} => :a}</span>
+{:a => ["b", {:c => "d"}]}.invert_recursive <span class="string"># Be careful!</span>
+<span class="string"># => {["b, {"d" => :c}] => :a}</span>
+</code></pre>
+<p>
+  Test, find edge cases, be merry!
+</p>
+<hr class="large">
+
+<!-- Projects -->
+<h1>Projects</h1>
+<h2>Ruby: Fueling Consumerism</h2>
+<p>
+  Now that you have a beautiful presence on the Internet, we're going to work on bringing one of the most notable American vices to South Africa: consumerism. Over the next two days, you'll use your new knowledge of Ruby—with all its Hashes and Classes—to build a Shopping Cart and some Shoppers. It will closely model something you might build in a Rails application some day.
+</p>
+<h4>
+  The Goods
+</h4>
+<p>
+  To start, create a <code>shopping_cart</code> folder in your <code>projects</code> directory. We'll start with an <code>Item</code> class, so in <code>shopping_cart</code>, create a file called <code>item.rb</code>. Item is the simplest: it just has a <code>name</code> and a <code>price</code>. Copy the below code into it:
+</p>
+<pre><code><span class="comment"># item.rb</span>
+
+class Item
+# @param{string} name The item's name
+# @param{float} price The item's price
+def initialize(name, price)
+end
+
+# Accessor methods
+
+# Returns name
+def name
+end
+
+# Returns price
+def price
+end
+end</code></pre>
+<p>
+  This code doesn't do anything yet, but should be simple to fill out. Go ahead and do so, just like we did in lecture.
+</p>
+<h4>
+  The Vehicle
+</h4>
+<p>
+  Next we're going to build a <code>Cart</code> class that will hold all of the items, as well as how many items there are. Put this in a new file, <code>cart.rb</code>. This cart will closely resemble Lesson 2B, Exercise 4, so feel free to borrow and modify code from there. To start, here's a template:
+</p>
+<pre><code><span class="comment"># cart.rb</span>
+
+class Cart
+def initialize
+end
+
+# @return{Hash&lt;string, Hash&lt;:item => Item, :quantity => Float&gt;&gt;}
+#   The items and their quantities in the cart, keyed by item name.
+def items
+end
+
+# @return{float} The total price of all the goods in the cart.
+def total_price
+end
+
+# @param{Item} item The item to add. 
+def add(item)
+end
+
+# @param{Item} item The item to remove. 
+def remove(item)
+end
+end</code></pre>
+<p>
+The exact specification is as follows:
+<ul>
+  <li>
+    Cart should keep a class variables called <code>@items</code>.
+    <code>@items</code> will be <code>Hash</code>, where the keys are the item names (strings).
+  </li>
+  <li>
+    The values of that hash will themselves be hashes (which we'll call <code>item_obj</code>s), with two keys: <code>:item</code> and <code>:quantity</code>. The value of <code>:item</code> will be the <code>Item</code> object, and the value of <code>:quantity</code> will be the number of that item in the cart. The value of quantity should never be below 0.
+  </li>
+  <li>
+    <code>add</code> will increment the quantity if the item already exists, or create a new, properly created <code>item_obj</code>.
+  </li>
+  <li>
+    <code>remove</code> will decrement the quantity if the item exists and has a quantity of at least 1. Otherwise, it will do nothing.
+  </li>
+  <li>
+    <code>total_price</code> returns a <code>float</code> of the total price of all items in the cart. 
+  </li>
+</ul>
+</p>
+<p>
+Like in the slides, let's create a <code>main.rb</code> that we'll use to test. This is a sample of how you might test it:
+</p>
+<pre><code><span class="comment"># main.rb</span>
+
+require_relative 'item'
+require_relative 'cart'
+milk = Item.new("milk", 1.20)
+eggs = Item.new("eggs", 1.30)
+cart = Cart.new
+cart.add(milk)
+cart.add(milk)
+cart.add(eggs)
+p cart.items
+<span class="string"># Console output might look like (but less well formatted):
+# {
+#   "milk" => {
+#     :item => #&lt;Item:0x00...>,
+#     :quantity => 2
+#   },
+#   "eggs" => {
+#     :item => #&lt;Item:0x00...>,
+#     :quantity => 1
+#   }
+# }</span>
+p cart.total_price
+<span class="string"># 3.7</span>
+cart.remove(milk)
+p cart.total_price
+<span class="string"># 2.5</span></code></pre>
+<p>
+After you think you have a working answer, download the test file from <a href="../files/shopping_cart_test_1.rb" target="_blank">here</a> and put it in your <code>shopping_cart</code> directory (just do File -> Save from Chrome). Run it with <code>ruby shopping_cart_test_1.rb</code>. If you're failing any tests, make them pass.
+</p>
+<h4>Add Some Mustard</h4>
+<p>
+  To spicen up your code, implement the following:
+  <ul>
+    <li>
+      Add an optional <code>quantity</code> parameter to <code>add</code> and <code>remove</code>, so we can just do <code>add(milk, 2)</code>. Make sure <code>remove</code> still can't ever be negative.
+    </li>
+    <li>
+      Give each item a <code>weight</code> property, and the <code>Cart</code> a <code>total_weight</code> method.
+    </li>
+    <li>
+      Make it so you can't create two <code>Item</code>s with the same name. That is, the below should fail (i.e. not create the second milk):
+      <ul>
+        <code>
+          Item.new("milk", 2)<br>
+          Item.new("milk", 3)
+        </code>
+      </ul>
+      This will involve research into <b>class methods and properties</b>.
+    </li>
+  </ul>
+</p>
 
 </div>
 <div class="footer">

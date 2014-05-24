@@ -1,0 +1,479 @@
+---
+title: Exercise 3B
+layout: exercise
+prev: 3A
+next: 4A
+permalink: /exercises/3B.html
+---
+<h1>Review</h1>
+<p>
+  <b>Topics Covered:</b> Defining methods, classes, and modules; using methods, classes, and modules effectively.
+</p>
+<hr class="large">
+
+<!-- Exercises -->
+<h1>Exercises</h1>
+<h2>E1: A Mass for the Masses</h2>
+<p>
+  We're going to review what we learned in class about classes.
+  Check out this code, and <b>write down</b> the answers to the questions below, in a file called <code>mass_quiz</code>. Have a teacher check them for you.
+</p>
+<pre><code>class Person
+  def initialize(name)
+    @name = name <span class="string"># Line 3</span>
+  end
+
+  def name
+    return @name
+  end
+end
+
+class Christian < Person
+  def initialize(name, type)
+    @name = name
+    @type = type
+  end
+
+  def go_to_mass
+    puts "Going to mass..."
+  end
+end 
+
+abdullah = Christian.new("abdullah", "original")</code></pre>
+<p>
+  <ol>
+    <li>Why is line 3 necessary? What happens without it?</li>
+    <li>Is <code>Christian</code> a subclass or a superclass?</li>
+    <li>What will running <code>Christian.go_to_mass</code> do? Why?</li>
+    <li>What will running <code>abdullah.type</code> do? Why? If you think it's broken, how can you fix it? If you think it works, what does it return?</li>
+    <li>
+      What is <code>abdullah</code>? Choose all that apply:
+      <ul>
+        <li>A class</li>
+        <li>A method</li>
+        <li>An instance</li>
+        <li>An object</li>
+        <li>A variable</li>
+      </ul>
+    </li>
+  </ol>
+</p>
+<h4>Raise a Glass to Glasses</h4>
+<p>
+  Trudging onward:
+</p>
+<pre><code>module HasGlasses
+  def put_on_glasses
+    @glasses = "on"
+  end
+  def take_off_glasses
+    @glasses = "off"
+  end
+  def drink_ten_glasses
+    @thirsty = "false"
+  end
+
+  def glasses_on?
+    return (@glasses == "on")
+  end
+end
+
+class Christian < Person
+  include HasGlasses
+end
+
+class Muslim < Person
+  include HasGlasses
+end
+
+mary = Muslim.new("mary")</code></pre>
+<p>
+  <ol start="6">
+    <li>Will all this code work? Do you see any bugs? Before you try it yourself, write down your answer. If you see bugs, note what they are and how you would fix them.</li>
+    <li>What will <code>Muslim.new("mary", "sunni")</code> do? Why?</li>
+    <li>In the code, we're calling <code>Muslim.new("mary")</code>, even though the <code>new</code> method isn't <code>def</code>'d anywhere. How come it works?</li>
+    <li>What will <code>Muslim.put_on_glasses</code> do? Why?</li>
+    <li>If after the last line of code, you ran <code>mary.glasses_on?</code>, what would happen? Why? If you think it's broken, how can you fix it? If you think it works, what does it return?</li>
+    <li>What is <code>HasGlasses</code>? Choose all that apply:
+      <ul>
+        <li>A class</li>
+        <li>A method</li>
+        <li>An instance</li>
+        <li>An object</li>
+        <li>A variable</li>
+      </ul></li>
+  </ol>
+</p>
+<h2>E1: String Theory</h2>
+<p>
+  A common way to practice arrays and methods is to write <em>string manipulation</em> methods, or methods that modify strings. The cool thing about Ruby is that you can always modify any class and add methods to it. For example, instead of our <code>shout</code> method, we could have written it into the <code>String</code> class itself:
+</p>
+<pre><code>class String
+def shout
+self.upcase
+end
+end
+
+"hElLo".shout
+<span class="string"># => "HELLO"</span></code></pre>
+<p>
+  For this exercise, we're going to add some methods to the <code>String</code> class. Create <code>d3/super_strings.rb</code>.
+</p>
+
+<h4>Iglatinpay</h4>
+<p>
+  You may be familiar with <em>Piglatin</em>, which is a language just like English, but each first letter of a word is put at the end and followed by "ay". So, "Piglatin" in Piglatin is "Iglatinpay", and "iglatinpay" is "glatinpayiay". Write a method <code>piglatinify</code> to get this behavior.
+</p>
+<h4>Histay Siay Iglatinpay</h4>
+<p>
+  Write a method <code>piglatinify_sentence</code> that makes each word in a sentence into Piglatin.
+</p>
+<h4>Strip Down</h4>
+<p>
+  Write the method <code>strip</code> (but call it <code>strip_new</code>). Test it against Ruby's strip with a variety of test samples. Does it always behave the same?
+</p>
+
+<pre><code><span class="comment"># super_strings.rb</span>
+
+# Your code here
+
+"piglatin".piglatinify
+<span class="string"># => "iglatinpay"</span>
+"Piglatin".piglatinify
+<span class="string"># => "Iglatinpay" (watch out for capital letters!)</span>
+"This is Piglatin".piglatinify_sentence
+<span class="string"># => "Histay siay Iglatinpay"</span>
+" 
+tripsay emay \t ".strip_new
+<span class="string"># => "tripsay emay"</span>
+</code></pre>
+
+<h2>E2: Modulify</h2>
+<p>
+  Make your Piglatin methods into a module called <code>Piglatinify</code> in <code>piglatinify.rb</code>. The two methods should work on any class (perhaps the <code>to_s</code> method will come in handy here). Test by creating another file.
+</p>
+<pre><code><span class="comment"># d3/some_other_file.rb</span>
+
+require_relative 'piglatinify'
+
+class Array
+include Piglatinify
+end
+[:a, :b, :c].piglatinify
+<span class="string"># => ":a, :b, :c][ay"</span>
+[:a, :b, :c].piglatinify_sentence
+<span class="string"># => ":a,[ay b,:ay c]:ay"</span></code></pre>
+
+<h2>E3: Finding things</h2>
+<p>
+  One of the best uses of a computer is to find things—meaning information or other data. Facebook finds what your friends are doing, Buzzfeed finds things you kind of care about, and even Bing finds things sometimes, too. For this exercise, you're going to write your own code that finds things.
+</p>
+<h4>Thing = letter in string</h4>
+<p>
+  Write a method <code>index_of</code> that takes two paramters, a string and a letter. Return the index of the first time the letter occurs in that string, or -1 if it doesn't occur.
+</p>
+
+<h4>Thing = item in array</h4>
+<p>
+  Write a method <code>find_by_name</code>, which takes an array of hashes, each of which has the property <code>:name</code>, and a string and finds the first one that has that name.
+</p>
+<h4>Thing = items in array</h4>
+<p>
+  Write a second, very similar method <code>filter_by_name</code>, which returns and array with <b>all</b> the items with the given name. Note that that method should always return an array, even if only one item is found.
+</p>
+<pre><code><span class="comment"># finding_things.rb</span>
+
+# Your code here
+
+index_of("abcdefghijklmnop", "m")
+<span class="string"># => 12</span>
+index_of("abcdefghijklmnop", "z")
+<span class="string"># => -1</span>
+
+people = [
+  {
+    :id => 1,
+    :name => "bru"
+  },
+  {
+    :id => 2,
+    :name => "ski"
+  },
+  {
+    :id => 3,
+    :name => "brunette"
+  },
+  {
+    :id => 4,
+    :name => "ski"
+  }
+]
+find_by_name(people, "ski")
+<span class="string"># => {:id=>2,:name=>"ski"}</span>
+find_by_name(people, "kitten!!!")
+<span class="string"># => nil</span>
+filter_by_name(people, "ski")
+<span class="string"># => [{:id=>2,:name=>"ski"}, {:id=>4,:name=>"ski"}]</span>
+filter_by_name(people, "bru")
+<span class="string"># => [{:id=>1,:name=>"bru"}] (Note this is still an array)</span>
+filter_by_name(people, "kitten!!!")
+<span class="string"># => []</span>
+</code></pre>
+
+<h2>E4: Tic-Tac-Toe</h2>
+<p>
+  This one's more a mini-project: we're going to work through building a simple tic-tac-toe application from scratch. Pick a partner who you haven't worked with before, create <code>tictactoe.rb</code> in <code>d3</code> and let's get started.
+</p>
+<h4>Step 1: Planning</h4>
+<p>
+  As usual, we're going to plan out our approach before we begin coding. Read the following carefully—your program must:
+  <ul>
+    <li>Take input from two players</li>
+    <li>Detect invalid input</li>
+    <li>Keep track of whose turn it is</li>
+    <li>Keep track of a board</li>
+    <li>Keep track of which squares have been filled in on the board, and not let the same square be filled in more than once</li>
+    <li>Detect a winner when a player has won</li>
+  </ul>
+  The input will be an integer from 0-8 and the squares will be numbered top-left to bottom-right (0 is the top-left square, 2 is the top-right square, 4 is the middle square, and 8 is the bottom-right square).  
+</p>
+<p>
+  In <code>tictactoe.rb</code>, answer the following questions:
+</p>
+<pre><code><span class="comment"># tictactoe.rb</span>
+
+# How will you keep track of whose turn it is?
+# What data structure will you use to keep track of the board? You only
+#   know two (Array, Hash), but remember they can be nested (meaning an
+#   array can contain another array—it can even contain a hash that contains
+#   another hash, though unclear if that will be useful :P)
+# When a player makes a move, what should happen? 
+# How do you keep track of which squares have x's and which have o's?
+# How do you detect a winner?
+# When does the program stop? Is there a loop? If so, what kind?</code></pre>
+<h4>Step 2: Pseudo-code</h4>
+<p>
+  <em>Pseudo-code</em> is code that's written in English; that is, step by step instructions for how your program behaves. An example:
+</p>
+<pre><code># Every turn:
+#   Update whose turn it is
+#   Get user input
+#   Update board
+#   Check for winner</code></pre>
+<p>
+  Of course, that's pretty easy to write, but may not be so obvious to translate into code. What exactly is a turn? How does one update the board? These are questions you've started thinking about in Step 1. For Step 2, expand your thinking and the above pseudo-code to make a more detailed outline. That is, your writing may contain words like "Array" and "Hash", but probably doesn't contain any "[" or "{". As you write, consider these questions, and be ready to answer them:
+  <ul>
+    <li>Do you need to make any classes or modules?</li>
+    <li>
+      What functionality are you using often? Do you need any helper methods?
+    </li>
+    <li>
+      Again: is there a loop? What kind of loop? Does it end? When? How? If no loop, how is your program structured?
+    </li>
+  </ul>
+</p>
+<p class="hint info">
+  It may be starting to become clear that coding is much more about <b>thinking</b> than anything else. While there isn't necessarily a best solution, there are solutions that are much more intuitive and easier to understand than others. Remember that code is meant to be read by <b>humans</b>, and when two pieces of code do the same thing with the same efficiency, the one that's simpler is always better.
+</p>
+<p>
+  <b>Check in with a TA before continuing!</b>
+</p>
+<h4>Step 3: Code</h4>
+<p>
+  Now that you have your pseudo-code, it should be a simple matter to turn it into real code. Take a crack at it, and see if it works. 
+</p>
+<pre><code>$ ruby tictactoe.rb 
+Player 1:
+0
+Player 2:
+1
+Player 1:
+kittens
+Error: Invalid input
+Player 1:
+10
+Error: Invalid input
+Player 1:
+3
+Player 2:
+2
+Player 1:
+2
+Error: Square already taken
+Player 1:
+6
+Congrats, player 1 won!</code></pre>
+    
+    <p class="info hint">
+      If you've gotten this far, you actually know quite a bit about coding, and the coding process. This was actually a Google coding interview problem (though keep that fact hush hush!). When you interview at companies—or try to code anything, really—this workflow is a good one to keep in mind: first <b>talk through</b> your solution and think about what <b>data structures</b> you'll use. Then write <b>pseudo-code</b> and try to foresee as many problems as you can. Only when you're confident in your <b>thinking</b> should you start coding.
+    </p>
+    <h4>Step 4: User Experience</h4>
+    <p>
+      To be honest, while your program is cool, it's not very user friendly...humans aren't very good at remembering what the board looks like. Add a method to print out the board after each step. We've picked a design, but feel free to make it look like however you want.
+    </p>
+    <pre><code>$ ruby tictactoe.rb
+Player 1:
+4
+     |   |   
+  ———+———+———
+     | X |   
+  ———+———+———
+     |   |   
+Player 2:
+0
+   O |   |   
+  ———+———+———
+     | X |   
+  ———+———+———
+     |   |   
+Player 1:
+2
+   O |   | X 
+  ———+———+———
+     | X |   
+  ———+———+———
+     |   |   
+Player 2:
+6
+   O |   | X 
+  ———+———+———
+     | X |   
+  ———+———+———
+   O |   |   
+Player 1:
+3
+   O |   | X 
+  ———+———+———
+   X | X |   
+  ———+———+———
+   O |   |   
+Player 2:
+5
+   O |   | X 
+  ———+———+———
+   X | X | O 
+  ———+———+———
+   O |   |   
+Player 1:
+1
+   O | X | X 
+  ———+———+———
+   X | X | O 
+  ———+———+———
+   O |   |   
+Player 2:
+7
+   O | X | X 
+  ———+———+———
+   X | X | O 
+  ———+———+———
+   O | O |   
+Player 1:
+8
+   O | X | X 
+  ———+———+———
+   X | X | O 
+  ———+———+———
+   O | O | X 
+Cats game!</code></pre>
+
+<h2>E5: Bigger. Better. Squared.</h2>
+<p>
+  Implement a 4 by 4 tic-tac-toe game.
+</p>
+
+<h2 class="bonus">E6 (Bonus!): Computer Tic-Tac-Toe</h2>
+<p>
+  While playing against a person is fun, us loners need something to do. Write a program that <b>plays tic tac toe against you</b>. It should be smart!
+</p>
+<pre><code>$ ruby computer_tictactoe.rb
+Would you like to be Player 1 or Player 2?
+1
+Player 1:
+4
+Computer: 0
+   O |   |   
+  ———+———+———
+     | X |   
+  ———+———+———
+     |   |   
+Player 1:
+2
+Computer: 6
+6
+   O |   | X 
+  ———+———+———
+     | X |   
+  ———+———+———
+   O |   |   
+Player 1
+5
+Computer: 8
+3
+   O |   | X 
+  ———+———+———
+   O | X | X 
+  ———+———+———
+   O |   |   
+The computer wins!
+</code></pre>
+<p>
+  As you can see, it's pretty tough to get a computer to even be smart about something as simple as tic-tac-toe—the human brain is really amazing. Now consider how much code and intelligence is required to make a program that plays chess, or gives directions to some place depending on traffic and road closings...it's actually quite humbling.
+</p>
+<hr class="large">
+
+
+<!-- Projects -->
+<h1>Projects</h1>
+<h2>Ruby: Fueling Consumerism</h2>
+<p>
+  Onward the plot to bring consumerism to Cape Town. We have the Goods and the Vehicle, all we need is the Villan.
+</p>
+<p>
+  Create a <code>Shopper</code> class. It should:
+  <ul>
+    <li>Have one required parameter, <code>first_name</code></li>
+    <li>Optionally have <code>last_name</code> and <code>money</code> properties, which should be input via an <code>options</code> hash in the constructor.</li>
+    <li>If <code>money</code> is not provided in the <code>options</code> hash, then it should default to 100.</li>
+    <li>Have methods to get a <code>first_name</code>, <code>last_name</code> and <code>money</code>, and a <code>full_name</code> method</li>
+    <li>
+      Have a <code>cart</code> property that is set to an empty <code>Cart</code> in the constructor.
+    </li>
+    <li>
+      Have <code>add_to_cart</code> and <code>remove_from_cart</code> methods.
+    </li>
+    <li>
+      Have a <code>checkout</code> method that empties the cart and subtracts the total price of its items from <code>money</code> proprety, <b>only if</b> the shopper has enough money. If not, the method does nothing.
+    </li>
+  </ul>
+</p>
+<h4>More power, Less responsibility</h4>
+<p>
+  Now create a <code>SuperShopper</code> class. It should:
+  <ul>
+    <li>Extend <code>Shopper</code></li>
+    <li>Receive a 10% discount on all items. That is, in its <code>checkout</code> method, only 90% of the total price of the cart is subtracted from <code>money</code>.</li>
+    <li>
+      Have a <code>get_money</code> method that takes an optional integer parameter and adds the input to the <code>money</code> property. If no input is specified, add 100.
+    </li>
+  </ul>
+</p>
+<p>
+  As with before, download the test script from <a href="../files/shopping_cart_test_2.rb" target="_blank">here</a>. Save it into your <code>shopping_cart</code> directory, run it, and make all the tests pass!
+</p>
+<h4>More mustard!!</h4>
+<p>
+  Implement the following:
+  <ul>
+    <li>Give each shopper that's created an <code>id</code> attribute. It should update automatically—that is, when I create the first shopper, its id should be 1, the second shopper's should be 2, etc. This is not a property that can be overwritten. Hint: use a class variable.</li>
+    <li>
+      Create an array that keeps track of all the shoppers—when a shopper is created, it should automatically be added to that array. Do the same for items.
+    </li>
+    <li>
+      Give <code>Shopper</code> a nice <code>to_s</code> method. Do the same for <code>Item</code>
+      <pre><code>bru = Shopper.new("bru")
+puts bru
+<span class="string"># => &lt;Shopper: id: 1, first_name: "bru", last_name: "", money: 100, cart: {}&gt;</span></code></pre>
+    </li>
+  </ul>
+</p>

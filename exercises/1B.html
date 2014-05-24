@@ -4,6 +4,7 @@ layout: exercise
 prev: 1A
 next: 2A
 permalink: /exercises/1B.html
+answers_shown: false
 ---
 <h1>Review</h1>
 <p>
@@ -61,9 +62,10 @@ or
 2.0
 Goodbye!</code></pre>
 <p>As with before, stress test. Try decimal (float) inputs. Try equations where there is only one real solution, or no real solutions. What should your program do in each case?</p>
-<!-- <span class="hover-show pull-right">Hover for answer</span>
-<div class="hover-hide">
-  <pre><code><span class="comment"># quadform.rb</span>
+{% if page.answers_shown %}
+  <span class="hover-show pull-right">Hover for answer</span>
+  <div class="hover-hide">
+    <pre><code><span class="comment"># quadform.rb</span>
 
 puts <span class="string">"Hey bru (South African for \"bro\"). Let's compute some quadform."</span>
 puts <span class="string">"Give me an A:"</span>
@@ -79,7 +81,8 @@ puts x1
 puts <span class="string">"or"</span>
 puts x2
 puts <span class="string">"Goodbye!"</span></code></pre>
-</div> -->
+  </div>
+{% endif %}
 <!-- Projects -->
 <hr class="large">
 <h1>Projects</h1>
