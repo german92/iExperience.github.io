@@ -11,3 +11,4 @@ sass:
   style: :compressed
 
 highlighter: pygments
+relative_permalinks: false
