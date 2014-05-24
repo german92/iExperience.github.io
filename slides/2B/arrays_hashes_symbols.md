@@ -179,7 +179,7 @@ Spend 10-15 minutes working through this exercise.
 
 ---
 
-# Hashes (Dictionaries)
+### Hashes (Dictionaries)
 
 Sometimes we need to store a list of things, but for each 'entry' in the list, we need to store two things rather than just one: we need to store both a 'key' as well as a 'value'.
 
