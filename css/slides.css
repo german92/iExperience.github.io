@@ -1,13 +1,36 @@
+.reveal h1, .reveal h2, .reveal h3, .reveal h4, .reveal h5, .reveal h6 {
+  font-family: 'Lato', sans-serif;
+  font-weight: bold;
+  letter-spacing: -1px;
+  text-shadow: 0;
+}
+.reveal h1 {
+  font-size: 70px;
+}
+.reveal h2 {
+  font-size: 50px;
+}
+.reveal h3 {
+  font-size: 40px;
+}
+
+.reveal .slide-background {
+}
+
 .logo {
 	position: absolute;
-	top: 0px;
-	left: 0px;
+	bottom: 24px;
+	left: 20px;
 	padding: 5px;
 	z-index: 1001;
 }
 
 .logo a {
 	text-decoration: none;
+}
+
+.logo img {
+  height: 42px;
 }
 
 .state-background {
