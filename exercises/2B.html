@@ -4,6 +4,7 @@ layout: exercise
 prev: 2A
 next: 3A
 permalink: /exercises/2B.html
+answers_shown: true
 ---
 <h2>E1: To 100</h2>
 <h1>Review</h1>
@@ -24,6 +25,7 @@ permalink: /exercises/2B.html
 carrots
 bananas
 apples</code></pre>
+{% if page.answers_shown %}
 <a class="hover-show pull-right">Hover for answer</a>
 <div class="hover-hide">
   <pre><code><span class="comment"># reverse.rb</span>
@@ -50,6 +52,7 @@ end
 <span class="comment"># If it's a short loop, you can do it on one line:</span>
 list.each_with_index do { |item, index| puts list[list.length-index-1] }</code></pre>
 </div>
+{% endif %}
 <h2>E2: Build a List</h2>
 <p>
   In <code>d2</code>, create a program that asks the user for items. Add each item to a list, and print out the whole list after each item.
