@@ -1,25 +1,12 @@
 # Control Flow
 
 ---
-# What is Control Flow?
+## What is Control Flow?
 
 * So far our programs have had a *linear* flow. In other words, a set of things happen in order. 
 * No matter what, those statements will execute in that exact order.
 * As a program's complexity grows, we need to be able to execute different operations based on certain *conditions* (e.g. if the user chooses A, do something, if they choose B, do something else)
 * Ruby has a special type of value that is used to store whether a condition is true or false
-
----
-
-### Declaring Booleans
-
-```ruby
->> true
-=> true
-
->> false
-=> false
-
-```
 
 ---
 
@@ -42,10 +29,12 @@
 
 ---
 
-Pay close attention to the syntax in a statement like ```1 == 2```. It is not a variable assignment, or a method call -- it is a comparison *operator* as part of a Boolean expression.
+Pay close attention to the syntax in a statement like ```(1 == 2)```. It is not a variable assignment, or a method call.
+
+It is a comparison *operator* as part of a *Boolean expression*.
 
 ---
-# What is a Boolean Expression?
+## What is a Boolean Expression?
 
 * A Boolean expression is one or more comparisons that evaluate to true or false
 * The terms are each compared using comparison *operators*, which include: ==, <, <=, >, >=
@@ -179,9 +168,28 @@ We can also use boolean variables as part of other boolean expressions.
 ```
 
 ---
+```ruby
+# parenthesis are optional
+if x >= 50 && x <= 100
+	puts "Math works!"
+end
 
-### NOTE: Single vs Double Equal Signs
-#### (Assignment vs Boolean Expression)
+# but they make things more clear
+if (x >= 50) && (x <= 100)
+	puts "Math works!"
+end
+
+# variables simplify even further
+a = x >= 50
+b = x <= 100
+
+if a && b
+	puts "Math works!"
+end
+```
+---
+
+#### NOTE: Single vs Double Equal Signs
 
 ```ruby
 >> x = 1 # Assignment, sets value of x
@@ -248,7 +256,7 @@ Always remember to close an if statement with an ```end```.
 Let's try building some programs using control flow!
 
 ---
-# Bouncer App
+## Bouncer App
 
 ```
 $ mkdir bouncer
@@ -272,7 +280,7 @@ end
 ```
 
 ---
-# Running Bouncer
+### Running Bouncer
 
 ```
 $ ruby bouncer/bouncer.rb
@@ -291,7 +299,7 @@ else
 end
 ```
 ---
-# Running Smarter Bouncer
+### Running Smarter Bouncer
 
 ```
 $ ruby bouncer/bouncer.rb
@@ -299,7 +307,7 @@ You're at least 21! Come on in.
 ```
 
 ---
-## Boolean 'Not' Modifier
+### Boolean 'Not' Modifier
 
 ```ruby
 >> !true
@@ -317,7 +325,7 @@ You're at least 21! Come on in.
 
 ---
 
-## Boolean 'Not' Modifier
+### Boolean 'Not' Modifier
 
 ```ruby
 >> healthy = false
@@ -349,10 +357,6 @@ In addition to using conditionals to create 'switches' in program flow, we can a
 
 ---
 
-*PRO TIP*: If you want to write quick programs without creating a whole Ruby file/folder, you can use ```pry``` instead of IRB, along with the ```edit``` command.
-
----
-
 # While Loop
 
 ```ruby
@@ -363,6 +367,10 @@ while i > 0
 	i = i - 1
 end
 ```
+
+---
+
+*PRO TIP*: If you want to write quick programs without creating a whole Ruby file/folder, you can use ```pry``` instead of IRB, along with the ```edit``` command.
 
 ---
 # Times Loop
