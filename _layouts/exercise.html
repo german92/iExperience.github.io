@@ -6,9 +6,17 @@ extra_css:
 ---
 <div class="header">
   <div class="container">
-    <h1>{{ page.title }}
-      <img src="/images/logo.png" alt="" class="logo">
-    </h1>
+    <h1 class="pull-left">{{ page.title }}</h1>
+    <div class="pull-right" style="margin-top: 30px;">
+      <a href="./{{page.prev}}.html" class="btn">
+        &larr; {{page.prev}}
+      </a>
+      <a href="../index.html" class="btn">Contents</a>
+      <a href="./{{page.next}}.html" class="btn">
+        {{page.next}} &rarr;
+      </a>
+    </div>
+    <div class="clearfix"></div>
   </div>
 </div>
 <div class="container">
@@ -16,12 +24,16 @@ extra_css:
 </div>
 <div class="footer">
   <div class="container">
-    <a href="./{{page.prev}}.html" class="btn big">
-      &larr; Previous lesson
-    </a>
-    <a href="../index.html" class="btn big">Back to contents</a>
-    <a href="./{{page.next}}.html" class="btn big">
-      Next lesson &rarr;
-    </a>
+    <img src="/images/logo.png" alt="" class="logo pull-left">
+    <div class="pull-right">
+      <a href="./{{page.prev}}.html" class="btn big">
+        &larr; {{page.prev}}
+      </a>
+      <a href="../index.html" class="btn big">Contents</a>
+      <a href="./{{page.next}}.html" class="btn big">
+        {{page.next}} &rarr;
+      </a>
+    </div>
+    <div class="clearfix"></div>
   </div>
 </div>
