@@ -4,7 +4,7 @@ layout: exercise
 prev: 1A
 next: 2A
 permalink: /exercises/1B.html
-answers_shown: false
+answers_shown: true
 ---
 <h1>Review</h1>
 <p>
@@ -32,6 +32,25 @@ How old is your dad?
 Thanks for answering my creepy questions! The average age of your family is 41 years old!
 Goodbye!</code></pre>
 <p class="info hint">Hint: To convert a string to an integer, call <code>.to_i</code> on a string variable, just like we used <code>.strip</code>. To convert it to a decimal (called a floating point number, or float, in programming) use <code>.to_f</code>.</p>
+{% if page.answers_shown %}
+<a class="hover-show pull-right">Hover for answer</a>
+<div class="hover-hide">
+  <pre><code><span class="comment"># survey_average_age.rb</span>
+
+puts "Hello!"
+puts "How old are you?"
+my_age = gets.to_f
+puts "How old is your mom?"
+mom_age = gets.to_f
+puts "How old is your dad?"
+dad_age = gets.to_f
+average = (my_age + mom_age + dad_age)/3
+puts "Thanks for answering my creepy questions! The average age of your family is #{average} years old!"
+puts "Goodbye!"
+
+<span class="comment"># Why do we use to_f instead of to_i? What happens when you use the inputs 2, 2 and 3? Does it give the correct answer? Why or why not?</span></code></pre>
+</div>
+{% endif %}
 <h2>E2: Add Some Stress</h2>
 <p>
   Now that you have a program that knows a lot about your family, do some <b>stress testing</b>. That means to try different inputs to see how your program responds. What happens if your output isn't a whole number? What if you input a negative number? A decimal? A fraction? Anything else you can think of?
@@ -39,6 +58,19 @@ Goodbye!</code></pre>
 <p>
   This is actually a pretty important part of programming: making sure your program handles errors well. When you make a website, you can't always guarantee that the user will type in a number in an input field that asks for their age. To make great apps, you have to be dilligent!
 </p>
+{% if page.answers_shown %}
+<a class="hover-show pull-right">Hover for answer</a>
+<div class="hover-hide">
+  Things to try in addition to those suggested: 
+  <ul>
+    <li>A blank line</li>
+    <li>Numbers followed by letters</li>
+    <li>Letters followed by numbers</li>
+    <li>Multiple numbers</li>
+    <li>Can you think of more?</li>
+  </ul>
+</div>
+{% endif %}
 <h2>E3: Some questions</h2>
 <p>
   Write down the answers to these questions <b>before</b> trying them in <code>irb</code>. Once you're done, show your answers to a TA. Consider the code below:
@@ -84,7 +116,7 @@ joe
     <li>What is the <b>exact</b> output of each of these these statements?</li>
   </ol>
 </p>
-{% if answers_shown %}
+{% if page.answers_shown %}
 <a class="hover-show pull-right">Hover for answer</a>
 <div class="hover-hide">
   <ol>
@@ -94,7 +126,17 @@ joe
     <li>yes</li>
     <li>Integer (or number or <code>Fixnum</code>)</li>
     <li>String</li>
-    <li>Yes, we can't add integers and strings. <code>"#{x}y"</code></li>
+    <li>Nothing, there's no <code>puts</code></li>
+    <li>Yes, we can't add integers and strings. Solutions include <code>"#{x}"+y</code>, <code>"#{x}#{y}"</code>, and <code>x.to_s + y</code></li>
+    <li>"joe\n"</li>
+    <li>
+      <ul>
+        <li>hi!joe (The console won't output multiple new lines at the end of statements)</li>
+        <li>hi!joe</li>
+        <li>hi!joe</li>
+        <li>hi!joe<br>.strip</li>
+      </ul>
+    </li>
   </ol>
 </div>
 {% endif %}
