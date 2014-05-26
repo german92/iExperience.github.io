@@ -1,8 +1,8 @@
-# Defining Methods
+# Defining Methods & Classes
 
-### As behavior starts to get more complex, we will occasionally
-### want to group functionality together into a method
-### a.k.a function, procedure
+---
+
+As behavior starts to get more complex, we will occasionally want to group our own code into logical sections by writing our own methods.
 
 ---
 
@@ -303,30 +303,35 @@ While we are just working with Ruby, a good practice is to have a single ```main
 
 ---
 
-## Q. What if you wanted to inherit from multiple classes?
-## A. You can't.
+Q. What if you wanted to inherit functionality from multiple classes at once?
+A. You can't.
 
 ---
 
-To get methods from multiple places, we use Modules
+However, you CAN get methods from multiple places if those methods are stored in Modules, rather than Classes.
 
 ---
+# What is a Module?
+
+* A module is similar to a class in that you can define methods in it
+* However, you cannot create an instance of a Module
+* The only thing you can do with a Module is ```include``` it in a class, which will give that class all the Module's methods
+
+---
+
 ```ruby
-module FullNames
+module HelpfulStuff
 	def full_name
 		"#{@first_name} #{@last_name}"
 	end
-end
 
-module Initials
 	def initials
 		"#{@first_name[0]} #{@last_name[0]}"
 	end
 end
 
 class Employee
-	include FullNames
-	include Initials
+	include HelpfulStuff
 end
 
 salman = Employee.new(20, 'Salman', 'Ansari')
@@ -335,5 +340,19 @@ salman.full_name
 salman.initials
 # => SA
 ```
+---
+## Why should we care about Modules?
+
+Rails uses Modules extensively to provide various functionality, and they are a common paradigm for writing simple helper libraries that many classes can easily leverage.
+
+For now, it's sufficient to have basic understanding of them (i.e. how to define them & how to include them so you can call their methods on class instances).
+
+---
+# Summary
+
+* We can define our own methods to call
+* We can define our own classes with our own methods
+* We can instantiate classes and call methods on those object instances
+* We can define Modules and include them in classes to get their methods
 
 ---

@@ -1,0 +1,27 @@
+Twitter App PART 1 Steps:
+
+- Create new rails app 'twitter'
+- Run server, verify working
+- Scaffold User { handle:string }
+- Migrate
+- Add a user { @daretorant }
+- Migrate
+- Scaffold Tweet { body:string, handle:string }
+- Add a few tweets with handle @daretorant
+- Change twitter handle of user 1 to @daretotalk
+- Notice that tweets don't change
+- Add a migration to add user_id:integer to tweets
+- (SLIDE: Explain Migrations at a high level)
+- Existing migrations! Review them
+- Fill in migration
+- Run migration
+- Turns out no change to view! What the heck... we need to edit the view to modify Edit page.
+- Update Edit view to show user_id, set user_id to 1 on tweet
+- Remove the handle column
+- Link the twitter handle
+- Link URLs inside the tweet
+- Add a URL to profile photo for User
+- do some CSS tweaks
+- Git init
+- Create GitHub repository
+- Push to github
