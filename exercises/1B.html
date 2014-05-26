@@ -19,7 +19,7 @@ answers_shown: false
 <h1>Exercises</h1>
 <h2>E1: More Surveying</h2>
 <p>
-  Now that you can get some input and output, let's do some actual computing. For the first exercise, create a new file in <code>d1</code> called <code>survey_average_age.rb</code>. In this one, we'll also ask for the user's mom's age, a dad's age, and compute the average age of the family (you don't have to ask for the name). As usual, please do not copy paste, but try to rewrite the code from memory, referencing <code>survey.rb</code> only if you really need to. 
+  Now that you can get some input and output, let's do some actual computing. For the first exercise, create a new file in <code>d1/survey</code> called <code>survey_average_age.rb</code>. In this one, we'll also ask for the user's mom's age, a dad's age, and compute the average age of the family (you don't have to ask for the name). As usual, please do not copy paste, but try to write out the code, referencing <code>survey.rb</code> only if you really need to. 
 </p>
 <pre><code>$ ruby survey_average_age.rb
 Hello!
@@ -39,7 +39,65 @@ Goodbye!</code></pre>
 <p>
   This is actually a pretty important part of programming: making sure your program handles errors well. When you make a website, you can't always guarantee that the user will type in a number in an input field that asks for their age. To make great apps, you have to be dilligent!
 </p>
-<h2 class="bonus">E3 (Bonus!): QUADFORM</h2>
+<h2>E3: Some questions</h2>
+<p>
+  Write down the answers to these questions <b>before</b> trying them in <code>irb</code>. Once you're done, show your answers to a TA. Consider the code below:
+</p>
+<pre><code>>> x = 5
+>> y = 10
+>> x = y + 5
+>> y = y + 10</code></pre>
+<p>
+  <ol>
+    <li>What is the value of <code>x</code>?</li>
+    <li>What is the value of <code>y</code>?</li>
+    <li>Is <code>x</code> being reassigned?</li>
+    <li>Is <code>y</code> being reassigned?</li>
+  </ol>
+</p>
+More code (continues from above):
+<pre><code>>> y = "hi!"
+>> x + y</code></pre>
+<p>
+  <ol start="3">
+    <li>What type is <code>x</code>?</li>
+    <li>What type is <code>y</code>?</li>
+    <li>Will there be an error? If yes, why, and how do we fix it?</li>
+  </ol>
+</p>
+<pre><code>>> name = gets
+>> hi_name = y + name</code></pre>
+<p>
+  <ol start="6">
+    <li>What is the type of <code>name</code>?</li>
+    <li>What will be output to the screen if we ran this?</li>
+    <li>What is the <b>exact</b> value of <code>hi_name</code> now?</li>
+  </ol>
+</p>
+<pre><code>>> puts hi_name
+>> puts hi_name.strip
+>> puts "#{hi_name.strip}"
+>> puts "#{hi_name}.strip"</code></pre>
+<p>
+  <ol start="9">
+    <li>What is the <b>exact</b> output of each of these these statements?</li>
+  </ol>
+</p>
+{% if answers_shown %}
+<a class="hover-show pull-right">Hover for answer</a>
+<div class="hover-hide">
+  <ol>
+    <li>15</li>
+    <li>20</li>
+    <li>yes</li>
+    <li>yes</li>
+    <li>Integer (or number or <code>Fixnum</code>)</li>
+    <li>String</li>
+    <li>Yes, we can't add integers and strings. <code>"#{x}y"</code></li>
+  </ol>
+</div>
+{% endif %}
+<h2 class="bonus">E4 (Bonus!): QUADFORM</h2>
 <p>
   Average is a pretty weak form of computation. For the heavy lifting, let's take it back to middle school and the days of the quadratic formula. If your memory serves you well, in an equation of the form
   <code>ax^2 + bx + c = 0</code>:
