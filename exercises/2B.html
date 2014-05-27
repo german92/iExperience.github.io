@@ -55,7 +55,7 @@ list.each_with_index do { |item, index| puts list[list.length-index-1] }</code><
 
 <h2>E2: Hashes and lists, oh my!</h2>
 <p>
-  Create a hash (in <code>ingredients.rb</code>) that maps a dish name (i.e. "Hash browns") to a list of necessary ingredients (i.e. "Potatoes", "Butter", "...is there anything else?"). Add at least 3 dishes. Each dish should have at least 3 ingredients.
+  While we've primarily seen examples of hashes mapping strings to integers or vice versa, the values can actually be anything (like array, or even other hashes). Create a hash (in <code>ingredients.rb</code>) that maps a dish name (i.e. "Hash browns") to a list of necessary ingredients (i.e. "Potatoes", "Butter", "...is there anything else?"). Add at least 3 dishes. Each dish should have at least 3 ingredients.
 </p>
 
 <h4>Hash on Hash on Hash</h4>
@@ -72,8 +72,8 @@ list.each_with_index do { |item, index| puts list[list.length-index-1] }</code><
 <pre style="font-style: normal">
 hash = {
   :a => {
-  :b => ["c", "d"]
-},
+    :b => ["c", "d"]
+  },
   :e => "f"
 }</pre>
 </code>
