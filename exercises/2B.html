@@ -242,7 +242,27 @@ end</code></pre>
   </div>
 {% endif %}
 
-<h2 class="bonus">E6 (Bonus!): Rubeque</h2>
+<h2>Google Map</h2>
+<p>
+  Translate the following code to use <code>map</code>.
+  <pre><code><span class="comment"># map.rb</span>
+
+result = []
+engines = ["Google", "Bing", "Ask Jeeves"]
+engines.each do |e|
+  if e == "Google"
+    result.push("OK")
+  elsif e == "Bing"
+    result.push("Bad!")
+  else
+    result.push("What is that?")
+  end
+end
+
+result
+<span class="comment"># => ["OK", "Bad!", "What is that?"]</span></code></pre>
+</p>
+<h2 class="bonus">E7 (Bonus!): Rubeque</h2>
 <p>
   <a href="http://rubeque.com">rubeque.com</a> is a great site for simple Ruby puzzles. Try some out. To get you started:
   <ul>
