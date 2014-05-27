@@ -211,13 +211,13 @@ people = [
 ]
 find_by_name(people, "ski")
 <span class="string"># => {:id=>2,:name=>"ski"}</span>
-find_by_name(people, "kitten!!!")
+find_by_name(people, "kitten!")
 <span class="string"># => nil</span>
 filter_by_name(people, "ski")
 <span class="string"># => [{:id=>2,:name=>"ski"}, {:id=>4,:name=>"ski"}]</span>
 filter_by_name(people, "bru")
 <span class="string"># => [{:id=>1,:name=>"bru"}] (Note this is still an array)</span>
-filter_by_name(people, "kitten!!!")
+filter_by_name(people, "puppy!!!")
 <span class="string"># => []</span>
 </code></pre>
 
@@ -471,7 +471,7 @@ The computer wins!
       Create an array that keeps track of all the shoppers—when a shopper is created, it should automatically be added to that array. Do the same for items.
     </li>
     <li>
-      Give <code>Shopper</code> a nice <code>to_s</code> method. Do the same for <code>Item</code>
+      Give <code>Shopper</code> a nice <code>to_s</code> method. Do the same for <code>Item</code> and <code>Cart</code>—in fact, shopper's <code>to_s</code> method should call cart's <code>to_s</code> method.
       <pre><code>bru = Shopper.new("bru")
 puts bru
 <span class="string"># => &lt;Shopper: id: 1, first_name: "bru", last_name: "", money: 100, cart: {}&gt;</span></code></pre>
