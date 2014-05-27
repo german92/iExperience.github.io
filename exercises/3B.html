@@ -71,7 +71,7 @@ abdullah = Christian.new("abdullah", "original")</code></pre>
     @glasses = "off"
   end
   def drink_ten_glasses
-    @thirsty = "false"
+    @thirsty = false
   end
 
   def glasses_on?
@@ -110,9 +110,9 @@ mary = Muslim.new("mary")</code></pre>
   A common way to practice arrays and methods is to write <em>string manipulation</em> methods, or methods that modify strings. The cool thing about Ruby is that you can always modify any class and add methods to it. For example, instead of our <code>shout</code> method, we could have written it into the <code>String</code> class itself:
 </p>
 <pre><code>class String
-def shout
-self.upcase
-end
+  def shout
+    self.upcase
+  end
 end
 
 "hElLo".shout
@@ -139,14 +139,14 @@ end
 # Your code here
 
 "piglatin".piglatinify
-<span class="string"># => "iglatinpay"</span>
+<span class="comment"># => "iglatinpay"</span>
 "Piglatin".piglatinify
-<span class="string"># => "Iglatinpay" (watch out for capital letters!)</span>
+<span class="comment"># => "Iglatinpay" (watch out for capital letters!)</span>
 "This is Piglatin".piglatinify_sentence
-<span class="string"># => "Histay siay Iglatinpay"</span>
+<span class="comment"># => "Histay siay Iglatinpay"</span>
 " 
 tripsay emay \t ".strip_new
-<span class="string"># => "tripsay emay"</span>
+<span class="comment"># => "tripsay emay"</span>
 </code></pre>
 
 <h2>E2: Modulify</h2>
@@ -158,12 +158,12 @@ tripsay emay \t ".strip_new
 require_relative 'piglatinify'
 
 class Array
-include Piglatinify
+  include Piglatinify
 end
 [:a, :b, :c].piglatinify
-<span class="string"># => ":a, :b, :c][ay"</span>
+<span class="comment"># => ":a, :b, :c][ay"</span>
 [:a, :b, :c].piglatinify_sentence
-<span class="string"># => ":a,[ay b,:ay c]:ay"</span></code></pre>
+<span class="comment"># => ":a,[ay b,:ay c]:ay"</span></code></pre>
 
 <h2>E3: Finding things</h2>
 <p>

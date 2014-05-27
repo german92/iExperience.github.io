@@ -49,6 +49,7 @@ x.class.class.class</code></pre>
 <p>
   Only <b>after</b> you've written down your answers should you check them. If you don't know, give it your best shot—you're not being graded, so you're only helping yourself :)
 </p>
+{% if page.answers_shown %}
 <a class="hover-show pull-right">Hover for answer</a>
 <div class="hover-hide">
   <ol>
@@ -68,7 +69,7 @@ x.class.class.class</code></pre>
     </li>
   </ol>
 </div>
-
+{% endif %}
 <h2>E4: hsaH</h2>
 <p>
   Write a method <code>invert</code> that inverts the keys and values of a Hash. 
@@ -103,36 +104,36 @@ Fibonacci at 11: 89</code></pre>
 <pre><code><span class="comment"># sum_loop.rb</span>
 
 def sum_up_to(num)
-sum = 0
-num.times do |i|
-sum += (i+1)
-end
-return sum
+  sum = 0
+  num.times do |i|
+    sum += (i+1)
+  end
+  return sum
 end
 
 sum_up_to 10
-<span class="string"># => 55</code></pre>
+<span class="comment"># => 55</code></pre>
 <p>
   But a more elegant way might be:
 </p>
 <pre><code><span class="comment"># sum_recursive.rb</span>
 
 def sum_up_to(num)
-return 0 if num == 0
-return num + sum_up_to(num-1)
+  return 0 if num == 0
+  return num + sum_up_to(num-1)
 end</code></pre>
 <p>
   That little bit of code packs a lot of punch. It stems from the observation that the sum of the numbers <code>0...5</code> is the same as <code>5 +</code> the sum of <code>0...4</code>. In general:
   <ul>
-    <code>sum 0...n = n + sum 0...n-1</code>
+    <code>sum(0 + &middot;&middot;&middot; + n) = n + sum(0 + &middot;&middot;&middot; + n-1)</code>
   </ul>
   Recursion stems from the <em>induction principle</em>, which you might remember from way back when. Basically, it requires two things: a <b>base case</b> and <b>an inductive step</b>. Our base case is easy: the sum of all the numbers up to 0 is 0. We know that, it's always true, and we can hard code it in. The inductive step is the answer to: <b>if we know the answer for <code>n</code>, how can we find the answer for <code>n+1</code>?</b> For our case, that's easy again: just add <code>n+1</code> to the answer for <code>n</code> (or rather, <code>n</code> to the answer for <code>n-1</code>).
 </p>
 <pre><code><span class="comment"># sum_recursive.rb</span>
 
 def sum_up_to(num)
-return 0 if num == 0          <span class="string"># Base case</span>
-return num + sum_up_to(num-1) <span class="string"># Inductive (or recursive) step.</span>
+  return 0 if num == 0          <span class="string"># Base case</span>
+  return num + sum_up_to(num-1) <span class="string"># Inductive (or recursive) step.</span>
 end</code></pre>
 <p>
   You might be able to guess what the Fibonacci re-code is: Can you implement the fibonacci method so that it uses recursion?
@@ -147,7 +148,8 @@ end</code></pre>
 # Your code here...
 
 {:a => {:b => "c"}}.invert_recursive
-<span class="string"># => {\{"c" => :b} => :a}</span>
+<!-- We need to use &#123; for '{' here or else Jekyll complains. -->
+<span class="string"># => {&#123;"c" => :b} => :a}</span>
 {:a => ["b", {:c => "d"}]}.invert_recursive <span class="string"># Be careful!</span>
 <span class="string"># => {["b, {"d" => :c}] => :a}</span>
 </code></pre>
@@ -171,20 +173,20 @@ end</code></pre>
 <pre><code><span class="comment"># item.rb</span>
 
 class Item
-# @param{string} name The item's name
-# @param{float} price The item's price
-def initialize(name, price)
-end
+  # @param{string} name The item's name
+  # @param{float} price The item's price
+  def initialize(name, price)
+  end
 
-# Accessor methods
+  # Accessor methods
 
-# Returns name
-def name
-end
+  # Returns name
+  def name
+  end
 
-# Returns price
-def price
-end
+  # Returns price
+  def price
+  end
 end</code></pre>
 <p>
   This code doesn't do anything yet, but should be simple to fill out. Go ahead and do so, just like we did in lecture.
@@ -198,25 +200,25 @@ end</code></pre>
 <pre><code><span class="comment"># cart.rb</span>
 
 class Cart
-def initialize
-end
+  def initialize
+  end
 
-# @return{Hash&lt;string, Hash&lt;:item => Item, :quantity => Float&gt;&gt;}
-#   The items and their quantities in the cart, keyed by item name.
-def items
-end
+  # @return{Hash&lt;string, Hash&lt;:item => Item, :quantity => Float&gt;&gt;}
+  #   The items and their quantities in the cart, keyed by item name.
+  def items
+  end
 
-# @return{float} The total price of all the goods in the cart.
-def total_price
-end
+  # @return{float} The total price of all the goods in the cart.
+  def total_price
+  end
 
-# @param{Item} item The item to add. 
-def add(item)
-end
+  # @param{Item} item The item to add. 
+  def add(item)
+  end
 
-# @param{Item} item The item to remove. 
-def remove(item)
-end
+  # @param{Item} item The item to remove. 
+  def remove(item)
+  end
 end</code></pre>
 <p>
 The exact specification is as follows:
