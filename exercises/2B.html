@@ -6,7 +6,6 @@ next: 3A
 permalink: /exercises/2B.html
 answers_shown: false
 ---
-<h2>E1: To 100</h2>
 <h1>Review</h1>
 <p>
   <b>Topics Covered:</b> creating, updating, iterating over arrays (lists); same for hashes (dictionaries); symbols; basic methods; options hash for methods
@@ -53,7 +52,44 @@ end
 list.each_with_index do { |item, index| puts list[list.length-index-1] }</code></pre>
 </div>
 {% endif %}
-<h2>E2: Build a List</h2>
+
+<h2>E2: Hashes and lists, oh my!</h2>
+<p>
+  Create a hash (in <code>ingredients.rb</code>) that maps a dish name (i.e. "Hash browns") to a list of necessary ingredients (i.e. "Potatoes", "Butter", "...is there anything else?"). Add at least 3 dishes. Each dish should have at least 3 ingredients.
+</p>
+
+<h4>Hash on Hash on Hash</h4>
+<p>
+  Create a new file <code>recipes.rb</code>. This time, map each dish name to another hash. That hash should have keys <code>:description</code> (which maps to a <code>String</code>), <code>:ingredients</code> (which maps to an array of Strings, like above, and <code>:steps</code> (which maps to an array of Strings that, you guessed it, tell you how to make the dish). 
+</p>
+<p>
+  If you finish early, cook one of those dishes for your TA.
+</p>
+<div class="info warning">
+  In code, formatting is important. If you're making a nested object, use a clear structure:
+  <ul>
+    <code>
+<pre style="font-style: normal">
+hash = {
+  :a => {
+  :b => ["c", "d"]
+},
+  :e => "f"
+}</pre>
+</code>
+  </ul>
+</div>
+<h4>Notation</h4>
+<p>
+  When describing complex objects, it's nice to have a way to describe them. If I were to describe a hash that maps a symbol to a string, for example, I would write <code>Hash&lt;Symbol, String&gt;</code>. For nested structures: <code>Hash&lt;Symbol, Array&lt;String&gt;&gt;</code> (a hash that maps a symbol to an array of strings). Write down the signatures for:
+  <ol>
+    <li>The hash in <code>ingredients.rb</code></li>
+    <li>A hash that maps hashes to an array of integers</li>
+    <li>An array of hashes that map arrays of strings to symbols</li>
+    <li>The hash in the yellow box above (can it be done? explain why).</li>
+  </ol>
+</p>
+<h2>E3: Build a List</h2>
 <p>
   In <code>d2</code>, create a program that asks the user for items. Add each item to a list, and print out the whole list after each item.
 </p>
@@ -87,7 +123,7 @@ while <span class="boolean">true</span> do
 end</code></pre>
 </div>
 {% endif %}
-<h2>E3: An Extensive Listbuilder</h2>
+<h2>E4: An Extensive Listbuilder</h2>
 <p>
   Create an extensive list builder, that allows you to add items with a command like <code>add x</code>, remove items with <code>remove x</code>, and quit with <code>quit</code>
 </p>
@@ -117,8 +153,7 @@ Bye!</code></pre>
 
 puts "Welcome to list builder++!"
 list = []
-done = false
-while !done do
+while true do
   puts "What can I do for you?"
   command = gets.strip
   tokens = command.split(" ")
@@ -134,7 +169,7 @@ while !done do
     p list
   elsif tokens[0] == "quit"
     puts "Bye!"
-    done = true
+    break
     elsif tokens[0] == "help"
     puts "You can add items with 'add x', remove items with 'remove x' and quit with 'quit'."
   else
@@ -143,7 +178,7 @@ while !done do
 end</code></pre>
   </div>
 {% endif %}
-<h2>E4: A Container Builder</h2>
+<h2>E5: A Container Builder</h2>
 <p>
   Extend your program to use a <code>Hash</code> instead of an <code>Array</code>, and keep track of how many of each item the user has added.
 </p>
@@ -172,8 +207,7 @@ Bye!</code></pre>
 
 puts "Welcome to container builder!"
 container = {}
-done = false
-while !done do
+while true do
   puts "What can I do for you?"
   command = gets.strip
   tokens = command.split(" ")
@@ -198,7 +232,7 @@ while !done do
     end
   elsif tokens[0] == "quit"
     puts "Bye!"
-    done = true
+    break
   elsif tokens[0] == "help"
     puts "You can add items with 'add x', remove items with 'remove x' and quit with 'quit'."
   else
@@ -207,10 +241,29 @@ while !done do
 end</code></pre>
   </div>
 {% endif %}
+
+<h2 class="bonus">E6 (Bonus!): Rubeque</h2>
+<p>
+  <a href="http://rubeque.com">rubeque.com</a> is a great site for simple Ruby puzzles. Try some out. To get you started:
+  <ul>
+    <li><a href="http://www.rubeque.com/problems/prime-factors">rubeque.com/problems/prime-factors</a></li>
+    <li><a href="http://www.rubeque.com/problems/reverse-each-word">rubeque.com/problems/reverse-each-word</a> (Use <code>split</code> and <code>map</code>!)</li>
+  </ul>
+</p>
 <!-- Projects -->
 <hr class="large">
 <h1>Projects</h1>
 <h2>A Coder's Selfie</h2>
 <p>
   The final push! You'll be briefly presenting your website to the class tomorrow, so give it your all. <a href="http://iexperience.github.io/personal/2B.html">This</a> is what The Bru came up with, in less than 100 lines of HTML and 100 lines of CSS.
+</p>
+<p>
+  A quick review of how to send to Github:
+  <ol>
+    <li>Make sure you're in your <code>projects/username.github.io</code> directory in the shell.</li>
+    <li><code>git add .</code></li>
+    <li><code>git commit -m "A descriptive message about the changes you've made."</code></li>
+    <li><code>git push origin master</code></li>
+    <li>Your site should now be <b>live on the web</b> at http://username.github.io—go check it out to make sure it looks right. Note that it might take a few minutes for it to update online.</li>
+  </ol>
 </p>

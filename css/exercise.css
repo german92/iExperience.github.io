@@ -69,13 +69,21 @@ img.centered {
   width: 200px;
 }
 
-.hint {
+.info {
   padding: 15px;
-  border: 1pt solid #4abd9b;
-  background-color: #e2fff3;
   border-radius: 3px;
   color: #333;
   font-style: italic;
+}
+
+.info.hint {
+  border: 1pt solid #4abd9b;
+  background-color: #e2fff3;
+}
+
+.info.warning {
+  border: 1pt solid #bdb462;
+  background-color: #fff9e0;
 }
 
 pre code {

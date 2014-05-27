@@ -69,44 +69,6 @@ x.class.class.class</code></pre>
   </ol>
 </div>
 
-
-<h2>E3: Hashes and lists, oh my!</h2>
-<p>
-  Create a hash (in <code>ingredients.rb</code>) that maps a dish name (i.e. "Hash browns") to a list of necessary ingredients (i.e. "Potatoes", "Butter", "...is there anything else?"). Add at least 3 dishes. Each dish should have at least 3 ingredients.
-</p>
-
-<h4>Hash on Hash on Hash</h4>
-<p>
-  Create a new file <code>recipes.rb</code>. This time, map each dish name to another hash. That hash should have keys <code>:description</code> (which maps to a <code>String</code>), <code>:ingredients</code> (which maps to an array of Strings, like above, and <code>:steps</code> (which maps to an array of Strings that, you guessed it, tell you how to make the dish). 
-</p>
-<p>
-  If you finish early, cook one of those dishes for your TA.
-</p>
-<div class="info warning">
-  In code, formatting is important. If you're making a nested object, use a clear structure:
-  <ul>
-    <code>
-      <pre style="font-style: normal">
-hash = {
-:a => {
-:b => ["c", "d"]
-},
-:e => "f"
-}</pre>
-    </code>
-  </ul>
-</div>
-<h4>Notation</h4>
-<p>
-  When describing complex objects, it's nice to have a way to describe them. If I were to describe a hash that maps a symbol to a string, for example, I would write <code>Hash&lt;Symbol, String&gt;</code>. For nested structures: <code>Hash&lt;Symbol, Array&lt;String&gt;&gt;</code> (a hash that maps a symbol to an array of strings). Write down the signatures for:
-  <ol>
-    <li>The hash in <code>ingredients.rb</code></li>
-    <li>A hash that maps hashes to an array of integers</li>
-    <li>An array of hashes that map arrays of strings to symbols</li>
-    <li>The hash in the yellow box above (can it be done? explain why).</li>
-  </ol>
-</p>
-
 <h2>E4: hsaH</h2>
 <p>
   Write a method <code>invert</code> that inverts the keys and values of a Hash. 
