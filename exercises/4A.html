@@ -6,25 +6,360 @@ next: 4B
 permalink: /exercises/4A.html
 answers_shown: false
 ---
+
 <h1>Review</h1>
 <p>
-  <b>Topics Covered:</b> Working with APIs; Data.gov, Reddit
+  <b>Topics Covered:</b> Defining methods, classes, and modules; using methods, classes, and modules effectively.
 </p>
 <hr class="large">
+
+<!-- Exercises -->
 <h1>Exercises</h1>
-<h2>E1: API FUN</h2>
-<h4>Step 1: F</h4>
+<h2>E1: A Mass for the Masses</h2>
 <p>
-  F is for friends, who do stuff together. Pick a partner or two who you've never worked with. Together, think of a cool use of one of the APIs we've learned, or find some others. Run your idea by a TA to make sure it's feasible.
+  We're going to review what we learned in class about classes.
+  Check out this code, and <b>write down</b> the answers to the questions below, in a file called <code>mass_quiz</code>. Have a teacher check them for you.
 </p>
-<h4>Step 2: U</h4>
+<pre><code>class Person
+  def initialize(name)
+    @name = name <span class="string"># Line 3</span>
+  end
+
+  def name
+    return @name
+  end
+end
+
+class Christian < Person
+  def initialize(name, type)
+    @name = name
+    @type = type
+  end
+
+  def go_to_mass
+    puts "Going to mass..."
+  end
+end 
+
+abdullah = Christian.new("abdullah", "original")</code></pre>
 <p>
-  U is for u and me. To work together, we'll need a way to collaborate. Create a Github repo for your project. Add all group members as collaborators. Make sure each of you have a copy of the repo on your machine and can push changes to it.
+  <ol>
+    <li>Why is line 3 necessary? What happens without it?</li>
+    <li>Is <code>Christian</code> a subclass or a superclass?</li>
+    <li>What will running <code>Christian.go_to_mass</code> do? Why?</li>
+    <li>What will running <code>abdullah.type</code> do? Why? If you think it's broken, how can you fix it? If you think it works, what does it return?</li>
+    <li>
+      What is <code>abdullah</code>? Choose all that apply:
+      <ul>
+        <li>A class</li>
+        <li>A method</li>
+        <li>An instance</li>
+        <li>An object</li>
+        <li>A variable</li>
+      </ul>
+    </li>
+  </ol>
 </p>
-<h4>Step 3: N</h4>
+<h4>Raise a Glass to Glasses</h4>
 <p>
-  N is for 'n' get to work! Spec out, plan and pseudo-code your project. Divide up the tasks and write the code. Merge the changes, and test!
+  Trudging onward:
 </p>
-<!-- <hr class="large">
+<pre><code>module HasGlasses
+  def put_on_glasses
+    @glasses = "on"
+  end
+  def take_off_glasses
+    @glasses = "off"
+  end
+  def drink_ten_glasses
+    @thirsty = false
+  end
+
+  def glasses_on?
+    return (@glasses == "on")
+  end
+end
+
+class Christian < Person
+  include HasGlasses
+end
+
+class Muslim < Person
+  include HasGlasses
+end
+
+mary = Muslim.new("mary")</code></pre>
+<p>
+  <ol start="6">
+    <li>Will all this code work? Do you see any bugs? Before you try it yourself, write down your answer. If you see bugs, note what they are and how you would fix them.</li>
+    <li>What will <code>Muslim.new("mary", "sunni")</code> do? Why?</li>
+    <li>In the code, we're calling <code>Muslim.new("mary")</code>, even though the <code>new</code> method isn't <code>def</code>'d anywhere. How come it works?</li>
+    <li>What will <code>Muslim.put_on_glasses</code> do? Why?</li>
+    <li>If after the last line of code, you ran <code>mary.glasses_on?</code>, what would happen? Why? If you think it's broken, how can you fix it? If you think it works, what does it return?</li>
+    <li>What is <code>HasGlasses</code>? Choose all that apply:
+      <ul>
+        <li>A class</li>
+        <li>A method</li>
+        <li>An instance</li>
+        <li>An object</li>
+        <li>A variable</li>
+      </ul></li>
+  </ol>
+</p>
+<h2>E1: String Theory</h2>
+<p>
+  A common way to practice arrays and methods is to write <em>string manipulation</em> methods, or methods that modify strings. The cool thing about Ruby is that you can always modify any class and add methods to it. For example, instead of our <code>shout</code> method, we could have written it into the <code>String</code> class itself:
+</p>
+<pre><code>class String
+  def shout
+    self.upcase
+  end
+end
+
+"hElLo".shout
+<span class="string"># => "HELLO"</span></code></pre>
+<p>
+  For this exercise, we're going to add some methods to the <code>String</code> class. Create <code>d3/super_strings.rb</code>.
+</p>
+
+<h4>Iglatinpay</h4>
+<p>
+  You may be familiar with <em>Piglatin</em>, which is a language just like English, but each first letter of a word is put at the end and followed by "ay". So, "Piglatin" in Piglatin is "Iglatinpay", and "iglatinpay" is "glatinpayiay". Write a method <code>piglatinify</code> to get this behavior.
+</p>
+<h4>Histay Siay Iglatinpay</h4>
+<p>
+  Write a method <code>piglatinify_sentence</code> that makes each word in a sentence into Piglatin.
+</p>
+<h4>Strip Down</h4>
+<p>
+  Write the method <code>strip</code> (but call it <code>strip_new</code>). Test it against Ruby's strip with a variety of test samples. Does it always behave the same?
+</p>
+
+<pre><code><span class="comment"># super_strings.rb</span>
+
+# Your code here
+
+"piglatin".piglatinify
+<span class="comment"># => "iglatinpay"</span>
+"Piglatin".piglatinify
+<span class="comment"># => "Iglatinpay" (watch out for capital letters!)</span>
+"This is Piglatin".piglatinify_sentence
+<span class="comment"># => "Histay siay Iglatinpay"</span>
+" 
+tripsay emay \t ".strip_new
+<span class="comment"># => "tripsay emay"</span>
+</code></pre>
+
+<h2>E2: Modulify</h2>
+<p>
+  Make your Piglatin methods into a module called <code>Piglatinify</code> in <code>piglatinify.rb</code>. The two methods should work on any class (perhaps the <code>to_s</code> method will come in handy here). Test by creating another file.
+</p>
+<pre><code><span class="comment"># d3/some_other_file.rb</span>
+
+require_relative 'piglatinify'
+
+class Array
+  include Piglatinify
+end
+[:a, :b, :c].piglatinify
+<span class="comment"># => ":a, :b, :c][ay"</span>
+[:a, :b, :c].piglatinify_sentence
+<span class="comment"># => ":a,[ay b,:ay c]:ay"</span></code></pre>
+
+<h2>E3: Finding things</h2>
+<p>
+  One of the best uses of a computer is to find things—meaning information or other data. Facebook finds what your friends are doing, Buzzfeed finds things you kind of care about, and even Bing finds things sometimes, too. For this exercise, you're going to write your own code that finds things.
+</p>
+<h4>Thing = letter in string</h4>
+<p>
+  Write a method <code>index_of</code> that takes two paramters, a string and a letter. Return the index of the first time the letter occurs in that string, or -1 if it doesn't occur.
+</p>
+
+<h4>Thing = item in array</h4>
+<p>
+  Write a method <code>find_by_name</code>, which takes an array of hashes, each of which has the property <code>:name</code>, and a string and finds the first one that has that name.
+</p>
+<h4>Thing = items in array</h4>
+<p>
+  Write a second, very similar method <code>filter_by_name</code>, which returns and array with <b>all</b> the items with the given name. Note that that method should always return an array, even if only one item is found.
+</p>
+<pre><code><span class="comment"># finding_things.rb</span>
+
+# Your code here
+
+index_of("abcdefghijklmnop", "m")
+<span class="string"># => 12</span>
+index_of("abcdefghijklmnop", "z")
+<span class="string"># => -1</span>
+
+people = [
+  {
+    :id => 1,
+    :name => "bru"
+  },
+  {
+    :id => 2,
+    :name => "ski"
+  },
+  {
+    :id => 3,
+    :name => "brunette"
+  },
+  {
+    :id => 4,
+    :name => "ski"
+  }
+]
+find_by_name(people, "ski")
+<span class="string"># => {:id=>2,:name=>"ski"}</span>
+find_by_name(people, "kitten!")
+<span class="string"># => nil</span>
+filter_by_name(people, "ski")
+<span class="string"># => [{:id=>2,:name=>"ski"}, {:id=>4,:name=>"ski"}]</span>
+filter_by_name(people, "bru")
+<span class="string"># => [{:id=>1,:name=>"bru"}] (Note this is still an array)</span>
+filter_by_name(people, "puppy!!!")
+<span class="string"># => []</span>
+</code></pre>
+
+
+<hr class="large">
+
+<!-- Projects -->
 <h1>Projects</h1>
- -->
+<h2>Ruby: Fueling Consumerism</h2>
+<p>
+  Now that you have a beautiful presence on the Internet, we're going to work on bringing one of the most notable American vices to South Africa: consumerism. Over the next two days, you'll use your new knowledge of Ruby—with all its Hashes and Classes—to build a Shopping Cart and some Shoppers. It will closely model something you might build in a Rails application some day.
+</p>
+<h4>
+  The Goods
+</h4>
+<p>
+  To start, create a <code>shopping_cart</code> folder in your <code>projects</code> directory. We'll start with an <code>Item</code> class, so in <code>shopping_cart</code>, create a file called <code>item.rb</code>. Item is the simplest: it just has a <code>name</code> and a <code>price</code>. Copy the below code into it:
+</p>
+<pre><code><span class="comment"># item.rb</span>
+
+class Item
+  # @param{string} name The item's name
+  # @param{float} price The item's price
+  def initialize(name, price)
+  end
+
+  # Accessor methods
+
+  # Returns name
+  def name
+  end
+
+  # Returns price
+  def price
+  end
+end</code></pre>
+<p>
+  This code doesn't do anything yet, but should be simple to fill out. Go ahead and do so, just like we did in lecture.
+</p>
+<h4>
+  The Vehicle
+</h4>
+<p>
+  Next we're going to build a <code>Cart</code> class that will hold all of the items, as well as how many items there are. Put this in a new file, <code>cart.rb</code>. This cart will closely resemble Lesson 2B, Exercise 4, so feel free to borrow and modify code from there. To start, here's a template:
+</p>
+<pre><code><span class="comment"># cart.rb</span>
+
+class Cart
+  def initialize
+  end
+
+  # @return{Hash&lt;string, Hash&lt;:item => Item, :quantity => Float&gt;&gt;}
+  #   The items and their quantities in the cart, keyed by item name.
+  def items
+  end
+
+  # @return{float} The total price of all the goods in the cart.
+  def total_price
+  end
+
+  # @param{Item} item The item to add. 
+  def add(item)
+  end
+
+  # @param{Item} item The item to remove. 
+  def remove(item)
+  end
+end</code></pre>
+<p>
+The exact specification is as follows:
+<ul>
+  <li>
+    Cart should keep a class variables called <code>@items</code>.
+    <code>@items</code> will be <code>Hash</code>, where the keys are the item names (strings).
+  </li>
+  <li>
+    The values of that hash will themselves be hashes (which we'll call <code>item_obj</code>s), with two keys: <code>:item</code> and <code>:quantity</code>. The value of <code>:item</code> will be the <code>Item</code> object, and the value of <code>:quantity</code> will be the number of that item in the cart. The value of quantity should never be below 0.
+  </li>
+  <li>
+    <code>add</code> will increment the quantity if the item already exists, or create a new, properly created <code>item_obj</code>.
+  </li>
+  <li>
+    <code>remove</code> will decrement the quantity if the item exists and has a quantity of at least 1. Otherwise, it will do nothing.
+  </li>
+  <li>
+    <code>total_price</code> returns a <code>float</code> of the total price of all items in the cart. 
+  </li>
+</ul>
+</p>
+<p>
+Like in the slides, let's create a <code>main.rb</code> that we'll use to test. This is a sample of how you might test it:
+</p>
+<pre><code><span class="comment"># main.rb</span>
+
+require_relative 'item'
+require_relative 'cart'
+milk = Item.new("milk", 1.20)
+eggs = Item.new("eggs", 1.30)
+cart = Cart.new
+cart.add(milk)
+cart.add(milk)
+cart.add(eggs)
+p cart.items
+<span class="string"># Console output might look like (but less well formatted):
+# {
+#   "milk" => {
+#     :item => #&lt;Item:0x00...>,
+#     :quantity => 2
+#   },
+#   "eggs" => {
+#     :item => #&lt;Item:0x00...>,
+#     :quantity => 1
+#   }
+# }</span>
+p cart.total_price
+<span class="string"># 3.7</span>
+cart.remove(milk)
+p cart.total_price
+<span class="string"># 2.5</span></code></pre>
+<p>
+After you think you have a working answer, download the test file from <a href="../files/shopping_cart_test_1.rb" target="_blank">here</a> and put it in your <code>shopping_cart</code> directory (just do File -> Save from Chrome). Run it with <code>ruby shopping_cart_test_1.rb</code>. If you're failing any tests, make them pass.
+</p>
+<h4>Add Some Mustard</h4>
+<p>
+  To spicen up your code, implement the following:
+  <ul>
+    <li>
+      Add an optional <code>quantity</code> parameter to <code>add</code> and <code>remove</code>, so we can just do <code>add(milk, 2)</code>. Make sure <code>remove</code> still can't ever be negative.
+    </li>
+    <li>
+      Give each item a <code>weight</code> property, and the <code>Cart</code> a <code>total_weight</code> method.
+    </li>
+    <li>
+      Make it so you can't create two <code>Item</code>s with the same name. That is, the below should fail (i.e. not create the second milk):
+      <ul>
+        <code>
+          Item.new("milk", 2)<br>
+          Item.new("milk", 3)
+        </code>
+      </ul>
+      This will involve research into <b>class methods and properties</b>.
+    </li>
+  </ul>
+</p>
