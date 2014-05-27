@@ -33,20 +33,20 @@ apples</code></pre>
 list = ["apples", "bananas", "carrots", 4]
 index = list.length - 1
 while index >= 0
-puts list[index]
-index -= 1
+  puts list[index]
+  index -= 1
 end
 
 <span class="comment"># alternate solution</span>
 list = ["apples", "bananas", "carrots", 4]
 list.each_with_index do |item, index|
-puts list[list.length - index - 1]
+  puts list[list.length - index - 1]
 end
 
 <span class="comment"># alternate (cheeky) solution</span>
 list = ["apples", "bananas", "carrots", 4]
 list.reverse.each do |item|
-puts item
+  puts item
 end
 
 <span class="comment"># If it's a short loop, you can do it on one line:</span>
@@ -71,20 +71,22 @@ Added! Your list is:
 <p class="info hint">
   To keep a program running forever, put your code in a <code>while true</code> loop. To exit such a program, press <code>Ctrl-c</code> in the shell.
 </p>
-<!-- <a class="hover-show pull-right">Hover for answer</a>
+{% if page.answers_shown %}
+<a class="hover-show pull-right">Hover for answer</a>
 <div class="hover-hide">
   <pre><code><span class="comment"># list_builder.rb</span>
   
 puts "Welcome to list builder!"
 list = []
 while <span class="boolean">true</span> do
-puts "What can I add?"
-item = gets.strip
-list.push(item)
-puts "Added! Your list is:"
-p list <span class="comment"># p is like puts, but works with all objects, not just strings</span>
+  puts "What can I add?"
+  item = gets.strip
+  list.push(item)
+  puts "Added! Your list is:"
+  p list <span class="comment"># p is like puts, but works with all objects, not just strings</span>
 end</code></pre>
-</div> -->
+</div>
+{% endif %}
 <h2>E3: An Extensive Listbuilder</h2>
 <p>
   Create an extensive list builder, that allows you to add items with a command like <code>add x</code>, remove items with <code>remove x</code>, and quit with <code>quit</code>
@@ -109,7 +111,8 @@ Bye!</code></pre>
   <br>
   After you come up with a solution, try to stress test, and check for edge cases (not typing anything, typing many words, etc.). Then ask one of the TA's to stress test for you and find any bugs!
 </p>
-<!-- <a class="hover-show pull-right">Hover for answer</a>
+{% if page.answers_shown %}
+<a class="hover-show pull-right">Hover for answer</a>
 <div class="hover-hide"><pre><code><span class="comment"># ext_list_builder.rb</span>
 
 puts "Welcome to list builder++!"
@@ -138,7 +141,8 @@ while !done do
     puts "Command not recognized"
   end
 end</code></pre>
-  </div> -->
+  </div>
+{% endif %}
 <h2>E4: A Container Builder</h2>
 <p>
   Extend your program to use a <code>Hash</code> instead of an <code>Array</code>, and keep track of how many of each item the user has added.
@@ -162,45 +166,47 @@ Removed! Your container has:
 {"a"=>1, "b"=>1}
 quit
 Bye!</code></pre>
-<!-- <a class="hover-show pull-right">Hover for answer</a>
+{% if page.answers_shown %}
+<a class="hover-show pull-right">Hover for answer</a>
 <div class="hover-hide"><pre><code><span class="comment"># ext_list_builder.rb</span>
 
 puts "Welcome to container builder!"
 container = {}
 done = false
 while !done do
-puts "What can I do for you?"
-command = gets.strip
-tokens = command.split(" ")
-if tokens[0] == "add"
-item = tokens[1]
-num = container[item]
-num = 0 if num == nil
-num += 1
-container[item] = num
-puts "Added! Your container has:"
-p container
-elsif tokens[0] == "remove"
-item = tokens[1]
-num = container[item]
-if num && num > 0
-  num = num - 1
-  container[item] = num
-  puts "Removed! Your container has:"
-  p container
-else
-  puts "No such item..."
-end
-elsif tokens[0] == "quit"
-puts "Bye!"
-done = true
-elsif tokens[0] == "help"
-puts "You can add items with 'add x', remove items with 'remove x' and quit with 'quit'."
-else
-puts "Command not recognized"
-end
+  puts "What can I do for you?"
+  command = gets.strip
+  tokens = command.split(" ")
+  if tokens[0] == "add"
+    item = tokens[1]
+    num = container[item]
+    num = 0 if num == nil
+    num += 1
+    container[item] = num
+    puts "Added! Your container has:"
+    p container
+  elsif tokens[0] == "remove"
+    item = tokens[1]
+    num = container[item]
+    if num && num > 0
+      num = num - 1
+      container[item] = num
+      puts "Removed! Your container has:"
+      p container
+    else
+      puts "No such item..."
+    end
+  elsif tokens[0] == "quit"
+    puts "Bye!"
+    done = true
+  elsif tokens[0] == "help"
+    puts "You can add items with 'add x', remove items with 'remove x' and quit with 'quit'."
+  else
+  puts "Command not recognized"
+    end
 end</code></pre>
-  </div> -->
+  </div>
+{% endif %}
 <!-- Projects -->
 <hr class="large">
 <h1>Projects</h1>
