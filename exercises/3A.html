@@ -41,10 +41,50 @@ x.class.class.class</code></pre>
   Suppose I had a class called <code>FishClass</code>. Give an example of:
   <ul>
     <li>An <b>instance</b> of that class</li>
-    <li>A method that that class might have</li>
+    <li>A <b>method</b> that that class might have</li>
   </ul>
 </p>
-<h2>E3: Split Up</h2>
+<h2>E3: Scoped out</h2>
+<p>
+  Look at this code, and answer some questions. As usual, write down your answers first, then try your code in <code>irb</code>.
+</p>
+<pre><code>loudness = 10
+def get_louder
+  loudness = 20
+  puts "IT'S SO LOUD"
+  loudness
+end
+
+get_louder</code></pre>
+<p>
+  <ul>
+    <li>What does <code>get_louder</code> return?</li>
+    <li><b>Step by step</b>, describe what the <code>get_louder</code> method does (Hint: there are 3 steps).</li>
+    <li>What is the value of <code>loudness</code> after the call to <code>get_louder</code> (i.e. at the end of the program)?</li>
+  </ul>
+</p>
+<p>
+  Let's modify this method a bit:
+</p>
+<pre><code>loudness = 10
+def get_even_louder(loudness)
+  loudness += 20
+  puts "IT'S SO SO SO SO LOUD"
+  loudness
+end
+
+get_even_louder(loudness)</code></pre>
+<p>
+  <ul>
+    <li>Now what does <code>get_even_louder</code> return?</li>
+    <li><b>Step by step</b>, describe what the <code>get_even_louder</code> method does (Hint: there are still 3 steps).</li>
+    <li>What is the value of <code>loudness</code> at the end of the program?</li>
+  </ul>
+</p>
+<p class="info warning">
+  Make sure to keep track in your head which variables are <b>inside</b> a method and which variables are <b>outside</b> (indentation really helps to visualize this). No matter what you call your variables, keep track that inside methods, there's a whole new <b>scope</b>—in other words, it's like a whole new program is running.
+</p>
+<h2>E4: Split Up</h2>
 <p>
   Use your best friend Google (or Bing, if you're one of those) to research the method <code>split</code> in Ruby. Then answer the following questions:
 </p>
@@ -81,12 +121,12 @@ x.class.class.class</code></pre>
   </ol>
 </div>
 {% endif %}
-<h2>E4: Twist and Whisper</h2>
+<h2>E5: Twist and Whisper</h2>
 <p>
   Somewhat like the <code>shout</code> method, write a method <code>whisper</code> that prints out an input string in lower case.
 </p>
 <pre><code>whisper("HI THERE I AM HUNGRY")
-<span class="comment"># => "hi there how r u"</span></code></pre>
+<span class="comment"># => "hi there i am hungry"</span></code></pre>
 <p>
   Next, write a method <code>twist</code> that takes a string and prints out the letters randomly. The output should be different each time you run the function.
 </p>
@@ -95,7 +135,7 @@ x.class.class.class</code></pre>
 <p class="info hint">
   Hint: There is a convenient method named <code>shuffle</code> that mixes up all the elements randomly, but only works for <b>arrays</b> and not strings. However, can you think of an easy way that we've already learned to convert a string to an array of letters? After you <b>split up</b> the string into an array, how do you suppose we can <b>join</b> them back together? This is a good case of <b>chaining</b> methods, or calling one method one after another, like you might have done with <code>gets.strip.downcase</code>.
 </p>
-<h2>E5: hsaH</h2>
+<h2>E6: hsaH</h2>
 <p>
   Write a method <code>invert</code> that inverts the keys and values of a Hash. 
 </p>
@@ -112,7 +152,7 @@ x.class.class.class</code></pre>
   </p>
 </p>
 
-<h2 class="bonus">E6 (Bonus!): The Fibonacci Re-code</h2>
+<h2 class="bonus">E7 (Bonus!): The Fibonacci Re-code</h2>
 <p>
   Now that you know more about methods, take the Fibonacci code you wrote earlier and make it into a method in <code>d3/fibonacci_method.rb</code>. Your code should still behave the same way, but wrap your code in a <code>while true</code> loop so that it doesn't exit every time:
 </p>
@@ -164,7 +204,7 @@ end</code></pre>
   You might be able to guess what the Fibonacci re-code is: Can you implement the fibonacci method so that it uses recursion?
 </p>
 
-<h2 class="bonus">E7 (Bonus!): hsaH no hsaH no hsaH</h2>
+<h2 class="bonus">E8 (Bonus!): hsaH no hsaH no hsaH</h2>
 <p>
   Knowing what you know about recursion, write a method that inverts all the keys and values for a hash, as well as those for any hashes in it. It should use the <code>invert</code> method you wrote above.
 </p>
