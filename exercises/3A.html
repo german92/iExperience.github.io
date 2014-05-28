@@ -168,7 +168,37 @@ end</code></pre>
 {% if page.answers_shown %}
 <a class="hover-show pull-right">Hover for answer</a>
 <div class="hover-hide">
-  <pre><code></code></pre>
+  <pre><code><span class="comment"># invert.rb</span>
+
+<span class="comment"># Invert the keys and values of a hash
+# Input: hash...but what if isnt?
+#   Check if hash, if not, return.
+# output: another hash
+
+# For each key and value
+#   Set the old value as the new key
+#   Set the old key as the new value
+#   (in the new hash, not in the original)
+# Return the new hash</span>
+
+def invert(hash)
+  if hash.class != Hash
+    puts <span class="string">"Error: please input a hash" </span>
+    return
+  end
+  result = {}
+
+  hash.each do |key, value|
+    <span class="comment"># hash[key] = value</span>
+    result[value] = key
+  end
+
+  result
+end
+
+to_test = ["a", "b"] <span class="comment"># {:a => "b", :c => {:d => "e"}}</span>
+puts invert(to_test)
+<span class="comment"># puts (invert(to_test) == to_test.invert)</span></code></pre>
 </div>
 {% end %}
 <h2 class="bonus">E7 (Bonus!): The Fibonacci Re-code</h2>
