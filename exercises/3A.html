@@ -135,6 +135,20 @@ get_even_louder(loudness)</code></pre>
 <p class="info hint">
   Hint: There is a convenient method named <code>shuffle</code> that mixes up all the elements randomly, but only works for <b>arrays</b> and not strings. However, can you think of an easy way that we've already learned to convert a string to an array of letters? After you <b>split up</b> the string into an array, how do you suppose we can <b>join</b> them back together? This is a good case of <b>chaining</b> methods, or calling one method one after another, like you might have done with <code>gets.strip.downcase</code>.
 </p>
+{% if page.answers_shown %}
+<a class="hover-show pull-right">Hover for answer</a>
+<div class="hover-hide">
+  <pre><code><span class="comment"># twist_and_whisper</span>
+
+def whisper(message)
+  return message.downcase
+end
+
+def twist(message)
+  return message.split("").shuffle.join
+end</code></pre>
+</div>
+{% endif %}
 <h2>E6: hsaH</h2>
 <p>
   Write a method <code>invert</code> that inverts the keys and values of a Hash. 
@@ -151,7 +165,12 @@ get_even_louder(loudness)</code></pre>
     Coincidentally, Ruby comes with a built-in method called <code>invert</code> on the <code>Hash</code> class. Try these test cases on those (i.e. <code>{:a => ["b", "c"]}.invert</code>). How does your program's output compare to Ruby's? Can you think of any other test cases?
   </p>
 </p>
-
+{% if page.answers_shown %}
+<a class="hover-show pull-right">Hover for answer</a>
+<div class="hover-hide">
+  <pre><code></code></pre>
+</div>
+{% %}
 <h2 class="bonus">E7 (Bonus!): The Fibonacci Re-code</h2>
 <p>
   Now that you know more about methods, take the Fibonacci code you wrote earlier and make it into a method in <code>d3/fibonacci_method.rb</code>. Your code should still behave the same way, but wrap your code in a <code>while true</code> loop so that it doesn't exit every time:

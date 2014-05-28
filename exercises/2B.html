@@ -4,7 +4,7 @@ layout: exercise
 prev: 2A
 next: 3A
 permalink: /exercises/2B.html
-answers_shown: false
+answers_shown: true
 ---
 <h1>Review</h1>
 <p>
@@ -264,6 +264,22 @@ end
 result
 <span class="comment"># => ["OK", "Bad!", "What is that?"]</span></code></pre>
 </p>
+{% if page.answers_shown %}
+<a class="hover-show pull-right">Hover for answer</a>
+<div class="hover-hide">
+  <pre><code><span class="comment"># google_map.rb</span>
+engines = ["Google", "Bing", "Ask Jeeves"]
+result = engines.map do |engine|
+  if e == "Google"
+    return "OK"
+  elsif e == "Bing"
+    return "Bad!"
+  else
+    return "What is that?"
+  end
+end</code></pre>
+</div>
+{% %}
 <h2 class="bonus">E8 (Bonus!): Rubeque</h2>
 <p>
   <a href="http://rubeque.com">rubeque.com</a> is a great site for simple Ruby puzzles. Try some out. To get you started:
