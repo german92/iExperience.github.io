@@ -264,7 +264,7 @@ end</code></pre>
   The Vehicle
 </h4>
 <p>
-  Next we're going to build a <code>Cart</code> class that will hold all of the items, as well as how many items there are. Put this in a new file, <code>cart.rb</code>. This cart will closely resemble <a href="./2B.html">Lesson 2B, Exercise 6</a>, so feel free to borrow and modify code from there. To start, here's a template:
+  Next we're going to build a <code>Cart</code> class that will hold all of the items, as well as how many items there are. Put this in a new file, <code>cart.rb</code>. This cart will closely resemble <a href="./2B.html">Lesson 2B, Exercise 5</a>, so feel free to borrow and modify code from there. To start, here's a template:
 </p>
 <pre><code><span class="comment"># cart.rb</span>
 
@@ -272,7 +272,7 @@ class Cart
   def initialize
   end
 
-  # @return{Hash&lt;string, Hash&lt;:item => Item, :quantity => Float&gt;&gt;}
+  # @return{Array&lt;Item&gt;}
   #   The items and their quantities in the cart, keyed by item name.
   def items
   end
@@ -294,16 +294,14 @@ The exact specification is as follows:
 <ul>
   <li>
     Cart should keep an instance variable called <code>@items</code>.
-    <code>@items</code> will be <code>Hash</code>, where the keys are the item names (strings).
+    <code>@items</code> will be an <code>Array</code>, that holds Objects of the <code>Item</code> class. That is, the signature of <code>@items</code> is <code>Array&lt;Item&gt;</code>.
+  </li>
+  <li><code>@items</code> will start (be initialized) as an empty array.</li>
+  <li>
+    <code>Cart</code> will have a method <code>add</code> that adds <code>Item</code>s to its <code>@items</code> array.
   </li>
   <li>
-    The values of that hash will themselves be hashes (which we'll call <code>item_obj</code>s), with two keys: <code>:item</code> and <code>:quantity</code>. The value of <code>:item</code> will be the <code>Item</code> object, and the value of <code>:quantity</code> will be the number of that item in the cart. The value of quantity should never be below 0.
-  </li>
-  <li>
-    <code>add</code> will increment the quantity if the item already exists, or create a new, properly created <code>item_obj</code>.
-  </li>
-  <li>
-    <code>remove</code> will decrement the quantity if the item exists and has a quantity of at least 1. Otherwise, it will do nothing.
+    <code>Cart</code> has a method <code>remove</code> that will remove <b>all</b> instances of an item from its cart. That is, if <code>@items</code> is <code>[milk, milk, eggs]</code> and I run <code>cart.remove(milk)</code>, then <code>@items</code> should be <code>[eggs]</code>.
   </li>
   <li>
     <code>total_price</code> returns a <code>float</code> of the total price of all items in the cart. 
@@ -324,22 +322,19 @@ cart.add(milk)
 cart.add(milk)
 cart.add(eggs)
 p cart.items
-<span class="string"># Console output might look like (but less well formatted):
-# {
-#   "milk" => {
-#     :item => #&lt;Item:0x00...>,
-#     :quantity => 2
-#   },
-#   "eggs" => {
-#     :item => #&lt;Item:0x00...>,
-#     :quantity => 1
-#   }
-# }</span>
+<span class="string"># Console output might look like (but less well formatted, and the long 0x00... 
+numbers might be different):
+
+[
+  #&lt;Item:0x00000103083438 @name="milk", @price=1.2&gt;,
+  #&lt;Item:0x00000103083438 @name="milk", @price=1.2&gt;,
+  #&lt;Item:0x000001012407f0 @name="eggs", @price=1.3&gt;
+]</span>
 p cart.total_price
 <span class="string"># 3.7</span>
 cart.remove(milk)
 p cart.total_price
-<span class="string"># 2.5</span></code></pre>
+<span class="string"># 1.3</span></code></pre>
 <p>
 After you think you have a working answer, download the test file from <a href="../tests/shopping_cart_test_1.rb" target="_blank">here</a> and put it in your <code>shopping_cart</code> directory (just do File -> Save from Chrome). Run it with <code>ruby shopping_cart_test_1.rb</code>. If you're failing any tests, make them pass.
 </p>

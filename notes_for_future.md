@@ -9,6 +9,7 @@ Not a huge issue, and probably low priority. A few people have trouble understan
     puts "#{word}"
 
 Perhaps quickly do:
+
     string1 + " " + string2
 
 Then say...that's kind of annoying, so we can do:
@@ -41,3 +42,7 @@ In the API exercise and in 4A/4B project, the concept of double access like `res
 #### Day 4 Project
 
 Wayyy to complicated—the people I spoke to hard a hard time getting their heads around what `cart.items` looks like. Simplification is necessary. 
+
+#### Day 4 Modulify Exercise
+
+Make it more practical—not `Array.piglatinify`

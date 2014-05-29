@@ -78,8 +78,8 @@ end
 begin
   cart.items
   pass "Cart: can access items"
-  assert cart.items == {}, "Cart: items starts as empty hash",
-    "Cart: items does not start as empty hash"
+  assert cart.items == [], "Cart: items starts as empty array",
+    "Cart: items does not start as empty array"
 rescue
   fail "Cart: cannot access items"
 end
@@ -91,20 +91,17 @@ rescue
   fail "Cart: has bad add method"
 end
 
-test = (cart.items == {"milk"=>{:item=>milk, :quantity=>1}})
+test = (cart.items == [milk])
 assert test, "Cart: add works first time", "Cart: add fails first time"
 
 3.times { cart.add(milk) }
 
-test = (cart.items == {"milk"=>{:item=>milk, :quantity=>4}})
+test = (cart.items == [milk, milk, milk, milk])
 assert test, "Cart: add works subsequent times",
   "Cart: add fails subsequent first times"
 
 cart.add(eggs)
-test = (cart.items == {
-  "milk"=>{:item=>milk, :quantity=>4},
-  "eggs"=>{:item=>eggs, :quantity=>1}
-  })
+test = (cart.items == [milk, milk, milk, milk, eggs])
 assert test, "Cart: add works with second item",
   "Cart: add fails with second item"
 
@@ -115,20 +112,14 @@ rescue
   fail "Cart: has bad remove method"
 end
 
-test = (cart.items == {
-  "milk"=>{:item=>milk, :quantity=>3},
-  "eggs"=>{:item=>eggs, :quantity=>1}
-  })
+test = (cart.items == [eggs])
 assert test, "Cart: remove works when item exists",
   "Cart: remove fails when item exists"
 
 cart.remove(eggs)
 begin 
   cart.remove(eggs)
-  test = (cart.items == {
-    "milk"=>{:item=>milk, :quantity=>3},
-    "eggs"=>{:item=>eggs, :quantity=>0}
-    })
+  test = (cart.items == [])
   assert test, "Cart: remove works when quantity is 0",
     "Cart: remove ends with wrong quantity when quantity is originally 0"
 rescue
@@ -137,8 +128,9 @@ end
 
 price_fail_msg = "Cart: total_price is incorrect"
 
+3.times { cart.add(milk) }
 begin
-  fail price_fail_msg unless cart.total_price == 3.60
+  fail price_fail_msg unless cart.total_price == 3.6
 rescue
   fail "Cart: bad total_price method"
 end
