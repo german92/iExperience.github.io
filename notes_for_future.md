@@ -3,8 +3,12 @@
 
 #### String interpolation
 
-Explain string interpolation better: people have trouble understanding what it is. Perhaps do:
+Not a huge issue, and probably low priority. A few people have trouble understanding what it is; I see some
 
+    word = "string" 
+    puts "#{word}"
+
+Perhaps quickly do:
     string1 + " " + string2
 
 Then say...that's kind of annoying, so we can do:
