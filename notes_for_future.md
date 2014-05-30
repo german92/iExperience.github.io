@@ -41,8 +41,10 @@ In the API exercise and in 4A/4B project, the concept of double access like `res
 
 #### Day 4 Project
 
-Wayyy to complicated—the people I spoke to hard a hard time getting their heads around what `cart.items` looks like. Simplification is necessary. 
+Wayyy to complicated—the people I spoke to hard a hard time getting their heads around what `cart.items` looks like. Simplification is necessary—done.
 
 #### Day 4 Modulify Exercise
 
 Make it more practical—not `Array.piglatinify`
+
+#### Day 5 

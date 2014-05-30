@@ -229,9 +229,8 @@ The computer wins!
 <p>
   Create a <code>Shopper</code> class. It should:
   <ul>
-    <li>Have one required parameter, <code>first_name</code></li>
-    <li>Optionally have <code>last_name</code> and <code>money</code> properties, which should be input via an <code>options</code> hash in the constructor.</li>
-    <li>If <code>money</code> is not provided in the <code>options</code> hash, then it should default to 100.</li>
+    <li>Have two required parameters, <code>first_name</code> and last name</li>
+    <li>A instance variable <code>@money</code> that starts as 100.</li>
     <li>Have methods to get a <code>first_name</code>, <code>last_name</code> and <code>money</code>, and a <code>full_name</code> method</li>
     <li>
       Have a <code>cart</code> property that is set to an empty <code>Cart</code> in the constructor.
@@ -273,6 +272,7 @@ The computer wins!
 puts bru
 <span class="string"># => &lt;Shopper: id: 1, first_name: "bru", last_name: "", money: 100, cart: {}&gt;</span></code></pre>
     </li>
+    <li>Have <b>optional</b> parameters. The second parameter should be <code>last_name</code> (optional) and the third one should be
   </ul>
 </p>
 -->
