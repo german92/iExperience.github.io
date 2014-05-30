@@ -36,6 +36,7 @@ end
 
 require_relative 'item'
 require_relative 'shopper'
+require_relative 'super_shopper'
 
 puts Color.blue "Tests for Shopper"
 
