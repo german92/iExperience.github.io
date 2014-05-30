@@ -126,7 +126,8 @@ rescue
   fail "Cart: remove fails when quantity is 0"
 end
 
-price_fail_msg = "Cart: total_price is incorrect"
+price_fail_msg = "Cart: total_price is incorrect" +
+  "(you may have to use the round method on your final answer)"
 
 3.times { cart.add(milk) }
 begin
