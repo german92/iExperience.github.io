@@ -1,17 +1,29 @@
 ---
 layout: default
-title: Course Schedule
+title: Course Page
 extra_css:
-  - exercise.css
+  - main.css
 ---
 <div class="header">
   <div class="container">
-    <h1>{{ page.title }}
-      <img src="/images/logo.png" alt="" class="logo pull-right">
-    </h1>
+    <h1 class="pull-left">{{ page.title }}</h1>
+    <div class="nav-bar pull-right">
+      <a href="#schedule" class="no-effect pull-left">
+        <div class="nav-item pull-left">Schedule</div>
+      </a>
+      <a href="#resources" class="no-effect pull-left">
+        <div class="nav-item pull-left">Resources</div>
+      </a>
+      <a href="#workshops" class="no-effect pull-left">
+        <div class="nav-item pull-left">Workshops</div>
+      </a>
+    </div>
   </div>
+  <div class="clearfix"></div>
 </div>
+<a name="schedule"></a>
 <div class="container">
+  <h1>Schedule</h1>
   <h2>Week 1</h2>
   <table class="table">
     <thead>
@@ -117,10 +129,79 @@ extra_css:
       </tr>
     </thead>
     <tbody>
-      
+      <tr>
+        <td>Monday</td>
+        <td>Morning</td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>Monday</td>
+        <td>Afternoon</td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>Tuesday</td>
+        <td>Morning</td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>Tuesday</td>
+        <td>Afternoon</td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>Wednesday</td>
+        <td>Morning</td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>Wednesday</td>
+        <td>Afternoon</td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>Thursday</td>
+        <td>Morning</td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>Thursday</td>
+        <td>Afternoon</td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>Friday</td>
+        <td>Morning</td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>Friday</td>
+        <td>Afternoon</td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
     </tbody>
   </table>
-  <h2>Week 3</h2>
+  <!-- <h2>Week 3</h2>
   <table class="table">
     <thead>
       <tr>
@@ -132,7 +213,76 @@ extra_css:
       </tr>
     </thead>
     <tbody>
-      
+      <tr>
+        <td>Monday</td>
+        <td>Morning</td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>Monday</td>
+        <td>Afternoon</td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>Tuesday</td>
+        <td>Morning</td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>Tuesday</td>
+        <td>Afternoon</td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>Wednesday</td>
+        <td>Morning</td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>Wednesday</td>
+        <td>Afternoon</td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>Thursday</td>
+        <td>Morning</td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>Thursday</td>
+        <td>Afternoon</td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>Friday</td>
+        <td>Morning</td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>Friday</td>
+        <td>Afternoon</td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
     </tbody>
   </table>
   <h2>Week 4</h2>
@@ -147,14 +297,164 @@ extra_css:
       </tr>
     </thead>
     <tbody>
-      
+      <tr>
+        <td>Monday</td>
+        <td>Morning</td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>Monday</td>
+        <td>Afternoon</td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>Tuesday</td>
+        <td>Morning</td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>Tuesday</td>
+        <td>Afternoon</td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>Wednesday</td>
+        <td>Morning</td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>Wednesday</td>
+        <td>Afternoon</td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>Thursday</td>
+        <td>Morning</td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>Thursday</td>
+        <td>Afternoon</td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>Friday</td>
+        <td>Morning</td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>Friday</td>
+        <td>Afternoon</td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
     </tbody>
   </table>
   <h2>PARTY TIME!</h2>
   <p>JK now you have to actually go work.</p>
+   -->
+</div>
+<a name="resources"></a>
+<div class="container">
+  <h1>Resources</h1>
+  <h2>Design</h2>
+  <table class="table resources-table">
+    <thead>
+      <th>Description</th>
+      <th>Website</th>
+    </thead>
+    <tbody>
+      <tr>
+        <td>A showcase website for the best designs</td>
+        <td>
+          <a href="http://thebestdesigns.com/">thebestdesigns.com</a>
+        </td>
+      </tr>
+      <tr>
+        <td>Sidebar: A blog with 5 great web design articles every day</td>
+        <td>
+          <a href="http://sidebar.io/">sidebar.io</a>
+        </td>
+      </tr>
+      <tr>
+        <td>Twitter Bootstrap: Instant, responsive, customizable web design for non-designers</td>
+        <td>
+          <a href="http://getbootstrap.com/">getboostrap.com</a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <h2>Ruby</h2>
+  <table class="table resources-table">
+    <tr>
+      <td>Easier Ruby, Rails, Git and other puzzles</td>
+      <td>
+        <a href="http://www.codequizzes.com">codequizzes.com</a>
+      </td>
+    </tr>
+    <tr>
+      <td>Tricky Ruby puzzles</td>
+      <td>
+        <a href="http://rubyquiz.com">rubyquiz.com</a>
+      </td>
+    </tr>
+  </table>
+</div>
+<a name="workshops"></a>
+<div class="container">
+  <h1>Workshops</h1>
+  <table class="table">
+    <thead>
+      <th>Name</th>
+      <th>Summary</th>
+      <th>Day</th>
+      <th>Author</th>
+      <th></th>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Programming Outside the Program</td>
+        <td>Tips about being efficient and staying fit as a coder</td>
+        <td>Rafi</td>
+        <td>Day 1</td>
+        <td>
+          <a href="https://docs.google.com/a/iexperience.co.za/presentation/d/13vaxzorAhkvZay5RaZyW2YhWuI43D3kd34u1yhCDZho/edit#slide=id.g34408fac9_053">Slides</a>
+        </td>
+      </tr>
+      <tr>
+        <td>Programming Outside the Program: XTREME</td>
+        <td>More tips, keyboard shortcuts, cool tools to use</td>
+        <td>Rafi</td>
+        <td>Day 5</td>
+        <td>
+          <a href="">Slides</a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
 </div>
 <div class="footer">
   <div class="container">
-    <h1>Something</h1>
+    &copy; iExperience
+    <img src="./images/logo.png" alt="" class="logo pull-right">
   </div>
 </div>

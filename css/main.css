@@ -26,6 +26,11 @@ a:hover, .a-like:hover {
   text-decoration: underline;
 }
 
+a.no-effect {
+  color: black;
+  text-decoration: none
+}
+
 h2 {
   padding-bottom: 5px;
   border-bottom: 1pt solid #aaaaaa;
@@ -48,6 +53,18 @@ img.centered {
   margin: 20px auto;
 }
 
+.nav-bar {
+  margin-top: 28px;
+}
+
+.nav-bar .nav-item {
+  margin-left: 20px;
+}
+
+.nav-bar .nav-item:hover {
+  text-decoration: underline;
+}
+
 .header {
   background-color: #fafafa;
   border-bottom: 1pt solid #dddddd;
@@ -67,6 +84,10 @@ img.centered {
 
 .logo {
   width: 200px;
+}
+
+.resources-table td:first-child {
+  width: 80%;
 }
 
 .info {
