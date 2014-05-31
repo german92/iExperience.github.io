@@ -62,41 +62,64 @@ abdullah = Christian.new("abdullah", "original")</code></pre>
 </p>
 <h4>Raise a Glass to Glasses</h4>
 <p>
-  Trudging onward:
+  Now consider these classes:
+  <pre><code>class Container
+  def fill_up
+    @full = true
+  end
+  def empty_out
+    @full = false
+  end
+end
+
+class ThingThatBreaks
+  def break
+    @broken = true
+  end
+  def fix
+    @broken = false
+  end
+end
+
+class Glass < <span class="comment"># What should go here?</span>
+end</code></pre>
 </p>
-<pre><code>module HasGlasses
-  def put_on_glasses
-    @glasses = "on"
+<p>
+  We want <code>Glass</code> to be both a <code>Container</code> (meaning we can fill it up and empty it out) AND be a <code>ThingThatBreaks</code>, meaning it should be able to break and fix itself. But it can't inherit from two different classes.
+</p>
+<p>
+  This is why we use modules.
+  <pre><code>module Breakable
+  def break
+    @broken = true
   end
-  def take_off_glasses
-    @glasses = "off"
-  end
-  def drink_ten_glasses
-    thirsty = false
-  end
-
-  def glasses_on?
-    return (@glasses == "on")
+  def fix
+    @broken = false
   end
 end
 
-class Christian < Person
-  include HasGlasses
+class Glass < Container
+  include Breakable
+
+  def fill_up_with_wine
+    puts "Stayin' classy"
+  end
 end
 
-class Muslim < Person
-  include HasGlasses
+class ShotGlass < Glass
+  def fill_up_with_tequila
+    puts "party == on"
+  end
 end
 
-mary = Muslim.new("mary")</code></pre>
+shot_glass = ShotGlass.new</code></pre>
+</p>
 <p>
   <ol start="6">
     <li>Will all this code work? Do you see any bugs? Before you try it yourself, write down your answer. If you see bugs, note what they are and how you would fix them.</li>
-    <li>What will <code>Muslim.new("mary", "sunni")</code> do? Why?</li>
-    <li>In the code, we're calling <code>Muslim.new("mary")</code>, even though the <code>new</code> method isn't <code>def</code>'d anywhere. How come it works?</li>
-    <li>What will <code>Muslim.put_on_glasses</code> do? Why?</li>
-    <li>If after the last line of code, you ran <code>mary.glasses_on?</code>, what would happen? Why? If you think it's broken, how can you fix it? If you think it works, what does it return?</li>
-    <li>What is <code>HasGlasses</code>? Choose all that apply:
+    <li>Will <code>shot_glass.break</code> work? Why or why not?</li>
+    <li>In the code, we're calling <code>ShotGlass.new</code>, even though the <code>new</code> method isn't <code>def</code>'d anywhere. How come it works?</li>
+    <li>What is <code>Breakable</code>? Choose all that apply:
       <ul>
         <li>A class</li>
         <li>A method</li>
@@ -105,7 +128,6 @@ mary = Muslim.new("mary")</code></pre>
         <li>A variable</li>
       </ul>
     </li>
-    <li>What does <code>drink_ten_glasses</code> do? Is anything missing?</li>
   </ol>
 </p>
 <h2>E2: String Theory</h2>
