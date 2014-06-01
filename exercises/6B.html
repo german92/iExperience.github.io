@@ -8,21 +8,40 @@ answers_shown: false
 ---
 <h1>Review</h1>
 <p>
-  <b>Topics Covered:</b> Rails views review; view helpers; partials
+  <b>Topics Covered:</b> 
 </p>
 <hr class="large">
 <h1>Exercises</h1>
-<h2>E1: Retweet Again</h2>
+<h2>E1: Tweet</h2>
 <p>
-  Perfect practice makes perfect. Recreate the Twitter app again, from scratch, but now with:
+  Fire up <code>rails console</code>. Then do the following things:
   <ul>
-    <li>A header and a footer in the layout</li>
-    <li>Using at least one <code>link_to</code> and one <code>image_tag</code></li>
-    <li>A <code>form_for</code> tag for the <code>User</code> view</li>
+    <li>Create a tweet.</li>
+    <li>Find it with the <code>Tweet.find</code> method</li>
+    <li>Find it by user with <code>Tweet.where(:user => "...")</code></li>
+    <li>Find it by user with <code>Tweet.find_by(:user => "..."</code></li>
+    <li>Describe to yourself what the difference is between those two methods.</li>
+    <li>Update that tweet to have a different tweeter name. Is this possible?</li>
+    <li>Update that tweet to have a different body. Is this possible?</li>
+    <li>Update that tweet to have a different id. Is this possible?</li>
+    <li>Delete that tweet</li>
   </ul>
-  Try to look at the codealong from class as infrequently as possible.
 </p>
+<h4>Tweet tweet</h4>
+<p>
+  A bit harder now:
+</p>
+<ul>
+  <li>Create 10 Tweets programmatically, each with a different user and different body. You might want to write pseudo-code first!</li>
+  <li>Destroy them all.</li>
+  <li>Create 10 more the same way. Find the 4th one.</li>
+  <li>Update all of them to have the body "iX TAs rock!"</li>
+  <li>Update the fourth one to to have the body "And the teacher rocks sometimes, too".</li>
+</ul>
 <hr class="large">
 
 <!-- Projects -->
 <h1>Projects</h1>
+<p>
+  
+</p>
