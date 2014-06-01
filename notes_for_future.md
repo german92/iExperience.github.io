@@ -39,10 +39,6 @@ students keep asking, what is that `|item|` thing? Why do I need it? How do I us
 
 In the API exercise and in 4A/4B project, the concept of double access like `response['data']['title']` or `items["milk"][:quantity]` doesn't seem to be clear—people don't have a mental model of what the bigger hash (`response` or `items`) is and what those square brackets are doing. Explaining that the `[]` is like a "look inside" operator (look inside Array, or Hash) helped a bit.
 
-#### Day 4 Project
-
-Wayyy to complicated—the people I spoke to hard a hard time getting their heads around what `cart.items` looks like. Simplification is necessary—done.
-
 #### Day 4 Modulify Exercise
 
 Make it more practical—not `Array.piglatinify`
