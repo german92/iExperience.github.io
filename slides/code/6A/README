@@ -1,0 +1,11 @@
+Steps:
+- move iX logo into header (change to .header from .tweets_header)
+- explain how image_tag works (takes options)
+- add a few links from home page to new .footer div
+- style it up a bit
+- add a link_to "", "", :target => "_blank", explain how it basically generates the same thing, takes HTML tag options
+- rails destroy scaffold User
+- rails generate scaffold User handle:string, profile_pic:string, bio:text, status:string
+- change bio to a text_area
+- change status to a select :status, ["User", "Admin"]
+- explain partials by showing that edit changed

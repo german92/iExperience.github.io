@@ -1,0 +1,49 @@
+// Place all the styles related to the Tweets controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.tweets_header {
+	text-align: center;
+}
+
+.tweets_list {
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	width: 100%;
+	background-color: #eee;
+	padding: 5px;
+
+	a {
+		color: #FD007A;
+	}
+
+	td, th {
+		font-family: "Lato", sans-serif;
+		padding: 5px;
+	}
+
+	.tweet_handle {
+		font-weight: bold;
+		font-size: 15px;
+	}
+
+	.tweet_body {
+		font-size: 15px;
+	}
+}
+
+.new_tweet_link {
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	text-align: center;
+	background-color: #FD007A;
+	width: 100px;
+	padding: 10px;
+
+	a {
+		color: #fff;
+		text-decoration: none;
+	}
+}
