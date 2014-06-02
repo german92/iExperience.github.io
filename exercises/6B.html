@@ -12,7 +12,18 @@ answers_shown: false
 </p>
 <hr class="large">
 <h1>Exercises</h1>
-<h2>E1: Tweet</h2>
+<h2>E1: ActiveQuiz</h2>
+<p>
+  <ul>
+    <li>What is a database?</li>
+    <li>What is a database table? How does it relate to a database? What's a good analogy for a database table (i.e. a way to visualize it)?</li>
+    <li>Draw the <code>tweets</code> database table</li>
+    <li>Why do we use models/resources at all?</li>
+    <li>What is ActiveRecord?</li>
+    <li>What's the difference between a database table, resource and an ActiveRecord model?</li>
+  </ul>
+</p>
+<h2>E2: Tweet</h2>
 <p>
   Fire up <code>rails console</code>. Then do the following things:
   <ul>
@@ -38,15 +49,80 @@ answers_shown: false
   <li>Update all of them to have the body "iX TAs rock!"</li>
   <li>Update the fourth one to to have the body "And the teacher rocks sometimes, too".</li>
 </ul>
+<h2>E3: Keep Retweeting</h2>
+<p>
+  Again, rebuild the Twitter app from scratch. This time:
+  <ul>
+    <li>Add a header and footer to your <code>app/views/layouts/application.html.erb</code>, but make them partials and render with <code><%= render :partial => "header" %></code></li>
+    <li>Expand <code>User</code> to have email, password, bio, and any other fields you think would be necessary.</li>
+    <li>Similarly, add any fields to the <code>Tweet</code> model that you think might be useful.</li>
+    <li>
+      Change the <code>form_for</code> in the appropriate partials to use the right input fields. For example, for your user's email fields, you might use a <code>&lt;input type="email"&gt;</code>, but it might look like a <code>f.something_tag</code>.
+    </li>
+  </ul>
+</p>
+<h4>Testing</h4>
+<p>
+  Just because we've moved past Ruby doesn't mean you should lose the coding principles that you learned there. Keep checking for edge cases, and verifying that your app is working the way it's supposed to. 
+</p>
 <hr class="large">
 
 <!-- Projects -->
 <h1>Projects</h1>
 <h2>The Real Deal</h2>
 <p>
-  Improve on your final project proposal. Talk to others about theirs, and start thinking about who you want to work with. You'll have to have a decision by Wednesday.
+  Now that you have some features, you want to come up with <b>user stories</b>, or typical workflows for all the types of actions. For our Twitter app, there are several that come to mind: A new user signing up, signing in, someone posting something, someone browsing tweets, following another user, etc.
 </p>
-<h2>Fueling Consumerism on Rails</h2>
+<pre><code>...continuing from your previous document...
+
+## User Stories
+
+#### Sign up
+
+1. User visits site
+2. User clicks "Sign up"
+3. User fills in name, email, password
+4. User clicks "Submit"
+  - If all is ok:
+    - User is directed to home page
+  - If email is invalid
+    - User is shown an error message
+  - If password is too short
+    - User is shown an error message
+
+#### Sign in
+
+1. User visits site
+2. User clicks "Sign in"
+3. User fills in email and password
+4. User clicks "Submit"
+  - If email and password match
+    - User is directed to main page
+  - Otherwise
+    - User is shown error message
+
+#### Create a tweet
+
+...
+
+#### Follow a person
+
+...
+
+#### Search for a person
+
+...
+
+#### Search for tweets
+
+...</code></pre>
+<p>
+  It might seem extremely verbose, but this a way of pseudo-coding applications: just like writing small programs, large apps need a lot of planning, too. This allows you to foresee a lot of problems that you may not have thought about. How exactly do I do a search? How do I render the results? And questions like that.
+</p>
+<p>
+  Tomorrow, you'll present your idea, features and stories in front of the whole class, and the class will give you back feedback on problems they see. Put yourself in their shoes and think "If I were a user of my app, what would I improve?". It's much better to decide that your idea should be changed/improved/scrapped now, after only hours of work, instead of after days or even weeks of work. 
+</p>
+<!-- <h2>Fueling Consumerism on Rails</h2>
 <p>
   We're going to begin the process of translating the project from last week into a Rails application. Each class (<code>Item</code>, <code>Cart</code>, <code>Shopper</code>...) will become its own model, and you'll write the controllers and views for them in time. This will also be a chance to go through the flow of building your own Rails application from scratch, as opposed to a codealong.
 </p>
@@ -68,3 +144,4 @@ answers_shown: false
 <p>
   Create a new Github repo for your code, and push your code there. If you forgot how, check back in previous exercises or visit <a href="http://lmgtfy.com/">here</a>.
 </p>
+ -->
