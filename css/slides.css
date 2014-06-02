@@ -14,9 +14,6 @@
   font-size: 40px;
 }
 
-.reveal .slide-background {
-}
-
 .logo {
 	position: absolute;
 	bottom: 24px;
@@ -31,8 +28,4 @@
 
 .logo img {
   height: 42px;
-}
-
-.state-background {
-	z-index: 1000;
 }
