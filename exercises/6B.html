@@ -44,5 +44,27 @@ answers_shown: false
 <h1>Projects</h1>
 <h2>The Real Deal</h2>
 <p>
-  Improve on your final project proposal. Talk to others about theirs, and start thinking about who you want to work with. You'll have to have a decision by Wednesday!
+  Improve on your final project proposal. Talk to others about theirs, and start thinking about who you want to work with. You'll have to have a decision by Wednesday.
+</p>
+<h2>Fueling Consumerism on Rails</h2>
+<p>
+  We're going to begin the process of translating the project from last week into a Rails application. Each class (<code>Item</code>, <code>Cart</code>, <code>Shopper</code>...) will become its own model, and you'll write the controllers and views for them in time. This will also be a chance to go through the flow of building your own Rails application from scratch, as opposed to a codealong.
+</p>
+<p>
+  In your <code>projects</code> directory, create a new Rails app called <code>shopping</code> (Hint: <code>rails new shopping</code>). Make sure you can get the server running; you may need to kill other servers that were previously running on your Terminal.
+</p>
+<p>
+  As with before, we'll start with the <code>Item</code> class. Use scaffolding to generate an Item model. It should have a property <code>name</code>, which is a string, and a property <code>price</code>, which is a float. Once you've created it, verify it's working by visiting <code>localhost:3000/items</code> and creating, viewing and deleting a new item. What happens if you type a non-float in the price field? Can you figure out how to fix that?
+</p>
+<h4>Pretty 'n' Sassy</h4>
+<p>
+  Sass up your webpage! Use <a href="http://sass-lang.com/guide">SASS CSS</a> in your <code>app/assets/stylesheets/items.css.scss</code> to make your website pretty (the <code>.scss</code> extension means you can use SASS, much like how <code>.erb</code> means you can use Ruby in HTML). Remember to add styles that apply to all pages (like styles on <code>body</code> or all text, for example) in <code>application.css</code> (which you can rename <code>application.css.scss</code>) and only those that apply to the items page in <code>items.css.scss</code>.
+</p>
+<h4>Think...think...</h4>
+<p>
+  Think about how you might scaffold the <code>Cart</code>. Can you foresee any problems? What would you type into the Terminal? Write down the answers to these questions.
+</p>
+<h4>To the cloud!</h4>
+<p>
+  Create a new Github repo for your code, and push your code there. If you forgot how, check back in previous exercises or visit <a href="http://lmgtfy.com/">here</a>.
 </p>

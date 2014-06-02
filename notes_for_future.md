@@ -43,4 +43,10 @@ In the API exercise and in 4A/4B project, the concept of double access like `res
 
 Make it more practical—not `Array.piglatinify`
 
-#### Day 5 
+#### Topics to Add Into Curriculum
+
+- Difference between class methods and just free methods. 
+  - Class methods teach something you create to do something (teach a fish to swim) vs. free methods building a machine that makes its input swim (a machine that, when given a fish, makes it swim).
+- `!` notation for methods
+  - `map!`
+- How to debug
