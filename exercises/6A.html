@@ -12,10 +12,35 @@ answers_shown: false
 </p>
 <hr class="large">
 <h1>Exercises</h1>
-<h2>E1: Retweet Again</h2>
+<h2>E1: Poppin' Tags</h2>
+<p>
+  We've learned so many tags in <code>erb</code> (note: different from <code>irb</code>). Let's do some review:
+  <ol>
+    <li>When do you use <code><%= %></code> and when do you use <code><% %></code>?</li>
+    <li>What does the <code>yield</code> in <code>app/views/layouts/application.html</code> do?</li>
+    <li></li>
+  </ol>
+</p>
+<p>
+  For each of the following tags, write down what it does, what parameters it takes and whether you need to put it in a <code><%= %></code> or <code><% %></code>.
+  <ol start="3">
+    <li><code>image_tag</code></li>
+    <li><code>link_to</code></li>
+    <li><code>render</code> or <code>render :partial =></code></li>
+    <li><code>form_for</code>. What is special about <code>form_for</code>? What is that <code>|f|</code> thing it gives you?</li>
+    <li><code>f.label</code></li>
+    <li><code>f.text_field</code></li>
+    <li><code>f.text_area</code></li>
+    <li><code>f.select</code></li>
+    <li><code>f.submit</code></li>
+  </ol>
+</p>
+
+<h2>E2: Retweet Again</h2>
 <p>
   Perfect practice makes perfect. Recreate the Twitter app again, from scratch, but now with:
   <ul>
+    <li>Users that have profile pics</li>
     <li>A header and a footer in the layout</li>
     <li>Using at least one <code>link_to</code> and one <code>image_tag</code></li>
     <li>A <code>form_for</code> view helper for the <code>User</code> view</li>
@@ -25,6 +50,11 @@ answers_shown: false
 <h2>E2: Catch up</h2>
 <p>
   If you haven't had a chance to finish your shopping cart project or tic-tac-toe, make sure to finish them. 
+</p>
+
+<h2>E3: Linked up</h2>
+<p>
+  Use <code>link_to</code> and <code>image_tag</code> to make an image that links somewhere. Make that link open in a new tab.
 </p>
 
 <hr class="large">
