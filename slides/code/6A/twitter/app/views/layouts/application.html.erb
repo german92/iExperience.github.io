@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Twitter</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<div class="header">
+	<%=image_tag "favicon.png"%>
+</div>
+
+<%= yield %>
+
+<div class="footer">
+	<%=link_to 'Home', 'http://iexperience.co.za', :target => "_blank" %> | 
+	<%=link_to 'About', 'http://iexperience.co.za/#row2', :target => "_blank" %> | 
+	<%=link_to 'FAQ', 'http://iexperience.co.za/faq.html', :target => "_blank" %> | 
+	<%=mail_to 'aaron@iexperience.co.za', 'Feedback', :subject => 'iExperience Feedback' %>
+</div>
+
+</body>
+</html>
