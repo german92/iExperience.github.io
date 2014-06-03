@@ -41,7 +41,7 @@ In the API exercise and in 4A/4B project, the concept of double access like `res
 
 #### Day 4 Modulify Exercise
 
-Make it more practical—not `Array.piglatinify`
+Make it more practical—not `Array.piglatinify`. 
 
 #### Topics to Add Into Curriculum
 
