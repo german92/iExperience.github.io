@@ -10,11 +10,37 @@ answers_shown: false
 <!-- Template for Exercises—just copy page into new file and update prematter -->
 <h1>Review</h1>
 <p>
-  <b>Topics Covered:</b> Putting MVC together
+  <b>Topics Covered:</b> Putting MVC together; building an API app; taking off the scaffolding training wheels
+</p>
+<h4>Conceptual Steps</h4>
+<p>
+  <ol>
+    <li>Visualize what you want your application to <b>store</b>, and what <b>properties</b> it has. In this case, it was stories with titles (strings) and scores (integers)</li>
+    <li>Think about what you want to do with those things. Common actions are look at them, edit them, delete them—in other words, basic CRUD actions. Other things in this case might be to filter by title, or rank by score. These will become your <b>controller methods</b>.</li>
+  </ol>
+</p>
+<h4>Coding Steps</h4>
+<p>
+  For review purposes, here are the list of steps we did today:
+  <ol>
+    <li><code>rails new reddit_rails</code></li>
+    <li><code>cd reddit_rails</code></li>
+    <li><code>rails generate migration create_stories</code></li>
+    <li>
+      Edit the migration file found in <code>db/migrate/2014..._create_stories.rb</code>
+    </li>
+    <li>Create a <code>story.rb</code> file in <code>app/models</code> and add the code to create a model (something that looks like <code>class Story < ActiveRecord::Base ... end</code></li>
+    <li>Create a <code>stories_controller.rb</code> controller in <code>app/controllers</code> (it should have something like <code>class StoriesController < ApplicationController ... end)</code></li>
+    <li>Give it the methods you thought about in step 2 above (in our case, we made <code>index</code>)</li>
+    <li>Create a route for your action in <code>config/routes.rb</code></li>
+    <li>Create a view <code>index.html.erb</code> in <code>app/views/stories</code> (you'll have to make a folder called <code>stories</code>). Why do we name it <code>index</code>? Because your action is called <code>index</code>. Rails renders the view with the same name as the action. We'll learn how to change that later.</li>
+    <li>Now you should be able to see your view in your route. Woohoo only 10 steps!</li>
+  </ol>
 </p>
 <hr class="large">
 <h1>Exercises</h1>
-<h2>E1: Migration Review</h2>
+<h2>E1: rake db:review</h2>
+<h4>Migrations</h4>
 <p>
   <ol>
     <li>At a high level, what is a migration?</li>
@@ -22,13 +48,13 @@ answers_shown: false
     <li>How do we roll back a migration?</li>
   </ol>
 </p>
-<h2>E2: One more time!</h2>
+<h4>Scaffolding</h4>
 <p>
-  Recreate Twitter, but without scaffolding. You should have a <code>Tweet</code> and <code>User</code> resource, <code>index</code>, <code>new</code>, <code>show</code>, <code>edit</code>, <code>update</code>, and <code>delete</code> actions in both the <code>UsersController</code> and <code>TweetsController</code>, as well as corresponding views.
+  Why are we not using scaffolding? Why do we not want to use it all the time?
 </p>
-<h2>E3: Open Source Democracy</h2>
+<h2>E2: Open Source Democracy</h2>
 <p>
-  Now we're going to write an app that does what our Terminal code for using the data.gov API did. In <code>d7</code>, start by creating new rails app called <code>petitions</code>. If you've lost the code from before, you can find it <a href="https://github.com/iExperience/petitions" target="_blank">here</a>.
+  Now we're going to write an app that does what our Terminal code for using the data.gov API did. In <code>d7</code>, start by creating new rails app called <code>petitions_rails</code>. If you've lost the code from before, you can find it <a href="https://github.com/iExperience/petitions" target="_blank">here</a>.
 </p>
 <h4>Setup</h4>
 <p>
@@ -43,18 +69,18 @@ gem 'sqlite3'
 </code></pre>
 At the end of the file, go ahead and add <code>gem 'json'</code> and <code>gem 'rest-client'</code> on their own lines. Then, back in Terminal, run <code>bundle install</code>. What that does is basically run <code>gem install</code> for each of the gems in the Gemfile.
 </p>
-<h4>Models</h4>
+<h4>Models and Migrations (Steps 4-5)</h4>
 <p>
-  Now we want to think about what models our application is going to need. One of them should be fairly obvious: a <code>Petition</code> model. Go ahead and create that. 
+  Now we want to think about what models our application is going to need. One of them should be fairly obvious: a <code>Petition</code> model. Go ahead and create that, as well as a migration for it. What properties do we need? What type are they? For example, for the stories example we did in class, we needed a title (a string), and score (an integer). 
 </p>
-<h4>The Start of an Application</h4>
+<h4>The Start of an Application (Steps 6-8)</h4>
 <p>
   Follow the steps in today's code along, as well as in the exercise above, to create a main page. Maybe you want to add CSS...or maybe not. Your choice! In any case, add a "Show petitions" link that links to <code>/petitions</code>. Create a route that maps that URL to a controller (probably the <code>PetitionsController</code>), and create the necessary action (probably <code>index</code>). Make sure your route in <code>config/routes.rb</code> maps to that controller and action.
 </p>
 <p>
   Now visit <code>localhost:3000</code> and make sure your link works. Get it so there are no error messages, and it basically shows an empty page. 
 </p>
-<h4>Now for Some Actual Logic</h4>
+<h4>Now for Some Actual Logic (All the stuff in the code along, but in the model file)</h4>
 <p>
   Our model is going to need a way to get data from the API. To use the gems we installed, we still have to require them. At the top of <code>/app/models/petition.rb</code>, add
   <pre><code>require 'json'
@@ -86,7 +112,7 @@ end
 <p>
   Start getting used to this workflow: Rails is a lot of switching between files, putting your code in the right place. Now the <code>index</code> method you created before shouldn't call <code>Petition.all</code> (which would return nothing since we haven't put any petitions in the database), but instead call <code>Petitions.get_from_api</code>. What instance variable should you store that in?
 </p>
-<h4>Lastly, the View</h4>
+<h4>Lastly, the View (Step 9)</h4>
 <p>
   Update your <code>/app/views/petitions/index.html.erb</code> file to render each of the petitions title, body, URL, deadline, status, created and siganture count. But don't let the date be something ugly like <code>1403920011</code>, use some of Rails' built in methods to make it into something nice!
 </p>
@@ -94,17 +120,19 @@ end
 <p>
   Now you should have a website that has two pages: a main page (URL <code>/</code>) that has a link to the <code>/petitions</code> page, and a petitions page (with URL <code>/petitions</code>) that shows the first five petitions on data.gov. Congrats, you've built your first somewhat useful website!!
 </p>
-<h2>E4: Customize</h2>
+<h2>E3: One for All</h2>
+<p>
+  Add the UI (user interface) and controller methods to be able to view just a single petition by clicking on it on the petitions page. The URL will probably looks something like <code>/petitions/&lt;petition_id&gt;</code>. (Hint: use a <code>show</code> action.)
+</p>
+
 <p>
   Your website works, but it always gives us just the last 5 petitions. It doesn't let us filter, or search, or any of the nice things the API allows us to do. Let's fix that. 
 </p>
+<h2 class="bonus">E4 (Bonus!): Customize</h2>
 <p>
   In the same app, add the necessary user interface (meaning HTML/CSS in your views), controller methods and model methods that allow us to search through petitions, filter by status, or see more than 5. Then go sign one of them and participate in America's beautiful democracy.
 </p>
-<h2 class="bonus">E5 (Bonus!): One for All</h2>
-<p>
-  Add the UI (user interface) and controller methods to be able to view just a single petition by clicking on it on the petitions page. The URL will probably looks something like <code>/petitions/&lt;petition_id&gt;</code>
-</p>
+
 <!-- Answer box code; to show answers, change the prematter answers_shown
 variable to true. -->
 {% if page.answers_shown %}
