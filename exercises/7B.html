@@ -102,15 +102,16 @@ end</code></pre>
   What should your code do? You want to get the data from the API, and return an <b>array of hashes</b> that contain all the information that we want. Your code <b>should not</b> <code>puts</code> anything—that's what your view is for! If I were to write pseudo-code, it might look like:
 </p>
 <pre><code>def self.get_from_api
-  <span class="comment"># get JSON from API</span>
-  <span class="comment"># parse it into a hash</span>
+  <span class="comment"># Get JSON from API</span>
+  <span class="comment"># Parse it into a hash</span>
   <span class="comment"># Get the relevant fields of the hash</span>
-  <span class="comment"># Return an array of hashes</span>
+  <span class="comment"># Create new stories and save it to the database</span>
+  <span class="comment"># Return an array of story instances</span>
 end
 </code></pre>
 <h4>Back to the Controller</h4>
 <p>
-  Start getting used to this workflow: Rails is a lot of switching between files, putting your code in the right place. Now the <code>index</code> method you created before shouldn't call <code>Petition.all</code> (which would return nothing since we haven't put any petitions in the database), but instead call <code>Petitions.get_from_api</code>. What instance variable should you store that in?
+  Start getting used to this workflow: Rails is a lot of switching between files, putting your code in the right place. Now the <code>index</code> method you created before shouldn't call <code>Petition.all</code>, but instead call <code>Petitions.get_from_api</code>. What instance variable should you store that in?
 </p>
 <h4>Lastly, the View (Step 9)</h4>
 <p>
