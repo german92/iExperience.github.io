@@ -1,0 +1,146 @@
+---
+title: Homework for 7B
+layout: exercise
+prev: 7A
+next: 8A
+permalink: /exercises/7B.html
+answers_shown: false
+---
+
+<!-- Template for Exercises—just copy page into new file and update prematter -->
+<h1>Review</h1>
+<p>
+  <b>Topics Covered:</b> Putting MVC together
+</p>
+<hr class="large">
+<h1>Exercises</h1>
+<h2>E1: Migration Review</h2>
+<p>
+  <ol>
+    <li>At a high level, what is a migration?</li>
+    <li>What code do run to run a migration?</li>
+    <li>How do we roll back a migration?</li>
+  </ol>
+</p>
+<h2>E2: One more time!</h2>
+<p>
+  Recreate Twitter, but without scaffolding. You should have a <code>Tweet</code> and <code>User</code> resource, <code>index</code>, <code>new</code>, <code>show</code>, <code>edit</code>, <code>update</code>, and <code>delete</code> actions in both the <code>UsersController</code> and <code>TweetsController</code>, as well as corresponding views.
+</p>
+<h2>E3: Open Source Democracy</h2>
+<p>
+  Now we're going to write an app that does what our Terminal code for using the data.gov API did. In <code>d7</code>, start by creating new rails app called <code>petitions</code>. If you've lost the code from before, you can find it <a href="https://github.com/iExperience/petitions" target="_blank">here</a>.
+</p>
+<h4>Setup</h4>
+<p>
+  For this app to work, remember that we needed to install the gems 'rest-client' and 'json'. The way Rails manages this is in the <code>Gemfile</code>, stored right in first directory. Right now, it looks something like
+  <pre><code>source 'https://rubygems.org'
+
+# Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
+gem 'rails', '4.1.1'
+# Use sqlite3 as the database for Active Record
+gem 'sqlite3'
+....
+</code></pre>
+At the end of the file, go ahead and add <code>gem 'json'</code> and <code>gem 'rest-client'</code> on their own lines. Then, back in Terminal, run <code>bundle install</code>. What that does is basically run <code>gem install</code> for each of the gems in the Gemfile.
+</p>
+<h4>Models</h4>
+<p>
+  Now we want to think about what models our application is going to need. One of them should be fairly obvious: a <code>Petition</code> model. Go ahead and create that. 
+</p>
+<h4>The Start of an Application</h4>
+<p>
+  Follow the steps in today's code along, as well as in the exercise above, to create a main page. Maybe you want to add CSS...or maybe not. Your choice! In any case, add a "Show petitions" link that links to <code>/petitions</code>. Create a route that maps that URL to a controller (probably the <code>PetitionsController</code>), and create the necessary action (probably <code>index</code>). Make sure your route in <code>config/routes.rb</code> maps to that controller and action.
+</p>
+<p>
+  Now visit <code>localhost:3000</code> and make sure your link works. Get it so there are no error messages, and it basically shows an empty page. 
+</p>
+<h4>Now for Some Actual Logic</h4>
+<p>
+  Our model is going to need a way to get data from the API. To use the gems we installed, we still have to require them. At the top of <code>/app/models/petition.rb</code>, add
+  <pre><code>require 'json'
+require 'rest-client'</code></pre>
+</p>
+<p>
+  Now you have to figure out where all the code we wrote last week goes. But this application is unique: we're not pulling data from our database, but from the data.gov API. We're going to create a <code>get_from_api</code> method that does just that.
+</p>
+<pre><code><span class="comment"># app/models/petition.rb</span>
+require 'json'
+require 'rest-client'
+
+class Petition < ActiveRecord::Base
+  def self.get_from_api
+    <span class="comment"># your code here</span>
+  end
+end</code></pre>
+<p>
+  What should your code do? You want to get the data from the API, and return an <b>array of hashes</b> that contain all the information that we want. Your code <b>should not</b> <code>puts</code> anything—that's what your view is for! If I were to write pseudo-code, it might look like:
+</p>
+<pre><code>def self.get_from_api
+  <span class="comment"># get JSON from API</span>
+  <span class="comment"># parse it into a hash</span>
+  <span class="comment"># Get the relevant fields of the hash</span>
+  <span class="comment"># Return an array of hashes</span>
+end
+</code></pre>
+<h4>Back to the Controller</h4>
+<p>
+  Start getting used to this workflow: Rails is a lot of switching between files, putting your code in the right place. Now the <code>index</code> method you created before shouldn't call <code>Petition.all</code> (which would return nothing since we haven't put any petitions in the database), but instead call <code>Petitions.get_from_api</code>. What instance variable should you store that in?
+</p>
+<h4>Lastly, the View</h4>
+<p>
+  Update your <code>/app/views/petitions/index.html.erb</code> file to render each of the petitions title, body, URL, deadline, status, created and siganture count. But don't let the date be something ugly like <code>1403920011</code>, use some of Rails' built in methods to make it into something nice!
+</p>
+<h4>All in All</h4>
+<p>
+  Now you should have a website that has two pages: a main page (URL <code>/</code>) that has a link to the <code>/petitions</code> page, and a petitions page (with URL <code>/petitions</code>) that shows the first five petitions on data.gov. Congrats, you've built your first somewhat useful website!!
+</p>
+<h2>E4: Customize</h2>
+<p>
+  Your website works, but it always gives us just the last 5 petitions. It doesn't let us filter, or search, or any of the nice things the API allows us to do. Let's fix that. 
+</p>
+<p>
+  In the same app, add the necessary user interface (meaning HTML/CSS in your views), controller methods and model methods that allow us to search through petitions, filter by status, or see more than 5. Then go sign one of them and participate in America's beautiful democracy.
+</p>
+<h2 class="bonus">E5 (Bonus!): One for All</h2>
+<p>
+  Add the UI (user interface) and controller methods to be able to view just a single petition by clicking on it on the petitions page. The URL will probably looks something like <code>/petitions/&lt;petition_id&gt;</code>
+</p>
+<!-- Answer box code; to show answers, change the prematter answers_shown
+variable to true. -->
+{% if page.answers_shown %}
+<a class="hover-show pull-right">Hover for answer</a>
+<div class="hover-hide">
+  <!-- Put answer here -->
+</div>
+{% endif %}
+
+<hr class="large">
+
+<!-- Projects -->
+<h1>Projects</h1>
+<h2>The Real Deal: Pivot and Iterate</h2>
+<p>
+  During your presentation, you got some feedback about your idea. Start tweaking it to reflect that feedback. Think about all the different types of users (as per Aaron's workshop), and all the things that they might want to do. Start thinking about what the interface might look like, and also, now, what Models, Views, and Controllers that you might need. Most likely, you'll need a User resource. What else?
+</p>
+<h2>Fueling Consumerism on Rails</h2>
+<p>
+  We're going to begin the process of translating the project from last week into a Rails application. Each class (<code>Item</code>, <code>Cart</code>, <code>Shopper</code>...) will become its own model, and you'll write the controllers and views for them in time. This will also be a chance to go through the flow of building your own Rails application from scratch, as opposed to a codealong.
+</p>
+<p>
+  In your <code>projects</code> directory, create a new Rails app called <code>shopping</code> (Hint: <code>rails new shopping</code>). Make sure you can get the server running; you may need to kill other servers that were previously running on your Terminal.
+</p>
+<p>
+  As with before, we'll start with the <code>Item</code> class. Use scaffolding to generate an Item model. It should have a property <code>name</code>, which is a string, and a property <code>price</code>, which is a float. Once you've created it, verify it's working by visiting <code>localhost:3000/items</code> and creating, viewing and deleting a new item. What happens if you type a non-float in the price field? Can you figure out how to fix that?
+</p>
+<h4>Pretty 'n' Sassy</h4>
+<p>
+  Sass up your webpage! Use <a href="http://sass-lang.com/guide">SASS CSS</a> in your <code>app/assets/stylesheets/items.css.scss</code> to make your website pretty (the <code>.scss</code> extension means you can use SASS, much like how <code>.erb</code> means you can use Ruby in HTML). Remember to add styles that apply to all pages (like styles on <code>body</code> or all text, for example) in <code>application.css</code> (which you can rename <code>application.css.scss</code>) and only those that apply to the items page in <code>items.css.scss</code>.
+</p>
+<h4>Think...think...</h4>
+<p>
+  Think about how you might scaffold the <code>Cart</code>. Can you foresee any problems? What would you type into the Terminal? Write down the answers to these questions.
+</p>
+<h4>To the cloud!</h4>
+<p>
+  Create a new Github repo for your code, and push your code there. If you forgot how, check back in previous exercises or visit <a href="http://lmgtfy.com/">here</a>.
+</p>
