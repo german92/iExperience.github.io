@@ -66,6 +66,12 @@ abdullah = Christian.new("abdullah", "original")</code></pre>
   <p>
     <ol>
       <li>Line 3 tells the class to save the name that was passed to it when you call <code>Person.new</code>. Without it, the class won't remember the name.</li>
+      <li>Subclass</li>
+      <li>It will break, because the method is only defined on the instance, not the class. You have to do <code>c = Christian.new(...)</code>, then <code>c.go_to_mass</code></li>
+      <li><code>abdullah.type</code> will break becuase there's no <code>type</code> method in <code>Person</code> or <code>Christian</code> class.</li>
+      <li>
+        An instance, an object and a variable.
+      </li>
     </ol>
   </p>
 </div>
@@ -140,6 +146,17 @@ shot_glass = ShotGlass.new</code></pre>
     </li>
   </ol>
 </p>
+{% if page.answers_shown %}
+<a class="hover-show pull-right">Hover for answer</a>
+<div class="hover-hide">
+  <ol start="6">
+    <li>Yes.</li>
+    <li>Will work, because it inherits from a class that includes <code>Breakable</code>, and therefore pulls in all the methods as well.</li>
+    <li>Ruby automatically defines a <code>new</code> method on each class, so we can create instances of that class.</li>
+    <li>An object (and also a module).</li>
+  </ol>
+</div>
+{% endif %}
 <h2>E2: String Theory</h2>
 <p>
   A common way to practice arrays and methods is to write <em>string manipulation</em> methods, or methods that modify strings. The cool thing about Ruby is that you can always modify any class and add methods to it. For example, instead of our <code>shout</code> method, we could have written it into the <code>String</code> class itself:
