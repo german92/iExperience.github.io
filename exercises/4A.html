@@ -263,6 +263,12 @@ module Piglatinify
     <span class="comment"># Rest of string + first letter + "ay"</span>
     string_self[1..-1] + string_self[0] + "ay"
   end
+
+  def piglatinify_sentence
+    string_self = self.to_s
+    pigged_words = string_self.split(" ").map { |word| word.piglatinify }
+    pigged_words.join(" ")
+  end
 end</code></pre>
 </div>
 {% endif %}
@@ -438,10 +444,12 @@ p cart.total_price
 <p>
 After you think you have a working answer, download the test file from <a href="../tests/shopping_cart_test_1.rb" target="_blank">here</a> and put it in your <code>shopping_cart</code> directory (just do File -> Save from Chrome). Run it with <code>ruby shopping_cart_test_1.rb</code>. If you're failing any tests, make them pass.
 </p>
+{% if page.answers_shown %} 
 <h4>Answers</h4>
 <p>
-  Download the files for <code>Item</code> and <code>Cart</code> in <a href="/tests/item.rb">/tests/item.rb</a> and <a href="/tests/cart.rb">/tests/cart.rb</a> respectively
+  Download the files for <code>Item</code> and <code>Cart</code> in <a href="/tests/item.rb">/tests/item.rb</a> and <a href="/tests/cart.rb">/tests/cart.rb</a> respectively.s
 </p>
+{% endif %}
 <!--
 <h4>Add Some Mustard</h4>
 <p>

@@ -4,7 +4,7 @@ layout: exercise
 prev: 7A
 next: 8A
 permalink: /exercises/7B.html
-answers_shown: false
+answers_shown: true
 ---
 
 <!-- Template for Exercises—just copy page into new file and update prematter -->
@@ -52,6 +52,18 @@ answers_shown: false
 <p>
   Why are we not using scaffolding? Why do we not want to use it all the time?
 </p>
+
+<!-- E1 Answers -->
+{% if page.answers_shown %}
+<a class="hover-show pull-right">Hover for answer</a>
+<div class="hover-hide">
+  <ol>
+    <li>It is code that <b>modifies the schema of your database</b>, meaning it changes the columns of the table.</li>
+    <li>In the Terminal: <code>rake db:migrate</code></li>
+    <li>In the Terminal: <code>rake db:rollback</code>. To go back more than one migration, type <code>rake db:migrate STEP=3</code> (note that STEP must be in all caps)</li>
+  </ol>
+</div>
+{% endif %}
 <h2>E2: Open Source Democracy</h2>
 <p>
   Now we're going to write an app that does what our Terminal code for using the data.gov API did. In <code>d7</code>, start by creating new rails app called <code>petitions_rails</code>. If you've lost the code from before, you can find it <a href="https://github.com/iExperience/petitions" target="_blank">here</a>.
