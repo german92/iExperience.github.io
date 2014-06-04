@@ -4,7 +4,7 @@ layout: exercise
 prev: 4A
 next: 5A
 permalink: /exercises/4B.html
-answers_shown: false
+answers_shown: true
 ---
 <h1>Review</h1>
 <p>
@@ -101,14 +101,15 @@ Player 1:
 6
 Congrats, player 1 won!</code></pre>
     
-    <p class="info hint">
-      If you've gotten this far, you actually know quite a bit about coding, and the coding process. This was actually a Google coding interview problem (though keep that fact hush hush!). When you interview at companies—or try to code anything, really—this workflow is a good one to keep in mind: first <b>talk through</b> your solution and think about what <b>data structures</b> you'll use. Then write <b>pseudo-code</b> and try to foresee as many problems as you can. Only when you're confident in your <b>thinking</b> should you start coding.
-    </p>
-    <h4>Step 4: User Experience</h4>
-    <p>
-      To be honest, while your program is cool, it's not very user friendly...humans aren't very good at remembering what the board looks like. Add a method to print out the board after each step. We've picked a design, but feel free to make it look like however you want.
-    </p>
-    <pre><code>$ ruby tictactoe.rb
+<p class="info hint">
+  If you've gotten this far, you actually know quite a bit about coding, and the coding process. This was actually a Google coding interview problem (though keep that fact hush hush!). When you interview at companies—or try to code anything, really—this workflow is a good one to keep in mind: first <b>talk through</b> your solution and think about what <b>data structures</b> you'll use. Then write <b>pseudo-code</b> and try to foresee as many problems as you can. Only when you're confident in your <b>thinking</b> should you start coding.
+</p>
+<h4>Step 4: User Experience</h4>
+<p>
+  To be honest, while your program is cool, it's not very user friendly...humans aren't very good at remembering what the board looks like. Add a method to print out the board after each step. We've picked a design, but feel free to make it look like however you want.
+</p>
+
+<pre><code>$ ruby tictactoe.rb
 Player 1:
 4
      |   |   
@@ -173,6 +174,12 @@ Player 1:
   ———+———+———
    O | O | X 
 Cats game!</code></pre>
+{% if page.answers_shown %} 
+<h4>Answers</h4>
+<p>
+  Find the answers at <a href="/tests/tictactoe.rb">/tests/tictactoe.rb</a>.
+</p>
+{% endif %}
 
 <h2>E3: Bigger. Better. Squared.</h2>
 <p>
