@@ -4,7 +4,7 @@ layout: exercise
 prev: 6A
 next: 7A
 permalink: /exercises/6B.html
-answers_shown: false
+answers_shown: true
 ---
 <h1>Review</h1>
 <p>
@@ -28,20 +28,51 @@ answers_shown: false
   </ul>
 </p>
 <p>
-  What's the difference between <code>.find</code> and <code>.find_by</code>?
+  What's the difference between <code>.find</code> and <code>.find_by</code>?<br>
   What's the difference between <code>.where</code> and <code>.find_by</code>?
 </p>
+{% if page.answers_shown %}
+<a class="hover-show pull-right">Hover for answer</a>
+<div class="hover-hide">
+  <p>
+    The first set of methods will be left for you to look up.
+  </p>
+  <p>
+    <code>find</code> takes one parameter, an integer, which is the ID of the resource. e.g. <code>Tweet.find(1)</code> gets the tweet with ID 1. <code>find_by</code> takes a <b>hash</b>, that has the parameter and a value, something like <code>Tweet.find_by(:handle => "fizzcan")</code>.
+  </p>
+  <p>
+    <code>.find_by</code> returns <b>just the first</b> matching entry, whereas <b>.where</b> returns all matching entries.
+  </p>
+</div>
+{% endif %}
 <h2>E2: ActiveQuiz</h2>
 <p>
-  <ul>
+  <ol>
     <li>What is a database?</li>
     <li>What is a database table? How does it relate to a database? What's a good analogy for a database table (i.e. a way to visualize it)?</li>
     <li>Draw the <code>tweets</code> database table</li>
     <li>Why do we use models/resources at all?</li>
     <li>What is ActiveRecord?</li>
     <li>What's the difference between a database table, resource and an ActiveRecord model?</li>
-  </ul>
+  </ol>
 </p>
+<!-- Answers for E2 -->
+{% if page.answers_shown %}
+<a class="hover-show pull-right">Hover for answer</a>
+<div class="hover-hide">
+  <p>
+    <ol>
+      <li>A database is a file on your computer that stores the literal 0s and 1s that represent your data.</li>
+      <li>A database table is a section of the database that corresponds to a particular resource, or logical entity (for example, tweets). We can think of a table like an Excel spreadsheet, with each column being an <em>attribute</em> (like the body of the tweet), and each row being an <em>instance</em> (one particular tweet)</li>
+      <li>Should look like a spreadsheet with three columns: ID, handle and body. Should have three rows with IDs 1, 2, 3 and some handles and bodies in the corresponding columns.</li>
+      <li>We use them to help us reason and think about our database. It's hard to always keep the spreadsheet in our heads, and it makes more sense to us to think about it as one class that has methods. <b>This step, from database to model, was very important in making web development easier and more accessible</b>.</li>
+      <li>ActiveRecord is a module that is included in Rails. It makes creating models easier because when a model extends <code>ActiveRecord::Base</code> (which is a class—confusing, we know), it gets all the methods in E1 and more for free!</li>
+      <li>A database table just contains 0s and 1s. An ActiveRecord model is a class, with methods and all, that's created in <code>app/models</code>. A resource is a model along with its controller and views. You can think of it as the conceptual or logical entity that represents the model. The model is the actual code that communicates with the database. This is <b>very difficult</b> to keep track in your head, so you may have to revisit these concepts as you learn more of Rails.</li>
+    </ol>
+  </p>
+</div>
+{% endif %}
+
 <h2>E3: Tweet Console</h2>
 <p>
   Fire up <code>rails console</code>. Then do the following things:

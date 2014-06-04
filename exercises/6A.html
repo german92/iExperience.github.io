@@ -4,7 +4,7 @@ layout: exercise
 prev: 5B
 next: 6B
 permalink: /exercises/6A.html
-answers_shown: false
+answers_shown: true
 ---
 <h1>Review</h1>
 <p>
@@ -20,6 +20,15 @@ answers_shown: false
     <li>What does the <code>yield</code> in <code>app/views/layouts/application.html</code> do?</li>
   </ol>
 </p>
+{% if page.answers_shown %}
+<a class="hover-show pull-right">Hover for answer</a>
+<div class="hover-hide">
+  <ol>
+    <li><code><%= %></code> is used to contain any Ruby that outputs things you want to show to the screen (<code>image_tag</code>, <code>link_to</code>, <code>@tweet.body</code>). <code><% %></code> is for things that don't show up, like control and loops: <code>if</code>, <code>.each</code>, and the like.</li>
+    <li>It "pastes" in the code from your view into that spot. That's why its in a <code><%= %></code>!</li>
+  </ol>
+</div>
+{% endif %}
 <p>
   For each of the following tags, write down what it does, what parameters it takes and whether you need to put it in a <code><%= %></code> or <code><% %></code>.
   <ol start="3">
@@ -34,6 +43,12 @@ answers_shown: false
     <li><code>f.submit</code></li>
   </ol>
 </p>
+{% if page.answers_shown %}
+<a class="hover-show pull-right">Hover for answer</a>
+<div class="hover-hide">
+  Left for you to check in the Rails documentation.
+</div>
+{% endif %}
 
 <h2>E2: Retweet Again</h2>
 <p>
@@ -51,6 +66,13 @@ answers_shown: false
 <p>
   Use <code>link_to</code> and <code>image_tag</code> to make an image that links somewhere. Make that link open in a new tab.
 </p>
+{% if page.answers_shown %}
+<a class="hover-show pull-right">Hover for answer</a>
+<div class="hover-hide">
+  Something like:
+  <pre><code>link_to (image_tag "http://image-url.com"), "http://link-destination.com"</code></pre>
+</div>
+{% endif %}
 
 <h2>E4: Catch up</h2>
 <p>
