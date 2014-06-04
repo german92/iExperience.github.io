@@ -1,0 +1,70 @@
+---
+title: Homework for 8A
+layout: exercise
+prev: 7B
+next: 8B
+permalink: /exercises/8A.html
+answers_shown: false
+---
+
+<!-- Template for Exercises—just copy page into new file and update prematter -->
+<h1>Review</h1>
+<p>
+  <b>Topics Covered:</b> Rails relations; associating two models; 
+</p>
+<hr class="large">
+<h1>Exercises</h1>
+<h2>E1: Relation Review</h2>
+<p>
+  <ol>
+    <li>Why do we use relations? What are they good for?</li>
+    <li>Will you ever write a relation on just one class, or will a relation always join two classes together?</li>
+    <li>What types of relations did we learn about? What makes them unique? Can you give examples of each? Hint: We learned about 4 different kinds and an extension.</li>
+    <li>What changes do you have to make to migrations for each relation? Does every single one require making changes to the database?</li>
+  </ol>
+</p>
+<h2>E2: We Belong Together</h2>
+<p>
+  <p>What kind of relations would you use for each of the following models?</p>
+  <ol>
+    <li>Tweets and users</li>
+    <li>Users and accounts</li>
+    <li>Tweets and hash tags</li>
+    <li>Stores and customers</li>
+    <li>Shopping carts and items</li>
+    <li>Shoppers and Carts</li>
+    <li>Shopper and items in the cart that the shopper has</li>
+  </ol>
+</p>
+<h2>E3: Omg Really Twitter Again?!</h2>
+<p>
+  Rebuild Twitter. Create <code>Tweet</code> and <code>User</code> from scratch, without using scaffolding. Make <code>Tweet</code> and <code>User</code> related in a way that makes sense.
+</p>
+<h2>E4: #relationships</h2>
+<p>
+  In the app you built above, add a <code>HashTag</code> resource, complete with a migration and a model (no need for routes, controllers, or views quite yet). Make it associated with <code>Tweet</code> in a <code>has_and_belongs_to_many</code> relationship. Don't forget to give it a join table! 
+</p>
+<h4>Adding content via Terminal</h4>
+<p>
+  Next, modify <code>User</code> to have many hash tags through tweets. Since we don't know how to add hash tags to a tweet via our website yet, create some users and give them tweets in the <code>rails console</code>. Then make some hash tags, and add them to those tweets. Make sure <code>user.hash_tags</code> returns an array of <code>HashTag</code>s. 
+</p>
+<h4>Show Me the Tags</h4>
+<p>
+  Write a route, controller action and view to show all the hash tags a user has ever used in all of their tweets. It should really not be too much code—most of the heavy lifting is done by the Rails relations!
+</p>
+<!-- Answer box for a particular exercise; to show all answers, change the prematter answers_shown variable to true. There's no easy way to show just one answer; you'll have to use comments or something. -->
+{% if page.answers_shown %}
+<a class="hover-show pull-right">Hover for answer</a>
+<div class="hover-hide">
+  <!-- Put answer here -->
+</div>
+{% endif %}
+
+<hr class="large">
+
+<!-- Projects -->
+<h1>Projects</h1>
+<h2>Fueling Consumerism on Rails</h2>
+<p>
+  In your <code>projects/shopping</code> app, create a <code>Cart</code> resource. Have it <code>has_many</code> items, and make items <code>belong_to</code> a cart. Implement the <code>add</code>, <code>remove</code> and <code>total_price</code> methods, but now in rails! Note that because of the relation, you don't need to write your own <code>items</code> method. Yay for Rails!
+</p>

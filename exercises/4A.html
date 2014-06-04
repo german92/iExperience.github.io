@@ -4,7 +4,7 @@ layout: exercise
 prev: 3B
 next: 4B
 permalink: /exercises/4A.html
-answers_shown: false
+answers_shown: true
 ---
 
 <h1>Review</h1>
@@ -146,6 +146,7 @@ shot_glass = ShotGlass.new</code></pre>
     </li>
   </ol>
 </p>
+<!-- Answers for E1 -->
 {% if page.answers_shown %}
 <a class="hover-show pull-right">Hover for answer</a>
 <div class="hover-hide">
@@ -200,6 +201,8 @@ end
 tripsay emay \t ".strip_new
 <span class="comment"># => "tripsay emay"</span>
 </code></pre>
+
+<!-- Answers for E2 -->
 {% if page.answers_shown %}
 <a class="hover-show pull-right">Hover for answer</a>
 <div class="hover-hide">
@@ -207,7 +210,21 @@ tripsay emay \t ".strip_new
 
 class String
   def piglatinify
-    
+    <span class="comment"># Check for capitalization</span>
+    if self[0].upcase == self[0]
+      self[0] = self[0].downcase <span class="comment"># Downcase old first letter</span>
+      self[1] = self[1].upcase   <span class="comment"># Upcase new first letter</span>
+    end
+    <span class="comment"># Rest of string + first letter + "ay"</span>
+    self[1..-1] + self[0] + "ay"
+  end
+
+  def piglatinify_sentence
+    pigged_words = self.split(" ").map { |word| word.piglatinify }
+    pigged_words.join(" ")
+    <span class="comment"># To be fancy, you might have done it in one line:</span>
+    <span class="comment"># self.split(" ").map({ |word| word.piglatinify }).join(" ")</span>
+    <span class="comment"># But in my opinion, that's less clear.</span>
   end
 end</code></pre>
 </div>
@@ -229,6 +246,27 @@ end
 <span class="comment"># => ":a, :b, :c][ay"</span>
 [:a, :b, :c].piglatinify_sentence
 <span class="comment"># => ":a,[ay b,:ay c]:ay"</span></code></pre>
+<!-- Answers for E3 -->
+{% if page.answers_shown %}
+<a class="hover-show pull-right">Hover for answer</a>
+<div class="hover-hide">
+  <pre><code><span class="comment"># piglatinify.rb</span>
+
+<span class="comment"># Modules, like classes, start with capital letters</span>
+module Piglatinify
+  def piglatinify
+    string_self = self.to_s
+    if string_self[0].upcase == string_self[0]
+      string_self[0] = string_self[0].downcase <span class="comment"># Downcase old first letter</span>
+      string_self[1] = string_self[1].upcase   <span class="comment"># Upcase new first letter</span>
+    end
+    <span class="comment"># Rest of string + first letter + "ay"</span>
+    string_self[1..-1] + string_self[0] + "ay"
+  end
+end</code></pre>
+</div>
+{% endif %}
+
 
 <h2>E4: Finding things</h2>
 <p>
@@ -285,7 +323,7 @@ filter_by_name(people, "bru")
 filter_by_name(people, "puppy!!!")
 <span class="string"># => []</span>
 </code></pre>
-
+<!-- Answers for E4 -->
 
 <hr class="large">
 
@@ -399,6 +437,10 @@ p cart.total_price
 <span class="string"># 1.3</span></code></pre>
 <p>
 After you think you have a working answer, download the test file from <a href="../tests/shopping_cart_test_1.rb" target="_blank">here</a> and put it in your <code>shopping_cart</code> directory (just do File -> Save from Chrome). Run it with <code>ruby shopping_cart_test_1.rb</code>. If you're failing any tests, make them pass.
+</p>
+<h4>Answers</h4>
+<p>
+  Download the files for <code>Item</code> and <code>Cart</code> in <a href="/tests/item.rb">/tests/item.rb</a> and <a href="/tests/cart.rb">/tests/cart.rb</a> respectively
 </p>
 <!--
 <h4>Add Some Mustard</h4>

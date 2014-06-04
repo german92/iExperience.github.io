@@ -3,8 +3,9 @@
 _site
 .sass-cache
 
-tests/cart.rb
-tests/item.rb
+# Ignore/unignore depending on if answers are released.
+# tests/cart.rb
+# tests/item.rb
 tests/shopper.rb
 tests/tictactoe.rb
 tests/cart_api.rb
