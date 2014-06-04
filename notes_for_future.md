@@ -50,3 +50,7 @@ Make it more practical—not `Array.piglatinify`.
 - `!` notation for methods
   - `map!`
 - How to debug
+
+#### SQL
+
+Worth teaching or not? If we have extra time, might be nice to have a lecture on databases and explain basic SQL. We can have people install Postgres (Postgres App, works really easily), and then play around in `psql`.

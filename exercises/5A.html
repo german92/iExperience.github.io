@@ -4,7 +4,7 @@ layout: exercise
 prev: 4B
 next: 5B
 permalink: /exercises/5A.html
-answers_shown: false
+answers_shown: true
 ---
 <h1>Review</h1>
 <p>
@@ -22,16 +22,34 @@ answers_shown: false
     <li>What is a request?</li>
     <li>What is making the request?</li>
     <li>Where does the request go (like physically, on Earth, as well as conceptually, on the internet)? What's its "address"?</li>
-    <li>How does the request know to go there?</li>
     <li>What happens to the request when it gets "there"?</li>
     <li>What comes back? What is it? What data does it contain?</li>
     <li>What happens when it comes back?</li>
   </ol>
 </p>
+{% if page.answers_shown %}
+<a class="hover-show pull-right">Hover for answer</a>
+<div class="hover-hide">
+  <ol>
+    <li>A request is some data sent over the internet from one computer to another to <b>ask for data</b>. When using the internet, most of your requests ask for HTML. But sometimes, like when using APIs, it might ask for other types of data, like JSON.</li>
+    <li>The client, or web browser (Chrome, Safari, Firefox, etc) makes the request.</li>
+    <li>The address is its IP address (something that looks like 185.31.18.133). That gets decoded, much like a street address, and the internet knows where that computer is. How? That's pretty complicated—if you're curious, you can do some Googling!</li>
+    <li>The request is processed by the server, which runs some code and returns data.</li>
+    <li>A <em>response</em> is what comes back. The response usually contains HTML, but sometimes some other kinds of data (JSON, images, stylesheets, fonts...)</li>
+    <li>The browser processes it and renders it on your screen.</li>
+  </ol>
+</div>
+{% endif %}
 <h2>E2: Rafi Rocks</h2>
 <p>
   Go to <a href="http://www.iexperience.github.io/exercises/rafi_rocks" target="_blank">iexperience.github.io/exercises/rafi_rocks</a>. What shows up on the screen? What does it mean? Why is it that particular number? You may have to do some Googling.
 </p>
+{% if page.answers_shown %}
+<a class="hover-show pull-right">Hover for answer</a>
+<div class="hover-hide">
+  A big "This page does not exist" screen shows up, with the number 404. 404 corresponds to a particular <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html" target="_blank"><em>HTTP status code</em></a>. There are many, and each one tells the browser whether the request succeeded, failed, went to the wrong place, etc.
+</div>
+{% endif %}
 
 <hr class="large">
 
