@@ -18,30 +18,38 @@ answers_shown: false
 <h2>E1: Validations Review </h2>
 
 <ol>
-	<li> Why does the code below respond false on user.save? When does a user.valid? return true? <br>
+	<li> Where do you write validations and why? Are there any validations that go in the Controller? </li>
+	<li> 
+ 	<li> Why does the code below respond false on <code> user.save? </code> When does a <code> user.valid? </code> return true? <br>
 	<code> >> user = User.new(:name => "", :email => "mhartl@example.com") ,</code> <br>
 	 <code> >> user.save </code> <br>
 	 <code> => false </code> <br>
 	 <code> >>user.valid? </code> <br> 
 	 <code> => false </code> <br>
 
-	<li> </li>
-	<li> </li>
-	<li> </li>
-	<li> </li>
+	<li> Write a one line code to check if a User attribute has any errors. Hint: We did this in the console. </li>
+
+	<li> Is it possible to validate relations? Think of validations for the relations in the Twitter app. </li>
 </ol>
 
-<h2>E2: </h2>
+<h2>E2: Nasty long names and emails and descriptions? </h2>
+
+<p> Yes, people have long names. Decide on a good length and add it as a validation. Repeat for email and Bio. 
+</p>
+
+<h2>E3: Want to/Don't want to describe yourself? </h2>
 
 <p> 
-
-
+ Currently, your twitter app doesn't handle validations for the bio field in the User model. Think of a validation required for this field. Can you keep it blank or should there always be content in it? 
+ Hint: you may need to use Google for reference
 </p>
-<h2>E3: </h3>
 
-<h4>E3: </h4>
+<h2>E4: Another validation? </h3>
 
+<p>
+You learned in class to create conditional validations. Your User class requires the user.handle to start with @. Similary, write a method in the User class to ensure a handle must start with a letter. </p>
 
+	
 
 <!-- Answer box code; to show answers, change the prematter answers_shown
 variable to true. -->
