@@ -11,33 +11,27 @@ answers_shown: false
 <!-- Template for Exercises—just copy page into new file and update prematter -->
 <h1>Review</h1>
 <p>
-  <b>Topics Covered:</b> 
+  <b>Topics Covered:</b> Validations; custom validations
 </p>
 <hr class="large">
 <h1>Exercises</h1>
 <h2>E1: Validations Review </h2>
 
 <ol>
-	<li> Why does the code below respond false on user.save? When does a user.valid? return true? <br>
-	<code> >> user = User.new(:name => "", :email => "mhartl@example.com") ,</code> <br>
-	 <code> >> user.save </code> <br>
-	 <code> => false </code> <br>
-	 <code> >>user.valid? </code> <br> 
-	 <code> => false </code> <br>
+	<li> Where do you write validations and why? Are there any validations that go in the controller? </li>
+ 	<li> Why does the code below respond false on <code> user.save?</code>. When does a <code> user.valid?</code> return true? <br>
+		<pre><code>>> user = User.new(:name => "", :email => "mhartl@example.com") 
+>> user.valid?
+<span class="comment">=> false</span>
+>> user.save
+<span class="comment">=> false</span></code></pre>
 
-	<li> </li>
-	<li> </li>
-	<li> </li>
-	<li> </li>
+	<li> What's one line of code to check if a User attribute has any errors? Hint: We did this in the console. </li>
+
+	<li> Is it possible to validate relations? Think of validations for the relations in the Twitter app. Hint: Google for Rails relations validations.</li>
 </ol>
 
-<h2>E2: </h2>
-
-<p> 
-
-
-</p>
-<h2>E3: I Need Validation</h2>
+<h2>E2: I Need Validation</h2>
 <p>
 	Let's add some more validations because, well, some of us are just insecure sometimes.
 	<ul>
@@ -47,8 +41,6 @@ answers_shown: false
 		<li><b>Bonus</b>: check in the model that the email is indeed a valid email. You'll need to use <b>regular expressions</b>—don't add an extra gem, use your own validator method.</li>
 	</ul>
 </p>
-
-
 
 <!-- Answer box code; to show answers, change the prematter answers_shown
 variable to true. -->
@@ -63,3 +55,7 @@ variable to true. -->
 
 <!-- Projects -->
 <h1>Projects</h1>
+<h2>The Real Deal</h2>
+<p>
+	<b>By end of day tomorrow</b> you'll have to have your groups and projects decided! You'll have a lengthy project proposal due on Monday, so work hard to finish all your other work :)
+</p>
