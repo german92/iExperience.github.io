@@ -1,0 +1,57 @@
+---
+title: Homework for 11A
+layout: exercise
+prev: 10B
+current: 11A
+next: 11B
+permalink: /exercises/11A.html
+answers_shown: false
+---
+
+<!-- Template for Exercises—just copy page into new file and update prematter -->
+<h1>Review</h1>
+<p>
+  <b>Topics Covered:</b> Sessions and cookies; the <code>session</code> hash; user authentication; using the <a href="https://github.com/plataformatec/devise">Devise</a> gem
+</p>
+<hr class="large">
+<h1>Exercises</h1>
+<h2>E1: Cookies and Sessions</h2>
+<p>
+  Write down your answers to the following:
+  <ol>
+    <li>What are cookies? Where are they stored?</li>
+    <li>Why do we use cookies?</li>
+    <li>Why are cookies encrypted? What could a malicious person do if they got a hold of your cookies?</li>
+    <li>Are cookies sent with every browser request? Are all of them sent, or only a subset?</li>
+  </ol>
+</p>
+<h2>E2: Devise a Solution</h2>
+<p>
+  Recreate the codealong from scratch. You can use the lecture slides, the <a href="https://github.com/iExperience/devise_practice/tree/1999561779d4ae07b5d83c2756658e9ab82fc888">Code on Github</a>, the <a href="http://railscasts.com/episodes/209-introducing-devise">RailsCast</a>, or the <a href="http://devise.plataformatec.com.br/#starting-with-rails">Devise documentation</a> for reference. Add links to be able to sign up, sign in and sign out. 
+</p>
+<h4>Customization</h4>
+<p>
+  Customize Devise to get rid of the "forgot password?" and "remember me?" links.
+</p>
+<h2>E3: Revise your Twitter</h2>
+<p>
+  Use Devise to add user accounts and authentication to <code>working_twitter</code> (code <a href="https://github.com/iExperience/working_twitter">here</a>). Make it so anyone can view all the tweets, but you can only add and delete tweets if you're logged in. Note: you'll have to destroy and regenerate the User model, or modify it significantly and write new migrations!
+</p>
+
+<!-- Answer box code; to show answers, change the prematter answers_shown
+variable to true. -->
+{% if page.answers_shown %}
+<a class="hover-show pull-right">Hover for answer</a>
+<div class="hover-hide">
+  <!-- Put answer here -->
+</div>
+{% endif %}
+
+<hr class="large">
+
+<!-- Projects -->
+<h1>Projects</h1>
+<h2>The Real Deal</h2>
+<p>
+  Finish up your project proposals! You'll meet with the teachers for feedback right after the afternoon class.
+</p>
