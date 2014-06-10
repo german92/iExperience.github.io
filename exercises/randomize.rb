@@ -9,7 +9,6 @@ Liu
 Cheng
 Kassier
 Premaratne
-Krook
 Gill
 Swift
 Ginsberg
@@ -18,9 +17,14 @@ Trudell
 Ahuja
 Chauvin)
 
+puts "<table class='reveal bordered'>"
+row = 1
 names.shuffle.each_with_index do |name, index|
-  puts if index%3 == 0
-  print "#{name}, "
-  
+  if index%3 == 0
+    print "\t<tr>\n\t\t<td>#{row}</td>" 
+    row += 1
+  end
+  print "<td>#{name}</td>"
+  print "\n\t</tr>\n" if index%3 == 2
 end
-
+puts "\n</table>"

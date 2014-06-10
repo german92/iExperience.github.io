@@ -29,3 +29,13 @@
 .logo img {
   height: 42px;
 }
+
+table {
+  border-spacing: 0;
+}
+
+table.bordered td {
+  margin: 0;
+  padding: 10px;
+  border-bottom: 1pt solid #888;
+}
