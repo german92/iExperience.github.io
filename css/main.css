@@ -53,6 +53,10 @@ img.centered {
   margin: 20px auto;
 }
 
+tr.disabled td {
+  color: #ddd;
+}
+
 .nav-bar {
   margin-top: 28px;
 }
