@@ -1,0 +1,77 @@
+---
+title: Homework for 12B
+layout: exercise
+prev: 12A
+current: 12B
+next: 13B
+permalink: /exercises/12B.html
+answers_shown: true
+---
+
+<!-- Template for Exercises—just copy page into new file and update prematter -->
+<h1>Review</h1>
+<p>
+  <b>Topics Covered:</b> Project Sketching; making model diagrams; designing controllers
+</p>
+<hr class="large">
+<h1>Exercises</h1>
+<p>
+  I hope you enjoyed the opportunity to work in groups and design off of a computer—this is actually how most programmers plan out their applications. The applications and images of the model diagrams can be found below.
+</p>
+<h2>E1: Yelp in Cape Town</h2>
+<h4>Models</h4>
+<p>
+  Sketch out the models, attributes, and relations for how to implement the following features of Yelp:
+  <ul>
+    <li>Users</li>
+    <li>Restaurants</li>
+    <li>Reviews</li>
+    <li>A favorites list for each user</li>
+  </ul>
+</p>
+<h4>Controllers</h4>
+<p>
+  Now describe the controllers, controller actions and routes that you need to do the following:
+  <ul>
+    <li>A store owner creating a restaurant page</li>
+    <li>A user reviewing the restaurant</li>
+    <li>Users viewing all reviews for a restaurant</li>
+    <li>A user favoriting a restaurant</li>
+  </ul>
+</p>
+{% if page.answers_shown %}
+<h4>A Solution</h4>
+<p>
+  Note that many solutions are possible: the best ones are the clearest and cleanest for your application.
+</p>
+<img src="/images/exercises/12.yelp-models.png" alt="" class="centered bordered">
+{% endif %}
+
+<h2>E2: Facebook</h2>
+<h4>Models</h4>
+<p>
+  Sketch out the models, attributes, and relations for how to implement the following features of Facebook:
+  <ul>
+    <li>Friends, friendships, friend requests</li>
+    <li>Albums, photos</li>
+    <li>Reviews</li>
+    <li>Tagging people in photos</li>
+  </ul>
+</p>
+<h4>Controllers</h4>
+<p>
+  Now describe the controllers, controller actions and routes that you need to do the following:
+  <ul>
+    <li>Make a friend request</li>
+    <li>Create an album</li>
+    <li>Upload a picture to that album</li>
+    <li>Tag your friend in a picture</li>
+  </ul>
+</p>
+{% if page.answers_shown %}
+<h4>A Solution</h4>
+<p>
+  Note: We can have a <code>Tag</code> belong to either a <code>Photo</code> or <code>Album</code> using <em>polymorphic associations</em>. Read more about <a href="http://guides.rubyonrails.org/association_basics.html">associations</a> or watch a <a href="http://railscasts.com/episodes/154-polymorphic-association">RailsCast</a>.
+</p>
+<img src="/images/exercises/12.facebook-models.png" alt="" class="centered bordered">
+{% endif %}
