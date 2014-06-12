@@ -1,0 +1,74 @@
+---
+title: Homework for 14B
+layout: exercise
+prev: 14A
+current: 14B
+next: 15B
+permalink: /exercises/14B.html
+answers_shown: false
+---
+
+NOTE: SHOW WHAT HAPPENS WHEN YOU COMMIT WITHOUT -M
+<!-- Template for Exercises—just copy page into new file and update prematter -->
+<h1>Review</h1>
+<p>
+  <b>Topics Covered:</b> Git; Github
+</p>
+<hr class="large">
+<h1>Exercises</h1>
+<h2>E1: Git Review</h2>
+<p>
+  <ol>
+    <li>What does the <code>git init</code> command do?</li>
+    <li>
+      What does <code>git add</code> do? How is it different from <code>git commit</code>?
+    </li>
+    <li>
+      What is the difference between <b>staged</b> and <b>committed</b> (or <b>versioned</b>) files? When might you stage something and not commit it?
+    </li>
+    <li>
+      What's the shortcut for adding all files and commiting?
+    </li>
+    <li>
+      How do you unstage a staged file? How do you go back to an old version of a committed file?
+    </li>
+    <li>
+      Why are commit messages very important?
+    </li>
+  </ol>
+</p>
+
+{% if page.answers_shown %}
+<a class="hover-show pull-right">Hover for answer</a>
+<div class="hover-hide">
+  <ul>
+    <li>Starts a new git repository. Specifically, it creates a <code>.git</code> folder (which is hidden by default so you can't see it in Finder) that stores all your git data.</li>
+    <li>
+      <code>git add</code> <em>stages</em> the specified files. <code>git commit</code> <em>stages</em> those files (add all the staged files to the repo). This gives you flexibility so you don't have to add all the files in your working tree to the reposity—though in the vast majority of cases, that's what you'll do.
+    </li>
+    <li>
+      <code>git commit -am "Your commit message"</code>
+    </li>
+    <li>
+      They describe what was done in the commit—having good messages makes it easy to go back to a particular "draft" of your app. 
+    </li>
+  </ul>
+</div>
+{% endif %}
+
+<h2>E2: Github</h2>
+<p>
+  <ul>
+    <li>What's the difference between Github and git? Could git exist without Github? Could Github exist without git?</li>
+  </ul>
+</p>
+{% if page.answers_shown %}
+<a class="hover-show pull-right">Hover for answer</a>
+<div class="hover-hide">
+  <p>
+    <ul>
+      <li>Git is the version control system that you have installed on your local computer. Github is a website that makes collaborating with git very easy, in particular looking at the code other programmers have written. Git could exist without Github, but not the other way around.</li>
+    </ul>
+  </p>
+</div>
+{% endif %}
