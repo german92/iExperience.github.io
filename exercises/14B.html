@@ -10,6 +10,7 @@ answers_shown: true
 
 NOTE: SHOW WHAT HAPPENS WHEN YOU COMMIT WITHOUT -M
       WHAT IS -U IN GIT PUSH?
+      How do I go back to an earlier stage of my app? git log and reset --hard vs. checkout
 <!-- Template for Exercises—just copy page into new file and update prematter -->
 <h1>Review</h1>
 <p>
@@ -36,6 +37,12 @@ NOTE: SHOW WHAT HAPPENS WHEN YOU COMMIT WITHOUT -M
     <li>
       Why are commit messages very important?
     </li>
+    <li>
+      How do I revert to a previous commit?
+    </li>
+    <li>
+      How do you exit out of <code>vi</code>? (Also called <code>vim</code>.)
+    </li>
   </ol>
 </p>
 
@@ -59,6 +66,21 @@ NOTE: SHOW WHAT HAPPENS WHEN YOU COMMIT WITHOUT -M
     <li>
       They describe what was done in the commit—having good messages makes it easy to go back to a particular "draft" of your app. 
     </li>
+    <li>
+      First use <code>git log</code> to get the <b>commit hash</b> for the commit you want to get back to. The output of <code>git log</code> should look something like: 
+      <pre><code>commit 2f10cb58b852b4b2fe6b6f22a4e24594cf1faafd
+Author: Rafi Khan <rafi.fa.khan@gmail.com>
+Date:   Thu Jun 12 14:53:28 2014 +0200
+
+    undo git rebase typo fix
+
+commit 0d3751aeded09576b3a58174d84870313aa27840
+Author: Rafi Khan <rafi.fa.khan@gmail.com>
+Date:   Thu Jun 12 14:52:57 2014 +0200
+
+    git rebase typo fix</code></pre>
+    The commit hash is that long <code>2f10cb58b852b4b2fe6b6f22a4e24594cf1faafd</code> thing after the word "commit". Then you would run <code>git revert 2f10cb58b852b4b2fe6b6f22a4e24594cf1faafd</code>.
+    </li>
   </ol>
 </div>
 {% endif %}
@@ -70,6 +92,9 @@ NOTE: SHOW WHAT HAPPENS WHEN YOU COMMIT WITHOUT -M
     <li>Why is GitHub a cool company?</li>
     <li>What does <code>git push</code> do?</li>
     <li>What does <code>git pull</code> do? How is it different from/same as <code>git fetch</code> and <code>git merge</code>?</li>
+    <li>
+      What's the difference between rebase and merge?
+    </li>
   </ol>
 </p>
 {% if page.answers_shown %}
@@ -84,6 +109,9 @@ NOTE: SHOW WHAT HAPPENS WHEN YOU COMMIT WITHOUT -M
       </li>
       <li>
         <code>git pull</code> brings code in from the remote you specify, and merges it into your working tree automatically. <code>git fetch</code> brings in the code from the remote, but doesn't merge. <code>git merge</code> then allows you to merge manually. <b>Usually, you'll just use git pull</b>.
+      </li>
+      <li>
+        Merge creates a new commit and rebase doesn't—but rebase also requires a bit more work to fix merge conflicts.
       </li>
     </ol>
   </p>
