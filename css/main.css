@@ -53,7 +53,7 @@ img.centered {
   margin: 20px auto;
 }
 
-tr.disabled td {
+tr.disabled td, td.disabled {
   color: #ddd;
 }
 
