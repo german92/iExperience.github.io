@@ -5,14 +5,15 @@ prev: 14A
 current: 14B
 next: 15B
 permalink: /exercises/14B.html
-answers_shown: false
+answers_shown: true
 ---
 
 NOTE: SHOW WHAT HAPPENS WHEN YOU COMMIT WITHOUT -M
+      WHAT IS -U IN GIT PUSH?
 <!-- Template for Exercises—just copy page into new file and update prematter -->
 <h1>Review</h1>
 <p>
-  <b>Topics Covered:</b> Git; Github
+  <b>Topics Covered:</b> Git; GitHub
 </p>
 <hr class="large">
 <h1>Exercises</h1>
@@ -41,34 +42,50 @@ NOTE: SHOW WHAT HAPPENS WHEN YOU COMMIT WITHOUT -M
 {% if page.answers_shown %}
 <a class="hover-show pull-right">Hover for answer</a>
 <div class="hover-hide">
-  <ul>
+  <ol>
     <li>Starts a new git repository. Specifically, it creates a <code>.git</code> folder (which is hidden by default so you can't see it in Finder) that stores all your git data.</li>
     <li>
-      <code>git add</code> <em>stages</em> the specified files. <code>git commit</code> <em>stages</em> those files (add all the staged files to the repo). This gives you flexibility so you don't have to add all the files in your working tree to the reposity—though in the vast majority of cases, that's what you'll do.
+      <code>git add</code> <em>stages</em> the specified files. <code>git commit</code> <em>commits</em> those files (add all the staged files to the repo). This gives you flexibility so you don't have to add all the files in your working tree to the reposity—though in the vast majority of cases, that's what you'll do.
     </li>
     <li>
-      <code>git commit -am "Your commit message"</code>
+      Staged files are ready to be committed, but aren't in the repository yet. Committing actually adds it to the repo. You might stage something if you've worked on it for a bit, but aren't sure enough of your changes to commit quite yet. <b>You will rarely stage something without committing it</b>.
+    </li>
+    <li>
+      <code>git commit -am "Your commit message"</code>—a <b>very</b> useful command. 
+    </li>
+    <li>
+      To unstage, use <code>git reset</code>. To revert to an earlier version, use <code>git checkout</code>.
     </li>
     <li>
       They describe what was done in the commit—having good messages makes it easy to go back to a particular "draft" of your app. 
     </li>
-  </ul>
+  </ol>
 </div>
 {% endif %}
 
-<h2>E2: Github</h2>
+<h2>E2: GitHub</h2>
 <p>
-  <ul>
-    <li>What's the difference between Github and git? Could git exist without Github? Could Github exist without git?</li>
-  </ul>
+  <ol>
+    <li>What's the difference between GitHub and git? Could git exist without GitHub? Could GitHub exist without git?</li>
+    <li>Why is GitHub a cool company?</li>
+    <li>What does <code>git push</code> do?</li>
+    <li>What does <code>git pull</code> do? How is it different from/same as <code>git fetch</code> and <code>git merge</code>?</li>
+  </ol>
 </p>
 {% if page.answers_shown %}
 <a class="hover-show pull-right">Hover for answer</a>
 <div class="hover-hide">
   <p>
-    <ul>
-      <li>Git is the version control system that you have installed on your local computer. Github is a website that makes collaborating with git very easy, in particular looking at the code other programmers have written. Git could exist without Github, but not the other way around.</li>
-    </ul>
+    <ol>
+      <li>Git is the version control system that you have installed on your local computer. GitHub is a website that makes collaborating with git very easy, in particular looking at the code other programmers have written. Git could exist without GitHub, but not the other way around.</li>
+      <li>They let you put all your code online, for free! But letting people share code so easily, they make solving common problems <em>super</em> easy, as well as pushing forward the open-source community.</li>
+      <li>
+        Sends your code to the <b>remote</b> you specify. For our purposes, our remote is always called <b>origin</b>, and lives on GitHub.
+      </li>
+      <li>
+        <code>git pull</code> brings code in from the remote you specify, and merges it into your working tree automatically. <code>git fetch</code> brings in the code from the remote, but doesn't merge. <code>git merge</code> then allows you to merge manually. <b>Usually, you'll just use git pull</b>.
+      </li>
+    </ol>
   </p>
 </div>
 {% endif %}
