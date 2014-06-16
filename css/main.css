@@ -90,6 +90,14 @@ tr.disabled td, td.disabled {
   width: 200px;
 }
 
+.schedule-table td {
+  width: 13%;
+}
+
+.schedule-table td:nth-child(3) {
+  width: 48%;
+}
+
 .resources-table td:first-child {
   width: 80%;
 }
