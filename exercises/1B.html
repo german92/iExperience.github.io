@@ -5,7 +5,7 @@ prev: 1A
 current: 1B
 next: 2A
 permalink: /exercises/1B.html
-answers_shown: true
+answers_shown: false
 ---
 <h1>Review</h1>
 <p>
@@ -144,13 +144,17 @@ joe
   </ol>
 </div>
 {% endif %}
-<h2 class="bonus">E4 (Bonus!): QUADFORM</h2>
+
+
+<h2 class="bonus">E4: QUADFORM</h2>
 <p>
   Average is a pretty weak form of computation. For the heavy lifting, let's take it back to middle school and the days of the quadratic formula. If your memory serves you well, in an equation of the form
   <code>ax^2 + bx + c = 0</code>:
   <pre>x = (-b + squareroot(b*b - 4*a*c))/2*a</pre> and 
   <pre>x = (-b - squareroot(b*b - 4*a*c))/2*a</pre>
-  Let's write some code to do that for us. Create a new file named <code>quadform.rb</code> and make it do as follows:
+  Remember, your a, b, and c values need to be logical. For reference, look up a sample quadratic equation online.
+  Let's write some code to now give us the two roots - or xs. Note, the Ruby method <a href="http://www.ruby-doc.org/core-2.1.2/Math.html">Math.sqrt</a> is helpful for this exercise. Please read up on its usage. :)
+  Next, create a new file named <code>quadform.rb</code> and make it do as follows:
 </p>
 <pre><code>$ ruby quadform.rb
 Hey bru (South African for "bro"). Let's compute some quadform.
@@ -175,9 +179,9 @@ Goodbye!</code></pre>
 puts <span class="string">"Hey bru (South African for \"bro\"). Let's compute some quadform."</span>
 puts <span class="string">"Give me an A:"</span>
 a = gets.strip.to_f
-puts <span class="string">"Give me an B:"</span>
+puts <span class="string">"Give me a B:"</span>
 b = gets.strip.to_f
-puts <span class="string">"Give me an C:"</span>
+puts <span class="string">"Give me a C:"</span>
 c = gets.strip.to_f
 x1 = (-b + Math.sqrt(b*b - 4*a*c))/(2*a)
 x2 = (-b - Math.sqrt(b*b - 4*a*c))/(2*a)
@@ -196,7 +200,7 @@ puts <span class="string">"Goodbye!"</span></code></pre>
   Like most things in life, coding requires planning. From movies and pop culture, it seems like young hackers just sit down in their dorm rooms and churn out social networks by the dozens. In reality, a <b>significant portion of programming is planning.</b> For example, before anything can be built at Google, engineers write what's called a Design Document, which outlines all the features, potential pitfalls, and detailed design decisions. Only after all the team members have weighed in and dissected the whole thing can code be written. Similar practices abound at all serious tech companies. In fact, rumor has it that Facebook has had to write thousands of lines of code to work around an early, not-so-well-though-out design decision made by Mark Zuckerberg himself. Facebook may well be millions of dollars richer, had he planned before his coding frenzy. Gosh darn it.
 </p>
 <p>
-  So your next billions-dollar company doesn't fall victim to the same issues, we're going to get in the habit of planning our projects before we start coding. Your personal page is no exception. Create a file called <code>README.md</code> in your <code>username.github.io</code> folder (<code>username</code> will be your Github username, not the literal world "username") and answer the following questions. (Refresher: to create the file, right-click on the folder in the Sublime sidebar, then choose "New File". Make sure to save, and call it <code>README.md</code>.) No need to write an essay, but a couple of words or sentences about each will really clear up your thinking. You can structure your plans however makes sense to you, but we advise you to follow the following syntax. It's called Markdown (hence the <code>.md</code> in the filename), and it's very handy to know.
+  So your next billions-dollar company doesn't fall victim to the same issues, we're going to get in the habit of planning our projects before we start coding. Your personal page is no exception. Create a file called <code>README.md</code> in your <code>personal</code> folder and answer the following questions. (Refresher: to create the file, right-click on the folder in the Sublime sidebar, then choose "New File". Make sure to save, and call it <code>README.md</code>.) No need to write an essay, but a couple of words or sentences about each will really clear up your thinking. You can structure your plans however makes sense to you, but we advise you to follow the following syntax. It's called Markdown (hence the <code>.md</code> in the filename), and it's very handy to know.
 </p>
 <pre><code>## The bru's personal page
 #### May 27, 2014
@@ -235,63 +239,9 @@ and how you might structure those with HTML.
 </code></pre>
 <p class="info warning">
   We're encouraging you to use Markdown because it's easy—but if you have another way you want to do it, that's fine! The priority is to get your ideas down, not to learn a whole other thing. If you're curious, though, more info about Markdown can be found <a href="http://daringfireball.net/projects/markdown/syntax" target="_blank">here</a>.
-</p>
-<p>
-  After you're done doing some of that thinking, update your <code>index.html</code> with some content. Here's a sample you might end up with. It's meant to be a starting point, but there's no need to follow it in style or content! People are doing some wildly creative and original things on the web, and we want to encourage you to test your ideas out. Just remember that <b>code should follow standards</b>, even if <b>what your code does</b> breaks down barriers.
-</p>
-<pre><code><span class="doctype">&lt;!doctype html&gt;</span>
-<span class="tag">&lt;html&gt;</span>
-<span class="tag">&lt;head&gt;</span> 
-  <span class="tag">&lt;title&gt;</span>The Bru<span class="tag">&lt;/title&gt;</span>
-<span class="tag">&lt;/head&gt;</span>
-<span class="tag">&lt;body&gt;</span>
-<span class="comment">&lt;!-- 
-The bru is a complex bru,
-so his page will be split into two.
-On the left,
-a professional life showcase,
-On the right,
-his playful side will find its place.
---&gt;</span>
-<span class="tag">&lt;div class=<span class="string">"left"</span>&gt;</span>
-<span class="tag">&lt;h1&gt;</span>The Bru at Work<span class="tag">&lt;/h1&gt;</span>
-<span class="tag">&lt;p&gt;</span>
-  The Bru works hard by day...
-<span class="tag">&lt;/p&gt;</span>
-<span class="tag">&lt;div class=<span class="string">"jobs"</span>&gt;</span>
-  <span class="tag">&lt;div class=<span class="string">"job"</span>&gt;</span>
-    <span class="tag">&lt;h3&gt;</span>iExperience<span class="tag">&lt;/h3&gt;</span>
-    <span class="tag">&lt;p&gt;</span>
-      The Bru serves as the official generic user for the iExperience code base.
-    <span class="tag">&lt;/p&gt;</span>
-  <span class="tag">&lt;/div&gt;</span>
-  <span class="tag">&lt;div class=<span class="string">"job"</span>&gt;</span>
-    <span class="tag">&lt;h3&gt;</span>Art and Surfing<span class="tag">&lt;/h3&gt;</span>
-    <span class="tag">&lt;p&gt;</span>
-      A Renaissance man of the past and future, the Bru makes a living by
-      painting...while surfing. He specializes in water color. 
-    <span class="tag">&lt;/p&gt;</span>
-  <span class="tag">&lt;/div&gt;</span>
-<span class="tag">&lt;/div&gt;</span>
-<span class="tag">&lt;/div&gt;</span>
-<span class="tag">&lt;div class=<span class="string">"right"</span>&gt;</span>
-<span class="tag">&lt;h1&gt;</span>The Bru at Play<span class="tag">&lt;/h1&gt;</span>
-<span class="tag">&lt;p&gt;</span>...and plays hard by night (and also on weekends!)<span class="tag">&lt;/p&gt;</span>
-<span class="tag">&lt;div class=<span class="string">"projects"</span>&gt;</span>
-  <span class="tag">&lt;div class=<span class="string">"project"</span>&gt;</span>
-    <span class="tag">&lt;h3&gt;</span>Shark Diving<span class="tag">&lt;/h3&gt;</span>
-    <span class="tag">&lt;p&gt;</span>
-      &lt;3 sharks!
-      [insert pic with sharks here]
-    <span class="tag">&lt;/p&gt;</span>
-  <span class="tag">&lt;/div&gt;</span>
-<span class="tag">&lt;/div&gt;</span>
-<span class="tag">&lt;/div&gt;</span>
-<span class="tag">&lt;/body&gt;</span>
-<span class="tag">&lt;/html&gt;</span></code></pre>
-<p>
-  If you look at your file in the browser (remember, right-click on the file name in Sublime, choose "Reveal in Finder" or "Open Containing Folder" and then double-click the file), you should end up with something like <a href="http://iexperience.github.io/personal/1B.html">this</a>.
-</p>
+
+<!-- Rafi had personal page from 1A here. -->
+
 <h4>Code Review</h4>
 <p>
   The next good coding practice we'll learn is <b>code review</b>. This means looking at someone else's code and reading it line by line to understand it: NOT just casually glancing over it. For this part, pick someone near you and go through each other's code together. You're looking for several things, in both your and your partner's code:
