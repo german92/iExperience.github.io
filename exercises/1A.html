@@ -11,33 +11,33 @@ permalink: /exercises/1A.html
   <b>Topics Covered:</b> Course introduction
 </p>
 <p>
-  <b>Relevant Resouces:</b> Make sure you're caught up on the Treehouse coursework! The pace will pick up from here, so it's essential you don't start already behind.
+  <b>Relevant Resouces:</b> Make sure you're caught up on the Treehouse coursework, esp the JavaScript modules! The pace will pick up from here, so it's essential you don't start already behind.
 </p>
 <hr class="large">
 
 <!-- Exercises -->
 <h1>Exercises</h1>
-<h2>E1: Gaining Familiarity</h2>
+<!-- <h2>E1: Gaining Familiarity</h2>
 <p>
-  Learn the name, hometown, interests and some interesting facts about two of the people sitting near you.
-</p>
-<h2>E2: A Bit More Setup</h2>
+  Most of you have been around for 2 days now. But we had some new people come in last night. So, take some time, and learn the name, hometown, interests and some interesting facts about two of the people sitting near you.
+</p> -->
+<h2>E1: A Bit More Setup</h2>
 <p>
   We're going to build off of the prework to set up the working environment. All this material should be review, but if you have questions don't hesitate to ask. 
 </p>
 <p>
-  In your home folder, create a folder called <code>iX</code> (note that <code>~</code> is a shortcut for <code>/Users/your-name</code> on a Mac). Inside that, create a folder called <code>workspace</code>. In your shell, switch to that directory with <code>cd</code> or <code>dir</code> and start a git repository. Lastly, create a folder called <code>d1</code> (for day 1).
+  In your home folder, create a folder called <code>iX</code> (note that <code>~</code> is a shortcut for <code>/Users/your-name</code> on a Mac). Inside that, create a folder called <code>workspace</code>. In your shell, switch to that directory with <code>cd</code> or <code>dir</code>. Lastly, create a folder called <code>d1</code> (for day 1).
   <pre><code>$ cd ~ 
 $ mkdir iX
 $ cd iX
 $ mkdir workspace
 $ cd workspace
-$ git init
-Initialized empty Git repository in /Users/my_name/workspace/.git/
 $ mkdir d1</code></pre>
+<!-- $ git init -->
+<!-- Initialized empty Git repository in /Users/my_name/workspace/.git/ -->
 </p>
 <p class="info warning">
-  Windows users: While all the examples and screenshots are done on Macs, all the code should work (after slight modification) on your machine, especially if you have Cygwin or Git bash installed. If you don't and are stuck, please ask one of the TA's and they'll help you out!
+  Windows users: While all the examples and screenshots are done on Macs, all the code should work (after slight modification) on your machine in your Powershell. If you don't and are stuck, please ask one of the TA's and they'll help you out!
 </p>
 <p>
   Every day, you'll create a new folder for the classwork done during that day. Next, open the folder you've created in Sublime Text (File -> Open and then choose the folder on a Mac, File -> Open Folder... then choose the folder on Windows). Your Sublime should look exactly like below:
@@ -51,7 +51,7 @@ $ mkdir d1</code></pre>
 <p class="info hint">
   Protip (Macs): Set your default application for html files as Chrome: Right-click on any HTML file, and choose "Get Info". Then choose Chrome as the Open With, and click "Change All...". Then you can just type <code>open filename.html</code> in the Terminal and it'll come up. No more using the mouse!
 </p>
-<h2>E3: A Real Web Page</h2>
+<h2>E2: A Real Web Page</h2>
 <p>
   For this exercise, we're going to make a real web page, using the <code>html</code>, <code>head</code> and <code>body</code> tags you've already learned. Create a new file in the <code>d1</code> folder called <code>second.html</code> and write the following (don't copy paste!):
   <pre><code><span class="doctype">&lt;doctype html&gt;</span>
@@ -64,9 +64,14 @@ $ mkdir d1</code></pre>
 &lt;/body&gt;
 &lt;/html&gt;</code></pre>
 </p>
+<br>
+
 <p>
   Open it in Chrome...do you see any difference betweeen this web page and the one you created in E2?
 </p>
+<br>
+
+<!--
 <h2>E4: Create a repo, commit and push!</h2>
 We'll work together to <a href="https://help.github.com/articles/create-a-repo" target="_blank">create a repo on</a> Github called iX-workspace. Then, just like in the prework, tell your repository about the new repo, commit your changes, and push! First, run the commands below to make sure you're doing the right thing. 
 <pre><code>$ pwd
@@ -79,6 +84,11 @@ $ git add .
 $ git commit -m "Made first html files"
 $ git remote add origin https://github.com/<em>username</em>/iX-workspace.git
 $ git push -u origin master</code></pre>
+
+<p>For those who want more practice with git and pushing to github, practice <a href="https://try.github.io/levels/1/challenges/1">here</a>.</p>
+
+-->
+
 <hr class="large">
 <h1>Projects</h1>
 <h2>A Coder's Selfie</h2>
@@ -87,8 +97,79 @@ $ git push -u origin master</code></pre>
 </p>
 <p>
   To start, create a <code>projects</code> folder in your <code>iX</code> folder—NOT in <code>workspace</code>. In <code>projects</code>, create a folder called <code>personal</code>. In the personal folder, create a file called <code>index.html</code>
+
+  Next, you will populate the contents of this <code>index.html</code> page, which are completely up to you. But for the South African Bru, here's what he'd say ;):
+
+<pre><code><span class="doctype">&lt;!doctype html&gt;</span>
+<span class="tag">&lt;html&gt;</span>
+<span class="tag">&lt;head&gt;</span> 
+  <span class="tag">&lt;title&gt;</span>The Bru<span class="tag">&lt;/title&gt;</span>
+<span class="tag">&lt;/head&gt;</span>
+<span class="tag">&lt;body&gt;</span>
+<span class="tag">&lt;div class=<span class="string">"left"</span>&gt;</span>
+<span class="tag">&lt;h1&gt;</span>The Bru at Work<span class="tag">&lt;/h1&gt;</span>
+<span class="tag">&lt;p&gt;</span>
+  The Bru works hard by day...
+<span class="tag">&lt;/p&gt;</span>
+<span class="tag">&lt;div class=<span class="string">"jobs"</span>&gt;</span>
+  <span class="tag">&lt;div class=<span class="string">"job"</span>&gt;</span>
+    <span class="tag">&lt;h3&gt;</span>iExperience<span class="tag">&lt;/h3&gt;</span>
+    <span class="tag">&lt;p&gt;</span>
+      The Bru serves as the official generic user for the iExperience code base.
+    <span class="tag">&lt;/p&gt;</span>
+  <span class="tag">&lt;/div&gt;</span>
+  <span class="tag">&lt;div class=<span class="string">"job"</span>&gt;</span>
+    <span class="tag">&lt;h3&gt;</span>Art and Surfing<span class="tag">&lt;/h3&gt;</span>
+    <span class="tag">&lt;p&gt;</span>
+      A Renaissance man of the past and future, the Bru makes a living by
+      painting...while surfing. He specializes in water color. 
+    <span class="tag">&lt;/p&gt;</span>
+  <span class="tag">&lt;/div&gt;</span>
+<span class="tag">&lt;/div&gt;</span>
+<span class="tag">&lt;/div&gt;</span>
+<span class="tag">&lt;div class=<span class="string">"right"</span>&gt;</span>
+<span class="tag">&lt;h1&gt;</span>The Bru at Play<span class="tag">&lt;/h1&gt;</span>
+<span class="tag">&lt;p&gt;</span>...and plays hard by night (and also on weekends!)<span class="tag">&lt;/p&gt;</span>
+<span class="tag">&lt;div class=<span class="string">"projects"</span>&gt;</span>
+  <span class="tag">&lt;div class=<span class="string">"project"</span>&gt;</span>
+    <span class="tag">&lt;h3&gt;</span>Shark Diving<span class="tag">&lt;/h3&gt;</span>
+    <span class="tag">&lt;p&gt;</span>
+      &lt;3 sharks!
+      [insert pic with sharks here]
+    <span class="tag">&lt;/p&gt;</span>
+  <span class="tag">&lt;/div&gt;</span>
+<span class="tag">&lt;/div&gt;</span>
+<span class="tag">&lt;/div&gt;</span>
+<span class="tag">&lt;/body&gt;</span>
+<span class="tag">&lt;/html&gt;</span></code></pre>
+<!-- <span class="comment">&lt;!  -->
+<!-- The bru is a complex bru,
+so his page will be split into two.
+On the left,
+a professional life showcase,
+On the right,
+his playful side will find its place. -->
+<!-- &gt;</span> -->
+
+Look at your file in the browser --remember, right-click on the file name in Sublime, choose "Reveal in Finder" or "Open Containing Folder" and then double-click the file!
+<!-- you should end up with something like <a href="http://iexperience.github.io/personal/1B.html">this</a>.  -->
+
+<br>
+<br>
+Now, let's add some styling to give it the look and feel you want. In your <code>personal</code> folder, create a folder called <code>stylesheets</code>, and while you're at it, create a folder called <code>images</code> as well. In <code>stylesheets</code>, create <code>style.css</code>. Then link your stylesheet in your <code>index.html</code>. You guys did the pre-coursework, so this should be easy-peasy, right?
+
+<br>
+<br>
+Again, you're welcome to come up with whatever design for your personal page! Add color, play with the fonts, add some spacing to start with. One good way to study the <code>html</code>element is to right-click, and select "Inspect Element". It will pop up a console at the bottom of your browser that lets you inspect the styling of each element on the fly. All editing, however, goes into your <code>.html</code> and <code>.css</code> files. 
+
+<br>
+<br>
+Here's a resource for great designs and styling: <a href="http://www.thebestdesigns.com/">The Best Designs. </a> 
+Also, the  <a href="http://iexperience.github.io/#resources">Resources Section</a> of our iExperience website has amazing references to websites that Rafi, our TA from Session 1 has left for us. You'll be looking through a lot of them as we mature into the course. 
+
+Alright, off to creating your personal pages ;) - Impress us! 
 </p>
-<!-- <p>
+<!--<p>
   To put your page on the internet, we'll be using 
   <a href="https://pages.github.com/" target="_blank">Github pages</a>. To start, follow the instructions there for a User site (not a project site). In the "Clone the repository" step, make sure you clone into the <code>projects</code> directory.
 </p>

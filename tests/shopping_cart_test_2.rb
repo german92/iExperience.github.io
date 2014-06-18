@@ -1,3 +1,6 @@
+# Tests for Shopping Cart exericise
+# By Rafi / June 1, 2014
+
 module Color
   # shamelessly stolen (and modified) from redgreen
   COLORS = {
@@ -68,6 +71,7 @@ end
 assert (shopper.money == 100), "Defaults to 100 money",
   "Doesn't default to 100 money"
 
+# Tests for an optional last name—removed. 
 # assert (shopper.full_name == "Bru"), "Full name works with no last name",
 #   "full name fails with no last name"
 

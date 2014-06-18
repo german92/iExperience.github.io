@@ -18,19 +18,6 @@
 
 
 
-
-
-# DO NOT USE THIS FILE
-
-
-
-
-
-
-
-
-
-
 class Cart
   # To store the items, we need to create a hash that contains
   # both the item and its quantity in the cart. As the key of the

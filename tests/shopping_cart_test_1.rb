@@ -1,3 +1,7 @@
+# Tests for Shopping Cart exericise
+# By Rafi / June 1, 2014
+
+# Color outputs on *nix terminals
 module Color
   # shamelessly stolen (and modified) from redgreen
   COLORS = {
@@ -17,6 +21,8 @@ module Color
   end
 end
 
+# Helper methods
+
 def pass(msg)
   puts "    " + Color.green(msg)
 end
@@ -33,6 +39,8 @@ def assert(condition, s_msg, f_msg)
     fail f_msg
   end
 end
+
+# Test begins
 
 require_relative 'item'
 require_relative 'cart'
