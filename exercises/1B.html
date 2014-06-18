@@ -307,6 +307,24 @@ his playful side will find its place.
 <p>
   Try to give constructive criticism and be open to suggestions about your own code. Borrow each other's ideas and discoveries—coding is meant to be a collaborative process!
 </p>
+<h4>Adding some personality to your HTML with CSS</h4>
+<p>
+  There are many ways to add styling to your HTML pages, i.e. style tags and CSS. However, good practice dictates that we should include all our style choices in a seperate CSS file. This way we can clearly differentiate between content and design, keep track of all our style decisions in one place, and easily change them when we need to. 
+</p>
+<p>
+  The first thing we need to do is link our HTML page with a CSS stylsheet. We do this by adding a <code>&lt;link&gt;</code> to the CSS stylesheet inside our <code>&lt;head&gt;</code> at the top of our HTML page. This lets our HTML page know where to look for the CSS stylesheet.
+</p>
+<pre><code><span class="comment">...</span>
+<span class="tag">&lt;head&gt;</span>
+<span class="tag">&lt;title&gt;</span>The Bru<span class="tag">&lt;/title&gt;</span>
+<span class="tag">&lt;link rel=<span class="string">"stylesheet"</span> href=<span class="string">"./stylesheets/style.css"</span>&gt;</span>
+<span class="tag">&lt;/head&gt;</span>
+<span class="tag">&lt;body&gt;</span>
+...
+</code></pre>
+<p>
+  We can now use <b>classes</b> and <b>IDs</b> to link our HTML and CSS files. Classes can be used multiple times to apply styling to numerous HTML items. IDs can only be used once! Remember that classes are referenced in your CSS file using a period, e.g. <code>.class-name</code>, and IDs are referenced using the hash symbol, e.g. <code>#ID-name</code>. Check out Treehouse if you need to refresh yourself on how to implement CSS.
+</p>
 <hr class="large">
 <h1>
   Dust yourself off!
