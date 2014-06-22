@@ -23,57 +23,57 @@ answers_shown: true
 </p>
 <pre><code>class Person
   def initialize(name)
-    @name = name <span class="string"># Line 3</span>
+	@name = name <span class="string"># Line 3</span>
   end
 
   def name
-    return @name
+	return @name
   end
 end
 
 class Christian < Person
   def initialize(name, type)
-    @name = name
-    @type = type
+	@name = name
+	@type = type
   end
 
   def go_to_mass
-    puts "Going to mass..."
+	puts "Going to mass..."
   end
 end 
 
 abdullah = Christian.new("abdullah", "original")</code></pre>
 <p>
   <ol>
-    <li>Why is line 3 necessary? What happens without it?</li>
-    <li>Is <code>Christian</code> a subclass or a superclass?</li>
-    <li>What will running <code>Christian.go_to_mass</code> do? Why?</li>
-    <li>What will running <code>abdullah.type</code> do? Why? If you think it's broken, how can you fix it? If you think it works, what does it return?</li>
-    <li>
-      What is <code>abdullah</code>? Choose all that apply:
-      <ul>
-        <li>A class</li>
-        <li>A method</li>
-        <li>An instance</li>
-        <li>An object</li>
-        <li>A variable</li>
-      </ul>
-    </li>
+	<li>Why is line 3 necessary? What happens without it?</li>
+	<li>Is <code>Christian</code> a subclass or a superclass?</li>
+	<li>What will running <code>Christian.go_to_mass</code> do? Why?</li>
+	<li>What will running <code>abdullah.type</code> do? Why? If you think it's broken, how can you fix it? If you think it works, what does it return?</li>
+	<li>
+	  What is <code>abdullah</code>? Choose all that apply:
+	  <ul>
+		<li>A class</li>
+		<li>A method</li>
+		<li>An instance</li>
+		<li>An object</li>
+		<li>A variable</li>
+	  </ul>
+	</li>
   </ol>
 </p>
 {% if page.answers_shown %}
 <a class="hover-show pull-right">Hover for answer</a>
 <div class="hover-hide">
   <p>
-    <ol>
-      <li>Line 3 tells the class to save the name that was passed to it when you call <code>Person.new</code>. Without it, the class won't remember the name.</li>
-      <li>Subclass</li>
-      <li>It will break, because the method is only defined on the instance, not the class. You have to do <code>c = Christian.new(...)</code>, then <code>c.go_to_mass</code></li>
-      <li><code>abdullah.type</code> will break becuase there's no <code>type</code> method in <code>Person</code> or <code>Christian</code> class.</li>
-      <li>
-        An instance, an object and a variable.
-      </li>
-    </ol>
+	<ol>
+	  <li>Line 3 tells the class to save the name that was passed to it when you call <code>Person.new</code>. Without it, the class won't remember the name.</li>
+	  <li>Subclass</li>
+	  <li>It will break, because the method is only defined on the instance, not the class. You have to do <code>c = Christian.new(...)</code>, then <code>c.go_to_mass</code></li>
+	  <li><code>abdullah.type</code> will break becuase there's no <code>type</code> method in <code>Person</code> or <code>Christian</code> class.</li>
+	  <li>
+		An instance, an object and a variable.
+	  </li>
+	</ol>
   </p>
 </div>
 {% endif %}
@@ -82,19 +82,19 @@ abdullah = Christian.new("abdullah", "original")</code></pre>
   Now consider these classes:
   <pre><code>class Container
   def fill_up
-    @full = true
+	@full = true
   end
   def empty_out
-    @full = false
+	@full = false
   end
 end
 
 class ThingThatBreaks
   def break
-    @broken = true
+	@broken = true
   end
   def fix
-    @broken = false
+	@broken = false
   end
 end
 
@@ -108,10 +108,10 @@ end</code></pre>
   This is why we use modules.
   <pre><code>module Breakable
   def break
-    @broken = true
+	@broken = true
   end
   def fix
-    @broken = false
+	@broken = false
   end
 end
 
@@ -119,13 +119,13 @@ class Glass < Container
   include Breakable
 
   def fill_up_with_wine
-    puts "Stayin' classy"
+	puts "Stayin' classy"
   end
 end
 
 class ShotGlass < Glass
   def fill_up_with_tequila
-    puts "party == on"
+	puts "party == on"
   end
 end
 
@@ -133,18 +133,18 @@ shot_glass = ShotGlass.new</code></pre>
 </p>
 <p>
   <ol start="6">
-    <li>Will all this code work? Do you see any bugs? Before you try it yourself, write down your answer. If you see bugs, note what they are and how you would fix them.</li>
-    <li>Will <code>shot_glass.break</code> work? Why or why not?</li>
-    <li>In the code, we're calling <code>ShotGlass.new</code>, even though the <code>new</code> method isn't <code>def</code>'d anywhere. How come it works?</li>
-    <li>What is <code>Breakable</code>? Choose all that apply:
-      <ul>
-        <li>A class</li>
-        <li>A method</li>
-        <li>An instance</li>
-        <li>An object</li>
-        <li>A variable</li>
-      </ul>
-    </li>
+	<li>Will all this code work? Do you see any bugs? Before you try it yourself, write down your answer. If you see bugs, note what they are and how you would fix them.</li>
+	<li>Will <code>shot_glass.break</code> work? Why or why not?</li>
+	<li>In the code, we're calling <code>ShotGlass.new</code>, even though the <code>new</code> method isn't <code>def</code>'d anywhere. How come it works?</li>
+	<li>What is <code>Breakable</code>? Choose all that apply:
+	  <ul>
+		<li>A class</li>
+		<li>A method</li>
+		<li>An instance</li>
+		<li>An object</li>
+		<li>A variable</li>
+	  </ul>
+	</li>
   </ol>
 </p>
 <!-- Answers for E1 -->
@@ -152,10 +152,10 @@ shot_glass = ShotGlass.new</code></pre>
 <a class="hover-show pull-right">Hover for answer</a>
 <div class="hover-hide">
   <ol start="6">
-    <li>Yes.</li>
-    <li>Will work, because it inherits from a class that includes <code>Breakable</code>, and therefore pulls in all the methods as well.</li>
-    <li>Ruby automatically defines a <code>new</code> method on each class, so we can create instances of that class.</li>
-    <li>An object (and also a module).</li>
+	<li>Yes.</li>
+	<li>Will work, because it inherits from a class that includes <code>Breakable</code>, and therefore pulls in all the methods as well.</li>
+	<li>Ruby automatically defines a <code>new</code> method on each class, so we can create instances of that class.</li>
+	<li>An object (and also a module).</li>
   </ol>
 </div>
 {% endif %}
@@ -165,7 +165,7 @@ shot_glass = ShotGlass.new</code></pre>
 </p>
 <pre><code>class String
   def shout
-    self.upcase
+	self.upcase
   end
 end
 
@@ -211,21 +211,21 @@ tripsay emay \t ".strip_new
 
 class String
   def piglatinify
-    <span class="comment"># Check for capitalization</span>
-    if self[0].upcase == self[0]
-      self[0] = self[0].downcase <span class="comment"># Downcase old first letter</span>
-      self[1] = self[1].upcase   <span class="comment"># Upcase new first letter</span>
-    end
-    <span class="comment"># Rest of string + first letter + "ay"</span>
-    self[1..-1] + self[0] + "ay"
+	<span class="comment"># Check for capitalization</span>
+	if self[0].upcase == self[0]
+	  self[0] = self[0].downcase <span class="comment"># Downcase old first letter</span>
+	  self[1] = self[1].upcase   <span class="comment"># Upcase new first letter</span>
+	end
+	<span class="comment"># Rest of string + first letter + "ay"</span>
+	self[1..-1] + self[0] + "ay"
   end
 
   def piglatinify_sentence
-    pigged_words = self.split(" ").map { |word| word.piglatinify }
-    pigged_words.join(" ")
-    <span class="comment"># To be fancy, you might have done it in one line:</span>
-    <span class="comment"># self.split(" ").map({ |word| word.piglatinify }).join(" ")</span>
-    <span class="comment"># But in my opinion, that's less clear.</span>
+	pigged_words = self.split(" ").map { |word| word.piglatinify }
+	pigged_words.join(" ")
+	<span class="comment"># To be fancy, you might have done it in one line:</span>
+	<span class="comment"># self.split(" ").map({ |word| word.piglatinify }).join(" ")</span>
+	<span class="comment"># But in my opinion, that's less clear.</span>
   end
 end</code></pre>
 </div>
@@ -256,19 +256,19 @@ end
 <span class="comment"># Modules, like classes, start with capital letters</span>
 module Piglatinify
   def piglatinify
-    string_self = self.to_s
-    if string_self[0].upcase == string_self[0]
-      string_self[0] = string_self[0].downcase <span class="comment"># Downcase old first letter</span>
-      string_self[1] = string_self[1].upcase   <span class="comment"># Upcase new first letter</span>
-    end
-    <span class="comment"># Rest of string + first letter + "ay"</span>
-    string_self[1..-1] + string_self[0] + "ay"
+	string_self = self.to_s
+	if string_self[0].upcase == string_self[0]
+	  string_self[0] = string_self[0].downcase <span class="comment"># Downcase old first letter</span>
+	  string_self[1] = string_self[1].upcase   <span class="comment"># Upcase new first letter</span>
+	end
+	<span class="comment"># Rest of string + first letter + "ay"</span>
+	string_self[1..-1] + string_self[0] + "ay"
   end
 
   def piglatinify_sentence
-    string_self = self.to_s
-    pigged_words = string_self.split(" ").map { |word| word.piglatinify }
-    pigged_words.join(" ")
+	string_self = self.to_s
+	pigged_words = string_self.split(" ").map { |word| word.piglatinify }
+	pigged_words.join(" ")
   end
 end</code></pre>
 </div>
@@ -303,20 +303,20 @@ index_of("abcdefghijklmnop", "z")
 
 people = [
   {
-    :id => 1,
-    :name => "bru"
+	:id => 1,
+	:name => "bru"
   },
   {
-    :id => 2,
-    :name => "ski"
+	:id => 2,
+	:name => "ski"
   },
   {
-    :id => 3,
-    :name => "brunette"
+	:id => 3,
+	:name => "brunette"
   },
   {
-    :id => 4,
-    :name => "ski"
+	:id => 4,
+	:name => "ski"
   }
 ]
 find_by_name(people, "ski")
@@ -367,9 +367,7 @@ end</code></pre>
 <p>
   This code doesn't do anything yet, but should be simple to fill out. Go ahead and do so, just like we did in lecture.
 </p>
-<h4>
-  The Vehicle
-</h4>
+<h4>The Vehicle</h4>
 <p>
   Next we're going to build a <code>Cart</code> class that will hold all of the items, as well as how many items there are. Put this in a new file, <code>cart.rb</code>. This cart will closely resemble <a href="./2B.html">Lesson 2B, Exercise 5</a>, so feel free to borrow and modify code from there. To start, here's a template:
 </p>
@@ -400,18 +398,18 @@ end</code></pre>
 The exact specification is as follows:
 <ul>
   <li>
-    Cart should keep an instance variable called <code>@items</code>.
-    <code>@items</code> will be an <code>Array</code>, that holds Objects of the <code>Item</code> class. That is, the signature of <code>@items</code> is <code>Array&lt;Item&gt;</code>.
+	Cart should keep an instance variable called <code>@items</code>.
+	<code>@items</code> will be an <code>Array</code>, that holds Objects of the <code>Item</code> class. That is, the signature of <code>@items</code> is <code>Array&lt;Item&gt;</code>.
   </li>
   <li><code>@items</code> will start (be initialized) as an empty array.</li>
   <li>
-    <code>Cart</code> will have a method <code>add</code> that adds <code>Item</code>s to its <code>@items</code> array.
+	<code>Cart</code> will have a method <code>add</code> that adds <code>Item</code>s to its <code>@items</code> array.
   </li>
   <li>
-    <code>Cart</code> has a method <code>remove</code> that will remove <b>all</b> instances of an item from its cart. That is, if <code>@items</code> is <code>[milk, milk, eggs]</code> and I run <code>cart.remove(milk)</code>, then <code>@items</code> should be <code>[eggs]</code>.
+	<code>Cart</code> has a method <code>remove</code> that will remove <b>all</b> instances of an item from its cart. That is, if <code>@items</code> is <code>[milk, milk, eggs]</code> and I run <code>cart.remove(milk)</code>, then <code>@items</code> should be <code>[eggs]</code>.
   </li>
   <li>
-    <code>total_price</code> returns a <code>float</code> of the total price of all items in the cart. 
+	<code>total_price</code> returns a <code>float</code> of the total price of all items in the cart. 
   </li>
 </ul>
 </p>
@@ -451,24 +449,25 @@ After you think you have a working answer, download the test file from <a href="
   Download the files for <code>Item</code> and <code>Cart</code> in <a href="/tests/item.rb">/tests/item.rb</a> and <a href="/tests/cart.rb">/tests/cart.rb</a> respectively.s
 </p>
 {% endif %}
+
 <!--
 <h4>Add Some Mustard</h4>
 <p>
   To spicen up your code, implement the following:
   <ul>
-    <li>
-      Give each item a <code>weight</code> property, and the <code>Cart</code> a <code>total_weight</code> method.
-    </li>
-    <li>
-      Make it so you can't create two <code>Item</code>s with the same name. That is, the below should fail (i.e. not create the second milk):
-      <ul>
-        <code>
-          Item.new("milk", 2)<br>
-          Item.new("milk", 3)
-        </code>
-      </ul>
-      This will involve research into <b>class methods and properties</b>.
-    </li>
+	<li>
+	  Give each item a <code>weight</code> property, and the <code>Cart</code> a <code>total_weight</code> method.
+	</li>
+	<li>
+	  Make it so you can't create two <code>Item</code>s with the same name. That is, the below should fail (i.e. not create the second milk):
+	  <ul>
+		<code>
+		  Item.new("milk", 2)<br>
+		  Item.new("milk", 3)
+		</code>
+	  </ul>
+	  This will involve research into <b>class methods and properties</b>.
+	</li>
   </ul>
 </p>
 -->
