@@ -5,7 +5,7 @@ prev: 3B
 current: 4A
 next: 4B
 permalink: /exercises/4A.html
-answers_shown: false
+answers_shown: true
 ---
 
 <h1>Review</h1>
@@ -69,7 +69,7 @@ abdullah = Christian.new("abdullah", "catholic")</code></pre>
       <li>Line 3 tells the class to save the name that was passed to it when you call <code>Person.new</code>. Without it, the class won't remember the name.</li>
       <li>Subclass</li>
       <li>It will break, because the method is only defined on the instance, not the class. You have to do <code>c = Christian.new(...)</code>, then <code>c.go_to_mass</code></li>
-      <li><code>abdullah.sect</code> will break becuase there's no <code>sect</code> method in <code>Person</code> or <code>Christian</code> class.</li>
+      <li><code>abdullah.sect</code> will break because there's no <code>sect</code> method in <code>Person</code> or <code>Christian</code> class.</li>
       <li>
         An instance, an object and a variable.
       </li>
@@ -81,13 +81,12 @@ abdullah = Christian.new("abdullah", "catholic")</code></pre>
 <h4>E2: Classes, Objects and Instances! Oh, my!</h4>
 <p>Revisiting the <code>Person</code> and <code>Christian</code> example from above, we can test our understanding of the <code>instance_of?</code>, <code>is_a?</code> and <code>respond_to?</code> methods. Write down whether the following evaluate to true or false, and then write a sentence explaining the difference between <code>instance_of?</code> and <code>is_a?</code>.  </p>
 
-<pre><code>
-james = Christian.new("james", "presbyterian")
+<pre><code>james = Christian.new("james", "presbyterian")
 frank = Person.new("frank")
 </code></pre>
 
 <p>
-  <ol>
+  <ol start="6">
     <li><code>james.is_a?(Person)</code></li>
     <li><code>james.is_a?(Christian)</code></li>
     <li><code>james.instance_of?(Person)</code></li>
@@ -96,6 +95,22 @@ frank = Person.new("frank")
     <li><code>frank.respond_to?(:go_to_mass)</code></li>
   </ol>
 </p>
+
+{% if page.answers_shown %}
+<a class="hover-show pull-right">Hover for answer</a>
+<div class="hover-hide">
+  <p>
+    <ol start="6">
+      <li><code>true</code></li>
+      <li><code>true</code></li>
+      <li><code>false</code></li>
+      <li><code>true</code></li>
+      <li><code>true</code></li>
+      <li><code>false</code></li>
+    </ol>
+  </p>
+</div>
+{% endif %}
 
 
 <h4>Raise a Glass to Glasses</h4>
@@ -153,7 +168,7 @@ end
 shot_glass = ShotGlass.new</code></pre>
 </p>
 <p>
-  <ol start="6">
+  <ol start="12">
     <li>Will all this code work? Do you see any bugs? Before you try it yourself, write down your answer. If you see bugs, note what they are and how you would fix them.</li>
     <li>Will <code>shot_glass.break</code> work? Why or why not?</li>
     <li>In the code, we're calling <code>ShotGlass.new</code>, even though the <code>new</code> method isn't <code>def</code>'d anywhere. How come it works?</li>
@@ -173,7 +188,7 @@ shot_glass = ShotGlass.new</code></pre>
 {% if page.answers_shown %}
 <a class="hover-show pull-right">Hover for answer</a>
 <div class="hover-hide">
-  <ol start="6">
+  <ol start="12">
     <li>Yes.</li>
     <li>Will work, because it inherits from a class that includes <code>Breakable</code>, and therefore pulls in all the methods as well.</li>
     <li>Ruby automatically defines a <code>new</code> method that takes no arguments on each class, so we can create instances of that class.</li>

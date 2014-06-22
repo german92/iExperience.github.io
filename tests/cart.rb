@@ -1,3 +1,6 @@
+# An implementation for the Cart class for iXperience exercises.
+# By Rafi / June 1, 2014
+
 class Cart
   # To store the items, we need to create an array. When a cart is
   # created, the array will start empty. Note that the constructor

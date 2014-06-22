@@ -25,6 +25,7 @@ answers_shown: true
 carrots
 bananas
 apples</code></pre>
+{% if page.answers_shown %}
 <a class="hover-show pull-right">Hover for answer</a>
 <div class="hover-hide">
   <pre><code><span class="comment"># reverse.rb</span>
@@ -51,6 +52,8 @@ end
 <span class="comment"># If it's a short loop, you can do it on one line:</span>
 list.each_with_index { |item, index| puts list[list.length-index-1] }</code></pre>
 </div>
+{% endif %}
+
 
 <h2>E2: Optimization</h2>
 <p>
@@ -296,7 +299,7 @@ end</code></pre>
 <p>
   The final push! You'll be briefly presenting your website to the class tomorrow, so give it your all. <a href="http://iexperience.github.io/personal/2B.html">This</a> is what The Bru came up with, in less than 100 lines of HTML and 100 lines of CSS.
 </p>
-<p>
+<!-- <p>
   A quick review of how to send to Github:
   <ol>
     <li>Make sure you're in your <code>projects/username.github.io</code> directory in the shell.</li>
@@ -305,4 +308,4 @@ end</code></pre>
     <li><code>git push origin master</code></li>
     <li>Your site should now be <b>live on the web</b> at http://username.github.io—go check it out to make sure it looks right. Note that it might take a few minutes for it to update online.</li>
   </ol>
-</p>
+</p> -->

@@ -5,7 +5,7 @@ prev: 1B
 current: 2A
 next: 2B
 permalink: /exercises/2A.html
-answers_shown: false
+answers_shown: true
 ---
 <h1>Review</h1>
 <p>
@@ -165,7 +165,7 @@ Fibonnaci at 1: 1
 $ ruby fibonacci.rb
 Enter a number:
 4
-Fibonnaci at 4: 5
+Fibonnaci at 4: 3
 $ ruby fibonacci.rb
 Enter a number:
 10
@@ -200,16 +200,47 @@ puts "Fibonnaci at #{num}: #{fib}"</code></pre>
 <h1>Projects</h1>
 <h2>A Coder's Selfie</h2>
 <p>
-  Let's continue with our personal pages. Add some styling to give it the look and feel you want. In your <code>username.github.io</code> folder, create a folder called <code>stylesheets</code>, and while you're at it, create a folder called <code>images</code> as well. In <code>stylesheets</code>, create <code>style.css</code>. Then link your stylesheet in your HTML.
+  Let's continue with our personal pages. After you arrived in the <a href="http://www.travelstart.co.za/blog/50-photos-of-cape-town-that-will-make-you-want-to-live-in-the-mother-city/">Mother City</a>, you did some Team Treehouse modules on <code>JavaScript</code> and <code>jQuery</code>. Now, it's time to use this magical tool to improve on your personal page. 
+
+  In your <code>personal</code> folder, create a folder called <code>javascript</code>. In <code>javascript</code>, create <code>somefile.js</code>. Then, link this javascript file in your index.html file. 
+
+  <p class = "info warning">
+  It is possible to write your <code>javascript</code> in your <code>html</code> file itself as shown below. However, as you will write code for your final projects, these javascript files will contain a lot more functionality, so it is important to write JS(javscript) code in a separate file.
+   </p> 
+  <pre><code>
+  <span class="tag">&lt;script&gt;</span>your JS code here<span class ="tag">&lt;/script&gt;</span>
+  </pre></code>
+
+  <br>
+
+  So, we know you want to talk a lot about yourself, but I guess you don't want to overwhelm your reader, right? For today, you will try to show and hide some section of your page by adding a <code>button</code>, which on click, shows some section of your personal page, and on another click, hides it back.
+  <br>
+  <br>
+  And this is how you can include your new <code>somefile.js</code> file in your <code>index.html</code> as shown below:
+  <br>
+
+  <pre><code>
+  <span class="tag">&lt;head&gt;</span>
+  <span class="tag">&lt;title&gt;</span>The Bru<span class="tag">&lt;/title&gt;</span>
+  <span class="tag">&lt;script src=<span class="string">"somefile.js"</span> type =<span class ="string"> "text/javascript"</span>&gt;&lt;/script&gt;</span>
+  <span class="tag">&lt;/head&gt;</span>
+  <span class="tag">&lt;body&gt;</span>
+  ...
+  </code></pre> 
 </p>
-<pre><code><span class="comment">...</span>
+
+
+<!-- Old exercise content -->
+
+ <!-- Add some styling to give it the look and feel you want. In your <code>username.github.io</code> folder, create a folder called <code>stylesheets</code>, and while you're at it, create a folder called <code>images</code> as well. In <code>stylesheets</code>, create <code>style.css</code>. Then link your stylesheet in your HTML. -->
+<!-- <pre><code><span class="comment">...</span>
 <span class="tag">&lt;head&gt;</span>
 <span class="tag">&lt;title&gt;</span>The Bru<span class="tag">&lt;/title&gt;</span>
 <span class="tag">&lt;link rel=<span class="string">"stylesheet"</span> href=<span class="string">"./stylesheets/style.css"</span>&gt;</span>
 <span class="tag">&lt;/head&gt;</span>
 <span class="tag">&lt;body&gt;</span>
 ...
-</code></pre>
+</code></pre> -->
   Push yourself here: you want to have the basic concept done and ready. Look at example sites for inspiration, use Google fonts, borrow other people's styles—you want to have something you're truly proud of! Gauge your progress or get some ideas <a href="http://iexperience.github.io/personal/2A.html">here</a>.
 </p>
 <h4>Code Review</h4>
