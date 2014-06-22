@@ -284,3 +284,58 @@ puts bru
   </ul>
 </p>
 -->
+
+<hr class="large">
+<h1>Getting Git</h1>
+<p>
+  You've all been utilizing Git and GitHub over the past few days as tools to save and share your work. But what exactly do they do, and what's the difference between the two? 
+</p>
+<p>
+  The first thing we need to remember is that Git and GitHub are not the same thing. Git is a version control system that locally tracks your changes. Git does this by taking "snapshots" of your code (which Git calls commits) and then storing these commits in Git repositories (or repos). GitHub is a website that allows you to save your repos online and share them with other people. 
+</p>
+<p>
+  If you aren't 100% clear on what this means, don't worry! Over time you will develop familiarity with both Git and GitHub and you'll soon be using both like pros.
+</p>
+<h4>Creating a local repo and linking it to GitHub</h4>
+<p>
+  Let's start by walking through the steps of creating and linking a repo to GitHub, paying special attention to which product (Git or GitHub) each command is targeting.
+</p>
+<ol>
+  <li>
+    <code>git init</code>: The first thing we do after creating a project file is to initialize (init) a local Git repository in that folder. This creates a hidden <code>.git</code> folder that locally, i.e. on your computer, tracks changes made to the project. <code>git init</code> has nothing to do with GitHub.
+  </li>
+  <li>
+    <code>git add .</code>: Next we add the changes we have made to the staging area (the period in this command is shorthand for all, i.e. add all changed files). You can add files individually by name as well, e.g. <code>git add file1</code>. Remember to add a file before running this command if the folder you've just created is empty. At this point you may be wondering whether your changes have been saved. They have not! The staging area is like a loading dock where you can decide which changes you want to ship (commit). We still need to ship them.
+  </li>
+  <li>
+    <code>git commit -m "Your message"</code>: After choosing which files we want to commit using <code>git add</code>, we run the <code>git commit</code> command to save our changes to our local repo. Once we start having more commits, or our project has collaborators who also submit commits, we may want more information on the changes in each commit. Git allows us to do this by attaching a message with each commit. If we just run <code>git commit</code>, Git will open up a space where we can type our message. By adding the <code>-m</code> to our command, we can immediately add our message inside quotation marks. Commit messages are so important that Git actaully enforces their use, i.e. you cannot submit a commit without a message! Our changes have now been saved in our local Git repository. Let's move on to GitHub...
+  </li>
+  <li>
+    <code>git remote add origin https://github.com/username/reponame.git</code>: Up until now, all our Git commands have solely been targeting Git on our computer. We do this with the <code>git remote add origin</code> command. To utilize GitHub we need to link our local repo with our remote GitHub repo. After creating a repo on your GitHub account you can navigate to the repo page to see a list of instructions for linking the two repos. GitHub provides the URL you need to use in your command at the top of this page.
+  </li>
+  <li>
+    <code>git push origin master</code>: We're nearly there! The last thing we need to do is push our locally stored commits to GitHub with the <code>git push</code> command. The <code>origin</code> part of our command refers to the original remote repository. We will use this repository almost exclusively for this course. The <code>master</code> part of the command refers to the branch we are currently working on. Again, you will predominantly be using the master branch in this course. Check out GitHub's documentation if you want to learn more about using branches.
+  </li>
+</ol>
+<p>Congratulations! You've succesfully created and linked a GitHub repo!</p>
+<h4>Useful commands</h4>
+<p>Git and GitHub are immensely powerful tools. The more time you spend learning about them and how they work, the more you will be able to get out of both products. Below are some extra commands that may come in handy:</p>
+<ul>
+  <li>
+    <code>git status</code>: If you're ever unsure about what's going on with Git, simply type <code>git status</code> to see the current status of your Git repository (or even if the current folder has a Git repo associated with it). 
+  </li>
+  <li>
+    <code>git diff</code>: Shows unstaged changes made since your last commit.
+  </li>
+  <li>
+    <code>git rm file1</code>: Even though you can delete a file from a Git repo outside of the console, i.e. using Finder, it's better practice to delete the file using Git. If you don't do this, you'll find that <code>git add .</code> will not add the deletion to your staging area. You will have to run ...
+  </li>
+  <li>
+    <code>git add -u</code>: Adds deleted files to your staging area.
+  </li>
+  <li>
+    <code>git log</code>: Show recent commits, most recent on top.
+  </li>
+</ul>
+<h4>GitHub Pages: github.io </h4>
+<p>GitHub pages are public webpages freely hosted through GitHub. To create a GitHub page, simply create a new repository named username.github.io on your GitHub account, where username is your username (or organization name) on GitHub. Remember that if the first part of the repository doesn’t exactly match your username, it won’t work, so make sure to get it right. You get one site per GitHub account and organization, and unlimited project sites.</p>
