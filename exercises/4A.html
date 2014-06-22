@@ -5,7 +5,7 @@ prev: 3B
 current: 4A
 next: 4B
 permalink: /exercises/4A.html
-answers_shown: true
+answers_shown: false
 ---
 
 <h1>Review</h1>
@@ -27,14 +27,14 @@ answers_shown: true
   end
 
   def name
-    return @name
+    @name
   end
 end
 
 class Christian < Person
-  def initialize(name, type)
+  def initialize(name, sect)
     @name = name
-    @type = type
+    @sect = sect
   end
 
   def go_to_mass
@@ -42,13 +42,13 @@ class Christian < Person
   end
 end 
 
-abdullah = Christian.new("abdullah", "original")</code></pre>
+abdullah = Christian.new("abdullah", "catholic")</code></pre>
 <p>
   <ol>
     <li>Why is line 3 necessary? What happens without it?</li>
     <li>Is <code>Christian</code> a subclass or a superclass?</li>
     <li>What will running <code>Christian.go_to_mass</code> do? Why?</li>
-    <li>What will running <code>abdullah.type</code> do? Why? If you think it's broken, how can you fix it? If you think it works, what does it return?</li>
+    <li>What will running <code>abdullah.sect</code> do? Why? If you think it's broken, how can you fix it? If you think it works, what does it return?</li>
     <li>
       What is <code>abdullah</code>? Choose all that apply:
       <ul>
@@ -69,7 +69,7 @@ abdullah = Christian.new("abdullah", "original")</code></pre>
       <li>Line 3 tells the class to save the name that was passed to it when you call <code>Person.new</code>. Without it, the class won't remember the name.</li>
       <li>Subclass</li>
       <li>It will break, because the method is only defined on the instance, not the class. You have to do <code>c = Christian.new(...)</code>, then <code>c.go_to_mass</code></li>
-      <li><code>abdullah.type</code> will break becuase there's no <code>type</code> method in <code>Person</code> or <code>Christian</code> class.</li>
+      <li><code>abdullah.sect</code> will break becuase there's no <code>sect</code> method in <code>Person</code> or <code>Christian</code> class.</li>
       <li>
         An instance, an object and a variable.
       </li>
@@ -77,6 +77,27 @@ abdullah = Christian.new("abdullah", "original")</code></pre>
   </p>
 </div>
 {% endif %}
+
+<h4>E2: Classes, Objects and Instances! Oh, my!</h4>
+<p>Revisiting the <code>Person</code> and <code>Christian</code> example from above, we can test our understanding of the <code>instance_of?</code>, <code>is_a?</code> and <code>respond_to?</code> methods. Write down whether the following evaluate to true or false, and then write a sentence explaining the difference between <code>instance_of?</code> and <code>is_a?</code>.  </p>
+
+<pre><code>
+james = Christian.new("james", "presbyterian")
+frank = Person.new("frank")
+</code></pre>
+
+<p>
+  <ol>
+    <li><code>james.is_a?(Person)</code></li>
+    <li><code>james.is_a?(Christian)</code></li>
+    <li><code>james.instance_of?(Person)</code></li>
+    <li><code>james.instance_of?(Christian)</code></li>
+    <li><code>frank.respond_to?(:name)</code></li>
+    <li><code>frank.respond_to?(:go_to_mass)</code></li>
+  </ol>
+</p>
+
+
 <h4>Raise a Glass to Glasses</h4>
 <p>
   Now consider these classes:
@@ -89,7 +110,7 @@ abdullah = Christian.new("abdullah", "original")</code></pre>
   end
 end
 
-class ThingThatBreaks
+class FragileItem
   def break
     @broken = true
   end
@@ -102,7 +123,7 @@ class Glass < <span class="comment"># What should go here?</span>
 end</code></pre>
 </p>
 <p>
-  We want <code>Glass</code> to be both a <code>Container</code> (meaning we can fill it up and empty it out) AND be a <code>ThingThatBreaks</code>, meaning it should be able to break and fix itself. But it can't inherit from two different classes.
+  We want <code>Glass</code> to be both a <code>Container</code> (meaning we can fill it up and empty it out) AND be a <code>FragileItem</code>, meaning it should be able to break and fix itself. But it can't inherit from two different classes.
 </p>
 <p>
   This is why we use modules.
@@ -136,6 +157,7 @@ shot_glass = ShotGlass.new</code></pre>
     <li>Will all this code work? Do you see any bugs? Before you try it yourself, write down your answer. If you see bugs, note what they are and how you would fix them.</li>
     <li>Will <code>shot_glass.break</code> work? Why or why not?</li>
     <li>In the code, we're calling <code>ShotGlass.new</code>, even though the <code>new</code> method isn't <code>def</code>'d anywhere. How come it works?</li>
+    <li>Are you able to call <code>Breakable.new</code>? Why or why not?</li>
     <li>What is <code>Breakable</code>? Choose all that apply:
       <ul>
         <li>A class</li>
@@ -154,141 +176,27 @@ shot_glass = ShotGlass.new</code></pre>
   <ol start="6">
     <li>Yes.</li>
     <li>Will work, because it inherits from a class that includes <code>Breakable</code>, and therefore pulls in all the methods as well.</li>
-    <li>Ruby automatically defines a <code>new</code> method on each class, so we can create instances of that class.</li>
+    <li>Ruby automatically defines a <code>new</code> method that takes no arguments on each class, so we can create instances of that class.</li>
+    <li>No, you can't call <code>Breakable.new</code> as <code>Breakable</code> is a module and can't be instantiated (this will throw a NoMethodError).</li>
     <li>An object (and also a module).</li>
   </ol>
 </div>
 {% endif %}
-<h2>E2: String Theory</h2>
-<p>
-  A common way to practice arrays and methods is to write <em>string manipulation</em> methods, or methods that modify strings. The cool thing about Ruby is that you can always modify any class and add methods to it. For example, instead of our <code>shout</code> method, we could have written it into the <code>String</code> class itself:
-</p>
-<pre><code>class String
-  def shout
-    self.upcase
-  end
-end
 
-"hElLo".shout
-<span class="string"># => "HELLO"</span></code></pre>
+<h2>E3: Finding a Needle in a Hashstack</h2>
 <p>
-  For this exercise, we're going to add some methods to the <code>String</code> class. Create <code>d4/super_strings.rb</code>.
+  One of the best uses of a computer is to find things—meaning information or other data. Facebook finds what your friends are doing, Buzzfeed finds things you kind of care about, and even Bing finds things sometimes, too. For this exercise, you're going to write your own code that finds things. Note: if you're wondering how your methods should work in certain cases, check out the example tests in the code section below. Writing examples which make it clear how you want your method to work before implementing it is a great way to organize your thoughts!  
+</p>
+<h4>Thing to find = letter in string</h4>
+<p>
+  Write a method <code>index_of</code> that takes two parameters, a string and a letter. Return the index of the first time the letter occurs in that string, or -1 if it doesn't occur.
 </p>
 
-<h4>Iglatinpay</h4>
-<p>
-  You may be familiar with <em>Piglatin</em>, which is a language just like English, but each first letter of a word is put at the end and followed by "ay". So, "Piglatin" in Piglatin is "Iglatinpay", and "iglatinpay" is "glatinpayiay". Write a method <code>piglatinify</code> to get this behavior.
-</p>
-<h4>Histay Siay Iglatinpay</h4>
-<p>
-  Write a method <code>piglatinify_sentence</code> that makes each word in a sentence into Piglatin.
-</p>
-<h4>Strip Down</h4>
-<p>
-  Write the method <code>strip</code> (but call it <code>strip_new</code>). Test it against Ruby's strip with a variety of test samples. Does it always behave the same?
-</p>
-
-<pre><code><span class="comment"># super_strings.rb</span>
-
-# Your code here
-
-"piglatin".piglatinify
-<span class="comment"># => "iglatinpay"</span>
-"Piglatin".piglatinify
-<span class="comment"># => "Iglatinpay" (watch out for capital letters!)</span>
-"This is Piglatin".piglatinify_sentence
-<span class="comment"># => "Histay siay Iglatinpay"</span>
-" 
-tripsay emay \t ".strip_new
-<span class="comment"># => "tripsay emay"</span>
-</code></pre>
-
-<!-- Answers for E2 -->
-{% if page.answers_shown %}
-<a class="hover-show pull-right">Hover for answer</a>
-<div class="hover-hide">
-  <pre><code><span class="comment"># super_strings.rb</span>
-
-class String
-  def piglatinify
-    <span class="comment"># Check for capitalization</span>
-    if self[0].upcase == self[0]
-      self[0] = self[0].downcase <span class="comment"># Downcase old first letter</span>
-      self[1] = self[1].upcase   <span class="comment"># Upcase new first letter</span>
-    end
-    <span class="comment"># Rest of string + first letter + "ay"</span>
-    self[1..-1] + self[0] + "ay"
-  end
-
-  def piglatinify_sentence
-    pigged_words = self.split(" ").map { |word| word.piglatinify }
-    pigged_words.join(" ")
-    <span class="comment"># To be fancy, you might have done it in one line:</span>
-    <span class="comment"># self.split(" ").map({ |word| word.piglatinify }).join(" ")</span>
-    <span class="comment"># But in my opinion, that's less clear.</span>
-  end
-end</code></pre>
-</div>
-{% endif %}
-
-
-<h2>E3: Modulify</h2>
-<p>
-  Make your Piglatin methods into a module called <code>Piglatinify</code> in <code>piglatinify.rb</code>. The two methods should work on any class (perhaps the <code>to_s</code> method will come in handy here). Test by creating another file.
-</p>
-<pre><code><span class="comment"># d4/some_other_file.rb</span>
-
-require_relative 'piglatinify'
-
-class Array
-  include Piglatinify
-end
-[:a, :b, :c].piglatinify
-<span class="comment"># => ":a, :b, :c][ay"</span>
-[:a, :b, :c].piglatinify_sentence
-<span class="comment"># => ":a,[ay b,:ay c]:ay"</span></code></pre>
-<!-- Answers for E3 -->
-{% if page.answers_shown %}
-<a class="hover-show pull-right">Hover for answer</a>
-<div class="hover-hide">
-  <pre><code><span class="comment"># piglatinify.rb</span>
-
-<span class="comment"># Modules, like classes, start with capital letters</span>
-module Piglatinify
-  def piglatinify
-    string_self = self.to_s
-    if string_self[0].upcase == string_self[0]
-      string_self[0] = string_self[0].downcase <span class="comment"># Downcase old first letter</span>
-      string_self[1] = string_self[1].upcase   <span class="comment"># Upcase new first letter</span>
-    end
-    <span class="comment"># Rest of string + first letter + "ay"</span>
-    string_self[1..-1] + string_self[0] + "ay"
-  end
-
-  def piglatinify_sentence
-    string_self = self.to_s
-    pigged_words = string_self.split(" ").map { |word| word.piglatinify }
-    pigged_words.join(" ")
-  end
-end</code></pre>
-</div>
-{% endif %}
-
-
-<h2>E4: Finding things</h2>
-<p>
-  One of the best uses of a computer is to find things—meaning information or other data. Facebook finds what your friends are doing, Buzzfeed finds things you kind of care about, and even Bing finds things sometimes, too. For this exercise, you're going to write your own code that finds things.
-</p>
-<h4>Thing = letter in string</h4>
-<p>
-  Write a method <code>index_of</code> that takes two paramters, a string and a letter. Return the index of the first time the letter occurs in that string, or -1 if it doesn't occur.
-</p>
-
-<h4>Thing = item in array</h4>
+<h4>Thing to find = item in array</h4>
 <p>
   Write a method <code>find_by_name</code>, which takes an array of hashes, each of which has the property <code>:name</code>, and a string and finds the first one that has that name.
 </p>
-<h4>Thing = items in array</h4>
+<h4>Thing to find = items in array</h4>
 <p>
   Write a second, very similar method <code>filter_by_name</code>, which returns and array with <b>all</b> the items with the given name. Note that that method should always return an array, even if only one item is found.
 </p>
