@@ -9,27 +9,17 @@ answers_shown: true
 ---
 <h1>Review</h1>
 <p>
-  <b>Topics Covered:</b> Ruby Koans
+  <b>Topics Covered:</b> Tic-tac-toe
 </p>
 <hr class="large">
 <h1>Exercises</h1>
-<h2>E1: Achieve Nirvana on the Ruby Koans</h2>
+<h2>E1: Tic-Tac-Toe</h2>
 <p>
-    "If a REPL falls in an isolated environment and no one hears, does it make a noise?"
-</p>
-<p>
-    Fun fact, a koan (as defined by Wikipedia) is a story, dialogue, question, or statement, which is used in Zen-practice to provoke the "great doubt", and test a student's progress.
-</p>
-<p>
-    Ruby Koans is not only a great way to learn more about Ruby, it is also a fantastic example of the power of testing. The Koans start off really easy, but keep going. They become increasingly difficult surprisingly quickly. When "great doubts" arise, always remember to persevere until "mountains are again merely mountains".
-</p>
-<h2>E2: Tic-Tac-Toe</h2>
-<p>
-  This one's more a mini-project: we're going to work through building a simple tic-tac-toe application from scratch. Pick a partner who you haven't worked with before, create <code>tictactoe.rb</code> in <code>d3</code> and let's get started.
+  This one's more a mini-project: we're going to work through building a simple tic-tac-toe application from scratch. Pick a partner who you haven't worked with before, create <code>tictactoe.rb</code> in <code>d4</code> and let's get started.
 </p>
 <h4>Step 1: Planning</h4>
 <p>
-  As usual, we're going to plan out our approach before we begin coding. Read the following carefully—your program must:
+  As usual, we're going to plan out our approach before we start coding away. Read the following carefully—your program must:
   <ul>
     <li>Take input from two players</li>
     <li>Detect invalid input</li>
@@ -51,12 +41,12 @@ answers_shown: true
 #   array can contain another array—it can even contain a hash that contains
 #   another hash, though unclear if that will be useful :P)
 # When a player makes a move, what should happen? 
-# How do you keep track of which squares have x's and which have o's?
+# How do you keep track of which squares have Xs and which have Os?
 # How do you detect a winner?
 # When does the program stop? Is there a loop? If so, what kind?</code></pre>
 <h4>Step 2: Pseudo-code</h4>
 <p>
-  <em>Pseudo-code</em> is code that's written in English; that is, step by step instructions for how your program behaves. An example:
+  <em>Pseudo-code</em> is an informal, high-level description of your program's operation. Pseudo-code is written in english and outlines your program's behavior using step by step instructions. An example for tic-tac-toe:
 </p>
 <pre><code># Every turn:
 #   Update whose turn it is
@@ -64,7 +54,7 @@ answers_shown: true
 #   Update board
 #   Check for winner</code></pre>
 <p>
-  Of course, that's pretty easy to write, but may not be so obvious to translate into code. What exactly is a turn? How does one update the board? These are questions you've started thinking about in Step 1. For Step 2, expand your thinking and the above pseudo-code to make a more detailed outline. That is, your writing may contain words like "Array" and "Hash", but probably doesn't contain any "[" or "{". As you write, consider these questions, and be ready to answer them:
+  Of course, that's pretty easy to write. However, it may be less obvious how you would translate pseudo-code into good ol' regular code. What exactly is a turn? How does one update the board? These are questions you've started thinking about in Step 1. For Step 2, expand your thinking, and the above pseudo-code, to make a more detailed outline. That is, your writing may contain words like "Array" and "Hash", but probably doesn't contain any "[" or "{" glyphs. As you write, consider these questions, and be ready to answer them:
   <ul>
     <li>Do you need to make any classes or modules?</li>
     <li>
@@ -187,7 +177,7 @@ Cats game!</code></pre>
 </p>
 {% endif %}
 
-<h2>E3: Bigger. Better. Squared.</h2>
+<h2>E2: Bigger. Better. Squared.</h2>
 <p>
   Implement a 4 by 4 tic-tac-toe game.
 </p>
