@@ -9,11 +9,115 @@ answers_shown: false
 ---
 <h1>Review</h1>
 <p>
-  <b>Topics Covered:</b> Tic-tac-toe
+  <b>Topics Covered:</b> Git; Github
 </p>
 <hr class="large">
 <h1>Exercises</h1>
-<h2>E1: Tic-Tac-Toe</h2>
+
+<h2>E1: Git Review</h2>
+<p>
+  <ol>
+    <li>What does the <code>git init</code> command do?</li>
+    <li>
+      What does <code>git add</code> do? How is it different from <code>git commit</code>?
+    </li>
+    <li>
+      What is the difference between <b>staged</b> and <b>committed</b> (or <b>versioned</b>) files? When might you stage something and not commit it?
+    </li>
+    <li>
+      What's the shortcut for adding all files and commiting?
+    </li>
+    <li>
+      How do you unstage a staged file? How do you go back to an old version of a committed file?
+    </li>
+    <li>
+      Why are commit messages very important?
+    </li>
+    <li>
+      How do I revert to a previous commit?
+    </li>
+    <li>
+      How do you exit out of <code>vi</code>? (Also called <code>vim</code>.)
+    </li>
+  </ol>
+</p>
+
+{% if page.answers_shown %}
+<a class="hover-show pull-right">Hover for answer</a>
+<div class="hover-hide">
+  <ol>
+    <li>Starts a new git repository. Specifically, it creates a <code>.git</code> folder (which is hidden by default so you can't see it in Finder) that stores all your git data.</li>
+    <li>
+      <code>git add</code> <em>stages</em> the specified files. <code>git commit</code> <em>commits</em> those files (add all the staged files to the repo). This gives you flexibility so you don't have to add all the files in your working tree to the reposity—though in the vast majority of cases, that's what you'll do.
+    </li>
+    <li>
+      Staged files are ready to be committed, but aren't in the repository yet. Committing actually adds it to the repo. You might stage something if you've worked on it for a bit, but aren't sure enough of your changes to commit quite yet. <b>You will rarely stage something without committing it</b>.
+    </li>
+    <li>
+      <code>git commit -am "Your commit message"</code>—a <b>very</b> useful command. 
+    </li>
+    <li>
+      To unstage, use <code>git reset</code>. To revert to an earlier version, use <code>git checkout</code>.
+    </li>
+    <li>
+      They describe what was done in the commit—having good messages makes it easy to go back to a particular "draft" of your app. 
+    </li>
+    <li>
+      First use <code>git log</code> to get the <b>commit hash</b> for the commit you want to get back to. The output of <code>git log</code> should look something like: 
+      <pre><code>commit 2f10cb58b852b4b2fe6b6f22a4e24594cf1faafd
+Author: Rafi Khan <rafi.fa.khan@gmail.com>
+Date:   Thu Jun 12 14:53:28 2014 +0200
+
+    undo git rebase typo fix
+
+commit 0d3751aeded09576b3a58174d84870313aa27840
+Author: Rafi Khan <rafi.fa.khan@gmail.com>
+Date:   Thu Jun 12 14:52:57 2014 +0200
+
+    git rebase typo fix</code></pre>
+    The commit hash is that long <code>2f10cb58b852b4b2fe6b6f22a4e24594cf1faafd</code> thing after the word "commit". Then you would run <code>git revert 2f10cb58b852b4b2fe6b6f22a4e24594cf1faafd</code>.
+    </li>
+    <li>
+      Hold shift and press 'Z' twice, or type colon, then w, then q.
+    </li>
+  </ol>
+</div>
+{% endif %}
+
+<h2>E2: GitHub</h2>
+<p>
+  <ol>
+    <li>What's the difference between GitHub and git? Could git exist without GitHub? Could GitHub exist without git?</li>
+    <li>Why is GitHub a cool company?</li>
+    <li>What does <code>git push</code> do?</li>
+    <li>What does <code>git pull</code> do? How is it different from/same as <code>git fetch</code> and <code>git merge</code>?</li>
+    <li>
+      What's the difference between rebase and merge?
+    </li>
+  </ol>
+</p>
+{% if page.answers_shown %}
+<a class="hover-show pull-right">Hover for answer</a>
+<div class="hover-hide">
+  <p>
+    <ol>
+      <li>Git is the version control system that you have installed on your local computer. GitHub is a website that makes collaborating with git very easy, in particular looking at the code other programmers have written. Git could exist without GitHub, but not the other way around.</li>
+      <li>They let you put all your code online, for free! But letting people share code so easily, they make solving common problems <em>super</em> easy, as well as pushing forward the open-source community.</li>
+      <li>
+        Sends your code to the <b>remote</b> you specify. For our purposes, our remote is always called <b>origin</b>, and lives on GitHub.
+      </li>
+      <li>
+        <code>git pull</code> brings code in from the remote you specify, and merges it into your working tree automatically. <code>git fetch</code> brings in the code from the remote, but doesn't merge. <code>git merge</code> then allows you to merge manually. <b>Usually, you'll just use git pull</b>.
+      </li>
+      <li>
+        Merge creates a new commit and rebase doesn't—but rebase also requires a bit more work to fix merge conflicts.
+      </li>
+    </ol>
+  </p>
+</div>
+{% endif %}
+
+<h2>E3: Tic-Tac-Toe</h2>
 <p>
   This exercise is actually more of a mini-project: we're going to work through building a simple tic-tac-toe application from scratch. Pick a partner who you haven't worked with before, create <code>tictactoe.rb</code> in <code>d4</code> and let's get started.
 </p>
@@ -179,7 +283,7 @@ Cats game!</code></pre>
 </p>
 {% endif %}
 
-<h2>E2: Bigger. Better. Quadrupled.</h2>
+<h2>E4: Bigger. Better. Quadrupled.</h2>
 <p>
     Now that you've mastered the basics of tic-tac-toe, it's time to move on to bigger and better things. Choose one of the following extension projects:
     <ul>
@@ -198,7 +302,7 @@ Cats game!</code></pre>
     </ul>
 </p>
 
-<h2 class="bonus">E3 (Bonus!): Computer Tic-Tac-Toe</h2>
+<h2 class="bonus">E5 (Bonus!): Computer Tic-Tac-Toe</h2>
 <p>
   While playing against a person is fun, us loners need something to do. Write a program that <b>plays tic tac toe against you</b>. Your implementation should give your opponenent artificial intelligence (AI)! While this may seem too difficult, it's not too hard if you split it into steps! Try giving the computer these abilities in order: 
 </p>
