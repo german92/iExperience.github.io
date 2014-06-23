@@ -5,7 +5,7 @@ prev: 4A
 current: 4B
 next: 5A
 permalink: /exercises/4B.html
-answers_shown: true
+answers_shown: false
 ---
 <h1>Review</h1>
 <p>
@@ -200,8 +200,18 @@ Cats game!</code></pre>
 
 <h2 class="bonus">E4 (Bonus!): Computer Tic-Tac-Toe</h2>
 <p>
-  While playing against a person is fun, us loners need something to do. Write a program that <b>plays tic tac toe against you</b>. It should be smart!
+  While playing against a person is fun, us loners need something to do. Write a program that <b>plays tic tac toe against you</b>. Your implementation should give your opponenent artificial intelligence (AI)! While this may seem too difficult, it's not too hard if you split it into steps! Try giving the computer these abilities in order: 
 </p>
+<p>
+  <ol>
+    <li>Simply choose a random square to play in</li>
+    <li>Play in a winning square if there is one</li>
+    <li>Block the human from winning if they have a winning move</li>
+    <li>Make the computer impossible to defeat!</li>
+    <li>Allow the computer to take advantage of poor human play to win!</li>
+  </ol>
+</p>
+<p>The first three items are quite manageable, and are a great start to making your opponent smart! The last two items will require some time studying Tic-Tac-Toe strategy, but are a fun way to practice the translation of human strategy to computer code!</p>
 <pre><code>$ ruby computer_tictactoe.rb
 Would you like to be Player 1 or Player 2?
 1
@@ -234,7 +244,7 @@ Computer: 8
 The computer wins!
 </code></pre>
 <p>
-  As you can see, it's pretty tough to get a computer to even be smart about something as simple as tic-tac-toe—the human brain is really amazing. Now consider how much code and intelligence is required to make a program that plays chess, or gives directions to some place depending on traffic and road closings...it's actually quite humbling.
+  As you can see, it's pretty tough to get a computer to even be smart about something as simple as tic-tac-toe—the human brain is really amazing. Now consider how much code and intelligence is required to make a program that plays chess, or gives directions to some place depending on traffic and road closings... it's actually quite humbling.
 </p>
 
 <hr class="large">
