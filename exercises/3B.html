@@ -49,7 +49,7 @@ Cameron, Izinne <br>
 <p>
   If you aren't 100% clear on what this means, don't worry! Over time you will develop familiarity with both Git and GitHub and you'll soon be using both like pros.
 </p>
-<h4>Creating a local repo and linking it to GitHub</h4>
+<h4>Creating a Local Repo and Linking it to GitHub</h4>
 <p>
   Let's start by walking through the steps of creating and linking a repo to GitHub, paying special attention to which product (Git or GitHub) each command is targeting.
 </p>
@@ -71,6 +71,23 @@ Cameron, Izinne <br>
   </li>
 </ol>
 <p>Congratulations! You've succesfully created and linked a GitHub repo!</p>
+<h4>Updating a GitHub repo</h4>
+<p>So, you've linked your repos and successfully pushed your content. But now you make some changes and want to push these to GitHub. Which of the above commands do you need to run? To figure this out, all we need to do is take a closer look at what the commands are doing.</p>
+<ul>
+  <li><code>git init</code> initializes a repository in your project folder. We only ever need to intitialize a repo once, so we don't need to run this.</li>
+  <li>
+    How about <code>git add .</code>? This command adds changes to the staging area, so yes, we need to run this command.
+  </li>
+  <li>
+    Similarly, <code>git commit</code> commits these changes to our local repo, so we also need to run this.
+  </li>
+  <li>
+    Next, we have <code>git remote add origin</code>. This command links our local and remote repo. Once we've linked our repos, we don't need to do it again. So we don't need to run this command.
+  </li>
+  <li>
+    Lastly, <code>git push</code>. This command pushes your stored local changes to your remote repo. We need to run this command every time as well.
+  </li>
+</ul>
 <h4>Useful commands</h4>
 <p>Git and GitHub are immensely powerful tools. The more time you spend learning about them and how they work, the more you will be able to get out of both products. Below are some extra commands that may come in handy:</p>
 <ul>
