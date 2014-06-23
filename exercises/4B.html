@@ -9,27 +9,17 @@ answers_shown: true
 ---
 <h1>Review</h1>
 <p>
-  <b>Topics Covered:</b> Ruby Koans
+  <b>Topics Covered:</b> Tic-tac-toe
 </p>
 <hr class="large">
 <h1>Exercises</h1>
-<h2>E1: Achieve Nirvana on the Ruby Koans</h2>
+<h2>E1: Tic-Tac-Toe</h2>
 <p>
-    "If a REPLS falls in an isolated environment and no one hears, does it make a noise?"
+  This exercise is actually more of a mini-project: we're going to work through building a simple tic-tac-toe application from scratch. Pick a partner who you haven't worked with before, create <code>tictactoe.rb</code> in <code>d4</code> and let's get started.
 </p>
+<h4>Step 1: TIC! (Planning)</h4>
 <p>
-    Fun fact, a koan (as defined by Wikipedia) is a story, dialogue, question, or statement, which is used in Zen-practice to provoke the "great doubt", and test a student's progress.
-</p>
-<p>
-    Ruby Koans is not only a great way to learn more about Ruby, it is also a fantastic exmaple of the power of testing. The Koans start off really easy, but keep going. They become increasingly difficult surprisingly quickly. When "great doubts" arise, always remember to persevere until "mountains are again merely mountains".
-</p>
-<h2>E2: Tic-Tac-Toe</h2>
-<p>
-  This one's more a mini-project: we're going to work through building a simple tic-tac-toe application from scratch. Pick a partner who you haven't worked with before, create <code>tictactoe.rb</code> in <code>d3</code> and let's get started.
-</p>
-<h4>Step 1: Planning</h4>
-<p>
-  As usual, we're going to plan out our approach before we begin coding. Read the following carefully—your program must:
+  As usual, we're going to plan out our approach before we start coding away. Read the following carefully—your program must do the following:
   <ul>
     <li>Take input from two players</li>
     <li>Detect invalid input</li>
@@ -38,7 +28,7 @@ answers_shown: true
     <li>Keep track of which squares have been filled in on the board, and not let the same square be filled in more than once</li>
     <li>Detect a winner when a player has won</li>
   </ul>
-  The input will be an integer from 0-8 and the squares will be numbered top-left to bottom-right (0 is the top-left square, 2 is the top-right square, 4 is the middle square, and 8 is the bottom-right square).  
+  The player input will be an integer from 0-8 and the squares will be numbered top-left to bottom-right (0 is the top-left square, 2 is the top-right square, 4 is the middle square, and 8 is the bottom-right square).  
 </p>
 <p>
   In <code>tictactoe.rb</code>, answer the following questions:
@@ -51,12 +41,12 @@ answers_shown: true
 #   array can contain another array—it can even contain a hash that contains
 #   another hash, though unclear if that will be useful :P)
 # When a player makes a move, what should happen? 
-# How do you keep track of which squares have x's and which have o's?
+# How do you keep track of which squares have Xs and which have Os?
 # How do you detect a winner?
 # When does the program stop? Is there a loop? If so, what kind?</code></pre>
-<h4>Step 2: Pseudo-code</h4>
+<h4>Step 2: TAC! (Pseudo-code)</h4>
 <p>
-  <em>Pseudo-code</em> is code that's written in English; that is, step by step instructions for how your program behaves. An example:
+  <em>Pseudo-code</em> is an informal, high-level description of your program's operation. Pseudo-code is written in english and outlines your program's behavior using step by step instructions. An example for tic-tac-toe:
 </p>
 <pre><code># Every turn:
 #   Update whose turn it is
@@ -64,9 +54,11 @@ answers_shown: true
 #   Update board
 #   Check for winner</code></pre>
 <p>
-  Of course, that's pretty easy to write, but may not be so obvious to translate into code. What exactly is a turn? How does one update the board? These are questions you've started thinking about in Step 1. For Step 2, expand your thinking and the above pseudo-code to make a more detailed outline. That is, your writing may contain words like "Array" and "Hash", but probably doesn't contain any "[" or "{". As you write, consider these questions, and be ready to answer them:
+  Of course, that's pretty easy to write. However, it may be less obvious how you would translate pseudo-code into good ol' Ruby. What exactly is a turn? How does one update the board? These are questions you've started thinking about in Step 1. For Step 2, expand your thinking, and the above pseudo-code, to make a more detailed outline. That is, your writing may contain words like "Array" and "Hash", but probably doesn't contain any "[" or "{" glyphs. As you write, consider these questions, and be ready to answer them:
   <ul>
-    <li>Do you need to make any classes or modules?</li>
+    <li>
+      Do you need to make any classes or modules?
+    </li>
     <li>
       What functionality are you using often? Do you need any helper methods?
     </li>
@@ -81,9 +73,9 @@ answers_shown: true
 <p>
   <b>Check in with a TA before continuing!</b>
 </p>
-<h4>Step 3: Code</h4>
+<h4>Step 3: TOE! (Code)</h4>
 <p>
-  Now that you have your pseudo-code, it should be a simple matter to turn it into real code. Take a crack at it, and see if it works. 
+  Now that you have your pseudo-code, it should be a simple matter to turn it into real code. Take a crack at it, and see if it works!
 </p>
 <pre><code>$ ruby tictactoe.rb 
 Player 1:
@@ -110,9 +102,9 @@ Congrats, player 1 won!</code></pre>
 <p class="info hint">
   If you've gotten this far, you actually know quite a bit about coding, and the coding process. This was actually a Google coding interview problem (though keep that fact hush hush!). When you interview at companies—or try to code anything, really—this workflow is a good one to keep in mind: first <b>talk through</b> your solution and think about what <b>data structures</b> you'll use. Then write <b>pseudo-code</b> and try to foresee as many problems as you can. Only when you're confident in your <b>thinking</b> should you start coding.
 </p>
-<h4>Step 4: User Experience</h4>
+<h4>Step 4: TIC-TAC-TOE! (User Experience)</h4>
 <p>
-  To be honest, while your program is cool, it's not very user friendly...humans aren't very good at remembering what the board looks like. Add a method to print out the board after each step. We've picked a design, but feel free to make it look like however you want.
+  To be honest, while your program is pretty awesome, it's not very user friendly. Since humans aren't very good at remembering what the board looks like, add a method to print out the board after each step. We've picked a design below, but feel free to make it look like however you want.
 </p>
 
 <pre><code>$ ruby tictactoe.rb
@@ -187,9 +179,23 @@ Cats game!</code></pre>
 </p>
 {% endif %}
 
-<h2>E3: Bigger. Better. Squared.</h2>
+<h2>E2: Bigger. Better. Quadrupled.</h2>
 <p>
-  Implement a 4 by 4 tic-tac-toe game.
+    Now that you've mastered the basics of tic-tac-toe, it's time to move on to bigger and better things. Choose one of the following extension projects:
+    <ul>
+        <li>
+            Change your game into <b>EXTREME tic-tac-toe</b>, AKA 4x4 tic-tac-toe (Guru difficulty)
+            <p>
+                Think about what kind of changes you will need to make to your program by following the steps you used for making the first game. Plan, pseudo-code, code, repeat!
+            </p>
+        </li>
+        <li>
+            Create <b>Connect Four</b> (Chosen One difficulty)
+            <p>
+                Recreate the (awesome) two-player sensation from the 70s. Think about the different rules that you will need for this game as opposed to regular tic-tac-toe, e.g. can a player put a disc wherever they want?
+            </p>
+        </li>
+    </ul>
 </p>
 
 <h2 class="bonus">E4 (Bonus!): Computer Tic-Tac-Toe</h2>

@@ -49,7 +49,7 @@ Cameron, Izinne <br>
 <p>
   If you aren't 100% clear on what this means, don't worry! Over time you will develop familiarity with both Git and GitHub and you'll soon be using both like pros.
 </p>
-<h4>Creating a local repo and linking it to GitHub</h4>
+<h4>Creating a Local Repo and Linking it to GitHub</h4>
 <p>
   Let's start by walking through the steps of creating and linking a repo to GitHub, paying special attention to which product (Git or GitHub) each command is targeting.
 </p>
@@ -71,6 +71,23 @@ Cameron, Izinne <br>
   </li>
 </ol>
 <p>Congratulations! You've succesfully created and linked a GitHub repo!</p>
+<h4>Updating a GitHub repo</h4>
+<p>So, you've linked your repos and successfully pushed your content. But now you make some changes and want to push these to GitHub. Which of the above commands do you need to run? To figure this out, all we need to do is take a closer look at what the commands are doing.</p>
+<ul>
+  <li><code>git init</code> initializes a repository in your project folder. We only ever need to intitialize a repo once, so we don't need to run this.</li>
+  <li>
+    How about <code>git add .</code>? This command adds changes to the staging area, so yes, we need to run this command.
+  </li>
+  <li>
+    Similarly, <code>git commit</code> commits these changes to our local repo, so we also need to run this.
+  </li>
+  <li>
+    Next, we have <code>git remote add origin</code>. This command links our local and remote repo. Once we've linked our repos, we don't need to do it again. So we don't need to run this command.
+  </li>
+  <li>
+    Lastly, <code>git push</code>. This command pushes your stored local changes to your remote repo. We need to run this command every time as well.
+  </li>
+</ul>
 <h4>Useful commands</h4>
 <p>Git and GitHub are immensely powerful tools. The more time you spend learning about them and how they work, the more you will be able to get out of both products. Below are some extra commands that may come in handy:</p>
 <ul>
@@ -89,8 +106,15 @@ Cameron, Izinne <br>
   <li>
     <code>git log</code>: Show recent commits, most recent on top.
   </li>
+  <li>
+    <code>git clone https://github.com/username/reponame.git</code>: In order to have a copy of some repo on github on your local machine, you use the git clone command. You can make changes to this local copy, and can follow the usual git commands to push your changes to repository on github. Let's say you changed a html file. In your terminal, you will <code>cd</code> into this newly cloned repo, type <code>git add . </code>, next <code> git commit -m "message" </code>, and then <code>git push origin master</code>. The changes on your local machine will then be updated to the cloned github repo. 
+  </li>
 </ul>
 <h4>GitHub Pages: github.io </h4>
-<p>GitHub pages is a great service offered by GitHub. It allows you to host public webpages through GitHub for free! Creating a GitHub page is easy. Start by creating a new repository named username.github.io on your GitHub account, where username is your username on GitHub. Remember that the first part of the repository has to match your username EXACTLY (it is case sensitive). After you've created your repo, simply follow the normal steps for linking your local and remote repo, and that's it! You get one GitHub Pages site per GitHub account and unlimited project sites.</p>
+<p>
+  GitHub pages is a great service offered by GitHub. It allows you to host public webpages through GitHub for free! Creating a GitHub page is easy. Start by creating a new repository named username.github.io on your GitHub account, where username is your username on GitHub. Remember that the first part of the repository has to match your username EXACTLY (it is case sensitive). After you've created your repo, simply follow the normal steps for linking your local and remote repo, and that's it! You get one GitHub Pages site per GitHub account and unlimited project sites.
+</p>
 <h4>General tips</h4>
-<p>If you've ever tried deleting a repo on GitHub, you'll notice that it's far from simple. This is done purposefully. GitHub's philosophy encourages changes but not deletions, and deleting an entire repository should only ever be viewed as a last resort. Also remember that many Git files remain hidden from you. When you delete repositories, you are also deleting information in these ninja <code>.git</code> files that may have unintended conseqeunces down the road.</p>
+<p>
+  If you've ever tried deleting a repo on GitHub, you'll notice that it's far from simple. This is done purposefully. GitHub's philosophy encourages changes but not deletions, and deleting an entire repository should only ever be viewed as a last resort. Also remember that many Git files remain hidden from you. When you delete repositories, you are also deleting information in these ninja <code>.git</code> files that may have unintended conseqeunces down the road.
+</p>
